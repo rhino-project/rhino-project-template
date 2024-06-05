@@ -43,6 +43,7 @@ import {
   getSessionCreatePath
 } from '@rhino-project/core/utils';
 import { customRoutes } from 'routes/custom';
+import { RhinoDevTool } from '@rhino-project/core/components/devtool';
 
 const queryClient = new QueryClient({});
 
@@ -146,6 +147,7 @@ const Root = () => {
     <RollbarProvider config={rollbarConfig}>
       <RollbarErrorBounday>
         <div className="h-100">
+          <RhinoDevTool />
           <QueryClientProvider client={queryClient}>
             <AuthProvider>
               <ReactQueryDevtools
