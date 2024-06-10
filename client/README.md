@@ -1,32 +1,8 @@
 # Setup
 
-## Prerequisites
+See https://www.rhino-project.org/docs/getting_started/
 
-This assumes you have Homebrew installed.
-
-1. Install nvm: https://github.com/nvm-sh/nvm#installing-and-updating
-
-- `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash`
-
-2. Install node 20.10.0, `nvm install v20.10.0`
-
-## Launch the application
-
-1. Clone the repo `git clone https://github.com/rhino-project/rhino-project-template.git`
-
-2. `cd rhino-project-template/client`
-
-3. Install dependencies: `npm install`
-
-4. Copy `env.sample` to `.env` and modify env vars
-
-- PORT: Port to run the app. By default to not conflict with the rhino template server this would be 3001.
-
-- VITE_API_ROOT_PATH: url of the api to which this client will send requests. By default with the rhino template server this would be `VITE_API_ROOT_PATH=http://localhost:3000`
-
-5. Run the application client: `npm start`
-
-### Developing the front end against remote server
+## Developing the front end against remote server
 
 Because of CORS by default you will not be able to work against a deployed production server. However if you set `FRONT_END_LOCAL_URL=http://localhost:3001` you can.
 
