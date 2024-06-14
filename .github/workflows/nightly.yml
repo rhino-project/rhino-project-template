@@ -8,10 +8,28 @@ on:
 jobs:
   server_docker:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: server
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
       - name: Build Docker image
-        run: docker build server -f server/Dockerfile.development
+        run: docker build . -f Dockerfile
+      - name: Build Docker development image
+        run: docker build . -f Dockerfile.development
+
+  client_docker:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: client
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Build Docker image
+        run: docker build . -f Dockerfile
+      - name: Build Docker development image
+        run: docker build . -f Dockerfile.development
