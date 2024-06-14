@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "current": {
-    "node": "v20.10.0",
-    "npm": "10.2.3"
+    "node": "v20.14.0",
+    "npm": "10.7.0"
   },
   "type": "module",
   "dependencies": {
@@ -21,7 +21,7 @@
     "@testing-library/react": "14.0.0",
     "@testing-library/user-event": "14.4.3",
     "@types/lodash": "4.14.170",
-    "@types/node": "20.10.4",
+    "@types/node": "20.14.2",
     "@types/react": "18.2.30",
     "@types/react-dom": "18.2.14",
     "@types/react-helmet": "6.1.1",

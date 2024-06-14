@@ -71,7 +71,7 @@ jobs:
       NODE_ENV: test
       VITE_API_ROOT_PATH: https://api.example.com
     docker:
-      - image: cimg/node:20.10.0
+      - image: cimg/node:20.14.0
     steps:
       - checkout:
           path: ~/project
@@ -89,7 +89,7 @@ jobs:
   cypress:
     docker:
       - image: cimg/ruby:3.1.4-browsers
-        environment:      
+        environment:
           BUNDLE_JOBS: 3
           BUNDLE_RETRY: 3
           BUNDLE_PATH: vendor/bundle
@@ -120,7 +120,7 @@ jobs:
           app-dir: ~/project/server
 
       - node/install:
-          node-version: 20.10.0
+          node-version: 20.14.0
       - node/install-packages:
           app-dir: ~/project/client
 
