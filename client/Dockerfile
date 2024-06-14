@@ -2,7 +2,7 @@
 # https://typeofnan.dev/how-to-serve-a-react-app-with-nginx-in-docker/
 # https://developer.okta.com/blog/2020/06/24/heroku-docker-react
 # https://devopsian.net/notes/docker-nginx-template-env-vars/
-FROM node:20.10.0 as builder
+FROM node:20.14.0 as builder
 
 # set working directory
 WORKDIR /app
