@@ -1,7 +1,7 @@
-FROM ruby:3.1.4
+FROM ruby:3.1.6
 
 ENV APP_PATH /var/server
-ENV BUNDLE_VERSION 2.2.22
+ENV BUNDLE_VERSION 2.5.13
 ENV BUNDLE_PATH /usr/local/bundle/gems
 ENV TMP_PATH /tmp/
 ENV RAILS_LOG_TO_STDOUT true
