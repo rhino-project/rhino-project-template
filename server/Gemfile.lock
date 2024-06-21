@@ -517,8 +517,6 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sdoc (1.1.0)
-      rdoc (>= 5.0)
     sendgrid-actionmailer (3.2.0)
       mail (~> 2.7)
       sendgrid-ruby (~> 6.4)
@@ -648,7 +646,6 @@ DEPENDENCIES
   rubocop-rails (= 2.13.0)
   rubocop-rhino-project (~> 0.20.0.beta.75)
   sassc-rails
-  sdoc
   sendgrid-actionmailer
   sendgrid-ruby
   simplecov
