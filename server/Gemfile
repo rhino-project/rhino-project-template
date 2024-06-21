@@ -70,7 +70,6 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-azure-activedirectory-v2'
 gem 'omniauth-auth0'
 gem "omniauth-rails_csrf_protection"
-gem 'devise_token_auth', git: 'https://github.com/lynndylanhurley/devise_token_auth.git'
 gem 'devise_invitable', '~> 2.0.0'
 gem 'pundit'
 gem 'letter_opener', :group => :development
