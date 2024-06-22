@@ -1,12 +1,3 @@
-GIT
-  remote: https://github.com/lynndylanhurley/devise_token_auth.git
-  revision: f47ba936f2b086d50ffa6e68365cfc7a158ee819
-  specs:
-    devise_token_auth (1.2.3)
-      bcrypt (~> 3.0)
-      devise (> 3.5.2, < 5)
-      rails (>= 4.2.0, < 7.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -149,6 +140,10 @@ GEM
     devise_invitable (2.0.9)
       actionmailer (>= 5.0)
       devise (>= 4.6)
+    devise_token_auth (1.2.3)
+      bcrypt (~> 3.0)
+      devise (> 3.5.2, < 5)
+      rails (>= 4.2.0, < 7.2)
     docile (1.4.0)
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
@@ -268,7 +263,6 @@ GEM
     kaminari-core (1.2.2)
     launchy (2.5.0)
       addressable (~> 2.7)
-    lazy_priority_queue (0.1.1)
     letter_opener (1.7.0)
       launchy (~> 2.2)
     loofah (2.22.0)
@@ -342,6 +336,7 @@ GEM
       commonmarker (~> 0.17)
     orm_adapter (0.5.0)
     os (1.1.4)
+    pairing_heap (3.1.0)
     parallel (1.22.1)
     parser (3.1.2.1)
       ast (~> 2.4.1)
@@ -437,43 +432,46 @@ GEM
     retriable (3.1.2)
     rexml (3.2.9)
       strscan
-    rgl (0.5.7)
-      lazy_priority_queue (~> 0.1.0)
+    rgl (0.6.6)
+      pairing_heap (>= 0.3, < 4.0)
+      rexml (~> 3.2, >= 3.2.4)
       stream (~> 0.5.3)
-    rhino_project (0.20.0.beta.76)
+    rhino_project (0.20.0.beta.85)
       bundler (>= 1.15.0)
-      rhino_project_core (= 0.20.0.beta.76)
-      rhino_project_jobs (= 0.20.0.beta.76)
-      rhino_project_notifications (= 0.20.0.beta.76)
-      rhino_project_organizations (= 0.20.0.beta.76)
-      rhino_project_subscriptions (= 0.20.0.beta.76)
-    rhino_project_core (0.20.0.beta.76)
-      activeadmin (~> 2.14.0, <= 3.0.0)
-      devise_token_auth
-      js_regex (~> 3.11.1)
-      pundit (~> 2.1.0, <= 2.1.0)
+      rhino_project_core (= 0.20.0.beta.85)
+      rhino_project_jobs (= 0.20.0.beta.85)
+      rhino_project_notifications (= 0.20.0.beta.85)
+      rhino_project_organizations (= 0.20.0.beta.85)
+      rhino_project_subscriptions (= 0.20.0.beta.85)
+    rhino_project_core (0.20.0.beta.85)
+      activeadmin (= 2.14.0)
+      devise (= 4.9.4)
+      devise_token_auth (= 1.2.3)
+      js_regex (= 3.11.1)
+      pundit (= 2.1.0)
       rails (~> 7.0.0, >= 7.0.0)
       rake (~> 13.1)
-    rhino_project_jobs (0.20.0.beta.76)
+      rgl (= 0.6.6)
+    rhino_project_jobs (0.20.0.beta.85)
       active_scheduler (= 0.7.0)
       rails (~> 7.0.0, >= 7.0.0)
       resque (= 2.6.0)
       resque-heroku-signals (= 2.6.0)
       resque-scheduler (= 4.10.2)
-      rhino_project_core (= 0.20.0.beta.76)
-    rhino_project_notifications (0.20.0.beta.76)
+      rhino_project_core (= 0.20.0.beta.85)
+    rhino_project_notifications (0.20.0.beta.85)
       activity_notification (= 2.2.3)
       rails (~> 7.0.0, >= 7.0.0)
-      rhino_project_core (= 0.20.0.beta.76)
-      rhino_project_jobs (= 0.20.0.beta.76)
-    rhino_project_organizations (0.20.0.beta.76)
+      rhino_project_core (= 0.20.0.beta.85)
+      rhino_project_jobs (= 0.20.0.beta.85)
+    rhino_project_organizations (0.20.0.beta.85)
       devise_invitable (= 2.0.9)
       rails (~> 7.0.0, >= 7.0.0)
-      rhino_project_core (= 0.20.0.beta.76)
-    rhino_project_subscriptions (0.20.0.beta.76)
+      rhino_project_core (= 0.20.0.beta.85)
+    rhino_project_subscriptions (0.20.0.beta.85)
       rails (~> 7.0.0, >= 7.0.0)
-      rhino_project_core (= 0.20.0.beta.76)
-      stripe (~> 5.28.0)
+      rhino_project_core (= 0.20.0.beta.85)
+      stripe (= 5.28.0)
     rollbar (3.2.0)
     rubocop (1.24.1)
       parallel (~> 1.10)
@@ -497,7 +495,7 @@ GEM
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.7.0, < 2.0)
-    rubocop-rhino-project (0.20.0.beta.76)
+    rubocop-rhino-project (0.20.0.beta.85)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.24.1, < 2.0)
@@ -588,7 +586,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_scheduler
   activeadmin
   activeadmin_addons
   activity_notification
@@ -602,8 +599,6 @@ DEPENDENCIES
   countries
   dalli
   debug
-  devise_invitable (~> 2.0.0)
-  devise_token_auth!
   dotenv-rails
   factory_bot
   factory_bot_rails
@@ -624,27 +619,22 @@ DEPENDENCIES
   pg_search
   phonelib
   puma (~> 5.6)
-  pundit
   rack-cors
   railroady
   rails (~> 7.0.0)
-  resque
-  resque-heroku-signals
-  resque-scheduler
-  rgl
-  rhino_project (~> 0.20.0.beta.75)
-  rhino_project_core (~> 0.20.0.beta.75)
-  rhino_project_jobs (~> 0.20.0.beta.75)
-  rhino_project_notifications (~> 0.20.0.beta.75)
-  rhino_project_organizations (~> 0.20.0.beta.75)
-  rhino_project_subscriptions (~> 0.20.0.beta.75)
+  rhino_project (~> 0.20.0.beta.85)
+  rhino_project_core (~> 0.20.0.beta.85)
+  rhino_project_jobs (~> 0.20.0.beta.85)
+  rhino_project_notifications (~> 0.20.0.beta.85)
+  rhino_project_organizations (~> 0.20.0.beta.85)
+  rhino_project_subscriptions (~> 0.20.0.beta.85)
   rollbar
   rubocop (= 1.24.1)
   rubocop-minitest (= 0.17.0)
   rubocop-packaging (= 0.5.1)
   rubocop-performance (= 1.13.1)
   rubocop-rails (= 2.13.0)
-  rubocop-rhino-project (~> 0.20.0.beta.75)
+  rubocop-rhino-project (~> 0.20.0.beta.85)
   sassc-rails
   sendgrid-actionmailer
   sendgrid-ruby
