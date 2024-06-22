@@ -30,11 +30,6 @@ gem 'pg_search'
 
 gem 'acts-as-taggable-on', '~> 9.0'
 
-gem 'resque'
-gem 'resque-scheduler'
-gem 'resque-heroku-signals'
-gem 'active_scheduler'
-
 gem 'sendgrid-ruby'
 gem 'sendgrid-actionmailer'
 
@@ -42,8 +37,6 @@ gem 'activity_notification'
 
 
 gem 'google_drive'
-
-gem 'rgl'
 
 gem 'arel-helpers'
 
@@ -70,9 +63,6 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-azure-activedirectory-v2'
 gem 'omniauth-auth0'
 gem "omniauth-rails_csrf_protection"
-gem 'devise_token_auth', git: 'https://github.com/lynndylanhurley/devise_token_auth.git'
-gem 'devise_invitable', '~> 2.0.0'
-gem 'pundit'
 gem 'letter_opener', :group => :development
 gem 'rack-cors', :require => 'rack/cors'
 group :development, :test do
@@ -85,7 +75,7 @@ group :development, :test do
   gem 'rubocop-performance', '1.13.1', require: false
   gem 'rubocop-minitest', '0.17.0', require: false
   gem 'rubocop-rails', '2.13.0', require: false
-  gem 'rubocop-rhino-project', '~> 0.20.0.beta.75', require: false
+  gem 'rubocop-rhino-project', '~> 0.20.0.beta.85', require: false
 
   gem 'ffaker'
   gem 'simplecov', require: false
@@ -105,14 +95,14 @@ gem 'rollbar'
 
 gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
 
-gem "rhino_project", "~> 0.20.0.beta.75"
+gem "rhino_project", "~> 0.20.0.beta.85"
 
-gem "rhino_project_core", "~> 0.20.0.beta.75"
+gem "rhino_project_core","~> 0.20.0.beta.85"
 
-gem "rhino_project_organizations", "~> 0.20.0.beta.75"
+gem "rhino_project_organizations", "~> 0.20.0.beta.85"
 
-gem "rhino_project_notifications", "~> 0.20.0.beta.75"
+gem "rhino_project_notifications", "~> 0.20.0.beta.85"
 
-gem "rhino_project_subscriptions", "~> 0.20.0.beta.75"
+gem "rhino_project_subscriptions", "~> 0.20.0.beta.85"
 
-gem "rhino_project_jobs", "~> 0.20.0.beta.75"
+gem "rhino_project_jobs", "~> 0.20.0.beta.85"
