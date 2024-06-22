@@ -26,19 +26,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'dalli'
 
-gem 'pg_search'
-
-gem 'acts-as-taggable-on', '~> 9.0'
-
 gem 'sendgrid-ruby'
 gem 'sendgrid-actionmailer'
 
-gem 'activity_notification'
-
-
 gem 'google_drive'
-
-gem 'arel-helpers'
 
 group :development, :test do
   gem 'debug'
@@ -56,15 +47,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'dotenv-rails'
 gem 'pg'
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-github'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-azure-activedirectory-v2'
-gem 'omniauth-auth0'
-gem "omniauth-rails_csrf_protection"
 gem 'letter_opener', :group => :development
-gem 'rack-cors', :require => 'rack/cors'
+
 group :development, :test do
   gem 'factory_bot'
   gem 'factory_bot_rails'
@@ -75,34 +59,26 @@ group :development, :test do
   gem 'rubocop-performance', '1.13.1', require: false
   gem 'rubocop-minitest', '0.17.0', require: false
   gem 'rubocop-rails', '2.13.0', require: false
-  gem 'rubocop-rhino-project', '~> 0.20.0.beta.85', require: false
+  gem 'rubocop-rhino-project', '~> 0.20.0.beta.86', require: false
 
   gem 'ffaker'
   gem 'simplecov', require: false
   gem 'webmock', require: false
 end
 
-gem 'friendly_id'
-gem 'ancestry'
-gem 'phonelib'
-gem 'countries'
-
-gem 'activeadmin'
 gem 'arctic_admin'
 gem 'activeadmin_addons'
 
 gem 'rollbar'
 
-gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
+gem "rhino_project", "~> 0.20.0.beta.86"
 
-gem "rhino_project", "~> 0.20.0.beta.85"
+gem "rhino_project_core", "~> 0.20.0.beta.86"
 
-gem "rhino_project_core","~> 0.20.0.beta.85"
+gem "rhino_project_organizations", "~> 0.20.0.beta.86"
 
-gem "rhino_project_organizations", "~> 0.20.0.beta.85"
+gem "rhino_project_notifications", "~> 0.20.0.beta.86"
 
-gem "rhino_project_notifications", "~> 0.20.0.beta.85"
+gem "rhino_project_subscriptions", "~> 0.20.0.beta.86"
 
-gem "rhino_project_subscriptions", "~> 0.20.0.beta.85"
-
-gem "rhino_project_jobs", "~> 0.20.0.beta.85"
+gem "rhino_project_jobs", "~> 0.20.0.beta.86"
