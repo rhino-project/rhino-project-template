@@ -9,6 +9,21 @@ require "rails/test_help"
 require "rhino/test_case"
 require "rhino_organizations/test_case"
 
+# Set the geocoder to test mode and give it a default stub
+Geocoder.configure(lookup: :test, ip_lookup: :test)
+Geocoder::Lookup::Test.set_default_stub(
+  [
+    {
+      "coordinates" => [41.2565, -95.9345],
+      "address" => "Omaha, NE, US",
+      "state" => "Nebraska",
+      "state_code" => "NE",
+      "country" => "United States",
+      "country_code" => "US"
+    }
+  ]
+)
+
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
   parallelize(workers: :number_of_processors)
