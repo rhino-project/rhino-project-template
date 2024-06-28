@@ -71,14 +71,14 @@ gem 'activeadmin_addons'
 
 gem 'rollbar'
 
-gem "rhino_project", "~> 0.20.0.beta.91"
+gem "rhino_project", "~> 0.20.0.beta.96"
 
-gem "rhino_project_core", "~> 0.20.0.beta.91"
+gem "rhino_project_core", "~> 0.20.0.beta.96"
 
-gem "rhino_project_organizations", "~> 0.20.0.beta.91"
+gem "rhino_project_organizations", "~> 0.20.0.beta.96"
 
-gem "rhino_project_notifications", "~> 0.20.0.beta.91"
+gem "rhino_project_notifications", "~> 0.20.0.beta.96"
 
-gem "rhino_project_subscriptions", "~> 0.20.0.beta.91"
+gem "rhino_project_subscriptions", "~> 0.20.0.beta.96"
 
-gem "rhino_project_jobs", "~> 0.20.0.beta.91"
+gem "rhino_project_jobs", "~> 0.20.0.beta.96"

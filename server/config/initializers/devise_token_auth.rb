@@ -54,6 +54,9 @@ DeviseTokenAuth.setup do |config|
   # do so by enabling this flag. NOTE: This feature is highly experimental!
   # config.enable_standard_devise_support = false
 
+  # Ensure that the SPA client must submit a password reset token to reset the password if not already logged in.
+  config.require_client_password_reset_token = true
+
   config.default_confirm_success_url = "#{ENV['FRONT_END_URL']}/auth/signin"
   config.default_password_reset_url = "#{ENV['FRONT_END_URL']}/auth/reset-password"
 end
