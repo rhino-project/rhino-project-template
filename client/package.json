@@ -12,7 +12,8 @@
     "@rhino-project/core": "0.20.0-beta.96",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-helmet": "6.1.0"
+    "react-helmet": "6.1.0",
+    "reactstrap": "9.2.2"
   },
   "devDependencies": {
     "@rhino-project/eslint-plugin-rhino": "0.20.0-beta.96",
