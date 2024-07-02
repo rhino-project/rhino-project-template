@@ -4,16 +4,16 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV["DB_USERNAME"] %>
-  password: <%= ENV["DB_PASSWORD"] %>
-  database: <%= ENV["DB_NAME"] %>
+  username: <%= ENV["DB_USERNAME"] || "postgres" %>
+  password: <%= ENV["DB_PASSWORD"] || "postgres" %>
+  database: <%= ENV["DB_NAME"] %> || "rhino_project_template"
   port: <%= ENV["DB_PORT"] || 5432 %>
   host: <%= ENV["DB_HOST"] || "localhost" %>
 
 development:
   <<: *default
   gssencmode: disable
-  database: <%= ENV["DB_NAME"] %>_development
+  database: <%= ENV.fetch("DB_NAME", "rhino_project_template") %>_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -22,7 +22,7 @@ test:
   <<: *default
   # https://github.com/ged/ruby-pg/issues/311#issuecomment-1615084569
   gssencmode: disable
-  database: <%= ENV["DB_NAME"] %>_test
+  database: <%= ENV.fetch("DB_NAME", "rhino_project_template") %>_test
 
 production:
   <<: *default
