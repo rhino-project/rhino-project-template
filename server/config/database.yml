@@ -10,7 +10,7 @@ default: &default
 
 development:
   <<: *default
-  database: <%= ENV["DB_NAME"] %>_development
+  database: <%= ENV.fetch("DB_NAME", "rhino_project_template") %>_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -19,7 +19,7 @@ test:
   <<: *default
   # https://github.com/ged/ruby-pg/issues/311#issuecomment-1615084569
   gssencmode: disable
-  database: <%= ENV["DB_NAME"] %>_test
+  database: <%= ENV.fetch("DB_NAME", "rhino_project_template") %>_test
 
 production:
   <<: *default
