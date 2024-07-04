@@ -1,7 +1,7 @@
 FROM node:20.14.0
 
-ENV APP_PATH /var/client
-ENV NODE_ENV=development
+ENV APP_PATH=/var/client \
+    NODE_ENV=development
 
 # copy entrypoint scripts and grant execution permissions
 COPY ./docker/dev-docker-entrypoint.sh /usr/local/bin/dev-entrypoint.sh
