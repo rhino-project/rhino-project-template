@@ -1,5 +1,7 @@
 name: Nightly Docker
 
+# Scope cache for each build independently https://docs.docker.com/build/cache/backends/gha/#scope
+
 on:
   workflow_dispatch:
   schedule:
@@ -26,6 +28,10 @@ jobs:
           driver-opts: network=host
       - uses: docker/build-push-action@v6
         with:
+          cache-from: |
+            type=gha,scope=server_docker
+          cache-to: |
+            type=gha,mode=max,scope=server_docker
           context: server
           tags: server:latest
           push: false
@@ -37,6 +43,10 @@ jobs:
       - uses: docker/setup-buildx-action@v3
       - uses: docker/build-push-action@v6
         with:
+          cache-from: |
+            type=gha,scope=server_development_docker
+          cache-to: |
+            type=gha,mode=max,scope=server_development_docker
           context: server
           file: server/Dockerfile.development
           tags: server_development:latest
@@ -49,6 +59,10 @@ jobs:
       - uses: docker/setup-buildx-action@v3
       - uses: docker/build-push-action@v6
         with:
+          cache-from: |
+            type=gha,scope=client_docker
+          cache-to: |
+            type=gha,mode=max,scope=client_docker
           context: client
           tags: client:latest
           push: false
@@ -60,6 +74,10 @@ jobs:
       - uses: docker/setup-buildx-action@v3
       - uses: docker/build-push-action@v6
         with:
+          cache-from: |
+            type=gha,scope=client_development_docker
+          cache-to: |
+            type=gha,mode=max,scope=client_development_docker
           context: client
           file: client/Dockerfile.development
           tags: client_development:latest
