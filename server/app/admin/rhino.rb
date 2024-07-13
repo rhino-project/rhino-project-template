@@ -1,7 +1,14 @@
 # frozen_string_literal: true
 
-Rhino.resource_classes.each do |m|
+Rhino.resource_classes.filter { |rc| rc.ancestors.include?(ActiveRecord::Base) }.each do |m|
   ActiveAdmin.register m do
+    # Give a reasonable experience out of the box by only using designated fields
+    if m.respond_to?(:ransackable_filters)
+      m.ransackable_filters.each do |attr|
+        filter attr.to_sym
+      end
+    end
+
     permit_params do
       permitted = []
 
