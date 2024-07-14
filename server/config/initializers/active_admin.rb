@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Rhino Template"
+  config.site_title = Rails.application.class.module_parent_name
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
