@@ -2,7 +2,10 @@
 
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
+
+  # We introspect the models to create the admin interface
+  # https://github.com/activeadmin/activeadmin/issues/783#issuecomment-244587442
+  ActiveAdmin.routes(self) rescue ActiveAdmin::DatabaseHitDuringLoad
 
   root to: redirect(ENV["FRONT_END_URL"] || "/"), via: :all
 end
