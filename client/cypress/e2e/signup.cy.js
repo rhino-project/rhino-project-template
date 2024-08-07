@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { faker } from '@faker-js/faker';
 import api from '../../src/models/static';
 
 describe('signup', () => {
@@ -14,11 +14,11 @@ describe('signup', () => {
 
     cy.get('a[href="/auth/signup"]').click();
 
-    cy.get('input[name=email]').type(`${uuidv4()}@example.com`);
+    cy.get('input[name=email]').type(faker.internet.email());
     cy.get('#password').clear();
     cy.get('#password').type('password');
     cy.get('#password_confirmation').clear();
-    cy.get('#password_confirmation').type('password');
+    cy.get('#password_confirmation').type(faker.internet.password());
     cy.get('.btn-secondary').click();
 
     cy.get('.btn').should('be.visible');

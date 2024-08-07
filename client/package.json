@@ -16,6 +16,7 @@
     "reactstrap": "9.2.2"
   },
   "devDependencies": {
+    "@faker-js/faker": "8.4.1",
     "@rhino-project/eslint-plugin-rhino": "0.20.0-beta.110",
     "@rhino-project/vite-plugin-rhino": "0.20.0-beta.110",
     "@tanstack/eslint-plugin-query": "4.32.5",
