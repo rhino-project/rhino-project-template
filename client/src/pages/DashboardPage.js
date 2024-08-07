@@ -17,9 +17,9 @@ const Approval = () => {
   return (
     <Empty
       title="Admin Approval Required"
-      description="Please contact admin@nubinary.com"
+      description="Please contact admin@example.com"
     >
-      <LinkButton color="primary" href="mailto:admin@nubinary.com">
+      <LinkButton color="primary" href="mailto:admin@example.com">
         Request Approval
       </LinkButton>
     </Empty>
