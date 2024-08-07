@@ -608,10 +608,9 @@ const data1 = [
 const data2 = [
   {
     CellFloat: 3.1415981,
-    CellImage:
-      'https://nubinary.com/hs-fs/hubfs/NUway-504.png?width=504&height=409&name=NUway-504.png',
+    CellImage: 'https://www.rhino-project.org/img/rhino-red.svg',
     CellInteger: 889,
-    CellLink: 'https://nubinary.com',
+    CellLink: 'https:/rhino-project.org',
     CellLinkEmail: 'dont.send@rhino-project.org',
     CellLinkTelephone: '+1555555555',
     CellReference: {
@@ -625,7 +624,7 @@ const data2 = [
     CellImage:
       'https://upload.wikimedia.org/wikipedia/commons/8/82/Antonio_Vaz_island_-_Recife%2C_Pernambuco%2C_Brazil_%28cropped%29.jpg',
     CellInteger: 1537,
-    CellLink: 'https://nubinary.com',
+    CellLink: 'https://rhino-project.org',
     CellLinkEmail: 'dont.send@rhino-project.org',
     CellLinkTelephone: '+14444444',
     CellReference: {
