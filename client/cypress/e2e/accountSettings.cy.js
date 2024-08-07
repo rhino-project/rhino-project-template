@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+import { faker } from '@faker-js/faker';
 
 describe('account settings', () => {
   beforeEach(() => {
@@ -11,7 +11,7 @@ describe('account settings', () => {
     cy.get('#sidebarMenu #account-menu .nav-icon:first').click();
     cy.get('#sidebarMenu').contains('Account Settings').click();
     cy.get('#name').clear();
-    cy.get('#name').type(uuidv4());
+    cy.get('#name').type(faker.person.fullName());
     cy.get('.active > form > .btn').click();
 
     cy.get('.alert-success > h6').should(
@@ -26,7 +26,7 @@ describe('account settings', () => {
     cy.get('#sidebarMenu #account-menu .nav-icon:first').click();
     cy.get('#sidebarMenu').contains('Account Settings').click();
     cy.get('#nickname').clear();
-    cy.get('#nickname').type(uuidv4());
+    cy.get('#nickname').type(faker.person.fullName());
     cy.get('.active > form > .btn').click();
 
     cy.get('.alert-success > h6').should(
