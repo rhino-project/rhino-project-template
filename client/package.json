@@ -2,10 +2,10 @@
   "name": "rhino_client",
   "version": "0.1.0",
   "private": true,
-  "current": {
-    "node": "v20.14.0",
-    "npm": "10.7.0"
+  "engines": {
+    "node": "v20.14.0"
   },
+  "packageManager": "pnpm@9.6.0",
   "type": "module",
   "dependencies": {
     "@rhino-project/config": "0.20.0-beta.120",
