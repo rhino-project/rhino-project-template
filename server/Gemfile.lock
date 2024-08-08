@@ -631,7 +631,7 @@ DEPENDENCIES
   rails (~> 7.0.0)
   rhino_project (~> 0.20.0.beta.121)
   rhino_project_core (~> 0.20.0.beta.121)
-  rhino_project_jobs (~> 0.20.0.beta.116)
+  rhino_project_jobs (~> 0.20.0.beta.121)
   rhino_project_notifications (~> 0.20.0.beta.121)
   rhino_project_organizations (~> 0.20.0.beta.121)
   rhino_project_subscriptions (~> 0.20.0.beta.121)
