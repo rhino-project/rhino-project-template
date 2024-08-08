@@ -8,7 +8,7 @@ import './styles/styles.scss';
 modelLoader.loadModels().then(async () => {
   // Import the Root dynamically so that other modelLoader uses are assured
   // to have access to the already loaded models
-  const { default: Root } = await import('./Root.js');
+  const { default: Root } = await import('./Root');
 
   const container = document.getElementById('root');
   const root = createRoot(container);
