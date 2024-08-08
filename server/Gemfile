@@ -81,4 +81,4 @@ gem "rhino_project_notifications", "~> 0.20.0.beta.121"
 
 gem "rhino_project_subscriptions", "~> 0.20.0.beta.121"
 
-gem "rhino_project_jobs", "~> 0.20.0.beta.116"
+gem "rhino_project_jobs", "~> 0.20.0.beta.121"
