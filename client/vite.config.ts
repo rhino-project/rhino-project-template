@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => {
     },
 
     plugins: [
-      RhinoProjectVite(),
+      RhinoProjectVite({ enableJsxInJs: false }),
       react(),
       {
         // default settings on build (i.e. fail on error)
@@ -41,7 +41,7 @@ export default defineConfig(({ mode }) => {
     test: {
       environment: 'jsdom',
       globals: true,
-      setupFiles: ['src/__tests__/shared/setupTests.js'],
+      setupFiles: ['src/__tests__/shared/setupTests'],
       // For now until speed improves https://dev.to/thejaredwilcurt/improving-vitest-performance-42c6
       testTimeout: 10000
     }
