@@ -13,3 +13,6 @@
 # TODO Comment out this rule if environment variables can be committed
 .env
 .env*
+
+# pnpm when installed inside the docker-compose dev environment
+.pnpm-store/

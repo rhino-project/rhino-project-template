@@ -1,7 +1,11 @@
 FROM node:20.14.0
 
-ENV APP_PATH=/var/client \
-    NODE_ENV=development
+ENV APP_PATH=/app/client \
+    NODE_ENV=development \
+    XDG_CACHE_HOME="/usr/local/pnpm"
+
+# Install pnpm globally
+RUN npm install -g pnpm@9.9.0
 
 # copy entrypoint scripts and grant execution permissions
 COPY ./docker/dev-docker-entrypoint.sh /usr/local/bin/dev-entrypoint.sh

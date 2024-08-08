@@ -1,16 +1,17 @@
 networks:
   development:
 volumes:
-  npm_cache:
+  pnpm_cache:
 services:
   frontend:
     build:
       context: .
       dockerfile: Dockerfile.development
     volumes:
-      - .:/var/client
-      - ../server:/var/server
-      - npm_cache:/usr/local/npm
+      - ..:/app
+      # Don't mix node_modules between host and container
+      - /app/client/node_modules
+      - pnpm_cache:/usr/local/pnpm
     networks:
       - development
     ports:
