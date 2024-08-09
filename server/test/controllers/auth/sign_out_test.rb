@@ -9,6 +9,7 @@ class SignOutSuccessTest < Rhino::TestCase::ControllerTest
 
   test "returns 200 when successful" do
     sign_out
+
     assert_response_ok
   end
 
@@ -20,6 +21,7 @@ class SignOutSuccessTest < Rhino::TestCase::ControllerTest
 
   test "clears cookie when successful" do
     sign_out
+
     assert_deleted_cookie DeviseTokenAuth.cookie_name
   end
 end

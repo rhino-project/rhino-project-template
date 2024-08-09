@@ -16,6 +16,7 @@ class ActiveAdminLoginTest < ActionDispatch::IntegrationTest
       }
     }
     follow_redirect!
+
     assert_response :success
     assert_select "h2", "Dashboard"
   end
@@ -27,11 +28,13 @@ class ActiveAdminLoginTest < ActionDispatch::IntegrationTest
         password: @user.password
       }
     }
+
     assert_redirected_to new_admin_user_session_path
   end
 
   test "unauthenticated user is redirected to login" do
     get admin_root_path
+
     assert_redirected_to new_admin_user_session_path
   end
 end

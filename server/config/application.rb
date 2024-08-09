@@ -9,12 +9,12 @@ Bundler.require(*Rails.groups)
 module RhinoTemplate
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.0
+    config.load_defaults 7.1
 
-    #Raises an ArgumentError when an unpermitted open redirect occurs.
-    # Default value for target_version prior 7.0 was false, but now it is true
-    #https://edgeguides.rubyonrails.org/configuring.html#config-action-controller-raise-on-open-redirects
-    config.action_controller.raise_on_open_redirects = false
+    # Please, add to the `ignore` list any other `lib` subdirectories that do
+    # not contain `.rb` files, or that should not be reloaded or eager loaded.
+    # Common ones are `templates`, `generators`, or `middleware`, for example.
+    config.autoload_lib(ignore: %w(assets tasks))
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -33,8 +33,10 @@ module RhinoTemplate
       end
     end
 
-    # Keep mini_magick for now
-    config.active_storage.variant_processor = :mini_magick
+    # Raises an ArgumentError when an unpermitted open redirect occurs.
+    # Default value for target_version prior 7.0 was false, but now it is true
+    # https://edgeguides.rubyonrails.org/configuring.html#config-action-controller-raise-on-open-redirects
+    config.action_controller.raise_on_open_redirects = false
 
     # Return gzip compressed responses
     config.middleware.use Rack::Deflater
