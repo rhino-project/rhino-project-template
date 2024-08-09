@@ -1,5 +1,4 @@
 require:
-  - rubocop-packaging
   - rubocop-performance
   - rubocop-rails
   - rubocop-minitest
