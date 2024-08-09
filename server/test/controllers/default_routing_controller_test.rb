@@ -7,7 +7,7 @@ class DefaultRoutingControllerTest < ActionDispatch::IntegrationTest
     test "root via #{request} redirects to frontend" do
       send(request, "/")
 
-      assert_redirected_to ENV["FRONT_END_URL"]
+      assert_redirected_to ENV.fetch("FRONT_END_URL", nil)
     end
   end
 end
