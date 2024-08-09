@@ -91,3 +91,7 @@ Minitest/MultipleAssertions:
 # Present/blank will fight each other otherwise
 Rails/Blank:
   UnlessPresent: false
+
+# Don't force locales usage
+Rails/I18nLocaleTexts:
+  Enabled: false
