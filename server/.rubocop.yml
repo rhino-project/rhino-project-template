@@ -2,6 +2,7 @@ require:
   - rubocop-performance
   - rubocop-rails
   - rubocop-minitest
+  - rubocop-factory_bot
   - rubocop-rhino-project
 
 AllCops:

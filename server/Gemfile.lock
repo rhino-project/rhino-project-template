@@ -485,6 +485,8 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.32.0)
       parser (>= 3.3.1.0)
+    rubocop-factory_bot (2.26.1)
+      rubocop (~> 1.61)
     rubocop-minitest (0.29.0)
       rubocop (>= 1.39, < 2.0)
     rubocop-performance (1.21.0)
@@ -610,6 +612,7 @@ DEPENDENCIES
   rhino_project_subscriptions (~> 0.21.0.beta.2)
   rollbar
   rubocop (= 1.63.3)
+  rubocop-factory_bot (= 2.26.1)
   rubocop-minitest (= 0.29.0)
   rubocop-performance (= 1.21.0)
   rubocop-rails (= 2.18.0)

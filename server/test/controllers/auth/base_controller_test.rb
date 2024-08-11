@@ -34,9 +34,9 @@ end
 
 class BaseControllerForbiddenTest < Rhino::TestCase::ControllerTest
   def setup
-    @user = create :user
+    @user = create(:user)
     sign_in @user
-    @another_user = create :user
+    @another_user = create(:user)
     delete_api user_path(@another_user)
   end
 
