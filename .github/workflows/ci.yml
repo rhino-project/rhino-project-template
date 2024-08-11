@@ -16,7 +16,7 @@ jobs:
         working-directory: server
     services:
       postgres:
-        image: postgres:12.10
+        image: postgres:15
         ports:
           - "5432:5432"
         env:
@@ -120,7 +120,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:12.10
+        image: postgres:15
         ports:
           - "5432:5432"
         env:
