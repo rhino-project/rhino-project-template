@@ -3,7 +3,7 @@
 require "ffaker"
 
 FactoryBot.define do
-  factory :user, aliases: [:author] do
+  factory :user do
     approved { true }
     confirmed_at { FFaker::Time.date }
     email { FFaker::Internet.safe_email }
