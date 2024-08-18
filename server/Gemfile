@@ -68,8 +68,9 @@ group :development do
 
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
 
-  gem "brakeman"
+  gem "brakeman", require: false
   gem "railroady"
+
   gem "letter_opener"
 end
 
