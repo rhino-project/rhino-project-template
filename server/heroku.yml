@@ -8,3 +8,12 @@ release:
   command:
     - bundle exec rails db:migrate
   image: web
+run:
+  worker:
+    image: web
+    command:
+      - COUNT=1 QUEUE=* bin/rails resque:workers
+  scheduler:
+    image: web
+    command:
+      - bin/rails resque:scheduler

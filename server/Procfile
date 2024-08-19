@@ -1,2 +1,4 @@
 web: bin/rails server
 release: bin/rails db:migrate
+worker: COUNT=1 QUEUE=* bin/rails resque:workers
+scheduler: bin/rails resque:scheduler
