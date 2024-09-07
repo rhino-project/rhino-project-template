@@ -5,7 +5,7 @@ set -e
 echo "Environment: $NODE_ENV"
 
 # install packages
-npm i
+pnpm i
 
 # run passed commands
-npm run ${@}
+pnpm ${@}

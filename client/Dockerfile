@@ -7,15 +7,18 @@ FROM node:20.14.0 as builder
 # set working directory
 WORKDIR /app
 
+# Install pnpm globally
+RUN npm install -g pnpm@9.9.0
+
 # Do the minimum to install dependencies for caching
-COPY package.json package-lock.json ./
-RUN npm install
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install
 
 COPY . .
 
 # Config for API root for build
 ARG VITE_API_ROOT_PATH="https://rhino-server.demo.rhino-project.org"
-RUN npm run build
+RUN pnpm build
 
 # nginx state for serving content
 FROM nginx

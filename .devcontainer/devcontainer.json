@@ -8,7 +8,7 @@
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
-		"ghcr.io/devcontainers/features/node:1": { "version": "20.14.0"},
+                "ghcr.io/devcontainers/features/node:1": { "version": "20.14.0", "pnpmVersion": "9.9.0" },
 		"ghcr.io/devcontainers/features/github-cli:1": {}
 	},
 
@@ -31,12 +31,12 @@
 
 	"updateContentCommand": {
 		"server": "cd server && bundle install && rails rhino:dev:setup -- --no-prompt --db-name=postgres --db-user=postgres --db-password=postgres && rails db:setup",
-		"client": "cd client && npm install"
+		"client": "cd client && pnpm install"
 	},
 
 	"postAttachCommand": {
 		"server": "cd server && rails s",
-		"client": ".devcontainer/openport.sh & cd client && npm start"
+		"client": ".devcontainer/openport.sh & cd client && pnpm start"
 	},
 
 	"containerEnv": {

@@ -12,8 +12,9 @@ services:
       context: .
       dockerfile: Dockerfile.development
     volumes:
-      - .:/var/server
-      - ../client:/var/client
+      - .:/app
+      # Don't mix node_modules between host and container
+      - /app/client/node_modules
       - shared_data:/var/shared
       - gem_cache:/usr/local/bundle/gems
     networks:
