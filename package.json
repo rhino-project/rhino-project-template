@@ -68,6 +68,7 @@
     "start": "bin/vite dev",
     "dev": "bin/vite dev",
     "build": "bin/vite build",
+    "heroku-postbuild": "",
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "lint": "eslint app/frontend --report-unused-disable-directives --max-warnings 0",
