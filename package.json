@@ -65,10 +65,9 @@
     "vitest": "2.0.4"
   },
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
+    "start": "bin/vite dev",
+    "dev": "bin/vite dev",
+    "build": "bin/vite build",
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "lint": "eslint app/frontend --report-unused-disable-directives --max-warnings 0",
