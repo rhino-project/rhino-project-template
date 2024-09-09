@@ -49,7 +49,7 @@ group :development, :test do
   gem "rubocop-rails", "2.18.0", require: false
 
   gem "rubocop-factory_bot", "2.26.1", require: false
-  gem "rubocop-rhino-project", "~> 0.21.0.beta.15", require: false
+  gem "rubocop-rhino-project", "~> 0.21.0.beta.17", require: false
 
   gem "ffaker"
   gem "simplecov", require: false
@@ -86,16 +86,16 @@ gem "activeadmin_addons"
 
 gem "rollbar"
 
-gem "rhino_project", "~> 0.21.0.beta.15"
+gem "rhino_project", "~> 0.21.0.beta.17"
 
-gem "rhino_project_core", "~> 0.21.0.beta.15"
+gem "rhino_project_core", "~> 0.21.0.beta.17"
 
-gem "rhino_project_organizations", "~> 0.21.0.beta.15"
+gem "rhino_project_organizations", "~> 0.21.0.beta.17"
 
-gem "rhino_project_notifications", "~> 0.21.0.beta.15"
+gem "rhino_project_notifications", "~> 0.21.0.beta.17"
 
-gem "rhino_project_subscriptions", "~> 0.21.0.beta.15"
+gem "rhino_project_subscriptions", "~> 0.21.0.beta.17"
 
-gem "rhino_project_jobs", "~> 0.21.0.beta.15"
+gem "rhino_project_jobs", "~> 0.21.0.beta.17"
 
 gem "vite_rails", "~> 3.0"
