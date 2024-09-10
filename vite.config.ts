@@ -3,13 +3,13 @@ import { defineConfig } from 'vite';
 import { ViteEjsPlugin } from 'vite-plugin-ejs';
 import eslint from 'vite-plugin-eslint';
 import { RhinoProjectVite } from '@rhino-project/vite-plugin-rhino';
-import RubyPlugin from 'vite-plugin-ruby';
+import ViteRails from 'vite-plugin-rails';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   return {
     plugins: [
-      RubyPlugin(),
+      ViteRails(),
       RhinoProjectVite({ enableJsxInJs: false }),
       react(),
       {
