@@ -71,7 +71,7 @@
     "heroku-postbuild": "",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "lint": "eslint app/frontend --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint app/frontend --report-unused-disable-directives --max-warnings 0 --ext .js,.jsx,.ts,.tsx",
     "prettier-check": "prettier --check app/frontend cypress",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
