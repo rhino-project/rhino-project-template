@@ -19,14 +19,7 @@ module.exports = {
     '@tanstack/query',
     '@rhino-project/rhino'
   ],
-  ignorePatterns: [
-    'dist',
-    '.eslintrc.cjs',
-    // These are helper scripts that are not part of the codebase
-    'copyAndReplace.js',
-    'copyAndReplaceDisplay.js',
-    'extractComponents.js'
-  ],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
