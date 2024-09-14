@@ -1,5 +1,5 @@
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import { ViteEjsPlugin } from 'vite-plugin-ejs';
 import eslint from 'vite-plugin-eslint';
 import { RhinoProjectVite } from '@rhino-project/vite-plugin-rhino';
@@ -7,7 +7,16 @@ import ViteRails from 'vite-plugin-rails';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
+  // https://main.vitejs.dev/config/#using-environment-variables-in-config
+  const env = loadEnv(mode, process.cwd(), '');
+
   return {
+    server: {
+      hmr: {
+        clientPort: Number(env.VITE_RUBY_HMR_CLIENT_PORT) || undefined
+      }
+    },
+
     plugins: [
       ViteRails(),
       RhinoProjectVite({ enableJsxInJs: false }),
