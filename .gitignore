@@ -36,7 +36,8 @@
 
 
 # Rhino specific
-/coverage/
+coverage/
+app/frontend/coverage
 rhino-resource-graph.*
 rhino/guides/output
 /vendor/bundle
