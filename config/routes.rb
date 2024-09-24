@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # https://github.com/activeadmin/activeadmin/issues/783#issuecomment-244587442
   ActiveAdmin.routes(self) rescue ActiveAdmin::DatabaseHitDuringLoad
 
-  constraints lambda { |req| !req.path.starts_with?("/api/") && !req.path.starts_with?("/rails/") } do
+  constraints lambda { |req| !req.path.starts_with?("/api/") && !req.path.starts_with?("/rails/") && !req.path.starts_with?("/jobs")} do
     match "*path", to: "frontend#root", via: :get
   end
   root to: "frontend#root", via: :get
