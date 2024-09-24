@@ -113,8 +113,6 @@ jobs:
         run: npm run coverage -- --reporter=default --reporter=junit --coverage.reporter=json-summary
 
       - uses: davelosert/vitest-coverage-report-action@v2
-        with:
-          working-directory: client
 
       - name: Build
         run: CI=true npm run build
