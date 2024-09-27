@@ -53,7 +53,6 @@ services:
         condition: service_healthy
     entrypoint: ./bin/dev-vite-entrypoint.sh
     environment:
-      DEBUG: '*vite*'
       RAILS_ENV: development
       VITE_RUBY_HOST: 0.0.0.0
     init: true
