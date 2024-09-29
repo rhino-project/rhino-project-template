@@ -5,14 +5,14 @@ name: Nightly Docker
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: '0 0 * * *'
 
 jobs:
   docker:
     runs-on: ubuntu-latest
     services:
       redis:
-        image: redis:6.2.6
+        image: redis:7
         options: >-
           --health-cmd "redis-cli ping"
           --health-interval 10s
