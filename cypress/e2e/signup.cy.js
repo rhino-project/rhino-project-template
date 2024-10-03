@@ -19,7 +19,7 @@ describe('signup', () => {
     cy.get('#password').type('password');
     cy.get('#password_confirmation').clear();
     cy.get('#password_confirmation').type(faker.internet.password());
-    cy.get('.btn-secondary').click();
+    cy.get('.btn-primary').click();
 
     cy.get('.btn').should('be.visible');
   });
