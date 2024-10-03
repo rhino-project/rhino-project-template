@@ -10,11 +10,13 @@ export default defineConfig(({ mode }) => {
   // https://main.vitejs.dev/config/#using-environment-variables-in-config
   const env = loadEnv(mode, process.cwd(), '');
 
+  const hmr = env.VITE_RUBY_HMR_CLIENT_PORT
+    ? { clientPort: Number(env.VITE_RUBY_HMR_CLIENT_PORT) }
+    : {};
+
   return {
     server: {
-      hmr: {
-        clientPort: Number(env.VITE_RUBY_HMR_CLIENT_PORT) || undefined
-      }
+      hmr
     },
 
     plugins: [
