@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.3.4"
+ruby "3.3.5"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.4"
@@ -49,7 +49,7 @@ group :development, :test do
   gem "rubocop-rails", "2.18.0", require: false
 
   gem "rubocop-factory_bot", "2.26.1", require: false
-  gem "rubocop-rhino-project", "~> 0.21.0.beta.34", require: false
+  gem "rubocop-rhino-project", "~> 0.21.0.beta.35", require: false
 
   gem "ffaker"
   gem "simplecov", require: false
@@ -86,16 +86,16 @@ gem "activeadmin_addons"
 
 gem "rollbar"
 
-gem "rhino_project", "~> 0.21.0.beta.34"
+gem "rhino_project", "~> 0.21.0.beta.35"
 
-gem "rhino_project_core", "~> 0.21.0.beta.34"
+gem "rhino_project_core", "~> 0.21.0.beta.35"
 
-gem "rhino_project_organizations", "~> 0.21.0.beta.34"
+gem "rhino_project_organizations", "~> 0.21.0.beta.35"
 
-gem "rhino_project_notifications", "~> 0.21.0.beta.34"
+gem "rhino_project_notifications", "~> 0.21.0.beta.35"
 
-gem "rhino_project_subscriptions", "~> 0.21.0.beta.34"
+gem "rhino_project_subscriptions", "~> 0.21.0.beta.35"
 
-gem "rhino_project_jobs", "~> 0.21.0.beta.34"
+gem "rhino_project_jobs", "~> 0.21.0.beta.35"
 
 gem "vite_rails", "~> 3.0"
