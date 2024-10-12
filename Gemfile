@@ -74,6 +74,10 @@ group :development do
   gem "letter_opener"
 end
 
+## Temporary to manage dep challenges with specififc gems
+require "ostruct"
+##
+
 gem "dalli"
 
 gem "sendgrid-ruby"
