@@ -44,6 +44,8 @@ import {
 } from '@rhino-project/core/utils';
 import { customRoutes } from 'routes/custom';
 import { RhinoDevTool } from '@rhino-project/core/components/devtool';
+import { PrimaryNavigation } from './components/app/PrimaryNavigation';
+import { SecondaryNavigation } from './components/app/SecondaryNavigation';
 
 const queryClient = new QueryClient({});
 
@@ -56,11 +58,15 @@ const AuthenticatedApp = () => {
     enableModelRoutes,
     env: { DESIGN_SYSTEM_ENABLED }
   } = useRhinoConfig();
+
   return (
     <AuthenticatedRoute>
       <BaseOwnerProvider>
         <IdentityAnalytics>
-          <ApplicationShell>
+          <ApplicationShell
+            primaryNavigationElement={<PrimaryNavigation />}
+            secondaryNavigationElement={<SecondaryNavigation />}
+          >
             <Routes>
               {accountSettingsRoute()}
               {settingsRoute()}
