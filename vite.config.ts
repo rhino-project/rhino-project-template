@@ -1,6 +1,5 @@
 import react from '@vitejs/plugin-react';
 import { defineConfig, loadEnv } from 'vite';
-import { ViteEjsPlugin } from 'vite-plugin-ejs';
 import eslint from 'vite-plugin-eslint';
 import { RhinoProjectVite } from '@rhino-project/vite-plugin-rhino';
 import ViteRails from 'vite-plugin-rails';
@@ -37,8 +36,7 @@ export default defineConfig(({ mode }) => {
         }),
         apply: 'serve',
         enforce: 'post'
-      },
-      ViteEjsPlugin()
+      }
     ],
 
     test: {
