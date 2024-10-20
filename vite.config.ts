@@ -1,6 +1,6 @@
 import react from '@vitejs/plugin-react';
 import { defineConfig, loadEnv } from 'vite';
-import eslint from 'vite-plugin-eslint';
+import ViteEslint from '@nabla/vite-plugin-eslint';
 import { RhinoProjectVite } from '@rhino-project/vite-plugin-rhino';
 import ViteRails from 'vite-plugin-rails';
 
@@ -22,21 +22,7 @@ export default defineConfig(({ mode }) => {
       ViteRails(),
       RhinoProjectVite({ enableJsxInJs: false }),
       react(),
-      {
-        // default settings on build (i.e. fail on error)
-        ...eslint(),
-        apply: 'build'
-      },
-      // https://github.com/vitest-dev/vitest/issues/4055#issuecomment-1732994672
-      mode !== 'test' && {
-        // do not fail on serve (i.e. local development)
-        ...eslint({
-          failOnWarning: false,
-          failOnError: false
-        }),
-        apply: 'serve',
-        enforce: 'post'
-      }
+      ViteEslint({ eslintOptions: { cache: false } })
     ],
 
     test: {
