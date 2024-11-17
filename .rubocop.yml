@@ -1,97 +1,48 @@
+# Omakase Ruby styling for Rails
+inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+
 require:
-  - rubocop-performance
-  - rubocop-rails
   - rubocop-minitest
   - rubocop-factory_bot
   - rubocop-rhino-project
 
-AllCops:
-  TargetRubyVersion: 3.3
-  NewCops: enable
-  SuggestExtensions: false
+# Overwrite or add rules to create your own house style
+#
+# # Use `[a, [b, c]]` not `[ a, [ b, c ] ]`
+# Layout/SpaceInsideArrayLiteralBrackets:
+#   Enabled: false
+
+Rails:
+  Enabled: true
   Exclude:
-    - "bin/**"
-    - "config/**/*"
-    - "db/migrate/*"
-    - "db/schema.rb"
-    - "log/**/*"
-    - "vendor/**/*"
-    - "tmp/**/*"
-    - "**/Gemfile"
+    - 'db/**/*'
+  Include:
+    - 'app/**/*'
+    - 'config/**/*'
 
-Layout/FirstHashElementIndentation:
-  EnforcedStyle: consistent
+Minitest:
+  Enabled: true
 
-Layout/IndentationConsistency:
-  EnforcedStyle: indented_internal_methods
+Performance:
+  Enabled: true
+
+RhinoProject:
+  Enabled: true
 
 Layout/LineLength:
   Max: 150
 
-Layout/EmptyLinesAroundAccessModifier:
-  EnforcedStyle: only_before
+Lint/RedundantCopDisableDirective:
+  Enabled: true
 
-Layout/EndAlignment:
-  EnforcedStyleAlignWith: variable
-
-Layout/SpaceInsideBlockBraces:
-  EnforcedStyleForEmptyBraces: space
-
-Metrics/BlockLength:
-  Exclude:
-    - "app/admin/**"
-
-Metrics/ClassLength:
-  Max: 102
-
-Metrics/MethodLength:
-  Max: 12
-
-Style/ClassAndModuleChildren:
-  Exclude:
-    - test/test_helper.rb
-    - test/channels/application_cable/connection_test.rb
-
-Style/Documentation:
-  Enabled: false
+Rails/EnumSyntax:
+  Enabled: true
+  Include:
+    - 'app/models/**/*'
 
 Style/FrozenStringLiteralComment:
   EnforcedStyle: always
-  Exclude:
-    - ".simplecov"
-    - "**/Rakefile"
-    - "**/config.ru"
-
-Style/EmptyElse:
-  EnforcedStyle: empty
-
-Style/EmptyMethod:
-  Enabled: false
-
-Style/RedundantReturn:
-  AllowMultipleReturnValues: true
-
-Style/Semicolon:
-  AllowAsExpressionSeparator: true
-
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
-
-###
-# rubocop-minitest specific
-###
-
-Minitest/MultipleAssertions:
-  Max: 5
-
-###
-# rubocop-rails specific
-###
-
-# Present/blank will fight each other otherwise
-Rails/Blank:
-  UnlessPresent: false
-
-# Don't force locales usage
-Rails/I18nLocaleTexts:
-  Enabled: false
+  Include:
+    - 'app/**/*'
+    - 'lib/**/*'
+    - 'test/**/*'

@@ -65,10 +65,10 @@ jobs:
         run: npm install
 
       - name: RuboCop Check
-        run: bundle exec rubocop
+        run: bin/rubocop
 
       - name: Brakeman Checks
-        run: bundle exec brakeman
+        run: bin/brakeman
 
       - name: Database setup
         run: bin/rails db:schema:load --trace
@@ -190,4 +190,4 @@ jobs:
           curl -I http://localhost:3000 --retry 5 --retry-all-errors --retry-delay 10 --max-time 60 --connect-timeout 10
 
       - name: Run Cypress tests
-        run: npx cypress run --record || npx cypress run
+        run: npx cypress run --browser chrome --record || npx cypress run --browser chrome

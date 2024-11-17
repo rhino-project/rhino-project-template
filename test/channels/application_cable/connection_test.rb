@@ -2,34 +2,36 @@
 
 require "test_helper"
 
-class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCase
-  test "connects with cookies" do
-    user = create(:user)
+module ApplicationCable
+  class ConnectionTest < ActionCable::Connection::TestCase
+    test "connects with cookies" do
+      user = create(:user)
 
-    cookies[DeviseTokenAuth.cookie_name] = user.create_new_auth_token.to_json
+      cookies[DeviseTokenAuth.cookie_name] = user.create_new_auth_token.to_json
 
-    connect
+      connect
 
-    assert_equal user, connection.current_user
-  end
+      assert_equal user, connection.current_user
+    end
 
-  test "rejects connection when not signed in" do
-    assert_reject_connection { connect }
-  end
+    test "rejects connection when not signed in" do
+      assert_reject_connection { connect }
+    end
 
-  test "rejects connection with empty cookies" do
-    cookies[DeviseTokenAuth.cookie_name] = nil.to_json
+    test "rejects connection with empty cookies" do
+      cookies[DeviseTokenAuth.cookie_name] = nil.to_json
 
-    assert_reject_connection { connect }
-  end
+      assert_reject_connection { connect }
+    end
 
-  test "rejects connection with bad cookies" do
-    cookies[DeviseTokenAuth.cookie_name] = {
-      "access-token" => "1234",
-      "uid" => "1234",
-      "client" => "1234"
-    }.to_json
+    test "rejects connection with bad cookies" do
+      cookies[DeviseTokenAuth.cookie_name] = {
+        "access-token" => "1234",
+        "uid" => "1234",
+        "client" => "1234"
+      }.to_json
 
-    assert_reject_connection { connect }
+      assert_reject_connection { connect }
+    end
   end
 end

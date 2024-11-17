@@ -940,7 +940,7 @@ const api = {
     "x-rhino": {
       "modules": {
         "rhino": {
-          "version": "0.21.0.beta.39",
+          "version": "0.22.0.alpha.3",
           "authOwner": "user",
           "baseOwner": "user",
           "oauth": [

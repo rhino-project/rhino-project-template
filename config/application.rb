@@ -9,12 +9,12 @@ Bundler.require(*Rails.groups)
 module RhinoTemplate
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.1
+    config.load_defaults 7.2
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w(assets tasks))
+    config.autoload_lib(ignore: %w[assets tasks])
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -25,7 +25,7 @@ module RhinoTemplate
     # config.eager_load_paths << Rails.root.join("extras")
 
     # https://guides.rubyonrails.org/engines.html#overriding-models-and-controllers
-    overrides = "#{Rails.root}/app/overrides"
+    overrides = "#{Rails.root.join("app/overrides")}"
     Rails.autoloaders.main.ignore(overrides)
     config.to_prepare do
       Dir.glob("#{overrides}/**/*_override.rb").each do |override|
@@ -45,7 +45,7 @@ module RhinoTemplate
 
     # Error indexes for nested attribute errors
     # https://blog.bigbinary.com/2016/07/07/errors-can-be-indexed-with-nested-attrbutes-in-rails-5.html
-    config.active_record.index_nested_attribute_errors = true
+    config.active_record.index_nested_attribute_errors = :nested_attributes_order
 
     # Necessary for ActiveStorage integration
     # Rhino::Resource::ActiveStorageExtension#url needs this to be set
