@@ -1,9 +1,9 @@
 source "https://rubygems.org"
 
-ruby "~> 3.3.5"
+ruby "~> 3.3.6"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.1.3", ">= 7.1.3.4"
+gem "rails", "~> 7.2.2"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -35,21 +35,22 @@ gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri windows ]
+  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
   gem "openapi3_parser"
 
   gem "factory_bot"
   gem "factory_bot_rails"
 
-  # These are aligned with rails 7.1
-  gem "rubocop", "1.63.3", require: false
-  gem "rubocop-performance", "1.21.0", require: false
-  gem "rubocop-minitest", "0.29.0", require: false
-  gem "rubocop-rails", "2.18.0", require: false
+  # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
+  gem "brakeman", require: false
 
+  # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
+  gem "rubocop-rails-omakase", require: false
+
+  gem "rubocop-minitest", require: false
   gem "rubocop-factory_bot", "2.26.1", require: false
-  gem "rubocop-rhino-project", "~> 0.21.0.beta.46", require: false
+  gem "rubocop-rhino-project", "~> 0.22.0.beta.1", require: false
 
   gem "ffaker"
   gem "simplecov", require: false
@@ -66,9 +67,8 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 
-  gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
+  gem "error_highlight", ">= 0.4.0", platforms: [ :ruby ]
 
-  gem "brakeman", require: false
   gem "railroady"
 
   gem "letter_opener"
@@ -90,16 +90,16 @@ gem "activeadmin_addons"
 
 gem "rollbar"
 
-gem "rhino_project", "~> 0.21.0.beta.46"
+gem "rhino_project", "~> 0.22.0.beta.1"
 
-gem "rhino_project_core", "~> 0.21.0.beta.46"
+gem "rhino_project_core", "~> 0.22.0.beta.1"
 
-gem "rhino_project_organizations", "~> 0.21.0.beta.46"
+gem "rhino_project_organizations", "~> 0.22.0.beta.1"
 
-gem "rhino_project_notifications", "~> 0.21.0.beta.46"
+gem "rhino_project_notifications", "~> 0.22.0.beta.1"
 
-gem "rhino_project_subscriptions", "~> 0.21.0.beta.46"
+gem "rhino_project_subscriptions", "~> 0.22.0.beta.1"
 
-gem "rhino_project_jobs", "~> 0.21.0.beta.46"
+gem "rhino_project_jobs", "~> 0.22.0.beta.1"
 
 gem "vite_rails", "~> 3.0"

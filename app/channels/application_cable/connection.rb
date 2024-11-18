@@ -31,7 +31,7 @@ module ApplicationCable
         uid_name = DeviseTokenAuth.headers_names[:uid]
         access_token_name = DeviseTokenAuth.headers_names[:"access-token"]
         client_name = DeviseTokenAuth.headers_names[:client]
-        [access_token_name, uid_name, client_name]
+        [ access_token_name, uid_name, client_name ]
       end
   end
 

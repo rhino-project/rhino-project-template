@@ -4,7 +4,7 @@ class CreateFilestackPictures < ActiveRecord::Migration[5.2]
       t.string :handle
       t.integer :width
       t.integer :height
-      #t.references :picturable, polymorphic: true
+      # t.references :picturable, polymorphic: true
       t.references :user
 
       t.timestamps

@@ -1,11 +1,13 @@
 DeviseTokenAuth.setup do |config|
   config.cookie_enabled = true
   config.cookie_attributes = {
-    secure: ENV.fetch('DISABLE_SSL', false) ? false : true,
+    secure: ENV.fetch("DISABLE_SSL", false) ? false : true,
     httponly: true,
     expires: 1.day,
-    same_site: ENV.fetch('DISABLE_SSL', false) ? "Lax" : "None"
-    # WARNING: the :domain attribute specifies to whom the cookie will be sent to. It's recommended to leave it empty, so it acts in the most restrictive way as per https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#domain-and-path-attributes
+    same_site: ENV.fetch("DISABLE_SSL", false) ? "Lax" : "None"
+    # WARNING: the :domain attribute specifies to whom the cookie will be sent to.
+    # It's recommended to leave it empty, so it acts in the most restrictive way as per
+    # https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#domain-and-path-attributes
   }
   # By default the authorization headers will change after each request. The
   # client is responsible for keeping track of the changing tokens. Change
@@ -43,11 +45,11 @@ DeviseTokenAuth.setup do |config|
   # config.default_callbacks = true
 
   # Makes it possible to change the headers names
-  config.headers_names = {:'access-token' => 'auth-access-token',
-                         :'client' => 'auth-client',
-                         :'expiry' => 'auth-expiry',
-                         :'uid' => 'auth-uid',
-                         :'token-type' => 'auth-token-type' }
+  config.headers_names = { 'access-token': "auth-access-token",
+                         'client': "auth-client",
+                         'expiry': "auth-expiry",
+                         'uid': "auth-uid",
+                         'token-type': "auth-token-type" }
 
   # By default, only Bearer Token authentication is implemented out of the box.
   # If, however, you wish to integrate with legacy Devise authentication, you can

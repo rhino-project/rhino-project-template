@@ -5,7 +5,7 @@
 
 # Read more: https://github.com/cyu/rack-cors
 
-ORIGIN_ENV = [ENV["FRONT_END_URL"]].compact.freeze
+ORIGIN_ENV = [ ENV["FRONT_END_URL"] ].compact.freeze
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
@@ -13,7 +13,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
 
     resource "*",
              headers: :any,
-             methods: [:get, :post, :put, :patch, :delete, :options, :head],
+             methods: [ :get, :post, :put, :patch, :delete, :options, :head ],
              credentials: true
   end
 end
