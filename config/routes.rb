@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self) rescue ActiveAdmin::DatabaseHitDuringLoad
 
   constraints lambda { |req| !req.xhr? && req.format.html? && !req.path.starts_with?("/api/") && !req.path.starts_with?("/rails/") && !req.path.starts_with?("/jobs") } do # rubocop:disable Layout/LineLength
-    match "*path", to: "frontend#root", via: :get
+    get "*path", to: "frontend#root"
   end
   root to: "frontend#root", via: :get
 end
