@@ -293,7 +293,7 @@ const api = {
             }
           },
           "422": {
-            "description": "Unprocessable Entity",
+            "description": "Unprocessable Content",
             "content": {
               "application/json": {
               }
@@ -335,7 +335,7 @@ const api = {
             }
           },
           "422": {
-            "description": "Unprocessable Entity",
+            "description": "Unprocessable Content",
             "content": {
               "application/json": {
               }
@@ -383,7 +383,7 @@ const api = {
             }
           },
           "422": {
-            "description": "Unprocessable Entity",
+            "description": "Unprocessable Content",
             "content": {
               "application/json": {
               }
@@ -429,7 +429,7 @@ const api = {
             }
           },
           "422": {
-            "description": "Unprocessable Entity",
+            "description": "Unprocessable Content",
             "content": {
               "application/json": {
               }
@@ -475,7 +475,7 @@ const api = {
             }
           },
           "422": {
-            "description": "Unprocessable Entity",
+            "description": "Unprocessable Content",
             "content": {
               "application/json": {
               }
@@ -521,7 +521,7 @@ const api = {
             }
           },
           "422": {
-            "description": "Unprocessable Entity",
+            "description": "Unprocessable Content",
             "content": {
               "application/json": {
               }
@@ -565,7 +565,7 @@ const api = {
             }
           },
           "422": {
-            "description": "Unprocessable Entity",
+            "description": "Unprocessable Content",
             "content": {
               "application/json": {
               }
@@ -607,7 +607,7 @@ const api = {
             }
           },
           "422": {
-            "description": "Unprocessable Entity",
+            "description": "Unprocessable Content",
             "content": {
               "application/json": {
               }
@@ -655,7 +655,7 @@ const api = {
             }
           },
           "422": {
-            "description": "Unprocessable Entity",
+            "description": "Unprocessable Content",
             "content": {
               "application/json": {
               }
@@ -701,7 +701,7 @@ const api = {
             }
           },
           "422": {
-            "description": "Unprocessable Entity",
+            "description": "Unprocessable Content",
             "content": {
               "application/json": {
               }
@@ -747,7 +747,7 @@ const api = {
             }
           },
           "422": {
-            "description": "Unprocessable Entity",
+            "description": "Unprocessable Content",
             "content": {
               "application/json": {
               }
@@ -793,7 +793,7 @@ const api = {
             }
           },
           "422": {
-            "description": "Unprocessable Entity",
+            "description": "Unprocessable Content",
             "content": {
               "application/json": {
               }
@@ -837,7 +837,7 @@ const api = {
             }
           },
           "422": {
-            "description": "Unprocessable Entity",
+            "description": "Unprocessable Content",
             "content": {
               "application/json": {
               }
@@ -879,7 +879,7 @@ const api = {
             }
           },
           "422": {
-            "description": "Unprocessable Entity",
+            "description": "Unprocessable Content",
             "content": {
               "application/json": {
               }
@@ -921,7 +921,7 @@ const api = {
             }
           },
           "422": {
-            "description": "Unprocessable Entity",
+            "description": "Unprocessable Content",
             "content": {
               "application/json": {
               }
@@ -940,7 +940,7 @@ const api = {
     "x-rhino": {
       "modules": {
         "rhino": {
-          "version": "0.22.0.beta.1",
+          "version": "0.22.0.beta.6",
           "authOwner": "user",
           "baseOwner": "user",
           "oauth": [
