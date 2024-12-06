@@ -81,4 +81,7 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
+
+  # Ensure that exceptions show up for the API in development
+  config.action_dispatch.show_exceptions = :none
 end
