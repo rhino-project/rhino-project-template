@@ -1,4 +1,4 @@
-import { useRhinoConfig } from '@rhino-project/config';
+import { useRhinoConfig } from '@rhino-project/core/config';
 import {
   ErrorBoundary as RollbarErrorBounday,
   Provider as RollbarProvider

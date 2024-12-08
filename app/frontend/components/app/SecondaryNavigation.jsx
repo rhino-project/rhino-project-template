@@ -6,7 +6,7 @@ import {
   BaseOwnerSwitcher,
   NotificationMenu
 } from '@rhino-project/core/components/app';
-import { useRhinoConfig } from '@rhino-project/config';
+import { useRhinoConfig } from '@rhino-project/core/config';
 import { NavItem } from '@rhino-project/core/components/nav';
 
 export const SecondaryNavigation = () => {

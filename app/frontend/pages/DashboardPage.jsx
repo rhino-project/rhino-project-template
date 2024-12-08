@@ -9,6 +9,7 @@ import { useBaseOwnerPath } from '@rhino-project/core/hooks';
 import { useUser } from '@rhino-project/core/hooks';
 import { useBaseOwner } from '@rhino-project/core/hooks';
 import { getModelIndexPath } from '@rhino-project/core/utils';
+import { useRhinoConfig } from '@rhino-project/core/config';
 
 const APPROVAL = false;
 
@@ -48,6 +49,9 @@ const GetStarted = () => {
 };
 
 const DashboardPage = () => {
+  const all = useRhinoConfig();
+  console.log(all);
+
   return (
     <BaseAuthedPage>{APPROVAL ? <Approval /> : <GetStarted />}</BaseAuthedPage>
   );
