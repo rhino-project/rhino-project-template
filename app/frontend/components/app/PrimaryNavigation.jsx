@@ -1,8 +1,4 @@
-import {
-  ModelNavSection,
-  NavItem,
-  NavSection
-} from '@rhino-project/core/components/nav';
+import { ModelNavSection, NavItem, NavSection } from '@rhino-project/ui';
 
 export const PrimaryNavigation = () => {
   return (

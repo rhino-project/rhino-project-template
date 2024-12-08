@@ -2,7 +2,7 @@ import React from 'react';
 
 import { getBaseOwnedModels } from '@rhino-project/core/utils';
 
-import { BaseAuthedPage } from '@rhino-project/core/pages';
+import { BaseAuthedPage } from '@rhino-project/ui';
 import { Empty } from '@rhino-project/ui';
 import { LinkButton } from '@rhino-project/ui';
 import { useBaseOwnerPath } from '@rhino-project/core/hooks';

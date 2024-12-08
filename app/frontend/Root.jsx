@@ -16,9 +16,9 @@ import {
 } from 'react-router-dom';
 import { IdentityAnalytics } from '@rhino-project/core/components/analytics';
 import { PageAnalytics } from '@rhino-project/core/components/analytics';
-import { Toaster } from '@rhino-project/core/components/app';
+import { Toaster } from '@rhino-project/ui';
 import { NotFoundPage } from '@rhino-project/core/components/shared';
-import { ApplicationShell } from '@rhino-project/core/components/shells';
+import { ApplicationShell } from '@rhino-project/ui';
 import { AuthProvider } from '@rhino-project/core/contexts';
 import { BaseOwnerProvider } from '@rhino-project/core/contexts';
 import {
@@ -28,22 +28,22 @@ import {
   ResetPasswordPage,
   SignInPage,
   SignUpPage
-} from '@rhino-project/core/pages/auth';
+} from '@rhino-project/ui';
 import {
   routePaths,
   accountSettingsRoute,
   settingsRoute
-} from '@rhino-project/core/routes';
-import { AuthenticatedRoute } from '@rhino-project/core/routes';
-import { NonAuthenticatedRoute } from '@rhino-project/core/routes';
-import { modelRoutes } from '@rhino-project/core/routes';
+} from '@rhino-project/ui';
+import { AuthenticatedRoute } from '@rhino-project/ui';
+import { NonAuthenticatedRoute } from '@rhino-project/ui';
+import { modelRoutes } from '@rhino-project/ui';
 import {
   getAuthenticatedAppPath,
   getNonAuthenticatedAppPath,
   getSessionCreatePath
 } from '@rhino-project/core/utils';
 import { customRoutes } from 'routes/custom';
-import { RhinoDevTool } from '@rhino-project/core/components/devtool';
+import { RhinoDevTool } from '@rhino-project/ui';
 import { PrimaryNavigation } from './components/app/PrimaryNavigation';
 import { SecondaryNavigation } from './components/app/SecondaryNavigation';
 
