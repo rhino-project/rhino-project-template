@@ -13,101 +13,98 @@ import {
   LinkButton,
   LinkIconButton,
   SubmitButton
-} from '@rhino-project/core/components/buttons';
+} from '@rhino-project/ui';
 import { FormProvider } from '@rhino-project/core/components/forms';
 import {
   FieldGroupBoolean,
   FieldGroupHorizontalBoolean,
   FieldGroupFloatingBoolean
-} from '@rhino-project/core/components/forms/fieldGroups';
+} from '@rhino-project/ui';
 import {
   FieldGroupCountry,
   FieldGroupFloatingCountry,
   FieldGroupHorizontalCountry
-} from '@rhino-project/core/components/forms/fieldGroups';
+} from '@rhino-project/ui';
 import {
   FieldGroupCurrency,
   FieldGroupFloatingCurrency,
   FieldGroupHorizontalCurrency
-} from '@rhino-project/core/components/forms/fieldGroups';
+} from '@rhino-project/ui';
 import {
   FieldGroupDate,
   FieldGroupFloatingDate,
   FieldGroupHorizontalDate
-} from '@rhino-project/core/components/forms/fieldGroups';
+} from '@rhino-project/ui';
 import {
   FieldGroupDateTime,
   FieldGroupFloatingDateTime,
   FieldGroupHorizontalDateTime
-} from '@rhino-project/core/components/forms/fieldGroups';
-import {
-  FieldGroupFile,
-  FieldGroupHorizontalFile
-} from '@rhino-project/core/components/forms/fieldGroups';
+} from '@rhino-project/ui';
+import { FieldGroupFile, FieldGroupHorizontalFile } from '@rhino-project/ui';
 import {
   FieldGroupFloat,
   FieldGroupFloatingFloat,
   FieldGroupHorizontalFloat
-} from '@rhino-project/core/components/forms/fieldGroups';
+} from '@rhino-project/ui';
 import {
   FieldGroupInteger,
   FieldGroupFloatingInteger,
   FieldGroupHorizontalInteger
-} from '@rhino-project/core/components/forms/fieldGroups';
+} from '@rhino-project/ui';
 import {
   FieldGroupPassword,
   FieldGroupFloatingPassword,
   FieldGroupHorizontalPassword
-} from '@rhino-project/core/components/forms/fieldGroups';
+} from '@rhino-project/ui';
 import {
   FieldGroupPhone,
   FieldGroupFloatingPhone,
   FieldGroupHorizontalPhone
-} from '@rhino-project/core/components/forms/fieldGroups';
+} from '@rhino-project/ui';
 import {
   FieldGroupSelectControlled,
   FieldGroupFloatingSelectControlled,
   FieldGroupHorizontalSelectControlled
-} from '@rhino-project/core/components/forms/fieldGroups';
+} from '@rhino-project/ui';
 import {
   FieldGroupString,
   FieldGroupFloatingString,
   FieldGroupHorizontalString
-} from '@rhino-project/core/components/forms/fieldGroups';
+} from '@rhino-project/ui';
 import {
   FieldGroupText,
   FieldGroupFloatingText,
   FieldGroupHorizontalText
-} from '@rhino-project/core/components/forms/fieldGroups';
+} from '@rhino-project/ui';
 import {
   FieldGroupTime,
   FieldGroupFloatingTime,
   FieldGroupHorizontalTime
-} from '@rhino-project/core/components/forms/fieldGroups';
+} from '@rhino-project/ui';
 import {
   FieldGroupYear,
   FieldGroupFloatingYear,
   FieldGroupHorizontalYear
-} from '@rhino-project/core/components/forms/fieldGroups';
+} from '@rhino-project/ui';
 
-import { Table } from '@rhino-project/core/components/table';
-import { CellBadge } from '@rhino-project/core/components/table/cells';
-import { CellBoolean } from '@rhino-project/core/components/table/cells';
-import { CellCountry } from '@rhino-project/core/components/table/cells';
-import { CellCurrency } from '@rhino-project/core/components/table/cells';
-import { CellDate } from '@rhino-project/core/components/table/cells';
-import { CellDateTime } from '@rhino-project/core/components/table/cells';
-import { CellDateTimeDistance } from '@rhino-project/core/components/table/cells';
-import { CellDateTimeRelative } from '@rhino-project/core/components/table/cells';
-import { CellFloat } from '@rhino-project/core/components/table/cells';
-import { CellImage } from '@rhino-project/core/components/table/cells';
-import { CellInteger } from '@rhino-project/core/components/table/cells';
-import { CellLink } from '@rhino-project/core/components/table/cells';
-import { CellLinkEmail } from '@rhino-project/core/components/table/cells';
-import { CellLinkTelephone } from '@rhino-project/core/components/table/cells';
-import { CellReference } from '@rhino-project/core/components/table/cells';
-import { CellString } from '@rhino-project/core/components/table/cells';
-import { CellTime } from '@rhino-project/core/components/table/cells';
+import { Table } from '@rhino-project/ui';
+import { CellBadge } from '@rhino-project/ui';
+import { CellBoolean } from '@rhino-project/ui';
+import { CellCountry } from '@rhino-project/ui';
+import { CellCurrency } from '@rhino-project/ui';
+import { CellDate } from '@rhino-project/ui';
+import { CellDateTime } from '@rhino-project/ui';
+import { CellDateTimeDistance } from '@rhino-project/ui';
+import { CellDateTimeRelative } from '@rhino-project/ui';
+import { CellFloat } from '@rhino-project/ui';
+import { CellImage } from '@rhino-project/ui';
+import { CellInteger } from '@rhino-project/ui';
+import { CellLink } from '@rhino-project/ui';
+import { CellLinkEmail } from '@rhino-project/ui';
+import { CellLinkTelephone } from '@rhino-project/ui';
+import { CellReference } from '@rhino-project/ui';
+import { CellString } from '@rhino-project/ui';
+import { CellTime } from '@rhino-project/ui';
 
 const Buttons = () => {
   return (
