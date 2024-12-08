@@ -5,9 +5,9 @@ import {
   AccountMenu,
   BaseOwnerSwitcher,
   NotificationMenu
-} from '@rhino-project/core/components/app';
+} from '@rhino-project/ui';
 import { useRhinoConfig } from '@rhino-project/core/config';
-import { NavItem } from '@rhino-project/core/components/nav';
+import { NavItem } from '@rhino-project/ui';
 
 export const SecondaryNavigation = () => {
   const {

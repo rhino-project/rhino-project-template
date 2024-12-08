@@ -8,7 +8,8 @@
   },
   "type": "module",
   "dependencies": {
-    "@rhino-project/core": "0.30.0-alpha.3",
+    "@rhino-project/core": "file:../rhino-project/packages/core",
+    "@rhino-project/ui": "file:../rhino-project/packages/ui",
     "@rollbar/react": "0.11.2",
     "@tanstack/react-query": "4.32.6",
     "@tanstack/react-query-devtools": "4.32.6",
@@ -73,5 +74,6 @@
     "prettier-check": "prettier --check app/frontend cypress",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
-  }
+  },
+  "packageManager": "pnpm@8.14.1+sha512.856c4ecd97c5d3f30354ebc373cd32fb37274295c489db2d0f613a1e60f010cadfbb15036d525f3a06dec1897e4219b3c4f6d3be8f2f62fb0a366bee6aaa7533"
 }

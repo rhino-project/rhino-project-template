@@ -3,13 +3,12 @@ import React from 'react';
 import { getBaseOwnedModels } from '@rhino-project/core/utils';
 
 import { BaseAuthedPage } from '@rhino-project/core/pages';
-import { Empty } from '@rhino-project/core/components/empties';
-import { LinkButton } from '@rhino-project/core/components/buttons';
+import { Empty } from '@rhino-project/ui';
+import { LinkButton } from '@rhino-project/ui';
 import { useBaseOwnerPath } from '@rhino-project/core/hooks';
 import { useUser } from '@rhino-project/core/hooks';
 import { useBaseOwner } from '@rhino-project/core/hooks';
 import { getModelIndexPath } from '@rhino-project/core/utils';
-import { useRhinoConfig } from '@rhino-project/core/config';
 
 const APPROVAL = false;
 
@@ -37,6 +36,7 @@ const GetStarted = () => {
   const user = useUser();
   const baseOwner = useBaseOwner();
 
+  console.log('firstPath', firstPath);
   return (
     <Empty title={`Welcome to ${baseOwner?.name}, ${user.name || user.uid}`}>
       {firstPath && (
@@ -49,9 +49,6 @@ const GetStarted = () => {
 };
 
 const DashboardPage = () => {
-  const all = useRhinoConfig();
-  console.log(all);
-
   return (
     <BaseAuthedPage>{APPROVAL ? <Approval /> : <GetStarted />}</BaseAuthedPage>
   );
