@@ -3,7 +3,6 @@ import {
   ErrorBoundary as RollbarErrorBounday,
   Provider as RollbarProvider
 } from '@rollbar/react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import FavIcon from './assets/images/favicon.png';
 import { Suspense, lazy } from 'react';
@@ -46,8 +45,6 @@ import { customRoutes } from 'routes/custom';
 import { RhinoDevTool } from '@rhino-project/ui';
 import { PrimaryNavigation } from './components/app/PrimaryNavigation';
 import { SecondaryNavigation } from './components/app/SecondaryNavigation';
-
-const queryClient = new QueryClient({});
 
 const LazyDesignSystemRoute = lazy(
   () => import('./pages/design/DesignSystemPage')
@@ -155,49 +152,47 @@ const Root = () => {
         <RollbarErrorBounday>
           <div className="h-100">
             <RhinoDevTool />
-            <QueryClientProvider client={queryClient}>
-              <AuthProvider>
-                <ReactQueryDevtools
-                  initialIsOpen={false}
-                  position="bottom-right"
+            <AuthProvider>
+              <ReactQueryDevtools
+                initialIsOpen={false}
+                position="bottom-right"
+              />
+              <Helmet>
+                <title>{appName}</title>
+                <link
+                  rel="icon"
+                  type="image/png"
+                  sizes="16x16"
+                  href={FavIcon}
                 />
-                <Helmet>
-                  <title>{appName}</title>
-                  <link
-                    rel="icon"
-                    type="image/png"
-                    sizes="16x16"
-                    href={FavIcon}
-                  />
-                </Helmet>
-                <Router>
-                  <PageAnalytics>
-                    <Routes>
-                      <Route
-                        path="/"
-                        element={
-                          <Navigate to={getNonAuthenticatedAppPath()} replace />
-                        }
-                      />
-                      <Route
-                        path={`${getNonAuthenticatedAppPath()}/*`}
-                        element={<NonAuthenticatedApp />}
-                      />
-                      <Route
-                        path={`/:baseOwnerId/*`}
-                        element={<AuthenticatedApp />}
-                      />
-                      <Route
-                        path={getAuthenticatedAppPath()}
-                        element={<AuthenticatedApp />}
-                      />
-                      <Route path="/*" element={<Navigate to="/" replace />} />
-                    </Routes>
-                  </PageAnalytics>
-                </Router>
-                <Toaster />
-              </AuthProvider>
-            </QueryClientProvider>
+              </Helmet>
+              <Router>
+                <PageAnalytics>
+                  <Routes>
+                    <Route
+                      path="/"
+                      element={
+                        <Navigate to={getNonAuthenticatedAppPath()} replace />
+                      }
+                    />
+                    <Route
+                      path={`${getNonAuthenticatedAppPath()}/*`}
+                      element={<NonAuthenticatedApp />}
+                    />
+                    <Route
+                      path={`/:baseOwnerId/*`}
+                      element={<AuthenticatedApp />}
+                    />
+                    <Route
+                      path={getAuthenticatedAppPath()}
+                      element={<AuthenticatedApp />}
+                    />
+                    <Route path="/*" element={<Navigate to="/" replace />} />
+                  </Routes>
+                </PageAnalytics>
+              </Router>
+              <Toaster />
+            </AuthProvider>
           </div>
         </RollbarErrorBounday>
       </RollbarProvider>
