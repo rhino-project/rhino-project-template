@@ -5,11 +5,13 @@ import { Empty } from '@rhino-project/ui';
 import { LinkButton } from '@rhino-project/ui';
 import {
   useBaseOwnedModels,
-  useBaseOwnerPath
+  useBaseOwnerPath,
+  useModelShow
 } from '@rhino-project/core/hooks';
 import { useUser } from '@rhino-project/core/hooks';
 import { useBaseOwner } from '@rhino-project/core/hooks';
 import { getModelIndexPath } from '@rhino-project/core/utils';
+import { Blog } from '../models/models.d';
 
 const APPROVAL = false;
 
@@ -34,8 +36,12 @@ const GetStarted = () => {
   const firstPath = firstModel
     ? baseOwnerPath.build(getModelIndexPath(firstModel))
     : null;
+
   const user = useUser();
   const baseOwner = useBaseOwner();
+  const { resource } = useModelShow('blog', 1) as { resource: Blog };
+
+  console.log(resource.title);
 
   return (
     <Empty title={`Welcome to ${baseOwner?.name}, ${user.name || user.uid}`}>
