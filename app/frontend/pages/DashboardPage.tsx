@@ -29,10 +29,14 @@ const Approval = () => {
   );
 };
 
-function useModelShowTyped<T extends keyof ModelTypes>(model: T, id: number) {
-  return useModelShow(model, id) as { resource: ModelTypes[T] };
+function useModelShowTyped<T extends keyof ModelTypes>(
+  model: T | { model: T },
+  id: number
+): { resource: ModelTypes[T] } {
+  return useModelShow(typeof model === 'string' ? model : model.model, id) as {
+    resource: ModelTypes[T];
+  };
 }
-
 const GetStarted = () => {
   const baseOwnedModels = useBaseOwnedModels();
   const firstModel = baseOwnedModels?.[0];
@@ -44,7 +48,7 @@ const GetStarted = () => {
   // const user = useUser();
   const baseOwner = useBaseOwner();
   const { resource } = useModelShowTyped('blog', 1);
-  const { resource: user } = useModelShowTyped('user', 1);
+  const { resource: user } = useModelShowTyped({ model: 'user' }, 1);
 
   console.log(resource);
 
