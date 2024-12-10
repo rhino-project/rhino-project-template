@@ -11,7 +11,7 @@ import {
 import { useUser } from '@rhino-project/core/hooks';
 import { useBaseOwner } from '@rhino-project/core/hooks';
 import { getModelIndexPath } from '@rhino-project/core/utils';
-import { Blog } from '../models/models.d';
+import { ModelTypes } from '../models/models.d';
 
 const APPROVAL = false;
 
@@ -29,6 +29,10 @@ const Approval = () => {
   );
 };
 
+function useModelShowTyped<T extends keyof ModelTypes>(model: T, id: number) {
+  return useModelShow(model, id) as { resource: ModelTypes[T] };
+}
+
 const GetStarted = () => {
   const baseOwnedModels = useBaseOwnedModels();
   const firstModel = baseOwnedModels?.[0];
@@ -37,11 +41,12 @@ const GetStarted = () => {
     ? baseOwnerPath.build(getModelIndexPath(firstModel))
     : null;
 
-  const user = useUser();
+  // const user = useUser();
   const baseOwner = useBaseOwner();
-  const { resource } = useModelShow('blog', 1) as { resource: Blog };
+  const { resource } = useModelShowTyped('blog', 1);
+  const { resource: user } = useModelShowTyped('user', 1);
 
-  console.log(resource.title);
+  console.log(resource);
 
   return (
     <Empty title={`Welcome to ${baseOwner?.name}, ${user.name || user.uid}`}>

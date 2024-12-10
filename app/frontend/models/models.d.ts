@@ -1,3 +1,10 @@
+export type ModelTypes = {
+  active_storage_attachment: ActiveStorage_Attachment;
+  user: User;
+  account: Account;
+  blog: Blog;
+};
+
 export type ActiveStorage_Attachment = {
   id: number;
   name: string;
