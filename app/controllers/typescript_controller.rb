@@ -9,7 +9,7 @@ class TypescriptController < Rhino::BaseController
     def mapping
       <<~DESC
         export type ModelTypes = {
-          #{Rhino.resource_classes.select { |r| r.respond_to?(:attribute_names) }.map { |r| "#{r.model_name.singular}: #{r.name}" }.join("\n  ") }
+          #{Rhino.resource_classes.select { |r| r.respond_to?(:attribute_names) }.map { |r| "#{r.model_name.singular}: #{r.name.gsub("::", "_")}" }.join("\n  ") }
         }
       DESC
     end
@@ -28,7 +28,7 @@ class TypescriptController < Rhino::BaseController
     def describe
       Rhino.resource_classes.select { |r| r.respond_to?(:attribute_names) }.map do |resource|
         <<~DESC
-          export type #{resource.name} = {
+          export type #{resource.name.gsub("::", "_")} = {
             #{resource.all_properties.map { |name| "#{name}: #{rails_type_to_typescript_type(resource.attribute_types[name].type)};" }.join("\n  ") }
           }
         DESC
