@@ -49,7 +49,9 @@ const GetStarted = () => {
   console.log(resource);
 
   return (
-    <Empty title={`Welcome to ${baseOwner?.name}, ${user.name || user.uid}`}>
+    <Empty
+      title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
+    >
       {firstPath && (
         <LinkButton color="primary" to={firstPath}>
           Get Started
