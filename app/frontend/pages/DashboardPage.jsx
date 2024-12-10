@@ -1,11 +1,12 @@
 import React from 'react';
 
-import { getBaseOwnedModels } from '@rhino-project/core/utils';
-
 import { BaseAuthedPage } from '@rhino-project/ui';
 import { Empty } from '@rhino-project/ui';
 import { LinkButton } from '@rhino-project/ui';
-import { useBaseOwnerPath } from '@rhino-project/core/hooks';
+import {
+  useBaseOwnedModels,
+  useBaseOwnerPath
+} from '@rhino-project/core/hooks';
 import { useUser } from '@rhino-project/core/hooks';
 import { useBaseOwner } from '@rhino-project/core/hooks';
 import { getModelIndexPath } from '@rhino-project/core/utils';
@@ -27,16 +28,15 @@ const Approval = () => {
 };
 
 const GetStarted = () => {
-  const firstModel = getBaseOwnedModels()?.[0];
+  const baseOwnedModels = useBaseOwnedModels();
+  const firstModel = baseOwnedModels?.[0];
   const baseOwnerPath = useBaseOwnerPath();
-
   const firstPath = firstModel
     ? baseOwnerPath.build(getModelIndexPath(firstModel))
     : null;
   const user = useUser();
   const baseOwner = useBaseOwner();
 
-  console.log('firstPath', firstPath);
   return (
     <Empty title={`Welcome to ${baseOwner?.name}, ${user.name || user.uid}`}>
       {firstPath && (

@@ -257,6 +257,103 @@ const api = {
         "required": [
           "email"
         ]
+      },
+      "blog": {
+        "x-rhino-model": {
+          "model": "blog",
+          "modelPlural": "blogs",
+          "name": "blog",
+          "pluralName": "blogs",
+          "readableName": "Blog",
+          "pluralReadableName": "Blogs",
+          "ownedBy": "user",
+          "singular": false,
+          "path": "/api/blogs",
+          "searchable": false
+        },
+        "type": "object",
+        "properties": {
+          "id": {
+            "x-rhino-attribute": {
+              "name": "id",
+              "readableName": "Id",
+              "readable": true,
+              "creatable": false,
+              "updatable": false
+            },
+            "readOnly": true,
+            "nullable": false,
+            "type": "identifier"
+          },
+          "title": {
+            "x-rhino-attribute": {
+              "name": "title",
+              "readableName": "Title",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": true,
+            "type": "string"
+          },
+          "published_at": {
+            "x-rhino-attribute": {
+              "name": "published_at",
+              "readableName": "Published At",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": true,
+            "type": "string",
+            "format": "datetime"
+          },
+          "created_at": {
+            "x-rhino-attribute": {
+              "name": "created_at",
+              "readableName": "Created At",
+              "readable": true,
+              "creatable": false,
+              "updatable": false
+            },
+            "readOnly": true,
+            "nullable": false,
+            "type": "string",
+            "format": "datetime"
+          },
+          "updated_at": {
+            "x-rhino-attribute": {
+              "name": "updated_at",
+              "readableName": "Updated At",
+              "readable": true,
+              "creatable": false,
+              "updatable": false
+            },
+            "readOnly": true,
+            "nullable": false,
+            "type": "string",
+            "format": "datetime"
+          },
+          "user": {
+            "x-rhino-attribute": {
+              "name": "user",
+              "readableName": "User",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": false,
+            "type": "reference",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/user"
+              }
+            ]
+          }
+        },
+        "required": [
+          "user"
+        ]
       }
     }
   },
@@ -930,6 +1027,278 @@ const api = {
         },
         "tags": [
           "account"
+        ]
+      }
+    },
+    "/api/blogs": {
+      "get": {
+        "operationId": "blog-index",
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/blog"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "blog"
+        ]
+      },
+      "post": {
+        "operationId": "blog-create",
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/blog"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "blog"
+        ]
+      }
+    },
+    "/api/blogs/:id": {
+      "get": {
+        "operationId": "blog-show",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/blog"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "blog"
+        ]
+      },
+      "patch": {
+        "operationId": "blog-update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/blog"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "blog"
+        ]
+      },
+      "put": {
+        "operationId": "blog-update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/blog"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "blog"
+        ]
+      },
+      "delete": {
+        "operationId": "blog-destroy",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/blog"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "blog"
         ]
       }
     }
