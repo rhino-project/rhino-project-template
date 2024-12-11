@@ -10,8 +10,8 @@ import {
 } from '@rhino-project/core/hooks';
 import { useUser } from '@rhino-project/core/hooks';
 import { useBaseOwner } from '@rhino-project/core/hooks';
-import { getModelIndexPath } from '@rhino-project/core/utils';
-import { ModelTypes } from '../models/models.d';
+import { getModel, getModelIndexPath } from '@rhino-project/core/utils';
+import { components, ModelTypes } from '../models/models.d';
 
 const APPROVAL = false;
 
@@ -29,12 +29,12 @@ const Approval = () => {
   );
 };
 
-function useModelShowTyped<T extends keyof ModelTypes>(
+function useModelShowTyped<T extends keyof components['schemas']>(
   model: T | { model: T },
   id: number
-): { resource: ModelTypes[T] } {
+): { resource: components['schemas'][T] } {
   return useModelShow(typeof model === 'string' ? model : model.model, id) as {
-    resource: ModelTypes[T];
+    resource: components['schemas'][T];
   };
 }
 const GetStarted = () => {
@@ -48,7 +48,10 @@ const GetStarted = () => {
   // const user = useUser();
   const baseOwner = useBaseOwner();
   const { resource } = useModelShowTyped('blog', 1);
-  const { resource: user } = useModelShowTyped({ model: 'user' }, 1);
+  const model = getModel('user') as
+    | keyof ModelTypes
+    | { model: keyof ModelTypes };
+  const { resource: user } = useModelShowTyped('user', 1);
 
   console.log(resource);
 
