@@ -293,7 +293,7 @@ const api = {
               "creatable": true,
               "updatable": true
             },
-            "nullable": true,
+            "nullable": false,
             "type": "string"
           },
           "published_at": {
@@ -352,6 +352,7 @@ const api = {
           }
         },
         "required": [
+          "title",
           "user"
         ]
       }

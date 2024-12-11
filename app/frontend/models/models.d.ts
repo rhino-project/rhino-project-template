@@ -146,7 +146,7 @@ export interface components {
     };
     blog: {
       readonly id?: Record<string, never>;
-      title?: string | null;
+      title: string;
       /** Format: datetime */
       published_at?: string | null;
       /** Format: datetime */
