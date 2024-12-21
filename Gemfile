@@ -50,7 +50,7 @@ group :development, :test do
 
   gem "rubocop-minitest", require: false
   gem "rubocop-factory_bot", "2.26.1", require: false
-  gem "rubocop-rhino-project", "~> 0.22.0.beta.6", require: false
+  gem "rubocop-rhino-project", "~> 0.30.0.alpha.4", require: false
 
   gem "ffaker"
   gem "simplecov", require: false
@@ -90,16 +90,16 @@ gem "activeadmin_addons"
 
 gem "rollbar"
 
-gem "rhino_project", "~> 0.22.0.beta.6"
+gem "rhino_project", "~> 0.30.0.alpha.4"
 
-gem "rhino_project_core", "~> 0.22.0.beta.6"
+gem "rhino_project_core", path: "../rhino-project/gems/rhino_project_core"
 
-gem "rhino_project_organizations", "~> 0.22.0.beta.6"
+gem "rhino_project_organizations", "~> 0.30.0.alpha.4"
 
-gem "rhino_project_notifications", "~> 0.22.0.beta.6"
+gem "rhino_project_notifications", "~> 0.30.0.alpha.4"
 
-gem "rhino_project_subscriptions", "~> 0.22.0.beta.6"
+gem "rhino_project_subscriptions", "~> 0.30.0.alpha.4"
 
-gem "rhino_project_jobs", "~> 0.22.0.beta.6"
+gem "rhino_project_jobs", "~> 0.30.0.alpha.4"
 
 gem "vite_rails", "~> 3.0"

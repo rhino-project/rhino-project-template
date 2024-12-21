@@ -121,32 +121,40 @@ export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
         active_storage_attachment: {
-            readonly id?: Record<string, never>;
+            /** Format: identifier */
+            readonly id?: number;
             name: string;
             record_type: string;
             /** Format: datetime */
             readonly created_at?: string;
             url?: unknown;
             url_attachment?: unknown;
+            /** @default {} */
+            variants: Record<string, never>;
             readonly signed_id?: Record<string, never>;
         };
         user: {
-            readonly id?: Record<string, never>;
+            /** Format: identifier */
+            readonly id?: number;
             name?: string | null;
             nickname?: string | null;
             email: string;
             readonly image?: string | null;
         };
         account: {
-            readonly id?: Record<string, never>;
+            /** Format: identifier */
+            readonly id?: number;
             name?: string | null;
             nickname?: string | null;
             email: string;
             readonly image?: string | null;
         };
         blog: {
-            readonly id?: Record<string, never>;
+            /** Format: identifier */
+            readonly id?: number;
             title?: string | null;
+            /** Format: double */
+            dnum?: number | null;
             /** Format: datetime */
             published_at?: string | null;
             /** Format: datetime */

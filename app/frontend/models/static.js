@@ -27,7 +27,8 @@ const api = {
             },
             "readOnly": true,
             "nullable": false,
-            "type": "identifier"
+            "type": "integer",
+            "format": "identifier"
           },
           "name": {
             "x-rhino-attribute": {
@@ -84,6 +85,19 @@ const api = {
             },
             "nullable": true
           },
+          "variants": {
+            "x-rhino-attribute": {
+              "name": "variants",
+              "readableName": "Variants",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": true,
+            "default": {
+            },
+            "type": "json"
+          },
           "signed_id": {
             "x-rhino-attribute": {
               "name": "signed_id",
@@ -127,7 +141,8 @@ const api = {
             },
             "readOnly": true,
             "nullable": false,
-            "type": "identifier"
+            "type": "integer",
+            "format": "identifier"
           },
           "name": {
             "x-rhino-attribute": {
@@ -205,7 +220,8 @@ const api = {
             },
             "readOnly": true,
             "nullable": false,
-            "type": "identifier"
+            "type": "integer",
+            "format": "identifier"
           },
           "name": {
             "x-rhino-attribute": {
@@ -283,7 +299,8 @@ const api = {
             },
             "readOnly": true,
             "nullable": false,
-            "type": "identifier"
+            "type": "integer",
+            "format": "identifier"
           },
           "title": {
             "x-rhino-attribute": {
@@ -295,6 +312,18 @@ const api = {
             },
             "nullable": true,
             "type": "string"
+          },
+          "dnum": {
+            "x-rhino-attribute": {
+              "name": "dnum",
+              "readableName": "Dnum",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": true,
+            "type": "number",
+            "format": "double"
           },
           "published_at": {
             "x-rhino-attribute": {
@@ -1309,7 +1338,7 @@ const api = {
     "x-rhino": {
       "modules": {
         "rhino": {
-          "version": "0.22.0.beta.6",
+          "version": "0.30.0.alpha.4",
           "authOwner": "user",
           "baseOwner": "user",
           "oauth": [
