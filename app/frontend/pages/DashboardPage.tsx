@@ -6,7 +6,8 @@ import { LinkButton } from '@rhino-project/ui';
 import {
   useBaseOwnedModels,
   useBaseOwnerPath,
-  useModelShow
+  useModelShow,
+  useResource
 } from '@rhino-project/core/hooks';
 import { useUser } from '@rhino-project/core/hooks';
 import { useBaseOwner } from '@rhino-project/core/hooks';
@@ -48,12 +49,8 @@ const GetStarted = () => {
   // const user = useUser();
   const baseOwner = useBaseOwner();
   const { resource } = useModelShowTyped('blog', 1);
-  const model = getModel('user') as
-    | keyof ModelTypes
-    | { model: keyof ModelTypes };
+  const user = useResource('user');
   const { resource: user } = useModelShowTyped('user', 1);
-
-  console.log(resource);
 
   return (
     <Empty
