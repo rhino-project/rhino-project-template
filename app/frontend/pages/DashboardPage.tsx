@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { BaseAuthedPage } from '@rhino-project/ui';
 import { Empty } from '@rhino-project/ui';
@@ -12,7 +12,25 @@ import {
 import { useUser } from '@rhino-project/core/hooks';
 import { useBaseOwner } from '@rhino-project/core/hooks';
 import { getModel, getModelIndexPath } from '@rhino-project/core/utils';
-import { components, ModelTypes } from '../models/models.d';
+import { components } from '../models/models.d';
+import { RhinoResource } from '@rhino-project/core/rhino-resource';
+import { Resources } from '@rhino-project/core';
+
+declare module '@rhino-project/core' {
+  interface Resources {
+    active_storage_attachment: components['schemas']['active_storage_attachment'];
+    user: components['schemas']['user'];
+    account: components['schemas']['account'];
+    blog: components['schemas']['blog'];
+  }
+}
+
+interface Blargh {
+  active_storage_attachment: components['schemas']['active_storage_attachment'];
+  user: components['schemas']['user'];
+  account: components['schemas']['account'];
+  blog: components['schemas']['blog'];
+}
 
 const APPROVAL = false;
 
@@ -38,6 +56,24 @@ function useModelShowTyped<T extends keyof components['schemas']>(
     resource: components['schemas'][T];
   };
 }
+
+const test = (a: keyof Blargh) => {
+  return a;
+};
+
+// const useResource = <T extends keyof Resources['schemas']>(resource: T) => {
+//   const filter = useCallback(
+//     (value: RhinoResource) => value.model === resource,
+//     [resource]
+//   );
+
+//   const resources = useResources({ filter });
+
+//   if (resources.length === 0) console.error(`Model ${resource} not found`);
+
+//   return resources[0];
+// };
+
 const GetStarted = () => {
   const baseOwnedModels = useBaseOwnedModels();
   const firstModel = baseOwnedModels?.[0];
@@ -49,8 +85,9 @@ const GetStarted = () => {
   // const user = useUser();
   const baseOwner = useBaseOwner();
   const { resource } = useModelShowTyped('blog', 1);
-  const user = useResource('user');
-  const { resource: user } = useModelShowTyped('user', 1);
+  const blog = useResource('adsfasdf');
+  // const { resource: user } = useModelShowTyped('user', 1);
+  const a = test('');
 
   return (
     <Empty
