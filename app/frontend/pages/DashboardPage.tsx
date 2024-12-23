@@ -85,7 +85,7 @@ const GetStarted = () => {
   // const user = useUser();
   const baseOwner = useBaseOwner();
   const { resource } = useModelShowTyped('blog', 1);
-  const blog = useResource('adsfasdf');
+  const blog = useResource('');
   // const { resource: user } = useModelShowTyped('user', 1);
   const a = test('');
 
