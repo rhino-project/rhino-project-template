@@ -24,13 +24,6 @@ declare module '@rhino-project/core' {
   interface Resources extends SchemaToResource {}
 }
 
-interface Blargh {
-  active_storage_attachment: components['schemas']['active_storage_attachment'];
-  user: components['schemas']['user'];
-  account: components['schemas']['account'];
-  blog: components['schemas']['blog'];
-}
-
 const APPROVAL = false;
 
 // FIXME Add back session tracking for approval
@@ -56,23 +49,6 @@ function useModelShowTyped<T extends keyof components['schemas']>(
   };
 }
 
-const test = (a: keyof Blargh) => {
-  return a;
-};
-
-// const useResource = <T extends keyof Resources['schemas']>(resource: T) => {
-//   const filter = useCallback(
-//     (value: RhinoResource) => value.model === resource,
-//     [resource]
-//   );
-
-//   const resources = useResources({ filter });
-
-//   if (resources.length === 0) console.error(`Model ${resource} not found`);
-
-//   return resources[0];
-// };
-
 const GetStarted = () => {
   const baseOwnedModels = useBaseOwnedModels();
   const firstModel = baseOwnedModels?.[0];
@@ -84,9 +60,8 @@ const GetStarted = () => {
   // const user = useUser();
   const baseOwner = useBaseOwner();
   const { resource } = useModelShowTyped('blog', 1);
-  const blog = useResource('account');
+  const blog = useResource('active_storage_attachment');
   // const { resource: user } = useModelShowTyped('user', 1);
-  const a = test('');
 
   return (
     <Empty
