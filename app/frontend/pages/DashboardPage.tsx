@@ -17,12 +17,11 @@ import { RhinoResource } from '@rhino-project/core/rhino-resource';
 import { Resources } from '@rhino-project/core';
 
 declare module '@rhino-project/core' {
-  interface Resources {
-    active_storage_attachment: components['schemas']['active_storage_attachment'];
-    user: components['schemas']['user'];
-    account: components['schemas']['account'];
-    blog: components['schemas']['blog'];
-  }
+  type SchemaToResource = {
+    [K in keyof components['schemas']]: components['schemas'][K];
+  };
+
+  interface Resources extends SchemaToResource {}
 }
 
 interface Blargh {
@@ -85,7 +84,7 @@ const GetStarted = () => {
   // const user = useUser();
   const baseOwner = useBaseOwner();
   const { resource } = useModelShowTyped('blog', 1);
-  const blog = useResource('');
+  const blog = useResource('account');
   // const { resource: user } = useModelShowTyped('user', 1);
   const a = test('');
 
