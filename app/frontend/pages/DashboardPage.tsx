@@ -4,27 +4,15 @@ import { BaseAuthedPage } from '@rhino-project/ui';
 import { Empty } from '@rhino-project/ui';
 import { LinkButton } from '@rhino-project/ui';
 import {
-  useBaseOwnedModels,
   useBaseOwnedResources,
   useBaseOwnerPath,
-  useModelShow,
-  useResource,
-  useResourceIndexController,
-  useResourceShow
+  useModelShow
 } from '@rhino-project/core/hooks';
 import { useUser } from '@rhino-project/core/hooks';
 import { useBaseOwner } from '@rhino-project/core/hooks';
-import { getModel, getModelIndexPath } from '@rhino-project/core/utils';
+import { getModelIndexPath } from '@rhino-project/core/utils';
 import { components } from '../models/models.d';
-import { useRhinoContext, Resources, RhinoResource } from '@rhino-project/core';
-
-declare module '@rhino-project/core' {
-  type SchemaToResource = {
-    [K in keyof components['schemas']]: components['schemas'][K];
-  };
-
-  interface Resources extends SchemaToResource {}
-}
+import { useRhinoContext, Resources } from '@rhino-project/core';
 
 const APPROVAL = false;
 
