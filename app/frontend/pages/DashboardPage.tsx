@@ -5,6 +5,7 @@ import { Empty } from '@rhino-project/ui';
 import { LinkButton } from '@rhino-project/ui';
 import {
   useBaseOwnedModels,
+  useBaseOwnedResources,
   useBaseOwnerPath,
   useModelShow,
   useResource,
@@ -51,13 +52,14 @@ function useModelShowTyped<T extends keyof Resources>(
 }
 
 const GetStarted = () => {
+  const baseOwnedResources = useBaseOwnedResources();
   // const baseOwnedModels = useBaseOwnedModels();
-  // const firstModel = baseOwnedModels?.[0];
+  const firstModel = baseOwnedResources?.[0];
   const baseOwnerPath = useBaseOwnerPath();
   const user = useUser();
-  // const firstPath = firstModel
-  //   ? baseOwnerPath.build(getModelIndexPath(firstModel))
-  //   : null;
+  const firstPath = firstModel
+    ? baseOwnerPath.build(getModelIndexPath(firstModel))
+    : null;
   const { resources } = useRhinoContext();
 
   // const user = useUser();
@@ -74,11 +76,11 @@ const GetStarted = () => {
     <Empty
       title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
     >
-      {/* {firstPath && (
+      {firstPath && (
         <LinkButton color="primary" to={firstPath}>
           Get Started
         </LinkButton>
-      )} */}
+      )}
     </Empty>
   );
 };
