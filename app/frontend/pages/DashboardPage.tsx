@@ -55,6 +55,7 @@ const GetStarted = () => {
   // const baseOwnedModels = useBaseOwnedModels();
   // const firstModel = baseOwnedModels?.[0];
   const baseOwnerPath = useBaseOwnerPath();
+  const user = useUser();
   // const firstPath = firstModel
   //   ? baseOwnerPath.build(getModelIndexPath(firstModel))
   //   : null;
@@ -62,10 +63,10 @@ const GetStarted = () => {
   // const user = useUser();
   const baseOwner = useBaseOwner();
   const { resource } = useModelShowTyped('blog', 1);
-  const blog = useResource('blog');
+  // const blog = useResource('blog');
   // const { resource: user } = useModelShowTyped('user', 1);
   // const { resource } = useResourceShow('blog', 1);
-  const {} = useResourceIndexController({ model: 'blog' });
+  // const {} = useResourceIndexController({ model: 'blog' });
 
   return (
     <Empty
