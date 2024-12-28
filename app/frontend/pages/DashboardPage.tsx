@@ -15,8 +15,7 @@ import { useUser } from '@rhino-project/core/hooks';
 import { useBaseOwner } from '@rhino-project/core/hooks';
 import { getModel, getModelIndexPath } from '@rhino-project/core/utils';
 import { components } from '../models/models.d';
-import { RhinoResource } from '@rhino-project/core/rhino-resource';
-import { Resources } from '@rhino-project/core';
+import { useRhinoContext, Resources, RhinoResource } from '@rhino-project/core';
 
 declare module '@rhino-project/core' {
   type SchemaToResource = {
@@ -42,7 +41,7 @@ const Approval = () => {
   );
 };
 
-function useModelShowTyped<T extends keyof components['schemas']>(
+function useModelShowTyped<T extends keyof Resources>(
   model: T | { model: T },
   id: number
 ): { resource: components['schemas'][T] } {
@@ -59,6 +58,7 @@ const GetStarted = () => {
   // const firstPath = firstModel
   //   ? baseOwnerPath.build(getModelIndexPath(firstModel))
   //   : null;
+  const { resources } = useRhinoContext();
 
   // const user = useUser();
   const baseOwner = useBaseOwner();
@@ -67,6 +67,8 @@ const GetStarted = () => {
   // const { resource: user } = useModelShowTyped('user', 1);
   // const { resource } = useResourceShow('blog', 1);
   // const {} = useResourceIndexController({ model: 'blog' });
+
+  console.log('models');
 
   return (
     <Empty
