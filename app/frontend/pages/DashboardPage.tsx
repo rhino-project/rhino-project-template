@@ -1,13 +1,8 @@
-import React, { useCallback } from 'react';
-
 import { BaseAuthedPage } from '@rhino-project/ui';
 import { Empty } from '@rhino-project/ui';
 import { LinkButton } from '@rhino-project/ui';
-import {
-  useBaseOwnedResources,
-  useBaseOwnerPath,
-  useModelShow
-} from '@rhino-project/core/hooks';
+import { useBaseOwnedResources } from '@rhino-project/core';
+import { useBaseOwnerPath, useModelShow } from '@rhino-project/core/hooks';
 import { useUser } from '@rhino-project/core/hooks';
 import { useBaseOwner } from '@rhino-project/core/hooks';
 import { getModelIndexPath } from '@rhino-project/core/utils';
