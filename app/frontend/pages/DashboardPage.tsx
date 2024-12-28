@@ -7,7 +7,9 @@ import {
   useBaseOwnedModels,
   useBaseOwnerPath,
   useModelShow,
-  useResource
+  useResource,
+  useResourceIndexController,
+  useResourceShow
 } from '@rhino-project/core/hooks';
 import { useUser } from '@rhino-project/core/hooks';
 import { useBaseOwner } from '@rhino-project/core/hooks';
@@ -50,28 +52,30 @@ function useModelShowTyped<T extends keyof components['schemas']>(
 }
 
 const GetStarted = () => {
-  const baseOwnedModels = useBaseOwnedModels();
-  const firstModel = baseOwnedModels?.[0];
+  // const baseOwnedModels = useBaseOwnedModels();
+  // const firstModel = baseOwnedModels?.[0];
   const baseOwnerPath = useBaseOwnerPath();
-  const firstPath = firstModel
-    ? baseOwnerPath.build(getModelIndexPath(firstModel))
-    : null;
+  // const firstPath = firstModel
+  //   ? baseOwnerPath.build(getModelIndexPath(firstModel))
+  //   : null;
 
   // const user = useUser();
   const baseOwner = useBaseOwner();
   const { resource } = useModelShowTyped('blog', 1);
-  const blog = useResource('active_storage_attachment');
+  const blog = useResource('blog');
   // const { resource: user } = useModelShowTyped('user', 1);
+  // const { resource } = useResourceShow('blog', 1);
+  const {} = useResourceIndexController({ model: 'blog' });
 
   return (
     <Empty
       title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
     >
-      {firstPath && (
+      {/* {firstPath && (
         <LinkButton color="primary" to={firstPath}>
           Get Started
         </LinkButton>
-      )}
+      )} */}
     </Empty>
   );
 };

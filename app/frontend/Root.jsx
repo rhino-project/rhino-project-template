@@ -18,7 +18,7 @@ import { PageAnalytics } from '@rhino-project/core/components/analytics';
 import { Toaster } from '@rhino-project/ui';
 import { NotFoundPage } from '@rhino-project/core/components/shared';
 import { ApplicationShell } from '@rhino-project/ui';
-import { RhinoProvider } from '@rhino-project/core/contexts';
+import { RhinoProvider } from '@rhino-project/core';
 import { BaseOwnerProvider } from '@rhino-project/core/contexts';
 import {
   AcceptInvitationPage,
