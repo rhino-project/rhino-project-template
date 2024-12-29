@@ -140,24 +140,26 @@ const RootUI = () => {
 
   return (
     <NextUIProvider navigate={navigate} useHref={useHref}>
-      <PageAnalytics>
-        <Routes>
-          <Route
-            path="/"
-            element={<Navigate to={getNonAuthenticatedAppPath()} replace />}
-          />
-          <Route
-            path={`${getNonAuthenticatedAppPath()}/*`}
-            element={<NonAuthenticatedApp />}
-          />
-          <Route path={`/:baseOwnerId/*`} element={<AuthenticatedApp />} />
-          <Route
-            path={getAuthenticatedAppPath()}
-            element={<AuthenticatedApp />}
-          />
-          <Route path="/*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </PageAnalytics>
+      <div className="dark text-foreground bg-background">
+        <PageAnalytics>
+          <Routes>
+            <Route
+              path="/"
+              element={<Navigate to={getNonAuthenticatedAppPath()} replace />}
+            />
+            <Route
+              path={`${getNonAuthenticatedAppPath()}/*`}
+              element={<NonAuthenticatedApp />}
+            />
+            <Route path={`/:baseOwnerId/*`} element={<AuthenticatedApp />} />
+            <Route
+              path={getAuthenticatedAppPath()}
+              element={<AuthenticatedApp />}
+            />
+            <Route path="/*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </PageAnalytics>
+      </div>
     </NextUIProvider>
   );
 };
