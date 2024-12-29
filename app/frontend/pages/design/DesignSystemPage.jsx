@@ -9,9 +9,9 @@ import { Form, NavItem } from 'reactstrap';
 import {
   Button,
   CloseButton,
+  Icon,
   IconButton,
   LinkButton,
-  LinkIconButton,
   SubmitButton
 } from '@rhino-project/ui-nextui';
 import { FormProvider } from '@rhino-project/core/components/forms';
@@ -121,9 +121,13 @@ const Buttons = () => {
       <LinkButton id="LinkButton" to=".">
         LinkButton
       </LinkButton>
-      <LinkIconButton id="LinkIconButton" icon="box-arrow-up-right" to=".">
+      <LinkButton
+        id="LinkIconButton"
+        startingComponent={<Icon icon="box-arrow-up-right" />}
+        to="."
+      >
         LinkIconButton
-      </LinkIconButton>
+      </LinkButton>
       <CloseButton id="CloseButton" />
     </div>
   );
