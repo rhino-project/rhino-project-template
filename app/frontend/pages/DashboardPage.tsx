@@ -1,4 +1,4 @@
-import { BaseAuthedPage } from '@rhino-project/ui-nextui';
+import { Accordion, BaseAuthedPage, Button } from '@rhino-project/ui-nextui';
 import { Empty } from '@rhino-project/ui-nextui';
 import { LinkButton } from '@rhino-project/ui-nextui';
 import { useBaseOwnedResources } from '@rhino-project/core';
@@ -37,7 +37,7 @@ const GetStarted = () => {
   const firstModel = baseOwnedResources?.[0];
 
   const baseOwnerPath = useBaseOwnerPath();
-  const user = useUser();
+  const user = useUser() as Resources['user'];
   const firstPath = firstModel
     ? baseOwnerPath.build(getModelIndexPath(firstModel))
     : null;
@@ -52,10 +52,14 @@ const GetStarted = () => {
   // const {} = useResourceIndexController({ model: 'blog' });
 
   console.log('resources', resources.blog.required);
+
   return (
     <Empty
       title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
     >
+      <Button variant="ghost" href="https://nextui.org">
+        Learn NextUI
+      </Button>
       {firstPath && (
         <LinkButton color="primary" to={firstPath}>
           Get Started
