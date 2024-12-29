@@ -57,6 +57,7 @@ const GetStarted = () => {
     <Empty
       title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
     >
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
       <Button variant="ghost" href="https://nextui.org">
         Learn NextUI
       </Button>
