@@ -1,4 +1,10 @@
-import { Accordion, BaseAuthedPage, Button } from '@rhino-project/ui-nextui';
+import {
+  Accordion,
+  BaseAuthedPage,
+  Button,
+  CircularProgress,
+  Kbd
+} from '@rhino-project/ui-nextui';
 import { Empty } from '@rhino-project/ui-nextui';
 import { LinkButton } from '@rhino-project/ui-nextui';
 import { useBaseOwnedResources } from '@rhino-project/core';
@@ -8,7 +14,6 @@ import { useBaseOwner } from '@rhino-project/core/hooks';
 import { getModelIndexPath } from '@rhino-project/core/utils';
 import { components } from '../models/models.d';
 import { useRhinoContext, Resources } from '@rhino-project/core';
-import { CircularProgress, Kbd } from '@nextui-org/react';
 
 const APPROVAL = false;
 
@@ -62,7 +67,7 @@ const GetStarted = () => {
       <Button variant="ghost">Learn NextUI</Button>
       <br />
       <Kbd keys={['command']}>K</Kbd>
-      <CircularProgress />
+      <CircularProgress aria-label="Test" />
       <br />
       {firstPath && (
         <LinkButton color="primary" to={firstPath}>
