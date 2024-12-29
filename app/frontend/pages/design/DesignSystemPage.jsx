@@ -12,7 +12,9 @@ import {
   Icon,
   IconButton,
   LinkButton,
-  SubmitButton
+  SubmitButton,
+  Tab,
+  Tabs
 } from '@rhino-project/ui-nextui';
 import { FormProvider } from '@rhino-project/core/components/forms';
 import {
@@ -110,6 +112,7 @@ import { CellString } from '@rhino-project/ui-nextui';
 import { CellTime } from '@rhino-project/ui-nextui';
 
 const Buttons = () => {
+  console.log('Buttons');
   return (
     <div className="d-flex flex-wrap gap-2">
       <Button id="Button">Button</Button>
@@ -123,7 +126,7 @@ const Buttons = () => {
       </LinkButton>
       <LinkButton
         id="LinkIconButton"
-        startingComponent={<Icon icon="box-arrow-up-right" />}
+        startContent={<Icon icon="box-arrow-up-right" />}
         to="."
       >
         LinkIconButton
@@ -509,45 +512,28 @@ const DesignSystemPage = () => {
           <a className="navbar-brand" href="#">
             Components
           </a>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <NavItem>
-                <NavLink className="nav-link" to="buttons">
-                  Buttons
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="nav-link" to="forms">
-                  Forms - No Label
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="nav-link" to="formsVertical">
-                  Forms - Vertical
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="nav-link" to="formsHorizontal">
-                  Forms - Horizontal
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="nav-link" to="formsFloating">
-                  Forms - Floating
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="nav-link" to="tables">
-                  Tables
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="nav-link" to="typography">
-                  Typography
-                </NavLink>
-              </NavItem>
-            </ul>
-          </div>
+          <Tabs>
+            <Tab id="dashboard" href="." title="Dashboard" />
+            <Tab id="buttons" href="buttons" title="Buttons" />
+            <Tab id="forms" href="forms" title="Forms" />
+            <Tab
+              id="formsVertical"
+              href="formsVertical"
+              title="Forms Vertical"
+            />
+            <Tab
+              id="formsHorizontal"
+              href="formsHorizontal"
+              title="Forms Horizontal"
+            />
+            <Tab
+              id="formsFloating"
+              href="formsFloating"
+              title="Forms Floating"
+            />
+            <Tab id="tables" href="tables" title="Tables" />
+            <Tab id="typography" href="typography" title="Typography" />
+          </Tabs>
         </div>
       </nav>
       <div className="py-3">
