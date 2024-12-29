@@ -5,12 +5,12 @@ import {
 } from '@tanstack/react-table';
 import { useForm } from 'react-hook-form';
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
-import { Form } from 'reactstrap';
 import {
   Button,
   CloseButton,
   FieldString,
   FieldText,
+  Form,
   IconButton,
   LinkButton,
   SubmitButton,
