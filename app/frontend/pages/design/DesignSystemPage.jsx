@@ -9,7 +9,6 @@ import { Form, NavItem } from 'reactstrap';
 import {
   Button,
   CloseButton,
-  Icon,
   IconButton,
   LinkButton,
   SubmitButton,
@@ -124,11 +123,7 @@ const Buttons = () => {
       <LinkButton id="LinkButton" to=".">
         LinkButton
       </LinkButton>
-      <LinkButton
-        id="LinkIconButton"
-        startContent={<Icon icon="box-arrow-up-right" />}
-        to="."
-      >
+      <LinkButton id="LinkIconButton" showAnchorIcon to=".">
         LinkIconButton
       </LinkButton>
       <CloseButton id="CloseButton" />
