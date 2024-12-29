@@ -515,26 +515,34 @@ const DesignSystemPage = () => {
             Components
           </a>
           <Tabs selectedKey={pathname} aria-label="Tabs">
-            <Tab id="dashboard" href="./" title="Dashboard" />
-            <Tab id="buttons" href="buttons" title="Buttons" />
-            <Tab id="forms" href="forms" title="Forms" />
+            <Tab id="dashboard" as={NavLink} to="./" title="Dashboard" />
+            <Tab id="buttons" as={NavLink} to="./buttons" title="Buttons" />
+            <Tab id="forms" as={NavLink} to="./forms" title="Forms" />
             <Tab
               id="formsVertical"
-              href="formsVertical"
+              as={NavLink}
+              to="formsVertical"
               title="Forms Vertical"
             />
             <Tab
               id="formsHorizontal"
-              href="formsHorizontal"
+              as={NavLink}
+              to="formsHorizontal"
               title="Forms Horizontal"
             />
             <Tab
               id="formsFloating"
-              href="formsFloating"
+              as={NavLink}
+              to="formsFloating"
               title="Forms Floating"
             />
-            <Tab id="tables" href="tables" title="Tables" />
-            <Tab id="typography" href="typography" title="Typography" />
+            <Tab id="tables" as={NavLink} to="tables" title="Tables" />
+            <Tab
+              id="typography"
+              as={NavLink}
+              to="typography"
+              title="Typography"
+            />
           </Tabs>
         </div>
       </nav>
