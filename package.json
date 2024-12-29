@@ -59,7 +59,7 @@
     "openapi-typescript": "7.4.4",
     "prettier": "3.1.0",
     "sass": "1.69.4",
-    "typescript": "5.5.3",
+    "typescript": "5.7.2",
     "vite": "5.4.6",
     "vite-plugin-rails": "0.5.0",
     "vitest": "2.0.4"

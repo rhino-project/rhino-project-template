@@ -35,6 +35,7 @@ const GetStarted = () => {
   const baseOwnedResources = useBaseOwnedResources();
   // const baseOwnedModels = useBaseOwnedModels();
   const firstModel = baseOwnedResources?.[0];
+
   const baseOwnerPath = useBaseOwnerPath();
   const user = useUser() as Resources['user'];
   const firstPath = firstModel
