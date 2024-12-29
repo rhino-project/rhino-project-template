@@ -37,7 +37,7 @@ const GetStarted = () => {
   const firstModel = baseOwnedResources?.[0];
 
   const baseOwnerPath = useBaseOwnerPath();
-  const user = useUser() as Resources['user'];
+  const user = useUser();
   const firstPath = firstModel
     ? baseOwnerPath.build(getModelIndexPath(firstModel))
     : null;
@@ -51,6 +51,7 @@ const GetStarted = () => {
   // const { resource } = useResourceShow('blog', 1);
   // const {} = useResourceIndexController({ model: 'blog' });
 
+  console.log('resources', resources.blog.required);
   return (
     <Empty
       title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
