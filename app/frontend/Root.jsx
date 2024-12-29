@@ -181,18 +181,16 @@ const Root = () => {
     <RhinoProvider>
       <RollbarProvider config={rollbarConfig}>
         <RollbarErrorBounday>
-          <div className="h-100">
-            <RhinoDevTool />
-            <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
-            <Helmet>
-              <title>{appName}</title>
-              <link rel="icon" type="image/png" sizes="16x16" href={FavIcon} />
-            </Helmet>
-            <Router>
-              <RootUI />
-            </Router>
-            <Toaster />
-          </div>
+          <RhinoDevTool />
+          <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+          <Helmet>
+            <title>{appName}</title>
+            <link rel="icon" type="image/png" sizes="16x16" href={FavIcon} />
+          </Helmet>
+          <Router>
+            <RootUI />
+          </Router>
+          <Toaster />
         </RollbarErrorBounday>
       </RollbarProvider>
     </RhinoProvider>
