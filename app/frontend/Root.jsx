@@ -11,7 +11,9 @@ import {
   Navigate,
   Route,
   BrowserRouter as Router,
-  Routes
+  Routes,
+  useHref,
+  useNavigate
 } from 'react-router-dom';
 import { IdentityAnalytics } from '@rhino-project/core/components/analytics';
 import { PageAnalytics } from '@rhino-project/core/components/analytics';
@@ -133,6 +135,33 @@ const NonAuthenticatedApp = () => {
   );
 };
 
+const RootUI = () => {
+  const navigate = useNavigate();
+
+  return (
+    <NextUIProvider navigate={navigate} useHref={useHref}>
+      <PageAnalytics>
+        <Routes>
+          <Route
+            path="/"
+            element={<Navigate to={getNonAuthenticatedAppPath()} replace />}
+          />
+          <Route
+            path={`${getNonAuthenticatedAppPath()}/*`}
+            element={<NonAuthenticatedApp />}
+          />
+          <Route path={`/:baseOwnerId/*`} element={<AuthenticatedApp />} />
+          <Route
+            path={getAuthenticatedAppPath()}
+            element={<AuthenticatedApp />}
+          />
+          <Route path="/*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </PageAnalytics>
+    </NextUIProvider>
+  );
+};
+
 const Root = () => {
   const {
     appName,
@@ -148,54 +177,22 @@ const Root = () => {
 
   return (
     <RhinoProvider>
-      <NextUIProvider>
-        <RollbarProvider config={rollbarConfig}>
-          <RollbarErrorBounday>
-            <div className="h-100">
-              <RhinoDevTool />
-              <ReactQueryDevtools
-                initialIsOpen={false}
-                position="bottom-right"
-              />
-              <Helmet>
-                <title>{appName}</title>
-                <link
-                  rel="icon"
-                  type="image/png"
-                  sizes="16x16"
-                  href={FavIcon}
-                />
-              </Helmet>
-              <Router>
-                <PageAnalytics>
-                  <Routes>
-                    <Route
-                      path="/"
-                      element={
-                        <Navigate to={getNonAuthenticatedAppPath()} replace />
-                      }
-                    />
-                    <Route
-                      path={`${getNonAuthenticatedAppPath()}/*`}
-                      element={<NonAuthenticatedApp />}
-                    />
-                    <Route
-                      path={`/:baseOwnerId/*`}
-                      element={<AuthenticatedApp />}
-                    />
-                    <Route
-                      path={getAuthenticatedAppPath()}
-                      element={<AuthenticatedApp />}
-                    />
-                    <Route path="/*" element={<Navigate to="/" replace />} />
-                  </Routes>
-                </PageAnalytics>
-              </Router>
-              <Toaster />
-            </div>
-          </RollbarErrorBounday>
-        </RollbarProvider>
-      </NextUIProvider>
+      <RollbarProvider config={rollbarConfig}>
+        <RollbarErrorBounday>
+          <div className="h-100">
+            <RhinoDevTool />
+            <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+            <Helmet>
+              <title>{appName}</title>
+              <link rel="icon" type="image/png" sizes="16x16" href={FavIcon} />
+            </Helmet>
+            <Router>
+              <RootUI />
+            </Router>
+            <Toaster />
+          </div>
+        </RollbarErrorBounday>
+      </RollbarProvider>
     </RhinoProvider>
   );
 };
