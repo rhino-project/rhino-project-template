@@ -14,10 +14,7 @@ const APPROVAL = false;
 // FIXME Add back session tracking for approval
 const Approval = () => {
   return (
-    <Empty
-      title="Admin Approval Required"
-      description="Please contact admin@example.com"
-    >
+    <Empty title="Admin Approval Required">
       <LinkButton color="primary" href="mailto:admin@example.com">
         Request Approval
       </LinkButton>
