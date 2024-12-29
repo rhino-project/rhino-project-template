@@ -5,7 +5,7 @@ import {
 } from '@tanstack/react-table';
 import { useForm } from 'react-hook-form';
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
-import { Form, NavItem } from 'reactstrap';
+import { Form } from 'reactstrap';
 import {
   Button,
   CloseButton,
@@ -483,7 +483,7 @@ const Dashboard = () => {
 
 const DesignSystemPage = () => {
   const { pathname } = useLocation();
-  console.log('DesignSystemPage', pathname);
+
   return (
     <>
       <nav className="navbar navbar-expand-sm bg-body-tertiary my-2">
