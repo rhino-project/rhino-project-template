@@ -13,98 +13,101 @@ import {
   LinkButton,
   LinkIconButton,
   SubmitButton
-} from '@rhino-project/ui';
+} from '@rhino-project/ui-nextui';
 import { FormProvider } from '@rhino-project/core/components/forms';
 import {
   FieldGroupBoolean,
   FieldGroupHorizontalBoolean,
   FieldGroupFloatingBoolean
-} from '@rhino-project/ui';
+} from '@rhino-project/ui-nextui';
 import {
   FieldGroupCountry,
   FieldGroupFloatingCountry,
   FieldGroupHorizontalCountry
-} from '@rhino-project/ui';
+} from '@rhino-project/ui-nextui';
 import {
   FieldGroupCurrency,
   FieldGroupFloatingCurrency,
   FieldGroupHorizontalCurrency
-} from '@rhino-project/ui';
+} from '@rhino-project/ui-nextui';
 import {
   FieldGroupDate,
   FieldGroupFloatingDate,
   FieldGroupHorizontalDate
-} from '@rhino-project/ui';
+} from '@rhino-project/ui-nextui';
 import {
   FieldGroupDateTime,
   FieldGroupFloatingDateTime,
   FieldGroupHorizontalDateTime
-} from '@rhino-project/ui';
-import { FieldGroupFile, FieldGroupHorizontalFile } from '@rhino-project/ui';
+} from '@rhino-project/ui-nextui';
+import {
+  FieldGroupFile,
+  FieldGroupHorizontalFile
+} from '@rhino-project/ui-nextui';
 import {
   FieldGroupFloat,
   FieldGroupFloatingFloat,
   FieldGroupHorizontalFloat
-} from '@rhino-project/ui';
+} from '@rhino-project/ui-nextui';
 import {
   FieldGroupInteger,
   FieldGroupFloatingInteger,
   FieldGroupHorizontalInteger
-} from '@rhino-project/ui';
+} from '@rhino-project/ui-nextui';
 import {
   FieldGroupPassword,
   FieldGroupFloatingPassword,
   FieldGroupHorizontalPassword
-} from '@rhino-project/ui';
+} from '@rhino-project/ui-nextui';
 import {
   FieldGroupPhone,
   FieldGroupFloatingPhone,
   FieldGroupHorizontalPhone
-} from '@rhino-project/ui';
+} from '@rhino-project/ui-nextui';
 import {
   FieldGroupSelectControlled,
   FieldGroupFloatingSelectControlled,
   FieldGroupHorizontalSelectControlled
-} from '@rhino-project/ui';
+} from '@rhino-project/ui-nextui';
 import {
   FieldGroupString,
   FieldGroupFloatingString,
   FieldGroupHorizontalString
-} from '@rhino-project/ui';
+} from '@rhino-project/ui-nextui';
 import {
   FieldGroupText,
   FieldGroupFloatingText,
   FieldGroupHorizontalText
-} from '@rhino-project/ui';
+} from '@rhino-project/ui-nextui';
 import {
   FieldGroupTime,
   FieldGroupFloatingTime,
   FieldGroupHorizontalTime
-} from '@rhino-project/ui';
+} from '@rhino-project/ui-nextui';
 import {
   FieldGroupYear,
   FieldGroupFloatingYear,
   FieldGroupHorizontalYear
-} from '@rhino-project/ui';
+} from '@rhino-project/ui-nextui';
 
-import { Table } from '@rhino-project/ui';
-import { CellBadge } from '@rhino-project/ui';
-import { CellBoolean } from '@rhino-project/ui';
-import { CellCountry } from '@rhino-project/ui';
-import { CellCurrency } from '@rhino-project/ui';
-import { CellDate } from '@rhino-project/ui';
-import { CellDateTime } from '@rhino-project/ui';
-import { CellDateTimeDistance } from '@rhino-project/ui';
-import { CellDateTimeRelative } from '@rhino-project/ui';
-import { CellFloat } from '@rhino-project/ui';
-import { CellImage } from '@rhino-project/ui';
-import { CellInteger } from '@rhino-project/ui';
-import { CellLink } from '@rhino-project/ui';
-import { CellLinkEmail } from '@rhino-project/ui';
-import { CellLinkTelephone } from '@rhino-project/ui';
-import { CellReference } from '@rhino-project/ui';
-import { CellString } from '@rhino-project/ui';
-import { CellTime } from '@rhino-project/ui';
+import { Table } from '@rhino-project/ui-nextui';
+import { CellBadge } from '@rhino-project/ui-nextui';
+import { CellBoolean } from '@rhino-project/ui-nextui';
+import { CellCountry } from '@rhino-project/ui-nextui';
+import { CellCurrency } from '@rhino-project/ui-nextui';
+import { CellDate } from '@rhino-project/ui-nextui';
+import { CellDateTime } from '@rhino-project/ui-nextui';
+import { CellDateTimeDistance } from '@rhino-project/ui-nextui';
+import { CellDateTimeRelative } from '@rhino-project/ui-nextui';
+import { CellFloat } from '@rhino-project/ui-nextui';
+import { CellImage } from '@rhino-project/ui-nextui';
+import { CellInteger } from '@rhino-project/ui-nextui';
+import { CellLink } from '@rhino-project/ui-nextui';
+import { CellLinkEmail } from '@rhino-project/ui-nextui';
+import { CellLinkTelephone } from '@rhino-project/ui-nextui';
+import { CellReference } from '@rhino-project/ui-nextui';
+import { CellString } from '@rhino-project/ui-nextui';
+import { CellTime } from '@rhino-project/ui-nextui';
 
 const Buttons = () => {
   return (

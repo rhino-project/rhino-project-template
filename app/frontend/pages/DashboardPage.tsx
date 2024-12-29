@@ -1,6 +1,6 @@
-import { BaseAuthedPage } from '@rhino-project/ui';
-import { Empty } from '@rhino-project/ui';
-import { LinkButton } from '@rhino-project/ui';
+import { BaseAuthedPage } from '@rhino-project/ui-nextui';
+import { Empty } from '@rhino-project/ui-nextui';
+import { LinkButton } from '@rhino-project/ui-nextui';
 import { useBaseOwnedResources } from '@rhino-project/core';
 import { useBaseOwnerPath, useModelShow } from '@rhino-project/core/hooks';
 import { useUser } from '@rhino-project/core/hooks';

@@ -1,4 +1,4 @@
-import { ModelNavSection, NavItem, NavSection } from '@rhino-project/ui';
+import { ModelNavSection, NavItem, NavSection } from '@rhino-project/ui-nextui';
 
 export const PrimaryNavigation = () => {
   return (
