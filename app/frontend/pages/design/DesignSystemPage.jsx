@@ -10,6 +10,7 @@ import {
   Button,
   CloseButton,
   FieldString,
+  FieldText,
   IconButton,
   LinkButton,
   SubmitButton,
@@ -70,16 +71,6 @@ import {
   FieldGroupSelectControlled,
   FieldGroupFloatingSelectControlled,
   FieldGroupHorizontalSelectControlled
-} from '@rhino-project/ui-nextui';
-import {
-  FieldGroupString,
-  FieldGroupFloatingString,
-  FieldGroupHorizontalString
-} from '@rhino-project/ui-nextui';
-import {
-  FieldGroupText,
-  FieldGroupFloatingText,
-  FieldGroupHorizontalText
 } from '@rhino-project/ui-nextui';
 import {
   FieldGroupTime,
@@ -156,7 +147,7 @@ const fields = [
     props: { children: SELECT_OPTIONS }
   },
   { Component: FieldString, name: 'FieldString', props: {} },
-  { Component: FieldGroupText, name: 'FieldGroupText', props: {} },
+  { Component: FieldText, name: 'FieldText', props: {} },
   { Component: FieldGroupTime, name: 'FieldGroupTime', props: {} },
   { Component: FieldGroupYear, name: 'FieldGroupYear', props: {} }
 ];
@@ -206,7 +197,7 @@ const FormsVertical = () => {
       props: { children: SELECT_OPTIONS }
     },
     { Component: FieldString, name: 'FieldString', props: {} },
-    { Component: FieldGroupText, name: 'FieldGroupText', props: {} },
+    { Component: FieldText, name: 'FieldText', props: {} },
     { Component: FieldGroupTime, name: 'FieldGroupTime', props: {} },
     { Component: FieldGroupYear, name: 'FieldGroupYear', props: {} }
   ];
@@ -288,11 +279,7 @@ const FormsHorizontal = () => {
       props: { children: SELECT_OPTIONS }
     },
     { Component: FieldString, name: 'FieldString', props: {} },
-    {
-      Component: FieldGroupHorizontalText,
-      name: 'FieldGroupHorizontalText',
-      props: {}
-    },
+    { Component: FieldText, name: 'FieldText', props: {} },
     {
       Component: FieldGroupHorizontalTime,
       name: 'FieldGroupHorizontalTime',
@@ -381,11 +368,7 @@ const FormsFloating = () => {
       props: { children: SELECT_OPTIONS }
     },
     { Component: FieldString, name: 'FieldString', props: {} },
-    {
-      Component: FieldGroupFloatingText,
-      name: 'FieldGroupFloatingText',
-      props: {}
-    },
+    { Component: FieldText, name: 'FieldText', props: {} },
     {
       Component: FieldGroupFloatingTime,
       name: 'FieldGroupFloatingTime',
