@@ -4,7 +4,7 @@ import {
   useReactTable
 } from '@tanstack/react-table';
 import { useForm } from 'react-hook-form';
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import { Form, NavItem } from 'reactstrap';
 import {
   Button,
@@ -505,6 +505,8 @@ const Dashboard = () => {
 };
 
 const DesignSystemPage = () => {
+  const { pathname } = useLocation();
+  console.log('DesignSystemPage', pathname);
   return (
     <>
       <nav className="navbar navbar-expand-sm bg-body-tertiary my-2">
@@ -512,8 +514,8 @@ const DesignSystemPage = () => {
           <a className="navbar-brand" href="#">
             Components
           </a>
-          <Tabs>
-            <Tab id="dashboard" href="." title="Dashboard" />
+          <Tabs selectedKey={pathname} aria-label="Tabs">
+            <Tab id="dashboard" href="./" title="Dashboard" />
             <Tab id="buttons" href="buttons" title="Buttons" />
             <Tab id="forms" href="forms" title="Forms" />
             <Tab
