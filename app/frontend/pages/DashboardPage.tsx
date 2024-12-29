@@ -1,7 +1,7 @@
 import { BaseAuthedPage } from '@rhino-project/ui';
 import { Empty } from '@rhino-project/ui';
 import { LinkButton } from '@rhino-project/ui';
-import { useBaseOwnedResources } from '@rhino-project/core';
+import { RhinoResource, useBaseOwnedResources } from '@rhino-project/core';
 import { useBaseOwnerPath, useModelShow } from '@rhino-project/core/hooks';
 import { useUser } from '@rhino-project/core/hooks';
 import { useBaseOwner } from '@rhino-project/core/hooks';
@@ -34,7 +34,7 @@ function useModelShowTyped<T extends keyof Resources>(
 const GetStarted = () => {
   const baseOwnedResources = useBaseOwnedResources();
   // const baseOwnedModels = useBaseOwnedModels();
-  const firstModel = baseOwnedResources?.[0];
+  const firstModel = baseOwnedResources?.[0] as RhinoResource | undefined;
 
   const baseOwnerPath = useBaseOwnerPath();
   const user = useUser() as Resources['user'];
@@ -50,8 +50,6 @@ const GetStarted = () => {
   // const { resource: user } = useModelShowTyped('user', 1);
   // const { resource } = useResourceShow('blog', 1);
   // const {} = useResourceIndexController({ model: 'blog' });
-
-  console.log('models');
 
   return (
     <Empty
