@@ -10,6 +10,7 @@ import {
   Button,
   CloseButton,
   IconButton,
+  Input,
   LinkButton,
   SubmitButton,
   Tab,
@@ -164,6 +165,12 @@ const Forms = () => {
   return (
     <FormProvider {...methods}>
       <Form>
+        <Input
+          labelPlacement="inside"
+          label="Test"
+          isRequired
+          description="blah"
+        />
         {fields.map(({ Component, ...field }) => (
           <Component
             key={field.name}
