@@ -8,6 +8,7 @@ import { useBaseOwner } from '@rhino-project/core/hooks';
 import { getModelIndexPath } from '@rhino-project/core/utils';
 import { components } from '../models/models.d';
 import { useRhinoContext, Resources } from '@rhino-project/core';
+import { CircularProgress, Kbd } from '@nextui-org/react';
 
 const APPROVAL = false;
 
@@ -58,9 +59,11 @@ const GetStarted = () => {
       title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
     >
       <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <Button variant="ghost" href="https://nextui.org">
-        Learn NextUI
-      </Button>
+      <Button variant="ghost">Learn NextUI</Button>
+      <br />
+      <Kbd keys={['command']}>K</Kbd>
+      <CircularProgress />
+      <br />
       {firstPath && (
         <LinkButton color="primary" to={firstPath}>
           Get Started
