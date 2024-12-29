@@ -15,7 +15,7 @@ import {
 } from 'react-router-dom';
 import { IdentityAnalytics } from '@rhino-project/core/components/analytics';
 import { PageAnalytics } from '@rhino-project/core/components/analytics';
-import { Toaster } from '@rhino-project/ui-nextui';
+import { NextUIProvider, Toaster } from '@rhino-project/ui-nextui';
 import { NotFoundPage } from '@rhino-project/core/components/shared';
 import { ApplicationShell } from '@rhino-project/ui-nextui';
 import { RhinoProvider } from '@rhino-project/core';
@@ -148,44 +148,54 @@ const Root = () => {
 
   return (
     <RhinoProvider>
-      <RollbarProvider config={rollbarConfig}>
-        <RollbarErrorBounday>
-          <div className="h-100">
-            <RhinoDevTool />
-            <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
-            <Helmet>
-              <title>{appName}</title>
-              <link rel="icon" type="image/png" sizes="16x16" href={FavIcon} />
-            </Helmet>
-            <Router>
-              <PageAnalytics>
-                <Routes>
-                  <Route
-                    path="/"
-                    element={
-                      <Navigate to={getNonAuthenticatedAppPath()} replace />
-                    }
-                  />
-                  <Route
-                    path={`${getNonAuthenticatedAppPath()}/*`}
-                    element={<NonAuthenticatedApp />}
-                  />
-                  <Route
-                    path={`/:baseOwnerId/*`}
-                    element={<AuthenticatedApp />}
-                  />
-                  <Route
-                    path={getAuthenticatedAppPath()}
-                    element={<AuthenticatedApp />}
-                  />
-                  <Route path="/*" element={<Navigate to="/" replace />} />
-                </Routes>
-              </PageAnalytics>
-            </Router>
-            <Toaster />
-          </div>
-        </RollbarErrorBounday>
-      </RollbarProvider>
+      <NextUIProvider>
+        <RollbarProvider config={rollbarConfig}>
+          <RollbarErrorBounday>
+            <div className="h-100">
+              <RhinoDevTool />
+              <ReactQueryDevtools
+                initialIsOpen={false}
+                position="bottom-right"
+              />
+              <Helmet>
+                <title>{appName}</title>
+                <link
+                  rel="icon"
+                  type="image/png"
+                  sizes="16x16"
+                  href={FavIcon}
+                />
+              </Helmet>
+              <Router>
+                <PageAnalytics>
+                  <Routes>
+                    <Route
+                      path="/"
+                      element={
+                        <Navigate to={getNonAuthenticatedAppPath()} replace />
+                      }
+                    />
+                    <Route
+                      path={`${getNonAuthenticatedAppPath()}/*`}
+                      element={<NonAuthenticatedApp />}
+                    />
+                    <Route
+                      path={`/:baseOwnerId/*`}
+                      element={<AuthenticatedApp />}
+                    />
+                    <Route
+                      path={getAuthenticatedAppPath()}
+                      element={<AuthenticatedApp />}
+                    />
+                    <Route path="/*" element={<Navigate to="/" replace />} />
+                  </Routes>
+                </PageAnalytics>
+              </Router>
+              <Toaster />
+            </div>
+          </RollbarErrorBounday>
+        </RollbarProvider>
+      </NextUIProvider>
     </RhinoProvider>
   );
 };
