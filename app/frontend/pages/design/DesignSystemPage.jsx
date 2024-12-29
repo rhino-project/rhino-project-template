@@ -115,7 +115,9 @@ const Buttons = () => {
   return (
     <div className="d-flex flex-wrap gap-2">
       <Button id="Button">Button</Button>
-      <Button id="Button-with-loading-true" loading={true} />
+      <Button id="Button-with-loading-true" isLoading>
+        Button Loading
+      </Button>
       <IconButton id="IconButton" icon="check">
         IconButton
       </IconButton>
