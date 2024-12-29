@@ -3,6 +3,7 @@ import {
   BaseAuthedPage,
   Button,
   CircularProgress,
+  Icon,
   Kbd
 } from '@rhino-project/ui-nextui';
 import { Empty } from '@rhino-project/ui-nextui';
@@ -21,9 +22,9 @@ const APPROVAL = false;
 const Approval = () => {
   return (
     <Empty title="Admin Approval Required">
-      <LinkButton color="primary" href="mailto:admin@example.com">
+      {/* <LinkButton color="primary" href="mailto:admin@example.com">
         Request Approval
-      </LinkButton>
+      </LinkButton> */}
     </Empty>
   );
 };
@@ -64,16 +65,29 @@ const GetStarted = () => {
       title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
     >
       <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <Button variant="ghost">Learn NextUI</Button>
+      <Button
+        color="success"
+        variant="ghost"
+        startContent={<Icon icon="house" />}
+      >
+        Learn NextUI
+      </Button>
       <br />
       <Kbd keys={['command']}>K</Kbd>
       <CircularProgress aria-label="Test" />
       <br />
       {firstPath && (
-        <LinkButton color="primary" to={firstPath}>
+        <LinkButton
+          color="primary"
+          href={firstPath}
+          startContent={<Icon icon="house" />}
+        >
           Get Started
         </LinkButton>
       )}
+      <LinkButton color="primary" href={firstPath} isIconOnly>
+        <Icon icon="house" />
+      </LinkButton>
     </Empty>
   );
 };
