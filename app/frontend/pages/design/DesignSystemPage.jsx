@@ -111,7 +111,6 @@ import { CellString } from '@rhino-project/ui-nextui';
 import { CellTime } from '@rhino-project/ui-nextui';
 
 const Buttons = () => {
-  console.log('Buttons');
   return (
     <div className="d-flex flex-wrap gap-2">
       <Button id="Button">Button</Button>
