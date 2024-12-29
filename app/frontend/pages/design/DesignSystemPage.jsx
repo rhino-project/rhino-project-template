@@ -9,8 +9,8 @@ import { Form, NavItem } from 'reactstrap';
 import {
   Button,
   CloseButton,
+  FieldString,
   IconButton,
-  Input,
   LinkButton,
   SubmitButton,
   Tab,
@@ -139,43 +139,39 @@ const SELECT_OPTIONS = [
   <option key="3">Yet another option</option>
 ];
 
+const fields = [
+  { Component: FieldGroupBoolean, name: 'FieldGroupBoolean', props: {} },
+  { Component: FieldGroupCountry, name: 'FieldGroupCountry', props: {} },
+  { Component: FieldGroupCurrency, name: 'FieldGroupCurrency', props: {} },
+  { Component: FieldGroupDate, name: 'FieldGroupDate', props: {} },
+  { Component: FieldGroupDateTime, name: 'FieldGroupDateTime', props: {} },
+  { Component: FieldGroupFile, name: 'FieldGroupFile', props: {} },
+  { Component: FieldGroupFloat, name: 'FieldGroupFloat', props: {} },
+  { Component: FieldGroupInteger, name: 'FieldGroupInteger', props: {} },
+  { Component: FieldGroupPassword, name: 'FieldGroupPassword', props: {} },
+  { Component: FieldGroupPhone, name: 'FieldGroupPhone', props: {} },
+  {
+    Component: FieldGroupSelectControlled,
+    name: 'FieldGroupSelectControlled',
+    props: { children: SELECT_OPTIONS }
+  },
+  { Component: FieldString, name: 'FieldString', props: {} },
+  { Component: FieldGroupText, name: 'FieldGroupText', props: {} },
+  { Component: FieldGroupTime, name: 'FieldGroupTime', props: {} },
+  { Component: FieldGroupYear, name: 'FieldGroupYear', props: {} }
+];
+
 const Forms = () => {
   const methods = useForm();
-  const fields = [
-    { Component: FieldGroupBoolean, name: 'FieldGroupBoolean', props: {} },
-    { Component: FieldGroupCountry, name: 'FieldGroupCountry', props: {} },
-    { Component: FieldGroupCurrency, name: 'FieldGroupCurrency', props: {} },
-    { Component: FieldGroupDate, name: 'FieldGroupDate', props: {} },
-    { Component: FieldGroupDateTime, name: 'FieldGroupDateTime', props: {} },
-    { Component: FieldGroupFile, name: 'FieldGroupFile', props: {} },
-    { Component: FieldGroupFloat, name: 'FieldGroupFloat', props: {} },
-    { Component: FieldGroupInteger, name: 'FieldGroupInteger', props: {} },
-    { Component: FieldGroupPassword, name: 'FieldGroupPassword', props: {} },
-    { Component: FieldGroupPhone, name: 'FieldGroupPhone', props: {} },
-    {
-      Component: FieldGroupSelectControlled,
-      name: 'FieldGroupSelectControlled',
-      props: { children: SELECT_OPTIONS }
-    },
-    { Component: FieldGroupString, name: 'FieldGroupString', props: {} },
-    { Component: FieldGroupText, name: 'FieldGroupText', props: {} },
-    { Component: FieldGroupTime, name: 'FieldGroupTime', props: {} },
-    { Component: FieldGroupYear, name: 'FieldGroupYear', props: {} }
-  ];
+
   return (
     <FormProvider {...methods}>
       <Form>
-        <Input
-          labelPlacement="inside"
-          label="Test"
-          isRequired
-          description="blah"
-        />
         {fields.map(({ Component, ...field }) => (
           <Component
             key={field.name}
             id={field.name}
-            label={field.name}
+            label=""
             path={field.name}
             labelHidden
             {...field.props}
@@ -209,7 +205,7 @@ const FormsVertical = () => {
       name: 'FieldGroupSelectControlled',
       props: { children: SELECT_OPTIONS }
     },
-    { Component: FieldGroupString, name: 'FieldGroupString', props: {} },
+    { Component: FieldString, name: 'FieldString', props: {} },
     { Component: FieldGroupText, name: 'FieldGroupText', props: {} },
     { Component: FieldGroupTime, name: 'FieldGroupTime', props: {} },
     { Component: FieldGroupYear, name: 'FieldGroupYear', props: {} }
@@ -222,6 +218,8 @@ const FormsVertical = () => {
             key={field.name}
             id={field.name}
             label={field.name}
+            labelPlacement="outside"
+            placeholder={field.name}
             path={field.name}
             {...field.props}
           />
@@ -289,11 +287,7 @@ const FormsHorizontal = () => {
       name: 'FieldGroupHorizontalSelectControlled',
       props: { children: SELECT_OPTIONS }
     },
-    {
-      Component: FieldGroupHorizontalString,
-      name: 'FieldGroupHorizontalString',
-      props: {}
-    },
+    { Component: FieldString, name: 'FieldString', props: {} },
     {
       Component: FieldGroupHorizontalText,
       name: 'FieldGroupHorizontalText',
@@ -318,6 +312,7 @@ const FormsHorizontal = () => {
             key={field.name}
             id={field.name}
             label={field.name}
+            labelPlacement="outside-left"
             path={field.name}
             {...field.props}
           />
@@ -385,11 +380,7 @@ const FormsFloating = () => {
       name: 'FieldGroupFloatingSelectControlled',
       props: { children: SELECT_OPTIONS }
     },
-    {
-      Component: FieldGroupFloatingString,
-      name: 'FieldGroupFloatingString',
-      props: {}
-    },
+    { Component: FieldString, name: 'FieldString', props: {} },
     {
       Component: FieldGroupFloatingText,
       name: 'FieldGroupFloatingText',
@@ -414,8 +405,8 @@ const FormsFloating = () => {
             key={field.name}
             id={field.name}
             label={field.name}
+            labelPlacement="inside"
             path={field.name}
-            placeholder="dummy"
             {...field.props}
           />
         ))}
