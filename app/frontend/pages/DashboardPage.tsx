@@ -15,6 +15,7 @@ import { useBaseOwner } from '@rhino-project/core/hooks';
 import { getModelIndexPath } from '@rhino-project/core/utils';
 import { components } from '../models/models.d';
 import { useRhinoContext, Resources } from '@rhino-project/core';
+import { twMerge } from 'tailwind-merge';
 
 const APPROVAL = false;
 
@@ -58,12 +59,11 @@ const GetStarted = () => {
   // const { resource } = useResourceShow('blog', 1);
   // const {} = useResourceIndexController({ model: 'blog' });
 
-  console.log('resources', resources.blog.required);
-
   return (
     <Empty
       title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
     >
+      <div className="bg-red-600 size-8" />
       <h1 className="text-3xl font-bold underline">Hello world!</h1>
       <Button
         color="success"
