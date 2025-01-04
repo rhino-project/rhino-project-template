@@ -84,6 +84,19 @@ const api = {
             },
             "nullable": true
           },
+          "variants": {
+            "x-rhino-attribute": {
+              "name": "variants",
+              "readableName": "Variants",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": true,
+            "default": {
+            },
+            "type": "json"
+          },
           "signed_id": {
             "x-rhino-attribute": {
               "name": "signed_id",
@@ -940,7 +953,7 @@ const api = {
     "x-rhino": {
       "modules": {
         "rhino": {
-          "version": "0.22.0.beta.6",
+          "version": "0.22.0.beta.13",
           "authOwner": "user",
           "baseOwner": "user",
           "oauth": [

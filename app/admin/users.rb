@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register User do
+  rhino_filters
+
   permit_params :name, :email, :password, :password_confirmation, :approved
 
   menu label: "Users"
