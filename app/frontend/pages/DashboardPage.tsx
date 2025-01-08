@@ -19,6 +19,12 @@ import { getModelIndexPath } from '@rhino-project/core/utils';
 import { components } from '../models/models.d';
 import { useRhinoContext, Resources } from '@rhino-project/core';
 import { twMerge } from 'tailwind-merge';
+import {
+  parseDate,
+  parseDateTime,
+  parseAbsolute,
+  parseAbsoluteToLocal
+} from '@internationalized/date';
 
 const APPROVAL = false;
 
@@ -62,6 +68,11 @@ const GetStarted = () => {
   // const { resource } = useResourceShow('blog', 1);
   // const {} = useResourceIndexController({ model: 'blog' });
 
+  console.log(
+    'parse',
+    parseAbsoluteToLocal('2022-01-01T01:00:00Z'),
+    parseDate('2022-01-01')
+  );
   return (
     <Empty
       title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
@@ -79,11 +90,11 @@ const GetStarted = () => {
       <Kbd keys={['command']}>K</Kbd>
       <CircularProgress aria-label="Test" />
       <Input
+        type="file"
         label="test"
         labelPlacement="outside-left"
         // className="text-yellow-400"
         classNames={{ label: 'text-yellow-400' }}
-        value="-"
       />
       <Input
         label="test"
