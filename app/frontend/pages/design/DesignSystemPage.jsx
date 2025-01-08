@@ -8,6 +8,7 @@ import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import {
   Button,
   CloseButton,
+  FieldPassword,
   FieldString,
   FieldText,
   Form,
@@ -56,11 +57,6 @@ import {
   FieldGroupInteger,
   FieldGroupFloatingInteger,
   FieldGroupHorizontalInteger
-} from '@rhino-project/ui-nextui';
-import {
-  FieldGroupPassword,
-  FieldGroupFloatingPassword,
-  FieldGroupHorizontalPassword
 } from '@rhino-project/ui-nextui';
 import {
   FieldGroupPhone,
@@ -139,7 +135,7 @@ const fields = [
   { Component: FieldGroupFile, name: 'FieldGroupFile', props: {} },
   { Component: FieldGroupFloat, name: 'FieldGroupFloat', props: {} },
   { Component: FieldGroupInteger, name: 'FieldGroupInteger', props: {} },
-  { Component: FieldGroupPassword, name: 'FieldGroupPassword', props: {} },
+  { Component: FieldPassword, name: 'FieldPassword', props: {} },
   { Component: FieldGroupPhone, name: 'FieldGroupPhone', props: {} },
   {
     Component: FieldGroupSelectControlled,
@@ -189,7 +185,7 @@ const FormsVertical = () => {
     },
     { Component: FieldGroupFloat, name: 'FieldGroupFloat', props: {} },
     { Component: FieldGroupInteger, name: 'FieldGroupInteger', props: {} },
-    { Component: FieldGroupPassword, name: 'FieldGroupPassword', props: {} },
+    { Component: FieldPassword, name: 'FieldPassword', props: {} },
     { Component: FieldGroupPhone, name: 'FieldGroupPhone', props: {} },
     {
       Component: FieldGroupSelectControlled,
@@ -264,8 +260,8 @@ const FormsHorizontal = () => {
       props: {}
     },
     {
-      Component: FieldGroupHorizontalPassword,
-      name: 'FieldGroupHorizontalPassword',
+      Component: FieldPassword,
+      name: 'FieldPassword',
       props: {}
     },
     {
@@ -353,8 +349,8 @@ const FormsFloating = () => {
       props: {}
     },
     {
-      Component: FieldGroupFloatingPassword,
-      name: 'FieldGroupFloatingPassword',
+      Component: FieldPassword,
+      name: 'FieldPassword',
       props: {}
     },
     {

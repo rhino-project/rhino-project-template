@@ -152,16 +152,25 @@ export interface components {
         blog: {
             /** Format: identifier */
             readonly id?: number;
-            title?: string | null;
+            title: string;
+            content?: Record<string, never>;
             /** Format: double */
             dnum?: number | null;
+            /** Format: date */
+            published_on?: string | null;
             /** Format: datetime */
             published_at?: string | null;
+            /** Format: time */
+            published_time?: string | null;
+            is_published?: boolean | null;
             /** Format: datetime */
             readonly created_at?: string;
             /** Format: datetime */
             readonly updated_at?: string;
             user: components["schemas"]["user"];
+            image_attachment?: components["schemas"]["active_storage_attachment"] | null;
+            single_file_attachment?: components["schemas"]["active_storage_attachment"] | null;
+            multiple_files_attachments?: components["schemas"]["active_storage_attachment"][] | null;
         };
     };
     responses: never;

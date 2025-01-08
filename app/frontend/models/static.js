@@ -310,8 +310,19 @@ const api = {
               "creatable": true,
               "updatable": true
             },
-            "nullable": true,
+            "nullable": false,
             "type": "string"
+          },
+          "content": {
+            "x-rhino-attribute": {
+              "name": "content",
+              "readableName": "Content",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": true,
+            "type": "text"
           },
           "dnum": {
             "x-rhino-attribute": {
@@ -325,6 +336,18 @@ const api = {
             "type": "number",
             "format": "double"
           },
+          "published_on": {
+            "x-rhino-attribute": {
+              "name": "published_on",
+              "readableName": "Published On",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": true,
+            "type": "string",
+            "format": "date"
+          },
           "published_at": {
             "x-rhino-attribute": {
               "name": "published_at",
@@ -336,6 +359,29 @@ const api = {
             "nullable": true,
             "type": "string",
             "format": "datetime"
+          },
+          "published_time": {
+            "x-rhino-attribute": {
+              "name": "published_time",
+              "readableName": "Published Time",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": true,
+            "type": "string",
+            "format": "time"
+          },
+          "is_published": {
+            "x-rhino-attribute": {
+              "name": "is_published",
+              "readableName": "Is Published",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": true,
+            "type": "boolean"
           },
           "created_at": {
             "x-rhino-attribute": {
@@ -378,9 +424,63 @@ const api = {
                 "$ref": "#/components/schemas/user"
               }
             ]
+          },
+          "image_attachment": {
+            "x-rhino-attribute": {
+              "name": "image_attachment",
+              "readableName": "Image Attachment",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": true,
+            "type": "reference",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/active_storage_attachment"
+              }
+            ]
+          },
+          "single_file_attachment": {
+            "x-rhino-attribute": {
+              "name": "single_file_attachment",
+              "readableName": "Single File Attachment",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": true,
+            "type": "reference",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/active_storage_attachment"
+              }
+            ]
+          },
+          "multiple_files_attachments": {
+            "x-rhino-attribute": {
+              "name": "multiple_files_attachments",
+              "readableName": "Multiple Files Attachments",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "type": "reference",
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/active_storage_attachment"
+                }
+              ],
+              "x-rhino-attribute-array": {
+              }
+            }
           }
         },
         "required": [
+          "title",
           "user"
         ]
       }

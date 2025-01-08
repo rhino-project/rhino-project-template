@@ -76,8 +76,12 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_21_153146) do
   create_table "blogs", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "title"
+    t.text "content"
     t.float "dnum"
+    t.date "published_on"
     t.datetime "published_at"
+    t.time "published_time"
+    t.boolean "is_published"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_blogs_on_user_id"

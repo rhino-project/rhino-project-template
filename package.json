@@ -8,7 +8,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@nextui-org/react": "2.6.10",
+    "@nextui-org/react": "2.6.11",
     "@rhino-project/core": "file:../rhino-project/packages/core",
     "@rhino-project/ui-nextui": "file:../rhino-project/packages/ui-nextui",
     "@rollbar/react": "0.11.2",
