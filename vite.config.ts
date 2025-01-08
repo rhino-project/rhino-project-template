@@ -5,6 +5,7 @@ import { RhinoProjectVite } from '@rhino-project/vite-plugin-rhino';
 import ViteRails from 'vite-plugin-rails';
 import { exec } from 'child_process';
 import { promisify } from 'util';
+import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
 
 const execAsync = promisify(exec);
 
@@ -50,6 +51,7 @@ export default defineConfig(({ mode }) => {
     },
 
     plugins: [
+      TanStackRouterVite(),
       ViteRails(),
       RhinoProjectVite({ enableJsxInJs: false }),
       react(),
