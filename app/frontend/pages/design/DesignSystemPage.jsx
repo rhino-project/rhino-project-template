@@ -10,6 +10,8 @@ import {
   CloseButton,
   FieldDate,
   FieldDateTime,
+  FieldFloat,
+  FieldInteger,
   FieldPassword,
   FieldString,
   FieldText,
@@ -37,22 +39,8 @@ import {
   FieldGroupHorizontalCurrency
 } from '@rhino-project/ui-nextui';
 import {
-  FieldGroupFloatingDateTime,
-  FieldGroupHorizontalDateTime
-} from '@rhino-project/ui-nextui';
-import {
   FieldGroupFile,
   FieldGroupHorizontalFile
-} from '@rhino-project/ui-nextui';
-import {
-  FieldGroupFloat,
-  FieldGroupFloatingFloat,
-  FieldGroupHorizontalFloat
-} from '@rhino-project/ui-nextui';
-import {
-  FieldGroupInteger,
-  FieldGroupFloatingInteger,
-  FieldGroupHorizontalInteger
 } from '@rhino-project/ui-nextui';
 import {
   FieldGroupPhone,
@@ -129,8 +117,8 @@ const fields = [
   { Component: FieldDate, name: 'FieldDate', props: {} },
   { Component: FieldDateTime, name: 'FieldDateTime', props: {} },
   { Component: FieldGroupFile, name: 'FieldGroupFile', props: {} },
-  { Component: FieldGroupFloat, name: 'FieldGroupFloat', props: {} },
-  { Component: FieldGroupInteger, name: 'FieldGroupInteger', props: {} },
+  { Component: FieldFloat, name: 'FieldFloat', props: {} },
+  { Component: FieldInteger, name: 'FieldInteger', props: {} },
   { Component: FieldPassword, name: 'FieldPassword', props: {} },
   { Component: FieldGroupPhone, name: 'FieldGroupPhone', props: {} },
   {
@@ -179,8 +167,8 @@ const FormsVertical = () => {
       name: 'FieldGroupFileMultiple',
       props: { multiple: true }
     },
-    { Component: FieldGroupFloat, name: 'FieldGroupFloat', props: {} },
-    { Component: FieldGroupInteger, name: 'FieldGroupInteger', props: {} },
+    { Component: FieldFloat, name: 'FieldFloat', props: {} },
+    { Component: FieldInteger, name: 'FieldInteger', props: {} },
     { Component: FieldPassword, name: 'FieldPassword', props: {} },
     { Component: FieldGroupPhone, name: 'FieldGroupPhone', props: {} },
     {
@@ -236,8 +224,8 @@ const FormsHorizontal = () => {
       props: {}
     },
     {
-      Component: FieldGroupHorizontalDateTime,
-      name: 'FieldGroupHorizontalDateTime',
+      Component: FieldDateTime,
+      name: 'FieldDateTime',
       props: {}
     },
     {
@@ -246,13 +234,13 @@ const FormsHorizontal = () => {
       props: {}
     },
     {
-      Component: FieldGroupHorizontalFloat,
-      name: 'FieldGroupHorizontalFloat',
+      Component: FieldFloat,
+      name: 'FieldFloat',
       props: {}
     },
     {
-      Component: FieldGroupHorizontalInteger,
-      name: 'FieldGroupHorizontalInteger',
+      Component: FieldInteger,
+      name: 'FieldInteger',
       props: {}
     },
     {
@@ -325,8 +313,8 @@ const FormsFloating = () => {
       props: {}
     },
     {
-      Component: FieldGroupFloatingDateTime,
-      name: 'FieldGroupFloatingDateTime',
+      Component: FieldDateTime,
+      name: 'FieldDateTime',
       props: {}
     },
     {
@@ -335,13 +323,13 @@ const FormsFloating = () => {
       props: {}
     },
     {
-      Component: FieldGroupFloatingFloat,
-      name: 'FieldGroupFloatingFloat',
+      Component: FieldFloat,
+      name: 'FieldFloat',
       props: {}
     },
     {
-      Component: FieldGroupFloatingInteger,
-      name: 'FieldGroupFloatingInteger',
+      Component: FieldInteger,
+      name: 'FieldInteger',
       props: {}
     },
     {
