@@ -1,12 +1,14 @@
 import {
   Button,
+  DisplayImage,
+  DisplayImageBase,
   ModelDisplayAttachmentImage,
+  ModelDisplayAttachmentImageBase,
   ModelDisplayCurrency,
   ModelDisplayEnum,
   ModelDisplayInteger,
   ModelDisplayText
 } from '@rhino-project/ui-nextui';
-import { p } from 'framer-motion/client';
 
 /** @type {import('@rhino-project/core/config').RhinoConfig} */
 const rhinoConfig = {
@@ -24,24 +26,28 @@ const rhinoConfig = {
     // ModelDisplayDate: { props: { format: 'yyyy-MM-dd' } },
     // ModelDisplayAttachment: null,
     blog: {
-      // ModelShow: {
-      //   props: {
-      //     paths: [
-      //       'user',
-      //       'title',
-      //       // 'image_attachment',
-      //       'single_file_attachment'
-      //       // 'multiple_files_attachments'
-      //     ]
-      //   }
-      // },
+      ModelShow: {
+        props: {
+          paths: [
+            'user',
+            'title',
+            'image_attachment'
+            // 'single_file_attachment'
+            // 'multiple_files_attachments'
+          ]
+        }
+      },
       single_file_attachment: {
         ModelDisplayAttachment: {}
       },
       image_attachment: {
         ModelDisplayAttachment: {
           component: ModelDisplayAttachmentImage,
-          props: { as: Button, width: 500, height: 500 }
+          props: {
+            // src: 'http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MywicHVyIjoiYmxvYl9pZCJ9fQ==--3b64ca0390807a145b147e962e822fcafafb5940/Screenshot%202025-01-06%20at%2010.25.00%E2%80%AFPM.png',
+            width: 500,
+            height: 500
+          }
         }
       }
     }

@@ -87,6 +87,56 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_21_153146) do
     t.index ["user_id"], name: "index_blogs_on_user_id"
   end
 
+  create_table "every_field_dummies", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "string_overrideable"
+    t.index ["user_id"], name: "index_every_field_dummies_on_user_id"
+  end
+
+  create_table "every_fields", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "string"
+    t.string "string_length_min"
+    t.string "string_length_max"
+    t.string "string_length_range"
+    t.string "string_length_exact"
+    t.string "string_inclusion"
+    t.string "string_pattern"
+    t.float "float_gt"
+    t.float "float_gte"
+    t.float "float_lt"
+    t.float "float_lte"
+    t.float "float_in"
+    t.float "float_no_nil"
+    t.integer "integer_gt"
+    t.integer "integer_gte"
+    t.integer "integer_lt"
+    t.integer "integer_lte"
+    t.integer "integer_in"
+    t.integer "integer_no_nil"
+    t.date "date"
+    t.date "date_required"
+    t.datetime "date_time", precision: nil
+    t.datetime "date_time_required", precision: nil
+    t.time "time"
+    t.time "time_required"
+    t.integer "year"
+    t.integer "year_required", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "currency", precision: 10, scale: 4
+    t.decimal "currency_required", precision: 10, scale: 4, null: false
+    t.integer "array_int", array: true
+    t.integer "enum"
+    t.integer "enum_required", null: false
+    t.string "string_write_only"
+    t.string "string_overrideable"
+    t.string "phone"
+    t.virtual "float_virtual", type: :float, as: "(float_no_nil / (2)::double precision)", stored: true
+    t.string "string_readonly"
+    t.index ["user_id"], name: "index_every_fields_on_user_id"
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -133,4 +183,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_21_153146) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "blogs", "users"
+  add_foreign_key "every_field_dummies", "users"
+  add_foreign_key "every_fields", "users"
 end

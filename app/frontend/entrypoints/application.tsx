@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 
 import modelLoader from '@rhino-project/core/models';
 
-import '@/styles/styles.scss';
+// import '@/styles/styles.scss';
 import '@/styles/global.css';
 import { components } from '../models/models';
 

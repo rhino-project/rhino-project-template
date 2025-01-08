@@ -9,6 +9,7 @@ class Blog < ApplicationRecord
 
   rhino_owner_base
   rhino_references %i[ user image_attachment single_file_attachment multiple_files_attachments ]
+  rhino_search [ :title ]
 
   validates :title, presence: true
 end

@@ -140,7 +140,7 @@ const RootUI = () => {
 
   return (
     <NextUIProvider navigate={navigate} useHref={useHref}>
-      <div className="dark text-foreground bg-background">
+      <div className="dark text-foreground bg-background h-dvhq">
         <PageAnalytics>
           <Routes>
             <Route

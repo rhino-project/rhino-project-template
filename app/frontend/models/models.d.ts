@@ -116,6 +116,38 @@ export interface paths {
         patch: operations["blog-update"];
         trace?: never;
     };
+    "/api/every_fields": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["every_field-index"];
+        put?: never;
+        post: operations["every_field-create"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/every_fields/:id": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["every_field-show"];
+        put: operations["every_field-update"];
+        post?: never;
+        delete: operations["every_field-destroy"];
+        options?: never;
+        head?: never;
+        patch: operations["every_field-update"];
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -171,6 +203,74 @@ export interface components {
             image_attachment?: components["schemas"]["active_storage_attachment"] | null;
             single_file_attachment?: components["schemas"]["active_storage_attachment"] | null;
             multiple_files_attachments?: components["schemas"]["active_storage_attachment"][] | null;
+        };
+        every_field: {
+            /** Format: identifier */
+            readonly id?: number;
+            string?: string | null;
+            string_length_min?: string | null;
+            string_length_max?: string | null;
+            string_length_range?: string | null;
+            string_length_exact?: string | null;
+            /** @enum {string|null} */
+            string_inclusion?: "test" | "example" | null;
+            string_pattern?: string | null;
+            /** Format: double */
+            float_gt?: number | null;
+            /** Format: double */
+            float_gte?: number | null;
+            /** Format: double */
+            float_lt?: number | null;
+            /** Format: double */
+            float_lte?: number | null;
+            /** Format: double */
+            float_in?: number | null;
+            /** Format: double */
+            float_no_nil: number;
+            integer_gt?: number | null;
+            integer_gte?: number | null;
+            integer_lt?: number | null;
+            integer_lte?: number | null;
+            integer_in?: number | null;
+            integer_no_nil: number;
+            /** Format: date */
+            date?: string | null;
+            /** Format: date */
+            date_required: string;
+            /** Format: datetime */
+            date_time?: string | null;
+            /** Format: datetime */
+            date_time_required: string;
+            /** Format: time */
+            time?: string | null;
+            /** Format: time */
+            time_required: string;
+            /** Format: year */
+            year?: number | null;
+            /** Format: year */
+            year_required: number;
+            /** Format: datetime */
+            readonly created_at?: string;
+            /** Format: datetime */
+            readonly updated_at?: string;
+            /** Format: currency */
+            currency?: Record<string, never>;
+            /** Format: currency */
+            currency_required: Record<string, never>;
+            array_int?: number[] | null;
+            /** @enum {string|null} */
+            enum?: "test" | "example" | null;
+            /** @enum {string} */
+            enum_required: "test_required" | "example_required";
+            string_overrideable?: string | null;
+            /** Format: phone */
+            phone?: string | null;
+            /** Format: double */
+            readonly float_virtual?: number | null;
+            string_readonly?: string | null;
+            user: components["schemas"]["user"];
+            another_user: components["schemas"]["user"];
+            string_write_only?: string | null;
         };
     };
     responses: never;
@@ -1161,6 +1261,296 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["blog"];
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+        };
+    };
+    "every_field-index": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["every_field"];
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+        };
+    };
+    "every_field-create": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["every_field"];
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+        };
+    };
+    "every_field-show": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["every_field"];
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+        };
+    };
+    "every_field-update": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["every_field"];
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+        };
+    };
+    "every_field-destroy": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["every_field"];
+                };
+            };
+            /** @description Bad Request */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": unknown;
+                };
+            };
+        };
+    };
+    "every_field-update": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["every_field"];
                 };
             };
             /** @description Bad Request */

@@ -22,4 +22,5 @@ Rhino.setup do |config|
   # The list of resources exposed in the API
   config.resources += [ "User", "Account" ]
   config.resources += [ "Blog" ]
+  config.resources += [ "EveryField" ]
 end
