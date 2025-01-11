@@ -12,6 +12,7 @@ default: &default
 
 development:
   <<: *default
+  gssencmode: disable
   database: <%= ENV["DB_NAME"] %>_development
 
 # Warning: The database defined as "test" will be erased and
