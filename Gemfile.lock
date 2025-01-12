@@ -164,7 +164,6 @@ GEM
       railties (>= 3.2)
     drb (2.2.1)
     dry-cli (1.1.0)
-    error_highlight (0.6.0)
     erubi (1.13.1)
     et-orbi (1.2.11)
       tzinfo
@@ -676,7 +675,6 @@ DEPENDENCIES
   dartsass-rails
   debug
   dotenv-rails
-  error_highlight (>= 0.4.0)
   factory_bot
   factory_bot_rails
   ffaker
