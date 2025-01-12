@@ -67,4 +67,7 @@ Rails.application.configure do
 
   # Set the queue adapter to :test so that the jobs are performed inline in all tests.
   config.active_job.queue_adapter = :test
+
+  # Don't bundle css for test environment
+  config.assets.css_compressor = nil
 end

@@ -7,7 +7,7 @@ gem "rails", "~> 7.2.2"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
-gem "sassc-rails"
+gem "dartsass-rails"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
@@ -26,6 +26,11 @@ gem "redis", ">= 4.0.1"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
+
+# Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
+# gem "solid_cache"
+gem "solid_queue"
+# gem "solid_cable"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -87,6 +92,8 @@ gem "dotenv-rails"
 
 gem "arctic_admin"
 gem "activeadmin_addons"
+
+gem "mission_control-jobs", "~> 1.0"
 
 gem "rollbar"
 

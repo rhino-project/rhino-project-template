@@ -24,7 +24,7 @@ Rails.application.configure do
   # config.public_file_server.enabled = false
 
   # Compress CSS using a preprocessor.
-  # config.assets.css_compressor = :sass
+  config.assets.css_compressor = nil
 
   # Do not fall back to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
@@ -71,8 +71,7 @@ Rails.application.configure do
   # config.cache_store = :mem_cache_store
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
-  # config.active_job.queue_adapter = :resque
-  # config.active_job.queue_name_prefix = "#{Rails.application.class.module_parent_name.underscore}_#{Rails.env}"
+  config.active_job.queue_adapter = :solid_queue
 
   # Disable caching for Action Mailer templates even if Action Controller
   # caching is enabled.
