@@ -8,3 +8,8 @@ release:
   command:
     - bundle exec rails db:migrate
   image: web
+run:
+  worker:
+    image: web
+    command:
+      - bin/jobs
