@@ -603,6 +603,10 @@ GEM
       activejob (>= 7.2)
       activerecord (>= 7.2)
       railties (>= 7.2)
+    solid_cache (1.0.6)
+      activejob (>= 7.2)
+      activerecord (>= 7.2)
+      railties (>= 7.2)
     solid_queue (1.1.2)
       activejob (>= 7.1)
       activerecord (>= 7.1)
@@ -707,6 +711,7 @@ DEPENDENCIES
   sendgrid-ruby
   simplecov
   solid_cable
+  solid_cache
   solid_queue
   sprockets-rails
   tzinfo-data
