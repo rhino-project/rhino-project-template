@@ -15,12 +15,6 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
-# Use Redis adapter to run Action Cable in production
-gem "redis", ">= 4.0.1"
-
-# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
-
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
@@ -55,7 +49,7 @@ group :development, :test do
 
   gem "rubocop-minitest", require: false
   gem "rubocop-factory_bot", "2.26.1", require: false
-  gem "rubocop-rhino-project", "~> 0.22.0.beta.14", require: false
+  gem "rubocop-rhino-project", "~> 0.23.0.beta.0", require: false
 
   gem "ffaker"
   gem "simplecov", require: false
@@ -75,8 +69,6 @@ end
 require "ostruct"
 ##
 
-gem "dalli"
-
 gem "sendgrid-ruby"
 gem "sendgrid-actionmailer"
 
@@ -89,16 +81,14 @@ gem "mission_control-jobs", "~> 1.0"
 
 gem "rollbar"
 
-gem "rhino_project", "~> 0.22.0.beta.14"
+gem "rhino_project", "~> 0.23.0.beta.0"
 
-gem "rhino_project_core", "~> 0.22.0.beta.14"
+gem "rhino_project_core", "~> 0.23.0.beta.0"
 
-gem "rhino_project_organizations", "~> 0.22.0.beta.14"
+gem "rhino_project_organizations", "~> 0.23.0.beta.0"
 
-gem "rhino_project_notifications", "~> 0.22.0.beta.14"
+gem "rhino_project_notifications", "~> 0.23.0.beta.0"
 
-gem "rhino_project_subscriptions", "~> 0.22.0.beta.14"
-
-gem "rhino_project_jobs", "~> 0.22.0.beta.14"
+gem "rhino_project_subscriptions", "~> 0.23.0.beta.0"
 
 gem "vite_rails", "~> 3.0"

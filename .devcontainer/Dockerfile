@@ -9,7 +9,7 @@ ENV RAILS_DEVELOPMENT_HOSTS=".githubpreview.dev,.app.github.dev,.preview.app.git
 
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends postgresql-client redis-tools
+    && apt-get -y install --no-install-recommends postgresql-client
 
 # [Optional] Uncomment this line to install additional gems.
 RUN gem install bundler -v 2.5.13
