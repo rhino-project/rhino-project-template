@@ -17,7 +17,7 @@ export const SecondaryNavigation = () => {
 
   return (
     <div>
-      {/* {DESIGN_SYSTEM_ENABLED && (
+      {DESIGN_SYSTEM_ENABLED && (
         <NavItem
           key="design-system"
           title="Design System"
@@ -26,7 +26,7 @@ export const SecondaryNavigation = () => {
           className="px-3"
         />
       )}
-      {showNotifications && (
+      {/* {showNotifications && (
         <>
           <NotificationMenu />
           <hr className="border-top border-gray-700" />
