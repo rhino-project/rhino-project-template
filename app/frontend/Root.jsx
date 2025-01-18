@@ -17,7 +17,7 @@ import {
 } from 'react-router-dom';
 import { IdentityAnalytics } from '@rhino-project/core/components/analytics';
 import { PageAnalytics } from '@rhino-project/core/components/analytics';
-import { NextUIProvider, Toaster } from '@rhino-project/ui-nextui';
+import { HeroUIProvider, Toaster } from '@rhino-project/ui-nextui';
 import { NotFoundPage } from '@rhino-project/core/components/shared';
 import { ApplicationShell } from '@rhino-project/ui-nextui';
 import { RhinoProvider } from '@rhino-project/core';
@@ -139,7 +139,7 @@ const RootUI = () => {
   const navigate = useNavigate();
 
   return (
-    <NextUIProvider navigate={navigate} useHref={useHref}>
+    <HeroUIProvider navigate={navigate} useHref={useHref}>
       <div className="dark text-foreground bg-background h-dvh">
         <PageAnalytics>
           <Routes>
@@ -160,7 +160,7 @@ const RootUI = () => {
           </Routes>
         </PageAnalytics>
       </div>
-    </NextUIProvider>
+    </HeroUIProvider>
   );
 };
 

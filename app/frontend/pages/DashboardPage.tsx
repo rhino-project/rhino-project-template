@@ -36,7 +36,7 @@ import {
   parseAbsoluteToLocal
 } from '@internationalized/date';
 import { useEffect, useState } from 'react';
-import { Pagination, Table } from '@nextui-org/react';
+import { Pagination, Table } from "@heroui/react";
 
 const APPROVAL = false;
 
