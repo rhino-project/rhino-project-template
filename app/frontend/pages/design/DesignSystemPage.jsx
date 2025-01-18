@@ -15,6 +15,7 @@ import {
   FieldPassword,
   FieldString,
   FieldText,
+  FieldTime,
   Form,
   IconButton,
   LinkButton,
@@ -51,11 +52,6 @@ import {
   FieldGroupSelectControlled,
   FieldGroupFloatingSelectControlled,
   FieldGroupHorizontalSelectControlled
-} from '@rhino-project/ui-nextui';
-import {
-  FieldGroupTime,
-  FieldGroupFloatingTime,
-  FieldGroupHorizontalTime
 } from '@rhino-project/ui-nextui';
 import {
   FieldGroupYear,
@@ -128,7 +124,7 @@ const fields = [
   },
   { Component: FieldString, name: 'FieldString', props: {} },
   { Component: FieldText, name: 'FieldText', props: {} },
-  { Component: FieldGroupTime, name: 'FieldGroupTime', props: {} },
+  { Component: FieldTime, name: 'FieldTime', props: {} },
   { Component: FieldGroupYear, name: 'FieldGroupYear', props: {} }
 ];
 
@@ -178,7 +174,7 @@ const FormsVertical = () => {
     },
     { Component: FieldString, name: 'FieldString', props: {} },
     { Component: FieldText, name: 'FieldText', props: {} },
-    { Component: FieldGroupTime, name: 'FieldGroupTime', props: {} },
+    { Component: FieldTime, name: 'FieldTime', props: {} },
     { Component: FieldGroupYear, name: 'FieldGroupYear', props: {} }
   ];
   return (
@@ -261,8 +257,8 @@ const FormsHorizontal = () => {
     { Component: FieldString, name: 'FieldString', props: {} },
     { Component: FieldText, name: 'FieldText', props: {} },
     {
-      Component: FieldGroupHorizontalTime,
-      name: 'FieldGroupHorizontalTime',
+      Component: FieldTime,
+      name: 'FieldTime',
       props: {}
     },
     {
@@ -350,8 +346,8 @@ const FormsFloating = () => {
     { Component: FieldString, name: 'FieldString', props: {} },
     { Component: FieldText, name: 'FieldText', props: {} },
     {
-      Component: FieldGroupFloatingTime,
-      name: 'FieldGroupFloatingTime',
+      Component: FieldTime,
+      name: 'FieldTime',
       props: {}
     },
     {

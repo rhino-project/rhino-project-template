@@ -36,7 +36,8 @@ import {
   parseAbsoluteToLocal
 } from '@internationalized/date';
 import { useEffect, useState } from 'react';
-import { Pagination, Table } from "@heroui/react";
+import { Pagination, Table } from '@heroui/react';
+import { useHref } from 'react-router-dom';
 
 const APPROVAL = false;
 
@@ -83,12 +84,12 @@ const GetStarted = () => {
   // const { resource } = useResourceShow('blog', 1);
   // const {} = useResourceIndexController({ model: 'blog' });
 
-  console.log(
-    'parse',
-    parseTime('01:00:00'),
-    parseAbsoluteToLocal('2022-01-01T01:00:00Z'),
-    parseDate('2022-01-01')
-  );
+  // console.log(
+  //   'parse',
+  //   parseTime('01:00:00'),
+  //   parseAbsoluteToLocal('2022-01-01T01:00:00Z'),
+  //   parseDate('2022-01-01')
+  // );
 
   useEffect(() => {
     setTimeout(() => {
@@ -97,6 +98,10 @@ const GetStarted = () => {
       setTotal(4);
     }, 3000);
   }, []);
+
+  const check = useHref('/1/dashboard');
+  const check2 = useHref('dashboard');
+  console.log('check', check, check2);
 
   // useEffect(() => {
   //   setTimeout(() => {
