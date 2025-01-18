@@ -5,6 +5,10 @@ import {
   Checkbox,
   CircularProgress,
   DatePicker,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
   getKeyValue,
   Icon,
   Image,
@@ -116,6 +120,19 @@ const GetStarted = () => {
     <Empty
       title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
     >
+      <Dropdown>
+        <DropdownTrigger>
+          <Button variant="bordered">Open Menu</Button>
+        </DropdownTrigger>
+        <DropdownMenu aria-label="Link Actions">
+          <DropdownItem key="home" href="/1/__design">
+            Home
+          </DropdownItem>
+          <DropdownItem key="about" href="/1/account/settings/profile">
+            About
+          </DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
       <Pagination page={page} total={total} onChange={setPage} showControls />
       Page: {page}
       {''}Total: {total}
