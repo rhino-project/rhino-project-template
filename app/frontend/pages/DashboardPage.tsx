@@ -146,6 +146,8 @@ const GetStarted = () => {
         isLoading={isInitialLoading}
         items={results || []}
         onInputChange={setSearch}
+        onSelectionChange={(item) => console.log('selected', item)}
+        onClear={() => console.log('clear')}
       >
         {(item) => (
           <AutocompleteItem key={item.id}>{item.title}</AutocompleteItem>
