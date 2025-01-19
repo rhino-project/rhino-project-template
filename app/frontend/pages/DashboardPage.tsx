@@ -1,7 +1,10 @@
 import {
   Accordion,
+  Autocomplete,
+  AutocompleteItem,
   BaseAuthedPage,
   Button,
+  Calendar,
   Checkbox,
   CircularProgress,
   DatePicker,
@@ -25,7 +28,11 @@ import {
 import { Empty } from '@rhino-project/ui-nextui';
 import { LinkButton } from '@rhino-project/ui-nextui';
 import { useBaseOwnedResources } from '@rhino-project/core';
-import { useBaseOwnerPath, useModelShow } from '@rhino-project/core/hooks';
+import {
+  useBaseOwnerPath,
+  useModelIndex,
+  useModelShow
+} from '@rhino-project/core/hooks';
 import { useUser } from '@rhino-project/core/hooks';
 import { useBaseOwner } from '@rhino-project/core/hooks';
 import { getModelIndexPath } from '@rhino-project/core/utils';
@@ -37,11 +44,15 @@ import {
   parseDateTime,
   parseTime,
   parseAbsolute,
-  parseAbsoluteToLocal
+  parseAbsoluteToLocal,
+  parseZonedDateTime,
+  CalendarDateTime,
+  ZonedDateTime
 } from '@internationalized/date';
 import { useEffect, useState } from 'react';
 import { Pagination, Table } from '@heroui/react';
 import { useHref } from 'react-router-dom';
+import { set } from 'react-hook-form';
 
 const APPROVAL = false;
 
@@ -90,9 +101,14 @@ const GetStarted = () => {
 
   // console.log(
   //   'parse',
-  //   parseTime('01:00:00'),
+  //   // parseTime('01:00:00'),
+  //   // parseZonedDateTime(new Date().toString()),
   //   parseAbsoluteToLocal('2022-01-01T01:00:00Z'),
-  //   parseDate('2022-01-01')
+  //   parseAbsoluteToLocal('2022-01-01T01:00:00Z').toAbsoluteString()
+  //   // parseZonedDateTime('2022-01-01T01:00:00Z')
+  //   // parseZonedDateTime('2022-01-01T01:00:00Z')
+  //   // parseDateTime('2022-01-01T01:00:00Z')
+  //   // parseDate('2022-01-01')
   // );
 
   useEffect(() => {
@@ -116,10 +132,25 @@ const GetStarted = () => {
   //   }, 3000);
   // }, []);
 
+  const [search, setSearch] = useState('');
+  const { results, isInitialLoading } = useModelIndex('blog', { search });
+
+  console.log('results', results);
   return (
     <Empty
       title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
     >
+      <Autocomplete
+        classNames={{}}
+        label="Blogs"
+        isLoading={isInitialLoading}
+        items={results || []}
+        onInputChange={setSearch}
+      >
+        {(item) => (
+          <AutocompleteItem key={item.id}>{item.title}</AutocompleteItem>
+        )}
+      </Autocomplete>
       <Dropdown>
         <DropdownTrigger>
           <Button variant="bordered">Open Menu</Button>
@@ -159,10 +190,17 @@ const GetStarted = () => {
       />
       <Input
         label="test"
+        labelPlacement="inside"
+        variant="underlined"
         // className="text-yellow-400"
         classNames={{ label: 'text-primary-400' }}
         isClearable
         onClear={() => console.log('clear')}
+      />
+      <DatePicker label="test" showMonthAndYearPickers={true} />
+      <Calendar
+        showMonthAndYearPickers={true}
+        aria-label="Date (uncontrolled)"
       />
       {/* <img
         alt="NextUI Image with fallback"

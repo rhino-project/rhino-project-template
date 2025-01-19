@@ -13,12 +13,14 @@ import {
   FieldFloat,
   FieldInteger,
   FieldPassword,
+  FieldSelect,
   FieldString,
   FieldText,
   FieldTime,
   Form,
   IconButton,
   LinkButton,
+  SelectItem,
   SubmitButton,
   Tab,
   Tabs
@@ -47,11 +49,6 @@ import {
   FieldGroupPhone,
   FieldGroupFloatingPhone,
   FieldGroupHorizontalPhone
-} from '@rhino-project/ui-nextui';
-import {
-  FieldGroupSelectControlled,
-  FieldGroupFloatingSelectControlled,
-  FieldGroupHorizontalSelectControlled
 } from '@rhino-project/ui-nextui';
 import {
   FieldGroupYear,
@@ -101,9 +98,9 @@ const Buttons = () => {
 };
 
 const SELECT_OPTIONS = [
-  <option key="1">An option</option>,
-  <option key="2">Another option</option>,
-  <option key="3">Yet another option</option>
+  <SelectItem key="1">An option</SelectItem>,
+  <SelectItem key="2">Another option</SelectItem>,
+  <SelectItem key="3">Yet another option</SelectItem>
 ];
 
 const fields = [
@@ -118,8 +115,8 @@ const fields = [
   { Component: FieldPassword, name: 'FieldPassword', props: {} },
   { Component: FieldGroupPhone, name: 'FieldGroupPhone', props: {} },
   {
-    Component: FieldGroupSelectControlled,
-    name: 'FieldGroupSelectControlled',
+    Component: FieldSelect,
+    name: 'FieldSelect',
     props: { children: SELECT_OPTIONS }
   },
   { Component: FieldString, name: 'FieldString', props: {} },
@@ -168,8 +165,8 @@ const FormsVertical = () => {
     { Component: FieldPassword, name: 'FieldPassword', props: {} },
     { Component: FieldGroupPhone, name: 'FieldGroupPhone', props: {} },
     {
-      Component: FieldGroupSelectControlled,
-      name: 'FieldGroupSelectControlled',
+      Component: FieldSelect,
+      name: 'FieldSelect',
       props: { children: SELECT_OPTIONS }
     },
     { Component: FieldString, name: 'FieldString', props: {} },
@@ -250,8 +247,8 @@ const FormsHorizontal = () => {
       props: {}
     },
     {
-      Component: FieldGroupHorizontalSelectControlled,
-      name: 'FieldGroupHorizontalSelectControlled',
+      Component: FieldSelect,
+      name: 'FieldSelect',
       props: { children: SELECT_OPTIONS }
     },
     { Component: FieldString, name: 'FieldString', props: {} },
@@ -339,8 +336,8 @@ const FormsFloating = () => {
       props: {}
     },
     {
-      Component: FieldGroupFloatingSelectControlled,
-      name: 'FieldGroupFloatingSelectControlled',
+      Component: FieldSelect,
+      name: 'FieldSelect',
       props: { children: SELECT_OPTIONS }
     },
     { Component: FieldString, name: 'FieldString', props: {} },

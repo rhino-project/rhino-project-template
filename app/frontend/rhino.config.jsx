@@ -26,17 +26,17 @@ const rhinoConfig = {
     // ModelDisplayDate: { props: { format: 'yyyy-MM-dd' } },
     // ModelDisplayAttachment: null,
     blog: {
-      ModelShow: {
-        props: {
-          paths: [
-            'user',
-            'title',
-            'image_attachment'
-            // 'single_file_attachment'
-            // 'multiple_files_attachments'
-          ]
-        }
-      },
+      // ModelShow: {
+      //   props: {
+      //     paths: [
+      //       'user',
+      //       'title',
+      //       'image_attachment'
+      //       // 'single_file_attachment'
+      //       // 'multiple_files_attachments'
+      //     ]
+      //   }
+      // },
       single_file_attachment: {
         ModelDisplayAttachment: {}
       },
