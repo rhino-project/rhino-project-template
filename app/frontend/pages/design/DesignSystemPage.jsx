@@ -8,6 +8,7 @@ import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import {
   Button,
   CloseButton,
+  FieldBoolean,
   FieldDate,
   FieldDateTime,
   FieldFloat,
@@ -26,11 +27,6 @@ import {
   Tabs
 } from '@rhino-project/ui-nextui';
 import { FormProvider } from '@rhino-project/core/components/forms';
-import {
-  FieldGroupBoolean,
-  FieldGroupHorizontalBoolean,
-  FieldGroupFloatingBoolean
-} from '@rhino-project/ui-nextui';
 import {
   FieldGroupCountry,
   FieldGroupFloatingCountry,
@@ -104,7 +100,11 @@ const SELECT_OPTIONS = [
 ];
 
 const fields = [
-  { Component: FieldGroupBoolean, name: 'FieldGroupBoolean', props: {} },
+  {
+    Component: FieldBoolean,
+    name: 'FieldBoolean',
+    props: { children: 'FieldBoolean' }
+  },
   { Component: FieldGroupCountry, name: 'FieldGroupCountry', props: {} },
   { Component: FieldGroupCurrency, name: 'FieldGroupCurrency', props: {} },
   { Component: FieldDate, name: 'FieldDate', props: {} },
@@ -149,7 +149,11 @@ const Forms = () => {
 const FormsVertical = () => {
   const methods = useForm();
   const fields = [
-    { Component: FieldGroupBoolean, name: 'FieldGroupBoolean', props: {} },
+    {
+      Component: FieldBoolean,
+      name: 'FieldBoolean',
+      props: { children: 'FieldBoolean' }
+    },
     { Component: FieldGroupCurrency, name: 'FieldGroupCurrency', props: {} },
     { Component: FieldGroupCountry, name: 'FieldGroupCountry', props: {} },
     { Component: FieldDate, name: 'FieldDate', props: {} },
@@ -197,9 +201,9 @@ const FormsHorizontal = () => {
   const methods = useForm();
   const fields = [
     {
-      Component: FieldGroupHorizontalBoolean,
-      name: 'FieldGroupHorizontalBoolean',
-      props: {}
+      Component: FieldBoolean,
+      name: 'FieldBoolean',
+      props: { children: 'FieldBoolean' }
     },
     {
       Component: FieldGroupHorizontalCountry,
@@ -286,9 +290,9 @@ const FormsFloating = () => {
   const methods = useForm();
   const fields = [
     {
-      Component: FieldGroupFloatingBoolean,
-      name: 'FieldGroupFloatingBoolean',
-      props: {}
+      Component: FieldBoolean,
+      name: 'FieldBoolean',
+      props: { children: 'FieldBoolean' }
     },
     {
       Component: FieldGroupFloatingCountry,

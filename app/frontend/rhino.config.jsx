@@ -14,6 +14,9 @@ import {
 const rhinoConfig = {
   version: 1,
   components: {
+    every_field: {
+      // ModelCreate: { props: { paths: ['another_user'] } }
+    },
     // DisplayInput: {
     //   props: {
     //     classNames: {
