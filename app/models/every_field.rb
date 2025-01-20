@@ -6,7 +6,7 @@ class EveryField < ApplicationRecord
   enum :enum, { test: 0, example: 1 }
   enum :enum_required, { test_required: 0, example_required: 1 }
 
-  belongs_to :user
+  belongs_to :organization
   belongs_to :another_user, class_name: "User", foreign_key: :user_id
   # has_many :every_manies, dependent: :destroy
   # has_many :every_manies_not_nested, class_name: "EveryMany", inverse_of: :every_field_not_nested
@@ -17,7 +17,7 @@ class EveryField < ApplicationRecord
 
   rhino_owner_base
   # rhino_references %i[user another_user every_manies every_manies_not_nested]
-  rhino_references %i[user another_user]
+  rhino_references %i[organization another_user]
   rhino_properties_read except: %i[string_write_only]
   rhino_properties_format year: :year, year_required: :year, currency: :currency,
                           currency_required: :currency, phone: :phone

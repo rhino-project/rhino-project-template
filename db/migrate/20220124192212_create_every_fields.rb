@@ -1,7 +1,7 @@
 class CreateEveryFields < ActiveRecord::Migration[6.1]
   def change
     create_table :every_fields do |t|
-      t.references :user, null: false, foreign_key: true
+      t.references :organization, null: false, foreign_key: true
 
       t.string :string
       t.string :string_length_min

@@ -268,10 +268,405 @@ const api = {
             "readOnly": true,
             "nullable": true,
             "type": "string"
+          },
+          "users_roles": {
+            "x-rhino-attribute": {
+              "name": "users_roles",
+              "readableName": "Users Roles",
+              "readable": true,
+              "creatable": false,
+              "updatable": false
+            },
+            "readOnly": true,
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "type": "reference",
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/users_role"
+                }
+              ],
+              "x-rhino-attribute-array": {
+              }
+            }
           }
         },
         "required": [
           "email"
+        ]
+      },
+      "organization": {
+        "x-rhino-model": {
+          "model": "organization",
+          "modelPlural": "organizations",
+          "name": "organization",
+          "pluralName": "organizations",
+          "readableName": "Organization",
+          "pluralReadableName": "Organizations",
+          "ownedBy": null,
+          "singular": false,
+          "path": "/api/organizations",
+          "searchable": false
+        },
+        "type": "object",
+        "properties": {
+          "id": {
+            "x-rhino-attribute": {
+              "name": "id",
+              "readableName": "Id",
+              "readable": true,
+              "creatable": false,
+              "updatable": false
+            },
+            "readOnly": true,
+            "nullable": false,
+            "type": "integer",
+            "format": "identifier"
+          },
+          "name": {
+            "x-rhino-attribute": {
+              "name": "name",
+              "readableName": "Name",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": true,
+            "type": "string"
+          },
+          "created_at": {
+            "x-rhino-attribute": {
+              "name": "created_at",
+              "readableName": "Created At",
+              "readable": true,
+              "creatable": false,
+              "updatable": false
+            },
+            "readOnly": true,
+            "nullable": false,
+            "type": "string",
+            "format": "datetime"
+          },
+          "updated_at": {
+            "x-rhino-attribute": {
+              "name": "updated_at",
+              "readableName": "Updated At",
+              "readable": true,
+              "creatable": false,
+              "updatable": false
+            },
+            "readOnly": true,
+            "nullable": false,
+            "type": "string",
+            "format": "datetime"
+          },
+          "users_roles": {
+            "x-rhino-attribute": {
+              "name": "users_roles",
+              "readableName": "Users Roles",
+              "readable": true,
+              "creatable": false,
+              "updatable": false
+            },
+            "readOnly": true,
+            "nullable": true,
+            "type": "array",
+            "items": {
+              "type": "reference",
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/users_role"
+                }
+              ],
+              "x-rhino-attribute-array": {
+              }
+            }
+          }
+        }
+      },
+      "users_role": {
+        "x-rhino-model": {
+          "model": "users_role",
+          "modelPlural": "users_roles",
+          "name": "usersRole",
+          "pluralName": "usersRoles",
+          "readableName": "Users role",
+          "pluralReadableName": "Users roles",
+          "ownedBy": "organization",
+          "singular": false,
+          "path": "/api/users_roles",
+          "searchable": false
+        },
+        "type": "object",
+        "properties": {
+          "id": {
+            "x-rhino-attribute": {
+              "name": "id",
+              "readableName": "Id",
+              "readable": true,
+              "creatable": false,
+              "updatable": false
+            },
+            "readOnly": true,
+            "nullable": false,
+            "type": "integer",
+            "format": "identifier"
+          },
+          "created_at": {
+            "x-rhino-attribute": {
+              "name": "created_at",
+              "readableName": "Created At",
+              "readable": true,
+              "creatable": false,
+              "updatable": false
+            },
+            "readOnly": true,
+            "nullable": false,
+            "type": "string",
+            "format": "datetime"
+          },
+          "updated_at": {
+            "x-rhino-attribute": {
+              "name": "updated_at",
+              "readableName": "Updated At",
+              "readable": true,
+              "creatable": false,
+              "updatable": false
+            },
+            "readOnly": true,
+            "nullable": false,
+            "type": "string",
+            "format": "datetime"
+          },
+          "user": {
+            "x-rhino-attribute": {
+              "name": "user",
+              "readableName": "User",
+              "readable": true,
+              "creatable": true,
+              "updatable": false
+            },
+            "nullable": false,
+            "type": "reference",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/user"
+              }
+            ]
+          },
+          "role": {
+            "x-rhino-attribute": {
+              "name": "role",
+              "readableName": "Role",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": false,
+            "type": "reference",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/role"
+              }
+            ]
+          },
+          "organization": {
+            "x-rhino-attribute": {
+              "name": "organization",
+              "readableName": "Organization",
+              "readable": true,
+              "creatable": true,
+              "updatable": false
+            },
+            "nullable": false,
+            "type": "reference",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/organization"
+              }
+            ]
+          }
+        },
+        "required": [
+          "user",
+          "role",
+          "organization"
+        ]
+      },
+      "role": {
+        "x-rhino-model": {
+          "model": "role",
+          "modelPlural": "roles",
+          "name": "role",
+          "pluralName": "roles",
+          "readableName": "Role",
+          "pluralReadableName": "Roles",
+          "ownedBy": "global",
+          "singular": false,
+          "path": "/api/roles",
+          "searchable": false
+        },
+        "type": "object",
+        "properties": {
+          "id": {
+            "x-rhino-attribute": {
+              "name": "id",
+              "readableName": "Id",
+              "readable": true,
+              "creatable": false,
+              "updatable": false
+            },
+            "readOnly": true,
+            "nullable": false,
+            "type": "integer",
+            "format": "identifier"
+          },
+          "name": {
+            "x-rhino-attribute": {
+              "name": "name",
+              "readableName": "Name",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": false,
+            "type": "string",
+            "pattern": "^[a-zA-Z_]+$"
+          },
+          "created_at": {
+            "x-rhino-attribute": {
+              "name": "created_at",
+              "readableName": "Created At",
+              "readable": true,
+              "creatable": false,
+              "updatable": false
+            },
+            "readOnly": true,
+            "nullable": false,
+            "type": "string",
+            "format": "datetime"
+          },
+          "updated_at": {
+            "x-rhino-attribute": {
+              "name": "updated_at",
+              "readableName": "Updated At",
+              "readable": true,
+              "creatable": false,
+              "updatable": false
+            },
+            "readOnly": true,
+            "nullable": false,
+            "type": "string",
+            "format": "datetime"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "users_role_invite": {
+        "x-rhino-model": {
+          "model": "users_role_invite",
+          "modelPlural": "users_role_invites",
+          "name": "usersRoleInvite",
+          "pluralName": "usersRoleInvites",
+          "readableName": "Users role invite",
+          "pluralReadableName": "Users role invites",
+          "ownedBy": "organization",
+          "singular": false,
+          "path": "/api/users_role_invites",
+          "searchable": false
+        },
+        "type": "object",
+        "properties": {
+          "id": {
+            "x-rhino-attribute": {
+              "name": "id",
+              "readableName": "Id",
+              "readable": true,
+              "creatable": false,
+              "updatable": false
+            },
+            "readOnly": true,
+            "nullable": false,
+            "type": "integer",
+            "format": "identifier"
+          },
+          "email": {
+            "x-rhino-attribute": {
+              "name": "email",
+              "readableName": "Email",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": false,
+            "type": "string"
+          },
+          "created_at": {
+            "x-rhino-attribute": {
+              "name": "created_at",
+              "readableName": "Created At",
+              "readable": true,
+              "creatable": false,
+              "updatable": false
+            },
+            "readOnly": true,
+            "nullable": false,
+            "type": "string",
+            "format": "datetime"
+          },
+          "updated_at": {
+            "x-rhino-attribute": {
+              "name": "updated_at",
+              "readableName": "Updated At",
+              "readable": true,
+              "creatable": false,
+              "updatable": false
+            },
+            "readOnly": true,
+            "nullable": false,
+            "type": "string",
+            "format": "datetime"
+          },
+          "role": {
+            "x-rhino-attribute": {
+              "name": "role",
+              "readableName": "Role",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": false,
+            "type": "reference",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/role"
+              }
+            ]
+          },
+          "organization": {
+            "x-rhino-attribute": {
+              "name": "organization",
+              "readableName": "Organization",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": false,
+            "type": "reference",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/organization"
+              }
+            ]
+          }
+        },
+        "required": [
+          "email",
+          "role",
+          "organization"
         ]
       },
       "blog": {
@@ -282,7 +677,7 @@ const api = {
           "pluralName": "blogs",
           "readableName": "Blog",
           "pluralReadableName": "Blogs",
-          "ownedBy": "user",
+          "ownedBy": "organization",
           "singular": false,
           "path": "/api/blogs",
           "searchable": true
@@ -409,10 +804,10 @@ const api = {
             "type": "string",
             "format": "datetime"
           },
-          "user": {
+          "organization": {
             "x-rhino-attribute": {
-              "name": "user",
-              "readableName": "User",
+              "name": "organization",
+              "readableName": "Organization",
               "readable": true,
               "creatable": true,
               "updatable": true
@@ -421,7 +816,7 @@ const api = {
             "type": "reference",
             "anyOf": [
               {
-                "$ref": "#/components/schemas/user"
+                "$ref": "#/components/schemas/organization"
               }
             ]
           },
@@ -481,7 +876,7 @@ const api = {
         },
         "required": [
           "title",
-          "user"
+          "organization"
         ]
       },
       "every_field": {
@@ -492,7 +887,7 @@ const api = {
           "pluralName": "everyFields",
           "readableName": "Every field",
           "pluralReadableName": "Every fields",
-          "ownedBy": "user",
+          "ownedBy": "organization",
           "singular": false,
           "path": "/api/every_fields",
           "searchable": false
@@ -999,10 +1394,10 @@ const api = {
             "nullable": true,
             "type": "string"
           },
-          "user": {
+          "organization": {
             "x-rhino-attribute": {
-              "name": "user",
-              "readableName": "User",
+              "name": "organization",
+              "readableName": "Organization",
               "readable": true,
               "creatable": true,
               "updatable": true
@@ -1011,7 +1406,7 @@ const api = {
             "type": "reference",
             "anyOf": [
               {
-                "$ref": "#/components/schemas/user"
+                "$ref": "#/components/schemas/organization"
               }
             ]
           },
@@ -1053,7 +1448,7 @@ const api = {
           "year_required",
           "currency_required",
           "enum_required",
-          "user",
+          "organization",
           "another_user"
         ]
       }
@@ -1732,6 +2127,914 @@ const api = {
         ]
       }
     },
+    "/api/organizations": {
+      "get": {
+        "operationId": "organization-index",
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/organization"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "organization"
+        ]
+      },
+      "post": {
+        "operationId": "organization-create",
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/organization"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "organization"
+        ]
+      }
+    },
+    "/api/organizations/:id": {
+      "get": {
+        "operationId": "organization-show",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/organization"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "organization"
+        ]
+      },
+      "patch": {
+        "operationId": "organization-update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/organization"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "organization"
+        ]
+      },
+      "put": {
+        "operationId": "organization-update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/organization"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "organization"
+        ]
+      },
+      "delete": {
+        "operationId": "organization-destroy",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/organization"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "organization"
+        ]
+      }
+    },
+    "/api/users_roles": {
+      "get": {
+        "operationId": "users_role-index",
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/users_role"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "users_role"
+        ]
+      },
+      "post": {
+        "operationId": "users_role-create",
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/users_role"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "users_role"
+        ]
+      }
+    },
+    "/api/users_roles/:id": {
+      "get": {
+        "operationId": "users_role-show",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/users_role"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "users_role"
+        ]
+      },
+      "patch": {
+        "operationId": "users_role-update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/users_role"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "users_role"
+        ]
+      },
+      "put": {
+        "operationId": "users_role-update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/users_role"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "users_role"
+        ]
+      },
+      "delete": {
+        "operationId": "users_role-destroy",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/users_role"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "users_role"
+        ]
+      }
+    },
+    "/api/roles": {
+      "get": {
+        "operationId": "role-index",
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/role"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "role"
+        ]
+      }
+    },
+    "/api/roles/:id": {
+      "get": {
+        "operationId": "role-show",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/role"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "role"
+        ]
+      }
+    },
+    "/api/users_role_invites": {
+      "get": {
+        "operationId": "users_role_invite-index",
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/users_role_invite"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "users_role_invite"
+        ]
+      },
+      "post": {
+        "operationId": "users_role_invite-create",
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/users_role_invite"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "users_role_invite"
+        ]
+      }
+    },
+    "/api/users_role_invites/:id": {
+      "get": {
+        "operationId": "users_role_invite-show",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/users_role_invite"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "users_role_invite"
+        ]
+      },
+      "patch": {
+        "operationId": "users_role_invite-update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/users_role_invite"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "users_role_invite"
+        ]
+      },
+      "put": {
+        "operationId": "users_role_invite-update",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/users_role_invite"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "users_role_invite"
+        ]
+      },
+      "delete": {
+        "operationId": "users_role_invite-destroy",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/users_role_invite"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Content",
+            "content": {
+              "application/json": {
+              }
+            }
+          }
+        },
+        "tags": [
+          "users_role_invite"
+        ]
+      }
+    },
     "/api/blogs": {
       "get": {
         "operationId": "blog-index",
@@ -2285,11 +3588,14 @@ const api = {
         "rhino": {
           "version": "0.30.0.alpha.7",
           "authOwner": "user",
-          "baseOwner": "user",
+          "baseOwner": "organization",
           "oauth": [
 
           ],
           "allow_signup": true
+        },
+        "rhino_organizations": {
+          "version": "0.30.0.alpha.7"
         }
       }
     }

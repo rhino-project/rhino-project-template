@@ -30,5 +30,13 @@ ActiveAdmin.register User do
 
   show do
     default_main_content
+    br
+    br
+    panel "User Roles" do
+      table_for user.users_roles do
+        column :organization
+        column :role
+      end
+    end
   end
 end
