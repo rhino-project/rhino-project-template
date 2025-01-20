@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_01_20_222719) do
+ActiveRecord::Schema[7.2].define(version: 2025_01_20_224127) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -159,6 +159,15 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_20_222719) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "stripe_customers", force: :cascade do |t|
+    t.string "customer_id"
+    t.string "current_stripe_session_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "base_owner_id"
+    t.index ["base_owner_id"], name: "index_stripe_customers_on_base_owner_id"
   end
 
   create_table "users", force: :cascade do |t|
