@@ -119,9 +119,9 @@ const GetStarted = () => {
     }, 3000);
   }, []);
 
-  const check = useHref('/1/dashboard');
-  const check2 = useHref('dashboard');
-  console.log('check', check, check2);
+  // const check = useHref('/1/dashboard');
+  // const check2 = useHref('dashboard');
+  // console.log('check', check, check2);
 
   // useEffect(() => {
   //   setTimeout(() => {
@@ -135,11 +135,59 @@ const GetStarted = () => {
   const [search, setSearch] = useState('');
   const { results, isInitialLoading } = useModelIndex('blog', { search });
 
-  console.log('results', results);
+  // console.log('results', results);
   return (
     <Empty
       title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
     >
+      <div>
+        <div className=" space-y-4">
+          <div className="flex items-center justify-center w-full">
+            <label className="flex flex-col items-center justify-center w-full h-32 rounded-lg cursor-pointer bg-default-100 hover:bg-default-200">
+              <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                <Icon
+                  className="w-8 h-8 mb-2 text-foreground-400"
+                  icon="upload"
+                />
+                <p className="mb-2 text-sm text-foreground-500">
+                  <span className="font-semibold">Click to upload</span> or drag
+                  and drop
+                </p>
+                <p className="text-xs text-foreground-400">PDF (max. 5MB)</p>
+              </div>
+              <input
+                type="file"
+                className="hidden"
+                accept=".pdf"
+                // onChange={handleFileChange}
+              />
+            </label>
+          </div>
+
+          {/* {error && <div className="text-sm text-red-500">{error}</div>} */}
+
+          {/* {file && (
+            <div className="p-4 bg-gray-50 rounded-lg">
+              <div className="flex items-center justify-between">
+                <div className="truncate">
+                  <p className="text-sm font-medium text-gray-900">
+                    {file.name}
+                  </p>
+                  <p className="text-sm text-gray-500">
+                    {(file.size / 1024 / 1024).toFixed(2)} MB
+                  </p>
+                </div>
+                <button
+                  onClick={handleRemoveFile}
+                  className="text-sm text-red-600 hover:text-red-800"
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+          )} */}
+        </div>
+      </div>
       <Autocomplete
         classNames={{}}
         label="Blogs"
@@ -188,6 +236,7 @@ const GetStarted = () => {
         // className="text-yellow-400"
         classNames={{ label: 'text-red-400' }}
         isClearable
+        onChange={(e) => console.log('file oc', e.target.files)}
         onClear={() => console.log('clear file')}
       />
       <Input
@@ -197,6 +246,7 @@ const GetStarted = () => {
         // className="text-yellow-400"
         classNames={{ label: 'text-primary-400' }}
         isClearable
+        onValueChange={(e) => console.log('input file ovc', e)}
         onClear={() => console.log('clear')}
       />
       <DatePicker label="test" showMonthAndYearPickers={true} />
