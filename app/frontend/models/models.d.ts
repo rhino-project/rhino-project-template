@@ -439,7 +439,7 @@ export interface components {
             readonly float_virtual?: number | null;
             string_readonly?: string | null;
             organization: components["schemas"]["organization"];
-            another_user: components["schemas"]["user"];
+            user: components["schemas"]["user"];
             string_write_only?: string | null;
         };
     };

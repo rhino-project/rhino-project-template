@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_01_21_014537) do
+ActiveRecord::Schema[7.2].define(version: 2025_01_21_033550) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -134,7 +134,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_21_014537) do
     t.string "phone"
     t.virtual "float_virtual", type: :float, as: "(float_no_nil / (2)::double precision)", stored: true
     t.string "string_readonly"
+    t.bigint "user_id"
     t.index ["organization_id"], name: "index_every_fields_on_organization_id"
+    t.index ["user_id"], name: "index_every_fields_on_user_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

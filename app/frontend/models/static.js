@@ -1410,10 +1410,10 @@ const api = {
               }
             ]
           },
-          "another_user": {
+          "user": {
             "x-rhino-attribute": {
-              "name": "another_user",
-              "readableName": "Another User",
+              "name": "user",
+              "readableName": "User",
               "readable": true,
               "creatable": true,
               "updatable": true
@@ -1449,7 +1449,7 @@ const api = {
           "currency_required",
           "enum_required",
           "organization",
-          "another_user"
+          "user"
         ]
       }
     }
