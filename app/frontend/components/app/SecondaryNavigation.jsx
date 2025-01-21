@@ -17,21 +17,7 @@ export const SecondaryNavigation = () => {
 
   return (
     <div className="flex flex-col">
-      {DESIGN_SYSTEM_ENABLED && (
-        <NavItem
-          key="design-system"
-          title="Design System"
-          to="__design"
-          icon="list"
-          className="px-3"
-        />
-      )}
-      {/* {showNotifications && (
-        <>
-          <NotificationMenu />
-          <hr className="border-top border-gray-700" />
-        </>
-      )} */}
+      {showNotifications && <NotificationMenu />}
       <BaseOwnerSwitcher />
       <AccountMenu />
     </div>
