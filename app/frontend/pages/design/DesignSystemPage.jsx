@@ -32,10 +32,6 @@ import {
   Tabs
 } from '@rhino-project/ui-nextui';
 import { FormProvider } from '@rhino-project/core/components/forms';
-import {
-  FieldGroupFile,
-  FieldGroupHorizontalFile
-} from '@rhino-project/ui-nextui';
 
 import {
   Table,
@@ -144,10 +140,10 @@ const FormsVertical = () => {
     { Component: FieldCountry, name: 'FieldCountry', props: {} },
     { Component: FieldDate, name: 'FieldDate', props: {} },
     { Component: FieldDateTime, name: 'FieldDateTime', props: {} },
-    { Component: FieldGroupFile, name: 'FieldGroupFile', props: {} },
+    { Component: FieldFile, name: 'FieldFile', props: {} },
     {
-      Component: FieldGroupFile,
-      name: 'FieldGroupFileMultiple',
+      Component: FieldFile,
+      name: 'FieldFile',
       props: { multiple: true }
     },
     { Component: FieldFloat, name: 'FieldFloat', props: {} },
