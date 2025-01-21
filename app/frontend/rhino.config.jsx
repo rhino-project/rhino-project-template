@@ -7,7 +7,8 @@ import {
   ModelDisplayCurrency,
   ModelDisplayEnum,
   ModelDisplayInteger,
-  ModelDisplayText
+  ModelDisplayText,
+  ModelIndexCardGrid
 } from '@rhino-project/ui-nextui';
 
 /** @type {import('@rhino-project/core/config').RhinoConfig} */
@@ -40,6 +41,7 @@ const rhinoConfig = {
       //     ]
       //   }
       // },
+      ModelIndexTable: ModelIndexCardGrid,
       single_file_attachment: {
         ModelDisplayAttachment: {}
       },

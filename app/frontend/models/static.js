@@ -3597,6 +3597,9 @@ const api = {
         "rhino_organizations": {
           "version": "0.30.0.alpha.7"
         },
+        "rhino_notifications": {
+          "version": "0.30.0.alpha.7"
+        },
         "rhino_subscriptions": {
           "version": "0.30.0.alpha.7"
         }

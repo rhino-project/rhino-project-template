@@ -16,7 +16,7 @@ export const SecondaryNavigation = () => {
   const showNotifications = useMemo(() => hasNotificationsModule(), []);
 
   return (
-    <div>
+    <div className="flex flex-col">
       {DESIGN_SYSTEM_ENABLED && (
         <NavItem
           key="design-system"
@@ -31,8 +31,8 @@ export const SecondaryNavigation = () => {
           <NotificationMenu />
           <hr className="border-top border-gray-700" />
         </>
-      )}
-      <BaseOwnerSwitcher /> */}
+      )} */}
+      <BaseOwnerSwitcher />
       <AccountMenu />
     </div>
   );
