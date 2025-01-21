@@ -108,7 +108,7 @@ const fields = [
   { Component: FieldYear, name: 'FieldYear', props: {} }
 ];
 
-const Forms = () => {
+const Forms = ({ labelPlacement }) => {
   const methods = useForm();
 
   return (
@@ -118,6 +118,9 @@ const Forms = () => {
           <Component
             key={field.name}
             id={field.name}
+            label={labelPlacement ? field.name : undefined}
+            labelPlacement={labelPlacement}
+            placeholder={labelPlacement === 'outside' ? field.name : undefined}
             aria-label={field.name}
             path={field.name}
             {...field.props}
@@ -129,232 +132,15 @@ const Forms = () => {
 };
 
 const FormsVertical = () => {
-  const methods = useForm();
-  const fields = [
-    {
-      Component: FieldBoolean,
-      name: 'FieldBoolean',
-      props: { children: 'FieldBoolean' }
-    },
-    { Component: FieldCurrency, name: 'FieldCurrency', props: {} },
-    { Component: FieldCountry, name: 'FieldCountry', props: {} },
-    { Component: FieldDate, name: 'FieldDate', props: {} },
-    { Component: FieldDateTime, name: 'FieldDateTime', props: {} },
-    { Component: FieldFile, name: 'FieldFile', props: {} },
-    {
-      Component: FieldFile,
-      name: 'FieldFile',
-      props: { multiple: true }
-    },
-    { Component: FieldFloat, name: 'FieldFloat', props: {} },
-    { Component: FieldInteger, name: 'FieldInteger', props: {} },
-    { Component: FieldPassword, name: 'FieldPassword', props: {} },
-    { Component: FieldPhone, name: 'FieldPhone', props: {} },
-    {
-      Component: FieldSelect,
-      name: 'FieldSelect',
-      props: { children: SELECT_OPTIONS }
-    },
-    { Component: FieldString, name: 'FieldString', props: {} },
-    { Component: FieldText, name: 'FieldText', props: {} },
-    { Component: FieldTime, name: 'FieldTime', props: {} },
-    { Component: FieldYear, name: 'FieldYear', props: {} }
-  ];
-  return (
-    <FormProvider {...methods}>
-      <Form>
-        {fields.map(({ Component, ...field }) => (
-          <Component
-            key={field.name}
-            id={field.name}
-            label={field.name}
-            labelPlacement="outside"
-            placeholder={field.name}
-            path={field.name}
-            {...field.props}
-          />
-        ))}
-      </Form>
-    </FormProvider>
-  );
+  return <Forms labelPlacement="outside" />;
 };
 
 const FormsHorizontal = () => {
-  const methods = useForm();
-  const fields = [
-    {
-      Component: FieldBoolean,
-      name: 'FieldBoolean',
-      props: { children: 'FieldBoolean' }
-    },
-    {
-      Component: FieldCountry,
-      name: 'FieldCountry',
-      props: {}
-    },
-    {
-      Component: FieldCurrency,
-      name: 'FieldCurrency',
-      props: {}
-    },
-    {
-      Component: FieldDate,
-      name: 'FieldDate',
-      props: {}
-    },
-    {
-      Component: FieldDateTime,
-      name: 'FieldDateTime',
-      props: {}
-    },
-    {
-      Component: FieldGroupHorizontalFile,
-      name: 'FieldGroupHorizontalFile',
-      props: {}
-    },
-    {
-      Component: FieldFloat,
-      name: 'FieldFloat',
-      props: {}
-    },
-    {
-      Component: FieldInteger,
-      name: 'FieldInteger',
-      props: {}
-    },
-    {
-      Component: FieldPassword,
-      name: 'FieldPassword',
-      props: {}
-    },
-    {
-      Component: FieldPhone,
-      name: 'FieldPhone',
-      props: {}
-    },
-    {
-      Component: FieldSelect,
-      name: 'FieldSelect',
-      props: { children: SELECT_OPTIONS }
-    },
-    { Component: FieldString, name: 'FieldString', props: {} },
-    { Component: FieldText, name: 'FieldText', props: {} },
-    {
-      Component: FieldTime,
-      name: 'FieldTime',
-      props: {}
-    },
-    {
-      Component: FieldYear,
-      name: 'FieldYear',
-      props: {}
-    }
-  ];
-  return (
-    <FormProvider {...methods}>
-      <Form>
-        {fields.map(({ Component, ...field }) => (
-          <Component
-            key={field.name}
-            id={field.name}
-            label={field.name}
-            labelPlacement="outside-left"
-            path={field.name}
-            {...field.props}
-          />
-        ))}
-      </Form>
-    </FormProvider>
-  );
+  return <Forms labelPlacement="outside-left" />;
 };
 
 const FormsFloating = () => {
-  const methods = useForm();
-  const fields = [
-    {
-      Component: FieldBoolean,
-      name: 'FieldBoolean',
-      props: { children: 'FieldBoolean' }
-    },
-    {
-      Component: FieldCountry,
-      name: 'FieldCountry',
-      props: {}
-    },
-    {
-      Component: FieldCurrency,
-      name: 'FieldCurrency',
-      props: {}
-    },
-    {
-      Component: FieldDate,
-      name: 'FieldDate',
-      props: {}
-    },
-    {
-      Component: FieldDateTime,
-      name: 'FieldDateTime',
-      props: {}
-    },
-    {
-      Component: FieldGroupFile,
-      name: 'FieldGroupFloatingFile',
-      props: {}
-    },
-    {
-      Component: FieldFloat,
-      name: 'FieldFloat',
-      props: {}
-    },
-    {
-      Component: FieldInteger,
-      name: 'FieldInteger',
-      props: {}
-    },
-    {
-      Component: FieldPassword,
-      name: 'FieldPassword',
-      props: {}
-    },
-    {
-      Component: FieldPhone,
-      name: 'FieldPhone',
-      props: {}
-    },
-    {
-      Component: FieldSelect,
-      name: 'FieldSelect',
-      props: { children: SELECT_OPTIONS }
-    },
-    { Component: FieldString, name: 'FieldString', props: {} },
-    { Component: FieldText, name: 'FieldText', props: {} },
-    {
-      Component: FieldTime,
-      name: 'FieldTime',
-      props: {}
-    },
-    {
-      Component: FieldYear,
-      name: 'FieldYear',
-      props: {}
-    }
-  ];
-  return (
-    <FormProvider {...methods}>
-      <Form>
-        {fields.map(({ Component, ...field }) => (
-          <Component
-            key={field.name}
-            id={field.name}
-            label={field.name}
-            labelPlacement="inside"
-            path={field.name}
-            {...field.props}
-          />
-        ))}
-      </Form>
-    </FormProvider>
-  );
+  return <Forms labelPlacement="inside" />;
 };
 
 const columnHelper = createColumnHelper();
