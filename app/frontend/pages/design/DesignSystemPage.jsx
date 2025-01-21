@@ -9,6 +9,7 @@ import {
   Button,
   CloseButton,
   FieldBoolean,
+  FieldCurrency,
   FieldDate,
   FieldDateTime,
   FieldFile,
@@ -19,6 +20,7 @@ import {
   FieldString,
   FieldText,
   FieldTime,
+  FieldYear,
   Form,
   IconButton,
   LinkButton,
@@ -34,11 +36,6 @@ import {
   FieldGroupHorizontalCountry
 } from '@rhino-project/ui-nextui';
 import {
-  FieldGroupCurrency,
-  FieldGroupFloatingCurrency,
-  FieldGroupHorizontalCurrency
-} from '@rhino-project/ui-nextui';
-import {
   FieldGroupFile,
   FieldGroupHorizontalFile
 } from '@rhino-project/ui-nextui';
@@ -46,11 +43,6 @@ import {
   FieldGroupPhone,
   FieldGroupFloatingPhone,
   FieldGroupHorizontalPhone
-} from '@rhino-project/ui-nextui';
-import {
-  FieldGroupYear,
-  FieldGroupFloatingYear,
-  FieldGroupHorizontalYear
 } from '@rhino-project/ui-nextui';
 
 import { Table } from '@rhino-project/ui-nextui';
@@ -107,7 +99,7 @@ const fields = [
     props: { children: 'FieldBoolean' }
   },
   { Component: FieldGroupCountry, name: 'FieldGroupCountry', props: {} },
-  { Component: FieldGroupCurrency, name: 'FieldGroupCurrency', props: {} },
+  { Component: FieldCurrency, name: 'FieldCurrency', props: {} },
   { Component: FieldDate, name: 'FieldDate', props: {} },
   { Component: FieldDateTime, name: 'FieldDateTime', props: {} },
   { Component: FieldFile, name: 'FieldFile', props: {} },
@@ -123,7 +115,7 @@ const fields = [
   { Component: FieldString, name: 'FieldString', props: {} },
   { Component: FieldText, name: 'FieldText', props: {} },
   { Component: FieldTime, name: 'FieldTime', props: {} },
-  { Component: FieldGroupYear, name: 'FieldGroupYear', props: {} }
+  { Component: FieldYear, name: 'FieldYear', props: {} }
 ];
 
 const Forms = () => {
@@ -155,7 +147,7 @@ const FormsVertical = () => {
       name: 'FieldBoolean',
       props: { children: 'FieldBoolean' }
     },
-    { Component: FieldGroupCurrency, name: 'FieldGroupCurrency', props: {} },
+    { Component: FieldCurrency, name: 'FieldCurrency', props: {} },
     { Component: FieldGroupCountry, name: 'FieldGroupCountry', props: {} },
     { Component: FieldDate, name: 'FieldDate', props: {} },
     { Component: FieldDateTime, name: 'FieldDateTime', props: {} },
@@ -177,7 +169,7 @@ const FormsVertical = () => {
     { Component: FieldString, name: 'FieldString', props: {} },
     { Component: FieldText, name: 'FieldText', props: {} },
     { Component: FieldTime, name: 'FieldTime', props: {} },
-    { Component: FieldGroupYear, name: 'FieldGroupYear', props: {} }
+    { Component: FieldYear, name: 'FieldYear', props: {} }
   ];
   return (
     <FormProvider {...methods}>
@@ -212,8 +204,8 @@ const FormsHorizontal = () => {
       props: {}
     },
     {
-      Component: FieldGroupHorizontalCurrency,
-      name: 'FieldGroupHorizontalCurrency',
+      Component: FieldCurrency,
+      name: 'FieldCurrency',
       props: {}
     },
     {
@@ -264,8 +256,8 @@ const FormsHorizontal = () => {
       props: {}
     },
     {
-      Component: FieldGroupHorizontalYear,
-      name: 'FieldGroupHorizontalYear',
+      Component: FieldYear,
+      name: 'FieldYear',
       props: {}
     }
   ];
@@ -301,8 +293,8 @@ const FormsFloating = () => {
       props: {}
     },
     {
-      Component: FieldGroupFloatingCurrency,
-      name: 'FieldGroupFloatingCurrency',
+      Component: FieldCurrency,
+      name: 'FieldCurrency',
       props: {}
     },
     {
@@ -353,8 +345,8 @@ const FormsFloating = () => {
       props: {}
     },
     {
-      Component: FieldGroupFloatingYear,
-      name: 'FieldGroupFloatingYear',
+      Component: FieldYear,
+      name: 'FieldYear',
       props: {}
     }
   ];
