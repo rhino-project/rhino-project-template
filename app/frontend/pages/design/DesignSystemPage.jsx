@@ -9,12 +9,14 @@ import {
   Button,
   CloseButton,
   FieldBoolean,
+  FieldCountry,
   FieldCurrency,
   FieldDate,
   FieldDateTime,
   FieldFile,
   FieldFloat,
   FieldInteger,
+  FieldPhone,
   FieldPassword,
   FieldSelect,
   FieldString,
@@ -31,18 +33,8 @@ import {
 } from '@rhino-project/ui-nextui';
 import { FormProvider } from '@rhino-project/core/components/forms';
 import {
-  FieldGroupCountry,
-  FieldGroupFloatingCountry,
-  FieldGroupHorizontalCountry
-} from '@rhino-project/ui-nextui';
-import {
   FieldGroupFile,
   FieldGroupHorizontalFile
-} from '@rhino-project/ui-nextui';
-import {
-  FieldGroupPhone,
-  FieldGroupFloatingPhone,
-  FieldGroupHorizontalPhone
 } from '@rhino-project/ui-nextui';
 
 import {
@@ -100,7 +92,7 @@ const fields = [
     name: 'FieldBoolean',
     props: { children: 'FieldBoolean' }
   },
-  { Component: FieldGroupCountry, name: 'FieldGroupCountry', props: {} },
+  { Component: FieldCountry, name: 'FieldCountry', props: {} },
   { Component: FieldCurrency, name: 'FieldCurrency', props: {} },
   { Component: FieldDate, name: 'FieldDate', props: {} },
   { Component: FieldDateTime, name: 'FieldDateTime', props: {} },
@@ -108,7 +100,7 @@ const fields = [
   { Component: FieldFloat, name: 'FieldFloat', props: {} },
   { Component: FieldInteger, name: 'FieldInteger', props: {} },
   { Component: FieldPassword, name: 'FieldPassword', props: {} },
-  { Component: FieldGroupPhone, name: 'FieldGroupPhone', props: {} },
+  { Component: FieldPhone, name: 'FieldPhone', props: {} },
   {
     Component: FieldSelect,
     name: 'FieldSelect',
@@ -130,9 +122,8 @@ const Forms = () => {
           <Component
             key={field.name}
             id={field.name}
-            label=""
+            aria-label={field.name}
             path={field.name}
-            labelHidden
             {...field.props}
           />
         ))}
@@ -150,7 +141,7 @@ const FormsVertical = () => {
       props: { children: 'FieldBoolean' }
     },
     { Component: FieldCurrency, name: 'FieldCurrency', props: {} },
-    { Component: FieldGroupCountry, name: 'FieldGroupCountry', props: {} },
+    { Component: FieldCountry, name: 'FieldCountry', props: {} },
     { Component: FieldDate, name: 'FieldDate', props: {} },
     { Component: FieldDateTime, name: 'FieldDateTime', props: {} },
     { Component: FieldGroupFile, name: 'FieldGroupFile', props: {} },
@@ -162,7 +153,7 @@ const FormsVertical = () => {
     { Component: FieldFloat, name: 'FieldFloat', props: {} },
     { Component: FieldInteger, name: 'FieldInteger', props: {} },
     { Component: FieldPassword, name: 'FieldPassword', props: {} },
-    { Component: FieldGroupPhone, name: 'FieldGroupPhone', props: {} },
+    { Component: FieldPhone, name: 'FieldPhone', props: {} },
     {
       Component: FieldSelect,
       name: 'FieldSelect',
@@ -201,8 +192,8 @@ const FormsHorizontal = () => {
       props: { children: 'FieldBoolean' }
     },
     {
-      Component: FieldGroupHorizontalCountry,
-      name: 'FieldGroupHorizontalCountry',
+      Component: FieldCountry,
+      name: 'FieldCountry',
       props: {}
     },
     {
@@ -241,8 +232,8 @@ const FormsHorizontal = () => {
       props: {}
     },
     {
-      Component: FieldGroupHorizontalPhone,
-      name: 'FieldGroupHorizontalPhone',
+      Component: FieldPhone,
+      name: 'FieldPhone',
       props: {}
     },
     {
@@ -290,8 +281,8 @@ const FormsFloating = () => {
       props: { children: 'FieldBoolean' }
     },
     {
-      Component: FieldGroupFloatingCountry,
-      name: 'FieldGroupFloatingCountry',
+      Component: FieldCountry,
+      name: 'FieldCountry',
       props: {}
     },
     {
@@ -330,8 +321,8 @@ const FormsFloating = () => {
       props: {}
     },
     {
-      Component: FieldGroupFloatingPhone,
-      name: 'FieldGroupFloatingPhone',
+      Component: FieldPhone,
+      name: 'FieldPhone',
       props: {}
     },
     {
