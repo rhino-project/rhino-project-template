@@ -45,24 +45,26 @@ import {
   FieldGroupHorizontalPhone
 } from '@rhino-project/ui-nextui';
 
-import { Table } from '@rhino-project/ui-nextui';
-import { CellBadge } from '@rhino-project/ui-nextui';
-import { CellBoolean } from '@rhino-project/ui-nextui';
-import { CellCountry } from '@rhino-project/ui-nextui';
-import { CellCurrency } from '@rhino-project/ui-nextui';
-import { CellDate } from '@rhino-project/ui-nextui';
-import { CellDateTime } from '@rhino-project/ui-nextui';
-import { CellDateTimeDistance } from '@rhino-project/ui-nextui';
-import { CellDateTimeRelative } from '@rhino-project/ui-nextui';
-import { CellFloat } from '@rhino-project/ui-nextui';
-import { CellImage } from '@rhino-project/ui-nextui';
-import { CellInteger } from '@rhino-project/ui-nextui';
-import { CellLink } from '@rhino-project/ui-nextui';
-import { CellLinkEmail } from '@rhino-project/ui-nextui';
-import { CellLinkTelephone } from '@rhino-project/ui-nextui';
-import { CellReference } from '@rhino-project/ui-nextui';
-import { CellString } from '@rhino-project/ui-nextui';
-import { CellTime } from '@rhino-project/ui-nextui';
+import {
+  Table,
+  CellBadge,
+  CellBoolean,
+  CellCountry,
+  CellCurrency,
+  CellDate,
+  CellDateTime,
+  CellDateTimeDistance,
+  CellDateTimeRelative,
+  CellFloat,
+  CellImage,
+  CellInteger,
+  CellLink,
+  CellLinkEmail,
+  CellLinkTelephone,
+  CellReference,
+  CellString,
+  CellTime
+} from '@rhino-project/ui-nextui';
 
 const Buttons = () => {
   return (
