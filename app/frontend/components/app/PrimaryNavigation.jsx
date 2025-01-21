@@ -19,7 +19,7 @@ export const PrimaryNavigation = () => {
             key="design-system"
             title="Design System"
             to="__design"
-            icon="list"
+            icon="easel"
           />
         )}
       </NavSection>
