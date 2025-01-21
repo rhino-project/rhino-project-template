@@ -19,7 +19,17 @@ const rhinoConfig = {
       // ModelCreate: { props: { paths: ['another_user'] } }
       ModelFilters: {
         props: {
-          paths: ['date_time_required', 'date_required', 'time_required']
+          paths: [
+            'string',
+            'integer_no_nil',
+            'float_no_nil',
+            'date_time_required',
+            'date_required',
+            'time_required',
+            'enum_required',
+            'user',
+            'year_required'
+          ]
         }
       }
     },
@@ -46,6 +56,11 @@ const rhinoConfig = {
       //     ]
       //   }
       // },
+      ModelFilters: {
+        props: {
+          paths: ['is_published']
+        }
+      },
       ModelIndexTable: ModelIndexCardGrid,
 
       single_file_attachment: {
