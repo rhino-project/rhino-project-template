@@ -6,13 +6,8 @@ import {
   BaseOwnerSwitcher,
   NotificationMenu
 } from '@rhino-project/ui-nextui';
-import { useRhinoConfig } from '@rhino-project/core/config';
-import { NavItem } from '@rhino-project/ui-nextui';
 
 export const SecondaryNavigation = () => {
-  const {
-    env: { DESIGN_SYSTEM_ENABLED }
-  } = useRhinoConfig();
   const showNotifications = useMemo(() => hasNotificationsModule(), []);
 
   return (
