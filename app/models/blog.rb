@@ -2,6 +2,7 @@
 
 class Blog < ApplicationRecord
   belongs_to :organization
+  has_many :users, through: :organization
 
   has_one_attached :image
   has_one_attached :single_file
@@ -12,4 +13,6 @@ class Blog < ApplicationRecord
   rhino_search [ :title ]
 
   validates :title, presence: true
+
+  acts_as_notifiable :users, targets: User.all, tracked: { only: [ :create ] }
 end

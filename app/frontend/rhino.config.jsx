@@ -42,6 +42,11 @@ const rhinoConfig = {
       //   }
       // },
       ModelIndexTable: ModelIndexCardGrid,
+      ModelFilters: {
+        props: {
+          paths: ['title', 'user']
+        }
+      },
       single_file_attachment: {
         ModelDisplayAttachment: {}
       },

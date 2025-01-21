@@ -1,13 +1,12 @@
 ActivityNotification.configure do |config|
-
   # Configure if all activity notifications are enabled
   # Set false when you want to turn off activity notifications
   config.enabled = true
 
   # Configure ORM name for ActivityNotification.
   # Set :active_record, :mongoid or :dynamoid.
-  ENV['AN_ORM'] = 'active_record' if ['mongoid', 'dynamoid'].exclude?(ENV['AN_ORM'])
-  config.orm = ENV['AN_ORM'].to_sym
+  ENV["AN_ORM"] = "active_record" if [ "mongoid", "dynamoid" ].exclude?(ENV["AN_ORM"])
+  config.orm = ENV["AN_ORM"].to_sym
 
   # Configure table name to store notification data.
   config.notification_table_name = "notifications"
@@ -43,7 +42,7 @@ ActivityNotification.configure do |config|
 
   # Configure the e-mail address which will be shown in ActivityNotification::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-activity_notification@example.com'
+  config.mailer_sender = "please-change-me-at-config-initializers-activity_notification@example.com"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "ActivityNotification::Mailer"
@@ -92,13 +91,12 @@ ActivityNotification.configure do |config|
   config.action_cable_with_devise = false
 
   # Configure notification channel prefix for ActionCable.
-  config.notification_channel_prefix = 'activity_notification_channel'
+  config.notification_channel_prefix = "activity_notification_channel"
 
   # Configure notification API channel prefix for ActionCable.
-  config.notification_api_channel_prefix = 'activity_notification_api_channel'
+  config.notification_api_channel_prefix = "activity_notification_api_channel"
 
   # Configure if activity_notification internally rescues optional target errors. Default value is true.
   # See https://github.com/simukappu/activity_notification/issues/155 for more details.
   config.rescue_optional_target_errors = true
-
 end

@@ -11,7 +11,7 @@ export const SecondaryNavigation = () => {
   const showNotifications = useMemo(() => hasNotificationsModule(), []);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-2">
       {showNotifications && <NotificationMenu />}
       <BaseOwnerSwitcher />
       <AccountMenu />
