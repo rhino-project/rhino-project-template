@@ -17,6 +17,11 @@ const rhinoConfig = {
   components: {
     every_field: {
       // ModelCreate: { props: { paths: ['another_user'] } }
+      ModelFilters: {
+        props: {
+          paths: ['date_time_required', 'date_required', 'time_required']
+        }
+      }
     },
     // DisplayInput: {
     //   props: {
@@ -42,11 +47,7 @@ const rhinoConfig = {
       //   }
       // },
       ModelIndexTable: ModelIndexCardGrid,
-      ModelFilters: {
-        props: {
-          paths: ['title', 'user']
-        }
-      },
+
       single_file_attachment: {
         ModelDisplayAttachment: {}
       },
