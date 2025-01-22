@@ -37,6 +37,7 @@ import {
   Table,
   CellBadge,
   CellBoolean,
+  CellBooleanIcon,
   CellCountry,
   CellCurrency,
   CellDate,
@@ -288,6 +289,7 @@ const data1 = [
   {
     CellBadge: '1',
     CellBoolean: true,
+    CellBooleanIcon: true,
     CellCountry: 'BR',
     CellCurrency: 1.99,
     CellDate: new Date().toISOString(),
@@ -297,7 +299,8 @@ const data1 = [
   },
   {
     CellBadge: '1',
-    CellBoolean: true,
+    CellBoolean: false,
+    CellBooleanIcon: false,
     CellCountry: 'CA',
     CellCurrency: 1.99,
     CellDate: new Date().toISOString(),
@@ -308,6 +311,7 @@ const data1 = [
   {
     CellBadge: '2',
     CellBoolean: true,
+    CellBooleanIcon: true,
     CellCountry: 'US',
     CellCurrency: 1.99,
     CellDate: new Date().toISOString(),
@@ -318,6 +322,7 @@ const data1 = [
   {
     CellBadge: '3',
     CellBoolean: true,
+    CellBooleanIcon: true,
     CellCountry: 'MX',
     CellCurrency: 1.99,
     CellDate: new Date().toISOString(),
@@ -359,6 +364,7 @@ const data2 = [
 
 const columns1 = [
   { Cell: CellBadge, name: 'CellBadge' },
+  { Cell: CellBooleanIcon, name: 'CellBooleanIcon' },
   { Cell: CellBoolean, name: 'CellBoolean' },
   { Cell: CellCountry, name: 'CellCountry' },
   { Cell: CellCurrency, name: 'CellCurrency' },
