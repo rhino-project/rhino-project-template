@@ -17,7 +17,7 @@ import {
 } from 'react-router-dom';
 import { IdentityAnalytics } from '@rhino-project/core/components/analytics';
 import { PageAnalytics } from '@rhino-project/core/components/analytics';
-import { HeroUIProvider, Toaster } from '@rhino-project/ui-nextui';
+import { HeroUIProvider } from '@rhino-project/ui-nextui';
 import { NotFoundPage } from '@rhino-project/core/components/shared';
 import { ApplicationShell } from '@rhino-project/ui-nextui';
 import { RhinoProvider } from '@rhino-project/core';
@@ -190,7 +190,6 @@ const Root = () => {
           <Router>
             <RootUI />
           </Router>
-          <Toaster />
         </RollbarErrorBounday>
       </RollbarProvider>
     </RhinoProvider>

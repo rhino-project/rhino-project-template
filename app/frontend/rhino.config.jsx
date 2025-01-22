@@ -9,7 +9,9 @@ import {
   ModelDisplayEnum,
   ModelDisplayInteger,
   ModelDisplayText,
-  ModelIndexCardGrid
+  ModelIndexActionsModalCreate,
+  ModelIndexCardGrid,
+  ModelShowActionsModalEdit
 } from '@rhino-project/ui-nextui';
 import { useState } from 'react';
 
@@ -58,12 +60,16 @@ const rhinoConfig = {
       //     ]
       //   }
       // },
+
+      // ModelIndexActions: ModelIndexActionsModalCreate,
+      // ModelShowActions: ModelShowActionsModalEdit,
+
       ModelFilters: {
         props: {
           paths: ['is_published']
         }
       },
-      ModelIndexTable: ModelIndexCardGrid,
+      // ModelIndexTable: ModelIndexCardGrid,
 
       single_file_attachment: {},
       image_attachment: {
