@@ -41,6 +41,10 @@ export default defineConfig(({ mode }) => {
     : {};
 
   return {
+    resolve: {
+      dedupe: ['@heroui/react', 'react-router-dom', '@react-aria/utils']
+    },
+
     server: {
       hmr
     },

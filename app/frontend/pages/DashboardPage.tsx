@@ -17,6 +17,7 @@ import {
   Image,
   Input,
   Kbd,
+  Link,
   Pager,
   Spinner,
   TableBody,
@@ -50,9 +51,11 @@ import {
   ZonedDateTime
 } from '@internationalized/date';
 import { useEffect, useState } from 'react';
-import { Pagination, Table } from '@heroui/react';
-import { useHref } from 'react-router-dom';
+import { Pagination, Table, useLink } from '@heroui/react';
+import { Link as RRLink, useHref } from 'react-router-dom';
 import { set } from 'react-hook-form';
+import { useAriaLink } from '@heroui/use-aria-link';
+import { useRouter, useLinkProps } from '@react-aria/utils';
 
 const APPROVAL = false;
 
@@ -119,9 +122,15 @@ const GetStarted = () => {
     }, 3000);
   }, []);
 
-  // const check = useHref('/1/dashboard');
-  // const check2 = useHref('dashboard');
-  // console.log('check', check, check2);
+  // const check = useHref('https://example.com');
+  // const check2 = useHref('./blogs');
+  // console.log('check', check);
+
+  const rr = useRouter();
+  const internalalink = useLinkProps({ href: 'blogs' });
+  const alink = useAriaLink({ href: 'blogs' });
+  const link = useLink({ href: 'blogs' });
+  console.log('link', rr, internalalink, alink, link, link.getLinkProps());
 
   // useEffect(() => {
   //   setTimeout(() => {
@@ -137,9 +146,18 @@ const GetStarted = () => {
 
   // console.log('results', results);
   return (
-    <Empty
-      title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
-    >
+    <>
+      <Empty
+        title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
+      />
+      <div className="flex flex-col">
+        <Link id="linktest" href="blogs/14">
+          Blogs
+        </Link>
+        <Link href="__design/">Design</Link>
+
+        <RRLink to="blogs/14">Blogs</RRLink>
+      </div>
       <div>
         <div className=" space-y-4">
           <div className="flex items-center justify-center w-full">
@@ -249,7 +267,11 @@ const GetStarted = () => {
         onValueChange={(e) => console.log('input file ovc', e)}
         onClear={() => console.log('clear')}
       />
-      <DatePicker label="test" showMonthAndYearPickers={true} />
+      <DatePicker
+        className="my-3"
+        label="test"
+        // showMonthAndYearPickers={true}
+      />
       <Calendar
         showMonthAndYearPickers={true}
         aria-label="Date (uncontrolled)"
@@ -318,7 +340,7 @@ const GetStarted = () => {
           )}
         </TableBody>
       </Table>
-    </Empty>
+    </>
   );
 };
 

@@ -26,7 +26,7 @@
     "react-helmet": "6.1.0",
     "react-hook-form": "7.49.2",
     "react-phone-input-2": "2.15.1",
-    "react-router-dom": "6.16.0",
+    "react-router-dom": "6.28.1",
     "reactstrap": "9.2.2",
     "rollbar": "2.26.2"
   },

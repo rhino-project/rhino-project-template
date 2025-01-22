@@ -135,11 +135,27 @@ const NonAuthenticatedApp = () => {
   );
 };
 
+const useMyHref = (options) => {
+  const href = useHref(options);
+
+  console.log('useMyHref', options, href);
+
+  return href;
+};
+
 const RootUI = () => {
   const navigate = useNavigate();
 
+  console.log('RootUI', navigate);
+
   return (
-    <HeroUIProvider navigate={navigate} useHref={useHref}>
+    <HeroUIProvider
+      navigate={(options) => {
+        console.log('navoptions', options);
+        navigate(options);
+      }}
+      useHref={useMyHref}
+    >
       <div className="dark text-foreground bg-background h-dvh">
         <PageAnalytics>
           <Routes>

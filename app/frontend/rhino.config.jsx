@@ -69,7 +69,7 @@ const rhinoConfig = {
           paths: ['is_published']
         }
       },
-      // ModelIndexTable: ModelIndexCardGrid,
+      ModelIndexTable: ModelIndexCardGrid,
 
       single_file_attachment: {},
       image_attachment: {
