@@ -151,6 +151,17 @@ const GetStarted = () => {
         title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
       />
       <div className="animate-pulse">Hello</div>
+      <CircularProgress
+        classNames={{
+          svg: 'w-36 h-36 drop-shadow-md',
+          indicator: 'stroke-white',
+          track: 'stroke-white/10',
+          value: 'text-3xl font-semibold text-white'
+        }}
+        showValueLabel={true}
+        strokeWidth={4}
+        value={70}
+      />
       <div className="flex flex-col">
         <Link id="linktest" href="blogs/14">
           Blogs
