@@ -9,7 +9,7 @@ export const PrimaryNavigation = () => {
   return (
     <>
       <NavSection>
-        <NavItem title="Dashboard" icon="house" to="." end />
+        <NavItem title="Dashboard" icon="bi:house" to="." end />
       </NavSection>
       <ModelNavSection />
 
@@ -19,7 +19,7 @@ export const PrimaryNavigation = () => {
             key="design-system"
             title="Design System"
             to="__design"
-            icon="easel"
+            icon="bi:easel"
           />
         )}
       </NavSection>
