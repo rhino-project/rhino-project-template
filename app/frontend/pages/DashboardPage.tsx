@@ -150,6 +150,7 @@ const GetStarted = () => {
       <Empty
         title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
       />
+      <div className="animate-pulse">Hello</div>
       <div className="flex flex-col">
         <Link id="linktest" href="blogs/14">
           Blogs
@@ -159,15 +160,16 @@ const GetStarted = () => {
         <RRLink to="blogs/14">Blogs</RRLink>
       </div>
       <div>
-        <div className=" space-y-4">
+        <div className="space-y-4">
           <div className="flex items-center justify-center w-full">
             <label className="flex flex-col items-center justify-center w-full h-32 rounded-lg cursor-pointer bg-default-100 hover:bg-default-200">
-              <div className="flex flex-col items-center justify-center pt-5 pb-6">
+              <div className="flex flex-col items-center justify-center pt-5 pb-6 gap-2">
+                <div className="text-sm">Image Attachments</div>
                 <Icon
-                  className="w-8 h-8 mb-2 text-foreground-400"
+                  className="w-8 h-8 text-foreground-400"
                   icon="bi:upload"
                 />
-                <p className="mb-2 text-sm text-foreground-500">
+                <p className="text-sm text-foreground-500">
                   <span className="font-semibold">Click to upload</span> or drag
                   and drop
                 </p>
