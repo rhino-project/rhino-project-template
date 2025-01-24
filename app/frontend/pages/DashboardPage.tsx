@@ -150,6 +150,18 @@ const GetStarted = () => {
       <Empty
         title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
       />
+      <button disabled>Test</button>
+      <Button
+        showAnchorIcon
+        as={Link}
+        color="primary"
+        href="https://github.com/heroui-inc/heroui"
+        variant="solid"
+        isExternal
+        disable
+      >
+        Button Link
+      </Button>
       <Tabs>
         <Tab href=".">Home</Tab>
         <Tab href="blogs">Blogs</Tab>
