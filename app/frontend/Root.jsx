@@ -135,18 +135,18 @@ const NonAuthenticatedApp = () => {
   );
 };
 
-const useMyHref = (options) => {
-  const href = useHref(options);
+// const useMyHref = (options) => {
+//   const href = useHref(options);
 
-  console.log('useMyHref', options, href);
+//   console.log('useMyHref', options, href);
 
-  return href;
-};
+//   return href;
+// };
 
 const RootUI = () => {
   const navigate = useNavigate();
 
-  console.log('RootUI', navigate);
+  // console.log('RootUI', navigate);
 
   return (
     <HeroUIProvider
@@ -154,7 +154,7 @@ const RootUI = () => {
         console.log('navoptions', options);
         navigate(options);
       }}
-      useHref={useMyHref}
+      useHref={useHref}
     >
       <div className="dark text-foreground bg-background h-dvh">
         <PageAnalytics>

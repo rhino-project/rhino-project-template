@@ -51,7 +51,7 @@ import {
   ZonedDateTime
 } from '@internationalized/date';
 import { useEffect, useState } from 'react';
-import { Pagination, Table, useLink } from '@heroui/react';
+import { Tab, Tabs, Pagination, Table, useLink } from '@heroui/react';
 import { Link as RRLink, useHref } from 'react-router-dom';
 import { set } from 'react-hook-form';
 import { useAriaLink } from '@heroui/use-aria-link';
@@ -150,6 +150,10 @@ const GetStarted = () => {
       <Empty
         title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
       />
+      <Tabs>
+        <Tab href=".">Home</Tab>
+        <Tab href="blogs">Blogs</Tab>
+      </Tabs>
       <div className="animate-pulse">Hello</div>
       <CircularProgress
         classNames={{
@@ -313,7 +317,7 @@ const GetStarted = () => {
         </LinkButton>
       )}
       <LinkButton color="primary" href={firstPath} isIconOnly>
-        <Icon icon="house" />
+        <Icon icon="bi:house" />
       </LinkButton>
       <Table
         aria-label="Example table with client side sorting"

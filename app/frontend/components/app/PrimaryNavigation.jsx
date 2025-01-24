@@ -6,6 +6,7 @@ export const PrimaryNavigation = () => {
     env: { DESIGN_SYSTEM_ENABLED }
   } = useRhinoConfig();
 
+  console.log('DESIGN_SYSTEM_ENABLED, DESIGN_SYSTEM_ENABLED');
   return (
     <>
       <NavSection>
