@@ -1,9 +1,9 @@
 source "https://rubygems.org"
 
-ruby "~> 3.3.6"
+ruby "~> 3.4.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.2.2"
+gem "rails", "~> 8.0.1"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -29,6 +29,9 @@ gem "solid_cable"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# Use dotenv-rails right now because it loads sooner
+gem "dotenv-rails"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
 
@@ -49,7 +52,7 @@ group :development, :test do
 
   gem "rubocop-minitest", require: false
   gem "rubocop-factory_bot", "2.26.1", require: false
-  gem "rubocop-rhino-project", "~> 0.23.0.beta.0", require: false
+  gem "rubocop-rhino-project", "~> 0.25.0.beta.2", require: false
 
   gem "ffaker"
   gem "simplecov", require: false
@@ -72,8 +75,6 @@ require "ostruct"
 gem "sendgrid-ruby"
 gem "sendgrid-actionmailer"
 
-gem "dotenv-rails"
-
 gem "arctic_admin"
 gem "activeadmin_addons"
 
@@ -81,14 +82,14 @@ gem "mission_control-jobs", "~> 1.0"
 
 gem "rollbar"
 
-gem "rhino_project", "~> 0.23.0.beta.0"
+gem "rhino_project", "~> 0.25.0.beta.2"
 
-gem "rhino_project_core", "~> 0.23.0.beta.0"
+gem "rhino_project_core", "~> 0.25.0.beta.2"
 
-gem "rhino_project_organizations", "~> 0.23.0.beta.0"
+gem "rhino_project_organizations", "~> 0.25.0.beta.2"
 
-gem "rhino_project_notifications", "~> 0.23.0.beta.0"
+gem "rhino_project_notifications", "~> 0.25.0.beta.2"
 
-gem "rhino_project_subscriptions", "~> 0.23.0.beta.0"
+gem "rhino_project_subscriptions", "~> 0.25.0.beta.2"
 
 gem "vite_rails", "~> 3.0"

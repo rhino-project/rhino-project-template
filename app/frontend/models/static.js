@@ -84,6 +84,32 @@ const api = {
             },
             "nullable": true
           },
+          "previews": {
+            "x-rhino-attribute": {
+              "name": "previews",
+              "readableName": "Previews",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": true,
+            "default": {
+            },
+            "type": "json"
+          },
+          "representations": {
+            "x-rhino-attribute": {
+              "name": "representations",
+              "readableName": "Representations",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": true,
+            "default": {
+            },
+            "type": "json"
+          },
           "variants": {
             "x-rhino-attribute": {
               "name": "variants",
@@ -953,7 +979,7 @@ const api = {
     "x-rhino": {
       "modules": {
         "rhino": {
-          "version": "0.22.0.beta.14",
+          "version": "0.25.0.beta.0",
           "authOwner": "user",
           "baseOwner": "user",
           "oauth": [
