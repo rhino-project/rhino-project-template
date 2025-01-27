@@ -51,7 +51,7 @@ services:
     entrypoint: ./bin/dev-vite-entrypoint.sh
     environment:
       RAILS_ENV: development
-      VITE_RUBY_HOST: 0.0.0.0
+      VITE_RUBY_HOST: vite
     init: true
     networks:
       - development
