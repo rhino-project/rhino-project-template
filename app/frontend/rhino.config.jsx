@@ -64,8 +64,8 @@ const rhinoConfig = {
       //   }
       // },
 
-      ModelIndexActions: ModelIndexActionsModalCreate,
-      ModelShowActions: ModelShowActionsModalEdit,
+      // ModelIndexActions: ModelIndexActionsModalCreate,
+      // ModelShowActions: ModelShowActionsModalEdit,
 
       ModelFilters: {
         props: {
@@ -80,8 +80,8 @@ const rhinoConfig = {
           component: ModelDisplayAttachmentImage,
           props: {
             // src: 'http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MywicHVyIjoiYmxvYl9pZCJ9fQ==--3b64ca0390807a145b147e962e822fcafafb5940/Screenshot%202025-01-06%20at%2010.25.00%E2%80%AFPM.png',
-            width: 500,
-            height: 500
+            // width: 500,
+            // height: 500
           }
         }
       }
