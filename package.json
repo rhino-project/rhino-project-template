@@ -9,7 +9,7 @@
   "type": "module",
   "dependencies": {
     "@internationalized/date": "3.6.0",
-    "@heroui/react": "2.6.13",
+    "@heroui/react": "0.0.0-canary-20250130130534",
     "@rhino-project/core": "file:../rhino-project/packages/core",
     "@rhino-project/ui-nextui": "file:../rhino-project/packages/ui-nextui",
     "@rollbar/react": "0.11.2",
