@@ -21,8 +21,8 @@ const rhinoConfig = {
   components: {
     every_field: {
       // ModelCreate: { props: { paths: ['another_user'] } }
-      ModelIndexActions: ModelIndexActionsModalCreate,
-      ModelShowActions: ModelShowActionsModalEdit,
+      // ModelIndexActions: ModelIndexActionsModalCreate,
+      // ModelShowActions: ModelShowActionsModalEdit,
 
       ModelFilters: {
         props: {

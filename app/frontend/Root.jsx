@@ -155,6 +155,7 @@ const RootUI = () => {
         navigate(options);
       }}
       useHref={useHref}
+      labelPlacement="inside"
     >
       <div className="dark text-foreground bg-background h-dvh">
         <PageAnalytics>
