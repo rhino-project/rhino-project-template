@@ -185,6 +185,9 @@ const GetStarted = () => {
         <Link id="linktest" href="/1/blogs/14">
           Blogs Absolute
         </Link>
+        <Link id="linktest" href="http://example.com">
+          HTTP Link
+        </Link>
         <Link href="__design/">Design</Link>
 
         <RRLink to="blogs/14">Blogs</RRLink>
