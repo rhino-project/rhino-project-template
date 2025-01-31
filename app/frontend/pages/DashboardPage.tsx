@@ -182,6 +182,9 @@ const GetStarted = () => {
         <Link id="linktest" href="blogs/14">
           Blogs
         </Link>
+        <Link id="linktest" href="/1/blogs/14">
+          Blogs Absolute
+        </Link>
         <Link href="__design/">Design</Link>
 
         <RRLink to="blogs/14">Blogs</RRLink>
@@ -275,7 +278,8 @@ const GetStarted = () => {
       </Button>
       <br />
       <Kbd keys={['command']}>K</Kbd>
-      <CircularProgress aria-label="Test" />
+      {/* <CircularProgress aria-label="Test" /> */}
+      <Spinner label="Loading..." variant="wave" />
       <Input
         type="file"
         label="test"
