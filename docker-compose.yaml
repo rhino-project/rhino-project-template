@@ -3,7 +3,6 @@ networks:
   development:
 volumes:
   db_data:
-  redis_data:
   gem_cache:
   node_cache:
   shared_data:
@@ -32,7 +31,6 @@ services:
       DB_HOST: db
       DB_USERNAME: ${DB_USERNAME:-postgres}
       DB_PASSWORD: ${DB_PASSWORD:-password}
-      REDIS_URL: redis://redis:6379/${REDIS_DATABASE:-0}
       VITE_RUBY_HOST: vite
     healthcheck:
       test: 'curl -f http://localhost:${PORT:-3000}/admin/login || exit 1'
@@ -43,7 +41,6 @@ services:
       start_interval: 5s
     depends_on:
       - db
-      - redis
   vite:
     build:
       context: .
@@ -54,7 +51,7 @@ services:
     entrypoint: ./bin/dev-vite-entrypoint.sh
     environment:
       RAILS_ENV: development
-      VITE_RUBY_HOST: 0.0.0.0
+      VITE_RUBY_HOST: vite
     init: true
     networks:
       - development
@@ -76,11 +73,3 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD:-password}
     ports:
       - 5432
-  redis:
-    image: redis:7-alpine
-    volumes:
-      - redis_data:/data
-    networks:
-      - development
-    ports:
-      - 6379

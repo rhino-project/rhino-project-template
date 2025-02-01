@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     get "info/typescript", to: "typescript#show", format: :plain
   end
 
+  mount MissionControl::Jobs::Engine, at: "/jobs"
+
   constraints lambda { |req| !req.xhr? && req.format.html? && !req.path.starts_with?("/api/") && !req.path.starts_with?("/rails/") && !req.path.starts_with?("/jobs") } do # rubocop:disable Layout/LineLength
     get "*path", to: "frontend#root"
   end

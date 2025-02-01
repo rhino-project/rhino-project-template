@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module RhinoTemplate
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.2
+    config.load_defaults 8.0
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
@@ -50,5 +50,8 @@ module RhinoTemplate
     # Necessary for ActiveStorage integration
     # Rhino::Resource::ActiveStorageExtension#url needs this to be set
     Rails.application.routes.default_url_options[:host] = ENV["ROOT_URL"]
+
+    config.mission_control.jobs.base_controller_class = "MissionControlController"
+    config.mission_control.jobs.http_basic_auth_enabled = false
   end
 end

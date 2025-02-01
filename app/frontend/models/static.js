@@ -85,6 +85,32 @@ const api = {
             },
             "nullable": true
           },
+          "previews": {
+            "x-rhino-attribute": {
+              "name": "previews",
+              "readableName": "Previews",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": true,
+            "default": {
+            },
+            "type": "json"
+          },
+          "representations": {
+            "x-rhino-attribute": {
+              "name": "representations",
+              "readableName": "Representations",
+              "readable": true,
+              "creatable": true,
+              "updatable": true
+            },
+            "nullable": true,
+            "default": {
+            },
+            "type": "json"
+          },
           "variants": {
             "x-rhino-attribute": {
               "name": "variants",
@@ -3586,7 +3612,7 @@ const api = {
     "x-rhino": {
       "modules": {
         "rhino": {
-          "version": "0.30.0.alpha.7",
+          "version": "0.30.0.alpha.14",
           "authOwner": "user",
           "baseOwner": "organization",
           "oauth": [
@@ -3595,13 +3621,13 @@ const api = {
           "allow_signup": true
         },
         "rhino_organizations": {
-          "version": "0.30.0.alpha.7"
+          "version": "0.30.0.alpha.14"
         },
         "rhino_notifications": {
-          "version": "0.30.0.alpha.7"
+          "version": "0.30.0.alpha.14"
         },
         "rhino_subscriptions": {
-          "version": "0.30.0.alpha.7"
+          "version": "0.30.0.alpha.14"
         }
       }
     }

@@ -290,6 +290,10 @@ export interface components {
             url?: unknown;
             url_attachment?: unknown;
             /** @default {} */
+            previews: Record<string, never>;
+            /** @default {} */
+            representations: Record<string, never>;
+            /** @default {} */
             variants: Record<string, never>;
             readonly signed_id?: Record<string, never>;
         };
