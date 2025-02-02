@@ -39,7 +39,6 @@ jobs:
       DB_USERNAME: rails_test
       DB_PASSWORD: rails_test
       STRIPE_SECRET_KEY: 'FOR_TESTS'
-      VITE_API_ROOT_PATH: http://localhost:3000
 
     steps:
       - uses: actions/checkout@v4
@@ -80,7 +79,6 @@ jobs:
     env:
       CYPRESS_INSTALL_BINARY: 0
       NODE_ENV: test
-      VITE_API_ROOT_PATH: https://api.example.com
 
     steps:
       - uses: actions/checkout@v4
@@ -142,7 +140,6 @@ jobs:
       DB_USERNAME: rails_test
       DB_PASSWORD: rails_test
       STRIPE_SECRET_KEY: 'FOR_TESTS'
-      VITE_API_ROOT_PATH: 'http://localhost:3000'
       DISABLE_SSL: 1
 
     steps:

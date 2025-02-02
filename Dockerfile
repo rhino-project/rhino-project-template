@@ -23,9 +23,6 @@ ENV RAILS_ENV="production" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development"
 
-# Config for API root for build
-ARG VITE_API_ROOT_PATH="https://rhino-server.demo.rhino-project.org"
-
 # Throw-away build stage to reduce size of final image
 FROM base AS build
 

@@ -17,8 +17,7 @@ export default defineConfig({
     },
     baseUrl: `http://localhost:${env.PORT || 3000}`,
     env: {
-      PORT: env.PORT || 3000,
-      VITE_API_ROOT_PATH: env.VITE_API_ROOT_PATH
+      PORT: env.PORT || 3000
     }
   }
 });
