@@ -22,10 +22,7 @@
     "DB_PASSWORD": "postgres",
 
     // Client
-    "VITE_API_ROOT_PATH": "https://${localEnv:CODESPACE_NAME}-3000.${localEnv:GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}",
-
-    // Server
-    "FRONT_END_URL": "https://${localEnv:CODESPACE_NAME}-3001.${localEnv:GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"
+    "VITE_API_ROOT_PATH": "https://${localEnv:CODESPACE_NAME}-3000.${localEnv:GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"
   },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
