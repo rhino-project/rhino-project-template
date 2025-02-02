@@ -19,10 +19,7 @@
     "DB_NAME": "rhino_project_template_development",
     "DB_HOST": "postgres",
     "DB_USER": "postgres",
-    "DB_PASSWORD": "postgres",
-
-    // Client
-    "VITE_API_ROOT_PATH": "https://${localEnv:CODESPACE_NAME}-3000.${localEnv:GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"
+    "DB_PASSWORD": "postgres"
   },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
