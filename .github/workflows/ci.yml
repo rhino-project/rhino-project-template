@@ -35,7 +35,6 @@ jobs:
       PGUSER: rails_test
       RAILS_ENV: test
       ROOT_URL: http://localhost:3000
-      FRONT_END_URL: http://localhost:3000
       DB_NAME: rails
       DB_USERNAME: rails_test
       DB_PASSWORD: rails_test
@@ -139,7 +138,6 @@ jobs:
       BUNDLE_PATH: vendor/bundle
       RAILS_ENV: test
       ROOT_URL: http://localhost:3000
-      FRONT_END_URL: http://localhost:3000
       DB_NAME: rails
       DB_USERNAME: rails_test
       DB_PASSWORD: rails_test
