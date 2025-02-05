@@ -8,16 +8,19 @@ import {
   Checkbox,
   CircularProgress,
   DatePicker,
+  DisplayString,
   Dropdown,
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
+  Form,
   getKeyValue,
   Icon,
   Image,
   Input,
   Kbd,
   Link,
+  ModelShowSimple,
   Pager,
   Spinner,
   TableBody,
@@ -52,10 +55,15 @@ import {
 } from '@internationalized/date';
 import { useEffect, useState } from 'react';
 import { Tab, Tabs, Pagination, Table, useLink } from '@heroui/react';
-import { Link as RRLink, useHref } from 'react-router-dom';
-import { set } from 'react-hook-form';
+import {
+  Link as RRLink,
+  useHref,
+  useLocation,
+  useNavigate
+} from 'react-router-dom';
 import { useAriaLink } from '@heroui/use-aria-link';
 import { useRouter, useLinkProps } from '@react-aria/utils';
+import { Link as AriaLink } from 'react-aria-components';
 
 const APPROVAL = false;
 
@@ -116,7 +124,7 @@ const GetStarted = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      console.log('set total');
+      // console.log('set total');
       setPage(1);
       setTotal(4);
     }, 3000);
@@ -130,7 +138,7 @@ const GetStarted = () => {
   const internalalink = useLinkProps({ href: 'blogs' });
   const alink = useAriaLink({ href: 'blogs' });
   const link = useLink({ href: 'blogs' });
-  console.log('link', rr, internalalink, alink, link, link.getLinkProps());
+  // console.log('link', rr, internalalink, alink, link, link.getLinkProps());
 
   // useEffect(() => {
   //   setTimeout(() => {
@@ -143,14 +151,19 @@ const GetStarted = () => {
 
   const [search, setSearch] = useState('');
   const { results, isInitialLoading } = useModelIndex('blog', { search });
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
 
-  // console.log('results', results);
+  const anotherHref = useHref('.');
+  console.log('GetStarted', pathname, anotherHref);
   return (
     <>
       <Empty
         title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
       />
-      <button disabled>Test</button>
+      <ModelShowSimple model="blog" modelId={1}>
+        <DisplayString label="Title" path="title" />
+      </ModelShowSimple>
       <Button
         showAnchorIcon
         as={Link}
@@ -158,14 +171,18 @@ const GetStarted = () => {
         href="https://github.com/heroui-inc/heroui"
         variant="solid"
         isExternal
-        disable
+        isDisabled
       >
         Button Link
       </Button>
-      <Tabs>
-        <Tab href=".">Home</Tab>
-        <Tab href="blogs">Blogs</Tab>
-      </Tabs>
+      <div>
+        <Tabs selectedKey={pathname}>
+          <Tab key="blah">Home</Tab>
+          <Tab key={anotherHref} href={anotherHref}>
+            Blogs
+          </Tab>
+        </Tabs>
+      </div>
       <div className="animate-pulse">Hello</div>
       <CircularProgress
         classNames={{
@@ -179,18 +196,23 @@ const GetStarted = () => {
         value={70}
       />
       <div className="flex flex-col">
-        <Link id="linktest" href="blogs/14">
-          Blogs
-        </Link>
-        <Link id="linktest" href="/1/blogs/14">
-          Blogs Absolute
-        </Link>
-        <Link id="linktest" href="http://example.com">
-          HTTP Link
-        </Link>
-        <Link href="__design/">Design</Link>
+        <a
+          href="blogs/14"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate('blogs/14');
+          }}
+        >
+          direct nav link
+        </a>
 
-        <RRLink to="blogs/14">Blogs</RRLink>
+        <Link href="blogs/14">Blogs</Link>
+        <AriaLink href="blogs/14">Blogs Aria</AriaLink>
+        {/* <Link href="/1/blogs/14">Blogs Absolute</Link>
+        <Link href="http://example.com">HTTP Link</Link> */}
+        {/* <Link href="__design/">Design</Link>
+
+        <RRLink to="blogs/14">Blogs</RRLink> */}
       </div>
       <div>
         <div className="space-y-4">

@@ -47,17 +47,20 @@ import { customRoutes } from 'routes/custom';
 import { RhinoDevTool } from '@rhino-project/ui-nextui';
 import { PrimaryNavigation } from './components/app/PrimaryNavigation';
 import { SecondaryNavigation } from './components/app/SecondaryNavigation';
+import DashboardPage from './pages/DashboardPage';
 
 const LazyDesignSystemRoute = lazy(
   () => import('./pages/design/DesignSystemPage')
 );
 
-const AuthenticatedApp = () => {
+const AuthenticatedApp = ({ ...props }) => {
   const {
     enableModelRoutes,
     env: { DESIGN_SYSTEM_ENABLED }
   } = useRhinoConfig();
+  const navigate = useNavigate();
 
+  console.log('AuthenticatedApp', navigate, props);
   return (
     <AuthenticatedRoute>
       <BaseOwnerProvider>
@@ -69,7 +72,11 @@ const AuthenticatedApp = () => {
             <Routes>
               {accountSettingsRoute()}
               {settingsRoute()}
-              {customRoutes()}
+              <Route
+                key="custome"
+                index
+                element={<DashboardPage navigate={navigate} />}
+              />
               {enableModelRoutes ? modelRoutes() : []}
               <Route path="*" element={<NotFoundPage />} />
               {DESIGN_SYSTEM_ENABLED && (
@@ -146,14 +153,11 @@ const NonAuthenticatedApp = () => {
 const RootUI = () => {
   const navigate = useNavigate();
 
-  // console.log('RootUI', navigate);
+  console.log('RootUI', navigate);
 
   return (
     <HeroUIProvider
-      navigate={(options) => {
-        console.log('navoptions', options);
-        navigate(options);
-      }}
+      navigate={navigate}
       useHref={useHref}
       labelPlacement="inside"
     >
@@ -171,7 +175,7 @@ const RootUI = () => {
             <Route path={`/:baseOwnerId/*`} element={<AuthenticatedApp />} />
             <Route
               path={getAuthenticatedAppPath()}
-              element={<AuthenticatedApp />}
+              element={<AuthenticatedApp navigate={navigate} />}
             />
             <Route path="/*" element={<Navigate to="/" replace />} />
           </Routes>
