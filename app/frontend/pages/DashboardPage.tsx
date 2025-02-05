@@ -63,7 +63,13 @@ import {
 } from 'react-router-dom';
 import { useAriaLink } from '@heroui/use-aria-link';
 import { useRouter, useLinkProps } from '@react-aria/utils';
-import { Link as AriaLink } from 'react-aria-components';
+import {
+  Link as AriaLink,
+  Tabs as AriaTabs,
+  TabList,
+  Tab as AriaTab,
+  TabPanel
+} from 'react-aria-components';
 
 const APPROVAL = false;
 
@@ -153,7 +159,7 @@ const GetStarted = () => {
   const { results, isInitialLoading } = useModelIndex('blog', { search });
   const { pathname } = useLocation();
   const navigate = useNavigate();
-
+  const [timePeriod, setTimePeriod] = useState('triassic');
   const anotherHref = useHref('.');
   console.log('GetStarted', pathname, anotherHref);
   return (
@@ -176,12 +182,33 @@ const GetStarted = () => {
         Button Link
       </Button>
       <div>
-        <Tabs selectedKey={pathname}>
+        <Tabs
+          selectedKey={pathname}
+          onSelectionChange={(key) => console.log('tab', key)}
+        >
           <Tab key="blah">Home</Tab>
-          <Tab key={anotherHref} href={anotherHref}>
+          <Tab id={pathname} href={pathname}>
             Blogs
           </Tab>
         </Tabs>
+        <AriaTabs selectedKey={timePeriod} onSelectionChange={setTimePeriod}>
+          <TabList aria-label="Mesozoic time periods">
+            <AriaTab id="triassic">Triassic</AriaTab>
+            <AriaTab id="jurassic">Jurassic</AriaTab>
+            <AriaTab id="cretaceous">Cretaceous</AriaTab>
+          </TabList>
+          <TabPanel id="triassic">
+            The Triassic ranges roughly from 252 million to 201 million years
+            ago, preceding the Jurassic Period.
+          </TabPanel>
+          <TabPanel id="jurassic">
+            The Jurassic ranges from 200 million years to 145 million years ago.
+          </TabPanel>
+          <TabPanel id="cretaceous">
+            The Cretaceous is the longest period of the Mesozoic, spanning from
+            145 million to 66 million years ago.
+          </TabPanel>
+        </AriaTabs>
       </div>
       <div className="animate-pulse">Hello</div>
       <CircularProgress
