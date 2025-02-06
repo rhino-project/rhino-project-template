@@ -152,7 +152,6 @@ const NonAuthenticatedApp = () => {
 
 const RootUI = () => {
   const navigate = useNavigate();
-  const router = console.log('RootUI', navigate);
 
   return (
     <HeroUIProvider
