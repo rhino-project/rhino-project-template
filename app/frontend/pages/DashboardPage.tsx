@@ -163,6 +163,7 @@ const GetStarted = () => {
   const navigate = useNavigate();
   const [timePeriod, setTimePeriod] = useState('triassic');
   const anotherHref = useHref('.');
+
   console.log('GetStarted', pathname, anotherHref);
   return (
     <>
