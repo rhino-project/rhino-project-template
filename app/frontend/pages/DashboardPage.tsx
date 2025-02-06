@@ -133,7 +133,7 @@ const GetStarted = () => {
   useEffect(() => {
     setTimeout(() => {
       // console.log('set total');
-      setPage(1);
+      setPage(2);
       setTotal(4);
     }, 3000);
   }, []);
@@ -261,8 +261,8 @@ const GetStarted = () => {
         <RouterProvider navigate={navigate} useHref={useHref}>
           <Link href="blogs/14">Blogs</Link>
           <AriaLink href="blogs/14">Blogs Aria</AriaLink>
-          {/* <Link href="/1/blogs/14">Blogs Absolute</Link>
-        <Link href="http://example.com">HTTP Link</Link> */}
+          {/* <Link href="/1/blogs/14">Blogs Absolute</Link> */}
+          <Link href="https://example.com">HTTP Link</Link>
           {/* <Link href="__design/">Design</Link>
 
         <RRLink to="blogs/14">Blogs</RRLink> */}
