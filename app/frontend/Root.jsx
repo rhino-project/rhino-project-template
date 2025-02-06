@@ -175,7 +175,7 @@ const RootUI = () => {
             <Route path={`/:baseOwnerId/*`} element={<AuthenticatedApp />} />
             <Route
               path={getAuthenticatedAppPath()}
-              element={<AuthenticatedApp navigate={navigate} />}
+              element={<AuthenticatedApp />}
             />
             <Route path="/*" element={<Navigate to="/" replace />} />
           </Routes>

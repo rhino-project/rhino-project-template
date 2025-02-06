@@ -56,13 +56,15 @@ import {
 import { useEffect, useState } from 'react';
 import { Tab, Tabs, Pagination, Table, useLink } from '@heroui/react';
 import {
+  Route,
+  Routes,
   Link as RRLink,
   useHref,
   useLocation,
   useNavigate
 } from 'react-router-dom';
 import { useAriaLink } from '@heroui/use-aria-link';
-import { useRouter, useLinkProps } from '@react-aria/utils';
+import { useRouter, useLinkProps, RouterProvider } from '@react-aria/utils';
 import {
   Link as AriaLink,
   Tabs as AriaTabs,
@@ -183,12 +185,15 @@ const GetStarted = () => {
       </Button>
       <div>
         <Tabs
-          selectedKey={pathname}
+          selectedKey={'/1'}
           onSelectionChange={(key) => console.log('tab', key)}
         >
-          <Tab key="blah">Home</Tab>
-          <Tab id={pathname} href={pathname}>
-            Blogs
+          <Tab id="/1" href="/1">
+            Home
+          </Tab>
+          <Tab href="/1/shared">Shared</Tab>
+          <Tab id="/deleted" href="/1/deleted">
+            Deleted
           </Tab>
         </Tabs>
         <AriaTabs selectedKey={timePeriod} onSelectionChange={setTimePeriod}>
@@ -209,8 +214,27 @@ const GetStarted = () => {
             145 million to 66 million years ago.
           </TabPanel>
         </AriaTabs>
+        <AriaTabs selectedKey={pathname}>
+          <TabList aria-label="Tabs">
+            <AriaTab id="/1" href="/1">
+              Home
+            </AriaTab>
+            <AriaTab id="/shared" href="/1/shared">
+              Shared
+            </AriaTab>
+            <AriaTab id="/deleted" href="/1/deleted">
+              Deleted
+            </AriaTab>
+          </TabList>
+          <TabPanel id={pathname}>
+            <Routes>
+              <Route path="/1" element={'home'} />
+              <Route path="/1/shared" element={'shared'} />
+              <Route path="/1/deleted" element={'deleted'} />
+            </Routes>
+          </TabPanel>
+        </AriaTabs>
       </div>
-      <div className="animate-pulse">Hello</div>
       <CircularProgress
         classNames={{
           svg: 'w-36 h-36 drop-shadow-md',
@@ -233,13 +257,15 @@ const GetStarted = () => {
           direct nav link
         </a>
 
-        <Link href="blogs/14">Blogs</Link>
-        <AriaLink href="blogs/14">Blogs Aria</AriaLink>
-        {/* <Link href="/1/blogs/14">Blogs Absolute</Link>
+        <RouterProvider navigate={navigate} useHref={useHref}>
+          <Link href="blogs/14">Blogs</Link>
+          <AriaLink href="blogs/14">Blogs Aria</AriaLink>
+          {/* <Link href="/1/blogs/14">Blogs Absolute</Link>
         <Link href="http://example.com">HTTP Link</Link> */}
-        {/* <Link href="__design/">Design</Link>
+          {/* <Link href="__design/">Design</Link>
 
         <RRLink to="blogs/14">Blogs</RRLink> */}
+        </RouterProvider>
       </div>
       <div>
         <div className="space-y-4">
