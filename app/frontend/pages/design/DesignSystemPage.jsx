@@ -30,7 +30,7 @@ import {
   SubmitButton,
   Tab,
   Tabs
-} from '@rhino-project/ui-nextui';
+} from '@rhino-project/ui-heroui';
 import { FormProvider } from '@rhino-project/core/components/forms';
 
 import {
@@ -53,7 +53,7 @@ import {
   CellReference,
   CellString,
   CellTime
-} from '@rhino-project/ui-nextui';
+} from '@rhino-project/ui-heroui';
 
 const Buttons = () => {
   return (

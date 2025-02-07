@@ -5,7 +5,7 @@ import {
   AccountMenu,
   BaseOwnerSwitcher,
   NotificationMenu
-} from '@rhino-project/ui-nextui';
+} from '@rhino-project/ui-heroui';
 
 export const SecondaryNavigation = () => {
   const showNotifications = useMemo(() => hasNotificationsModule(), []);

@@ -17,9 +17,9 @@ import {
 } from 'react-router-dom';
 import { IdentityAnalytics } from '@rhino-project/core/components/analytics';
 import { PageAnalytics } from '@rhino-project/core/components/analytics';
-import { HeroUIProvider } from '@rhino-project/ui-nextui';
+import { HeroUIProvider } from '@rhino-project/ui-heroui';
 import { NotFoundPage } from '@rhino-project/core/components/shared';
-import { ApplicationShell } from '@rhino-project/ui-nextui';
+import { ApplicationShell } from '@rhino-project/ui-heroui';
 import { RhinoProvider } from '@rhino-project/core';
 import { BaseOwnerProvider } from '@rhino-project/core/contexts';
 import {
@@ -29,22 +29,22 @@ import {
   ResetPasswordPage,
   SignInPage,
   SignUpPage
-} from '@rhino-project/ui-nextui';
+} from '@rhino-project/ui-heroui';
 import {
   routePaths,
   accountSettingsRoute,
   settingsRoute
-} from '@rhino-project/ui-nextui';
-import { AuthenticatedRoute } from '@rhino-project/ui-nextui';
-import { NonAuthenticatedRoute } from '@rhino-project/ui-nextui';
-import { modelRoutes } from '@rhino-project/ui-nextui';
+} from '@rhino-project/ui-heroui';
+import { AuthenticatedRoute } from '@rhino-project/ui-heroui';
+import { NonAuthenticatedRoute } from '@rhino-project/ui-heroui';
+import { modelRoutes } from '@rhino-project/ui-heroui';
 import {
   getAuthenticatedAppPath,
   getNonAuthenticatedAppPath,
   getSessionCreatePath
 } from '@rhino-project/core/utils';
 import { customRoutes } from 'routes/custom';
-import { RhinoDevTool } from '@rhino-project/ui-nextui';
+import { RhinoDevTool } from '@rhino-project/ui-heroui';
 import { PrimaryNavigation } from './components/app/PrimaryNavigation';
 import { SecondaryNavigation } from './components/app/SecondaryNavigation';
 import DashboardPage from './pages/DashboardPage';
@@ -53,14 +53,13 @@ const LazyDesignSystemRoute = lazy(
   () => import('./pages/design/DesignSystemPage')
 );
 
-const AuthenticatedApp = ({ ...props }) => {
+const AuthenticatedApp = () => {
   const {
     enableModelRoutes,
     env: { DESIGN_SYSTEM_ENABLED }
   } = useRhinoConfig();
   const navigate = useNavigate();
 
-  console.log('AuthenticatedApp', navigate, props);
   return (
     <AuthenticatedRoute>
       <BaseOwnerProvider>

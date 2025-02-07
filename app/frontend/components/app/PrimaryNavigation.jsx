@@ -1,4 +1,4 @@
-import { ModelNavSection, NavItem, NavSection } from '@rhino-project/ui-nextui';
+import { ModelNavSection, NavItem, NavSection } from '@rhino-project/ui-heroui';
 import { useRhinoConfig } from '@rhino-project/core/config';
 
 export const PrimaryNavigation = () => {
@@ -6,7 +6,6 @@ export const PrimaryNavigation = () => {
     env: { DESIGN_SYSTEM_ENABLED }
   } = useRhinoConfig();
 
-  console.log('DESIGN_SYSTEM_ENABLED, DESIGN_SYSTEM_ENABLED');
   return (
     <>
       <NavSection>

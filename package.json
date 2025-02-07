@@ -11,7 +11,7 @@
     "@heroui/react": "0.0.0-canary-20250205213151",
     "@internationalized/date": "3.6.0",
     "@rhino-project/core": "file:../rhino-project/packages/core",
-    "@rhino-project/ui-nextui": "file:../rhino-project/packages/ui-nextui",
+    "@rhino-project/ui-heroui": "file:../rhino-project/packages/ui-heroui",
     "@rollbar/react": "0.11.2",
     "@tanstack/react-query": "4.32.6",
     "@tanstack/react-query-devtools": "4.32.6",

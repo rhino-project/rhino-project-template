@@ -9,10 +9,11 @@ import {
   ModelDisplayEnum,
   ModelDisplayInteger,
   ModelDisplayText,
+  ModelFilterReferenceTypeahead,
   ModelIndexActionsModalCreate,
   ModelIndexCardGrid,
   ModelShowActionsModalEdit
-} from '@rhino-project/ui-nextui';
+} from '@rhino-project/ui-heroui';
 import { useState } from 'react';
 
 /** @type {import('@rhino-project/core/config').RhinoConfig} */
@@ -28,13 +29,14 @@ const rhinoConfig = {
         props: {
           paths: [
             'string',
-            'integer_no_nil',
+            'integer_no_nil::gt',
             'float_no_nil',
             'date_time_required',
             'date_required',
             'time_required',
             'enum_required',
             'user',
+            // <ModelFilterReferenceTypeahead path="user" />,
             'year_required'
           ]
         }

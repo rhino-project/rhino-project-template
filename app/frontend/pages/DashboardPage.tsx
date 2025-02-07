@@ -28,9 +28,9 @@ import {
   TableColumn,
   TableHeader,
   TableRow
-} from '@rhino-project/ui-nextui';
-import { Empty } from '@rhino-project/ui-nextui';
-import { LinkButton } from '@rhino-project/ui-nextui';
+} from '@rhino-project/ui-heroui';
+import { Empty } from '@rhino-project/ui-heroui';
+import { LinkButton } from '@rhino-project/ui-heroui';
 import { useBaseOwnedResources } from '@rhino-project/core';
 import {
   useBaseOwnerPath,

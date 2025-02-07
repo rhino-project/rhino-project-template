@@ -153,7 +153,7 @@ const api = {
           "ownedBy": null,
           "singular": false,
           "path": "/api/users",
-          "searchable": false
+          "searchable": true
         },
         "type": "object",
         "properties": {
