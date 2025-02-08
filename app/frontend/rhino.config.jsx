@@ -20,6 +20,7 @@ import { useState } from 'react';
 const rhinoConfig = {
   version: 1,
   components: {
+    // ModelDisplayString: () => 'hi',
     every_field: {
       // ModelCreate: { props: { paths: ['another_user'] } }
       // ModelIndexActions: ModelIndexActionsModalCreate,
@@ -31,7 +32,7 @@ const rhinoConfig = {
             'string',
             'integer_no_nil::gt',
             'float_no_nil',
-            'date_time_required',
+            'date_time_required::gte',
             'date_required',
             'time_required',
             'enum_required',
@@ -54,6 +55,12 @@ const rhinoConfig = {
     // ModelDisplayDate: { props: { format: 'yyyy-MM-dd' } },
     // ModelDisplayAttachment: null,
     blog: {
+      // ModelDisplayString: () => 'hi2',
+      title: {
+        ModelDisplayString: {
+          props: { label: <div className="text-red-700">Hello</div> }
+        }
+      },
       // ModelShow: {
       //   props: {
       //     paths: [
@@ -76,7 +83,7 @@ const rhinoConfig = {
       },
       ModelIndexTable: ModelIndexCardGrid,
 
-      single_file_attachment: {},
+      // single_file_attachment: {},
       image_attachment: {
         ModelDisplayAttachment: {
           component: ModelDisplayAttachmentImage,

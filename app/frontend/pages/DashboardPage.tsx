@@ -8,7 +8,13 @@ import {
   Checkbox,
   CircularProgress,
   DatePicker,
+  DisplayAttachments,
+  DisplayBoolean,
+  DisplayDate,
+  DisplayDateTime,
   DisplayString,
+  DisplayStringBase,
+  DisplayText,
   Dropdown,
   DropdownItem,
   DropdownMenu,
@@ -148,14 +154,12 @@ const GetStarted = () => {
   const link = useLink({ href: 'blogs' });
   // console.log('link', rr, internalalink, alink, link, link.getLinkProps());
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     console.log('set src');
-  //     setSrc(
-  //       'http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NCwicHVyIjoiYmxvYl9pZCJ9fQ==--57d7b3537066c27ec8dd5f838c7ede4e0e1add60/Screenshot%202025-01-06%20at%2010.52.43%E2%80%AFAM.png'
-  //     );
-  //   }, 3000);
-  // }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      console.log('set src');
+      setSrc('https://placehold.co/600x400/EEE/31343C');
+    }, 3000);
+  }, []);
 
   const [search, setSearch] = useState('');
   const { results, isInitialLoading } = useModelIndex('blog', { search });
@@ -172,6 +176,20 @@ const GetStarted = () => {
       />
       <ModelShowSimple model="blog" modelId={1}>
         <DisplayString label="Title" path="title" />
+        <DisplayStringBase label="Title" path="title" />
+        <DisplayText label="content" path="content" />
+        <DisplayDateTime
+          label="Created At"
+          path="created_at"
+          granularity="minute"
+          classNames={{ base: 'text-red-400', input: 'text-blue-400' }}
+        />
+
+        <DisplayBoolean path="is_published">Published</DisplayBoolean>
+        <DisplayAttachments
+          label="Attachments"
+          path="multiple_files_attachments"
+        />
       </ModelShowSimple>
       <Button
         showAnchorIcon
@@ -381,7 +399,9 @@ const GetStarted = () => {
       />
       <DatePicker
         className="my-3"
-        label="test"
+        label="Date Picker"
+        classNames={{ base: 'text-red-400', input: 'text-blue-400' }}
+
         // showMonthAndYearPickers={true}
       />
       <Calendar
@@ -395,11 +415,7 @@ const GetStarted = () => {
         src="https://app.requestly.io/delay/1000/https://nextui.org/images/fruit-4.jpeg"
         width={300}
       /> */}
-      <Image
-        alt="NextUI Image with fallback"
-        height={200}
-        src="http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6NCwicHVyIjoiYmxvYl9pZCJ9fQ==--57d7b3537066c27ec8dd5f838c7ede4e0e1add60/Screenshot%202025-01-06%20at%2010.52.43%E2%80%AFAM.png"
-      />
+      <Image alt="NextUI Image with fallback" height={200} src={src} />
       {/* <Image src="http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiI2ejhmZXFiNGEyY3ZoNmpkZDE0Z3RhcWhpYml5IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCAyMDI1LTAxLTA2IGF0IDEuMDYuMTElM0ZQTS5wbmdcIjsgZmlsZW5hbWUqPVVURi04JydTY3JlZW5zaG90JTIwMjAyNS0wMS0wNiUyMGF0JTIwMS4wNi4xMSVFMiU4MCVBRlBNLnBuZyIsImNvbnRlbnRfdHlwZSI6ImltYWdlL3BuZyIsInNlcnZpY2VfbmFtZSI6ImxvY2FsIn0sImV4cCI6IjIwMjUtMDEtMDdUMjE6MDQ6MTYuMzc2WiIsInB1ciI6ImJsb2Jfa2V5In19--81f5ec5b5e98209d5660ec45dd750bb6c469af19/Screenshot%202025-01-06%20at%201.06.11%E2%80%AFPM.png" /> */}
       <br />
       {firstPath && (
