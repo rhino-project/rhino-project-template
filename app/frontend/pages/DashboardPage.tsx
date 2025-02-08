@@ -26,6 +26,8 @@ import {
   Input,
   Kbd,
   Link,
+  ModelDisplayBoolean,
+  ModelDisplayString,
   ModelShowSimple,
   Pager,
   Spinner,
@@ -175,17 +177,19 @@ const GetStarted = () => {
         title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
       />
       <ModelShowSimple model="blog" modelId={1}>
+        <ModelDisplayString path="title" />
         <DisplayString label="Title" path="title" />
         <DisplayStringBase label="Title" path="title" />
         <DisplayText label="content" path="content" />
         <DisplayDateTime
           label="Created At"
           path="created_at"
-          granularity="minute"
+          granularity="day"
           classNames={{ base: 'text-red-400', input: 'text-blue-400' }}
         />
 
         <DisplayBoolean path="is_published">Published</DisplayBoolean>
+        <ModelDisplayBoolean path="is_published">Another</ModelDisplayBoolean>
         <DisplayAttachments
           label="Attachments"
           path="multiple_files_attachments"

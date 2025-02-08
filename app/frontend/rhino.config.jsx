@@ -58,7 +58,10 @@ const rhinoConfig = {
       // ModelDisplayString: () => 'hi2',
       title: {
         ModelDisplayString: {
-          props: { label: <div className="text-red-700">Hello</div> }
+          props: {
+            isReadOnly: false,
+            label: <div className="text-red-700">Hello</div>
+          }
         }
       },
       // ModelShow: {
