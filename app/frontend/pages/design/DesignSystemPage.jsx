@@ -291,8 +291,7 @@ const DesignSystemPage = () => {
             />
             <Tab
               key={build('__design/formsVertical')}
-              as={NavLink}
-              to="formsVertical"
+              href={build('__design/formsVertical')}
               title="Forms Vertical"
             />
             <Tab
