@@ -280,13 +280,17 @@ const DesignSystemPage = () => {
           <Tabs selectedKey={pathname} aria-label="Tabs">
             <Tab id="dashboard" href="." title="Dashboard" />
             <Tab
-              id="buttons"
+              key={build('__design/buttons')}
               href={build('__design/buttons')}
               title="Buttons"
             />
-            <Tab id="forms" href={build('__design/forms')} title="Forms" />
             <Tab
-              id="formsVertical"
+              key={build('__design/forms')}
+              href={build('__design/forms')}
+              title="Forms"
+            />
+            <Tab
+              key={build('__design/formsVertical')}
               as={NavLink}
               to="formsVertical"
               title="Forms Vertical"
