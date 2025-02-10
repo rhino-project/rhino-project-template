@@ -54,6 +54,11 @@ import {
   CellString,
   CellTime
 } from '@rhino-project/ui-heroui';
+import {
+  useBaseOwnerNavigation,
+  useBaseOwnerPath
+} from '@rhino-project/core/hooks';
+import { path } from 'framer-motion/client';
 
 const Buttons = () => {
   return (
@@ -122,7 +127,7 @@ const fields = [
     name: 'FieldBoolean',
     props: { children: 'FieldBoolean' }
   },
-  { Component: FieldCountry, name: 'FieldCountry', props: {} },
+  // { Component: FieldCountry, name: 'FieldCountry', props: {} },
   { Component: FieldCurrency, name: 'FieldCurrency', props: {} },
   { Component: FieldDate, name: 'FieldDate', props: {} },
   { Component: FieldDateTime, name: 'FieldDateTime', props: {} },
@@ -262,7 +267,9 @@ const Dashboard = () => {
 
 const DesignSystemPage = () => {
   const { pathname } = useLocation();
+  const { build } = useBaseOwnerPath();
 
+  console.log('DesignSystemPage', pathname);
   return (
     <>
       <nav className="navbar navbar-expand-sm bg-body-tertiary my-2">
@@ -272,8 +279,12 @@ const DesignSystemPage = () => {
           </a>
           <Tabs selectedKey={pathname} aria-label="Tabs">
             <Tab id="dashboard" href="." title="Dashboard" />
-            <Tab id="buttons" href="./buttons" title="Buttons" />
-            <Tab id="forms" href="./forms" title="Forms" />
+            <Tab
+              id="buttons"
+              href={build('__design/buttons')}
+              title="Buttons"
+            />
+            <Tab id="forms" href={build('__design/forms')} title="Forms" />
             <Tab
               id="formsVertical"
               as={NavLink}
@@ -296,7 +307,7 @@ const DesignSystemPage = () => {
             <Tab
               id="typography"
               as={NavLink}
-              to="typography"
+              href={build('__design/typography')}
               title="Typography"
             />
           </Tabs>

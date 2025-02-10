@@ -64,14 +64,13 @@ const rhinoConfig = {
           }
         }
       },
-      // ModelShow: {
+      // ModelEdit: {
       //   props: {
       //     paths: [
-      //       'user',
       //       'title',
-      //       'image_attachment'
+      //       // 'image_attachment'
       //       // 'single_file_attachment'
-      //       // 'multiple_files_attachments'
+      //       'multiple_files_attachments'
       //     ]
       //   }
       // },
