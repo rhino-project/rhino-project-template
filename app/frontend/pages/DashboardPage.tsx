@@ -186,7 +186,8 @@ const GetStarted = () => {
         variant="flat"
         onPress={() => {
           addToast({
-            title: 'Toast Title'
+            title: 'Toast Title',
+            promise: new Promise((resolve) => setTimeout(resolve, 3000))
           });
         }}
       >
@@ -297,55 +298,6 @@ const GetStarted = () => {
 
         <RRLink to="blogs/14">Blogs</RRLink> */}
         </RouterProvider>
-      </div>
-      <div>
-        <div className="space-y-4">
-          <div className="flex items-center justify-center w-full">
-            <label className="flex flex-col items-center justify-center w-full h-32 rounded-lg cursor-pointer bg-default-100 hover:bg-default-200">
-              <div className="flex flex-col items-center justify-center pt-5 pb-6 gap-2">
-                <div className="text-sm">Image Attachments</div>
-                <Icon
-                  className="w-8 h-8 text-foreground-400"
-                  icon="bi:upload"
-                />
-                <p className="text-sm text-foreground-500">
-                  <span className="font-semibold">Click to upload</span> or drag
-                  and drop
-                </p>
-                <p className="text-xs text-foreground-400">PDF (max. 5MB)</p>
-              </div>
-              <input
-                type="file"
-                className="hidden"
-                accept=".pdf"
-                // onChange={handleFileChange}
-              />
-            </label>
-          </div>
-
-          {/* {error && <div className="text-sm text-red-500">{error}</div>} */}
-
-          {/* {file && (
-            <div className="p-4 bg-gray-50 rounded-lg">
-              <div className="flex items-center justify-between">
-                <div className="truncate">
-                  <p className="text-sm font-medium text-gray-900">
-                    {file.name}
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    {(file.size / 1024 / 1024).toFixed(2)} MB
-                  </p>
-                </div>
-                <button
-                  onClick={handleRemoveFile}
-                  className="text-sm text-red-600 hover:text-red-800"
-                >
-                  Remove
-                </button>
-              </div>
-            </div>
-          )} */}
-        </div>
       </div>
       <Autocomplete
         classNames={{}}
