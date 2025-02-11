@@ -8,7 +8,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@heroui/react": "0.0.0-canary-20250205213151",
+    "@heroui/react": "0.0.0-canary-20250211131058",
     "@internationalized/date": "3.6.0",
     "@rhino-project/core": "file:../rhino-project/packages/core",
     "@rhino-project/ui-heroui": "file:../rhino-project/packages/ui-heroui",

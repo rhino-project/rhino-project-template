@@ -17,7 +17,7 @@ import {
 } from 'react-router-dom';
 import { IdentityAnalytics } from '@rhino-project/core/components/analytics';
 import { PageAnalytics } from '@rhino-project/core/components/analytics';
-import { HeroUIProvider } from '@rhino-project/ui-heroui';
+import { HeroUIProvider, ToastProvider } from '@rhino-project/ui-heroui';
 import { NotFoundPage } from '@rhino-project/core/components/shared';
 import { ApplicationShell } from '@rhino-project/ui-heroui';
 import { RhinoProvider } from '@rhino-project/core';
@@ -158,6 +158,7 @@ const RootUI = () => {
       useHref={useHref}
       labelPlacement="inside"
     >
+      <ToastProvider />
       <div className="dark text-foreground bg-background h-dvh">
         <PageAnalytics>
           <Routes>

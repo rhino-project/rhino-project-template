@@ -1,5 +1,6 @@
 import {
   Accordion,
+  addToast,
   Autocomplete,
   AutocompleteItem,
   BaseAuthedPage,
@@ -38,7 +39,8 @@ import {
   TableCell,
   TableColumn,
   TableHeader,
-  TableRow
+  TableRow,
+  ToastProvider
 } from '@rhino-project/ui-heroui';
 import { Empty } from '@rhino-project/ui-heroui';
 import { LinkButton } from '@rhino-project/ui-heroui';
@@ -180,6 +182,16 @@ const GetStarted = () => {
       <Empty
         title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
       />
+      <Button
+        variant="flat"
+        onPress={() => {
+          addToast({
+            title: 'Toast Title'
+          });
+        }}
+      >
+        Default
+      </Button>
       <ModelShowSimple model="blog" modelId={1}>
         <DisplayBoolean path="is_published">Published</DisplayBoolean>
         <ModelDisplayBoolean path="is_published">Another</ModelDisplayBoolean>
