@@ -160,12 +160,11 @@ const GetStarted = () => {
 
   const [search, setSearch] = useState('');
   const { results, isInitialLoading } = useModelIndex('blog', { search });
-  const { pathname } = useLocation();
-  const navigate = useNavigate();
+  // const { pathname } = useLocation();
+  // const navigate = useNavigate();
   const [timePeriod, setTimePeriod] = useState('triassic');
-  const anotherHref = useHref('.');
+  // const anotherHref = useHref('.');
 
-  console.log('GetStarted', pathname, anotherHref);
   return (
     <>
       <Empty
@@ -205,8 +204,7 @@ const GetStarted = () => {
         Button Link
       </Button>
       <div>
-        <Tabs
-          variant="bordered"
+        {/* <Tabs
           selectedKey={'/1'}
           onSelectionChange={(key) => console.log('tab', key)}
         >
@@ -217,45 +215,7 @@ const GetStarted = () => {
           <Tab id="/deleted" href="/1/deleted">
             Deleted
           </Tab>
-        </Tabs>
-        <AriaTabs selectedKey={timePeriod} onSelectionChange={setTimePeriod}>
-          <TabList aria-label="Mesozoic time periods">
-            <AriaTab id="triassic">Triassic</AriaTab>
-            <AriaTab id="jurassic">Jurassic</AriaTab>
-            <AriaTab id="cretaceous">Cretaceous</AriaTab>
-          </TabList>
-          <TabPanel id="triassic">
-            The Triassic ranges roughly from 252 million to 201 million years
-            ago, preceding the Jurassic Period.
-          </TabPanel>
-          <TabPanel id="jurassic">
-            The Jurassic ranges from 200 million years to 145 million years ago.
-          </TabPanel>
-          <TabPanel id="cretaceous">
-            The Cretaceous is the longest period of the Mesozoic, spanning from
-            145 million to 66 million years ago.
-          </TabPanel>
-        </AriaTabs>
-        <AriaTabs selectedKey={pathname}>
-          <TabList aria-label="Tabs">
-            <AriaTab id="/1" href="/1">
-              Home
-            </AriaTab>
-            <AriaTab id="/shared" href="/1/shared">
-              Shared
-            </AriaTab>
-            <AriaTab id="/deleted" href="/1/deleted">
-              Deleted
-            </AriaTab>
-          </TabList>
-          <TabPanel id={pathname}>
-            <Routes>
-              <Route path="/1" element={'home'} />
-              <Route path="/1/shared" element={'shared'} />
-              <Route path="/1/deleted" element={'deleted'} />
-            </Routes>
-          </TabPanel>
-        </AriaTabs>
+        </Tabs> */}
       </div>
       <CircularProgress
         classNames={{
@@ -273,21 +233,21 @@ const GetStarted = () => {
           href="blogs/14"
           onClick={(e) => {
             e.preventDefault();
-            navigate('blogs/14');
+            // navigate('blogs/14');
           }}
         >
           direct nav link
         </a>
 
-        <RouterProvider navigate={navigate} useHref={useHref}>
+        {/* <RouterProvider navigate={navigate} useHref={useHref}>
           <Link href="blogs/14">Blogs</Link>
           <AriaLink href="blogs/14">Blogs Aria</AriaLink>
-          {/* <Link href="/1/blogs/14">Blogs Absolute</Link> */}
+          <Link href="/1/blogs/14">Blogs Absolute</Link>
           <Link href="https://example.com">HTTP Link</Link>
-          {/* <Link href="__design/">Design</Link>
+          <Link href="__design/">Design</Link>
 
-        <RRLink to="blogs/14">Blogs</RRLink> */}
-        </RouterProvider>
+          <RRLink to="blogs/14">Blogs</RRLink>
+        </RouterProvider> */}
       </div>
       <Autocomplete
         classNames={{}}
