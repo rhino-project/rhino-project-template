@@ -26,4 +26,5 @@ Rhino.setup do |config|
   config.resources += ["Organization", "UsersRole", "Role", "UsersRoleInvite"]
   config.resources += [ "EveryField" ]
   config.resources += ["Organization", "UsersRole", "Role", "UsersRoleInvite"]
+  config.resources += [ "BlogPost" ]
 end

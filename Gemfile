@@ -86,7 +86,7 @@ gem "rhino_project", "~> 0.30.0.alpha.14"
 
 gem "rhino_project_core", path: "../rhino-project/gems/rhino_project_core"
 
-gem "rhino_project_organizations", "~> 0.30.0.alpha.14"
+gem "rhino_project_organizations",  path: "../rhino-project/gems/rhino_project_organizations"
 
 gem "rhino_project_notifications", "~> 0.30.0.alpha.14"
 

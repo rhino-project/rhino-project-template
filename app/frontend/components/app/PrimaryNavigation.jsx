@@ -9,7 +9,12 @@ export const PrimaryNavigation = () => {
   return (
     <>
       <NavSection>
-        <NavItem title="Dashboard" icon="bi:house" to="." end />
+        <NavItem
+          title="Dashboard"
+          icon="bi:house"
+          to="/1"
+          activeOptions={{ exact: true }}
+        />
       </NavSection>
       <ModelNavSection />
 
@@ -18,7 +23,7 @@ export const PrimaryNavigation = () => {
           <NavItem
             key="design-system"
             title="Design System"
-            to="__design"
+            to="/1/design"
             icon="bi:easel"
           />
         )}

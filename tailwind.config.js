@@ -14,7 +14,7 @@ export default {
   plugins: [
     heroui({
       themes: {
-        dark: { layout: { borderWidth: { small: 5, medium: 5, large: 5 } } }
+        dark: {}
       }
     })
   ]

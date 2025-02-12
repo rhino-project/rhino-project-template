@@ -14,5 +14,5 @@ class Blog < ApplicationRecord
 
   validates :title, presence: true
 
-  acts_as_notifiable :users, targets: User.all, tracked: { only: [ :create ] }
+  acts_as_notifiable :users, targets: User.all, tracked: { only: [ :create ] }, notifiable_path: route_frontend
 end

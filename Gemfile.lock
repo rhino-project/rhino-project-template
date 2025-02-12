@@ -28,6 +28,14 @@ PATH
       rake (~> 13.1)
       rgl (= 0.6.6)
 
+PATH
+  remote: ../rhino-project/gems/rhino_project_organizations
+  specs:
+    rhino_project_organizations (0.30.0.alpha.14)
+      devise_invitable (= 2.0.9)
+      rails (~> 8.0.0, >= 8.0.0)
+      rhino_project_core (= 0.30.0.alpha.14)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -487,10 +495,6 @@ GEM
       activity_notification (= 2.3.3)
       rails (~> 8.0.0, >= 8.0.0)
       rhino_project_core (= 0.30.0.alpha.14)
-    rhino_project_organizations (0.30.0.alpha.14)
-      devise_invitable (= 2.0.9)
-      rails (~> 8.0.0, >= 8.0.0)
-      rhino_project_core (= 0.30.0.alpha.14)
     rhino_project_subscriptions (0.30.0.alpha.14)
       rails (~> 8.0.0, >= 8.0.0)
       rhino_project_core (= 0.30.0.alpha.14)
@@ -673,7 +677,7 @@ DEPENDENCIES
   rhino_project (~> 0.30.0.alpha.14)
   rhino_project_core!
   rhino_project_notifications (~> 0.30.0.alpha.14)
-  rhino_project_organizations (~> 0.30.0.alpha.14)
+  rhino_project_organizations!
   rhino_project_subscriptions (~> 0.30.0.alpha.14)
   rollbar
   rubocop-factory_bot (= 2.26.1)
@@ -868,7 +872,7 @@ CHECKSUMS
   rhino_project (0.30.0.alpha.14) sha256=21e28df003773eb2664175f755678c2b4a2e76c345f36e42ae05d3dae3d69383
   rhino_project_core (0.30.0.alpha.14)
   rhino_project_notifications (0.30.0.alpha.14) sha256=3a6b5984b0b64bd5835128874db89dddfc07c6ece78073c25174ea4c6cd9a9f0
-  rhino_project_organizations (0.30.0.alpha.14) sha256=54c4643ca1cfa6f2dd89312aa1cc9e98ad182c1ba629d9f54ec9391dfa629483
+  rhino_project_organizations (0.30.0.alpha.14)
   rhino_project_subscriptions (0.30.0.alpha.14) sha256=9e49a60abf3d865bde7bf4754127cdbdd5c3c3faecda9ba796b2c9672202aa43
   rollbar (3.2.0) sha256=906d90c802ce4a56c5d4e18f89e5c0dc41896c142f35c7ba52a2049768daa25b
   rubocop (1.64.1) sha256=3145bf1863771e400a1c041060e751e5ff0edd9ceb99d01df36db1902f611f3b
