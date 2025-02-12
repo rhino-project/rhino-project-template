@@ -171,7 +171,7 @@ const NonAuthenticatedApp = () => {
 // };
 
 const RootUI = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const auth = useAuth();
 
   return <RouterProvider router={router} context={{ auth }} />;
