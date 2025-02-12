@@ -66,6 +66,10 @@ class EveryField < ApplicationRecord
   validates :enum_required, presence: true
 
   private
+    def display_name
+      self.id
+    end
+
     def normalize_phone
       self.phone = Phonelib.parse(phone).full_e164.presence
     end

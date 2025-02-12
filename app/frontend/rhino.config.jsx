@@ -21,6 +21,7 @@ const rhinoConfig = {
   version: 1,
   components: {
     // ModelDisplayString: () => 'hi',
+    ModelBreadcrumb: { props: { variant: 'solid' } },
     every_field: {
       // ModelCreate: { props: { paths: ['another_user'] } }
       // ModelIndexActions: ModelIndexActionsModalCreate,
@@ -37,7 +38,7 @@ const rhinoConfig = {
             'time_required',
             'enum_required',
             'user',
-            // <ModelFilterReferenceTypeahead path="user" />,
+            <ModelFilterReferenceTypeahead path="user" />,
             'year_required'
           ]
         }
