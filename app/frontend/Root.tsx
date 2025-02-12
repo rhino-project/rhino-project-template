@@ -46,7 +46,7 @@ import {
   getNonAuthenticatedAppPath,
   getSessionCreatePath
 } from '@rhino-project/core/utils';
-import { customRoutes } from 'routes/custom';
+// import { customRoutes } from 'routes/custom';
 import { RhinoDevTool } from '@rhino-project/ui-heroui';
 import { PrimaryNavigation } from './components/app/PrimaryNavigation';
 import { SecondaryNavigation } from './components/app/SecondaryNavigation';
@@ -56,6 +56,7 @@ import { RouterProvider, createRouter } from '@tanstack/react-router';
 
 // Import the generated route tree
 import { routeTree } from './routeTree.gen';
+import { useAuth } from '@rhino-project/core/hooks';
 
 // Create a new router instance
 const router = createRouter({ routeTree });
@@ -171,36 +172,37 @@ const NonAuthenticatedApp = () => {
 
 const RootUI = () => {
   const navigate = useNavigate();
+  const auth = useAuth();
 
-  return (
-    <HeroUIProvider
-      navigate={navigate}
-      useHref={useHref}
-      labelPlacement="inside"
-    >
-      <ToastProvider />
-      <div className="dark text-foreground bg-background h-dvh">
-        <PageAnalytics>
-          <Routes>
-            <Route
-              path="/"
-              element={<Navigate to={getNonAuthenticatedAppPath()} replace />}
-            />
-            <Route
-              path={`${getNonAuthenticatedAppPath()}/*`}
-              element={<NonAuthenticatedApp />}
-            />
-            <Route path={`/:baseOwnerId/*`} element={<AuthenticatedApp />} />
-            <Route
-              path={getAuthenticatedAppPath()}
-              element={<AuthenticatedApp />}
-            />
-            <Route path="/*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </PageAnalytics>
-      </div>
-    </HeroUIProvider>
-  );
+  return <RouterProvider router={router} context={{ auth }} />;
+
+  // <HeroUIProvider
+  //   navigate={navigate}
+  //   useHref={useHref}
+  //   labelPlacement="inside"
+  // >
+  //   <ToastProvider />
+  //   <div className="dark text-foreground bg-background h-dvh">
+  //     <PageAnalytics>
+  //       <Routes>
+  //         <Route
+  //           path="/"
+  //           element={<Navigate to={getNonAuthenticatedAppPath()} replace />}
+  //         />
+  //         <Route
+  //           path={`${getNonAuthenticatedAppPath()}/*`}
+  //           element={<NonAuthenticatedApp />}
+  //         />
+  //         <Route path={`/:baseOwnerId/*`} element={<AuthenticatedApp />} />
+  //         <Route
+  //           path={getAuthenticatedAppPath()}
+  //           element={<AuthenticatedApp />}
+  //         />
+  //         <Route path="/*" element={<Navigate to="/" replace />} />
+  //       </Routes>
+  //     </PageAnalytics>
+  //   </div>
+  // </HeroUIProvider>
 };
 
 const Root = () => {
@@ -226,9 +228,8 @@ const Root = () => {
             <title>{appName}</title>
             <link rel="icon" type="image/png" sizes="16x16" href={FavIcon} />
           </Helmet>
-          <Router>
-            <RootUI />
-          </Router>
+
+          <RootUI />
         </RollbarErrorBounday>
       </RollbarProvider>
     </RhinoProvider>
