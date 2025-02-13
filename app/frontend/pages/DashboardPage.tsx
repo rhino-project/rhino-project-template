@@ -171,7 +171,10 @@ const GetStarted = () => {
       <Empty
         title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
       />
-      <TSLink to="about">Blogs</TSLink>
+      <TSLink to="/$owner/blogs" params={{ owner: '1' }}>
+        Blogs
+      </TSLink>
+      <TSLink to="http://example.com">Blogs</TSLink>
       <Button
         variant="flat"
         onPress={() => {

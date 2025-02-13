@@ -8,11 +8,23 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
+import { createFileRoute } from '@tanstack/react-router';
+
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root';
 import { Route as AboutImport } from './routes/about';
+import { Route as AuthenticatedImport } from './routes/_authenticated';
 import { Route as IndexImport } from './routes/index';
+import { Route as AuthenticatedOwnerIndexImport } from './routes/_authenticated/$owner/index';
+import { Route as AuthenticatedOwnerBlogsIndexImport } from './routes/_authenticated/$owner/blogs/index';
+import { Route as AuthenticatedOwnerBlogsNewImport } from './routes/_authenticated/$owner/blogs/new';
+import { Route as AuthenticatedOwnerBlogsIdIndexImport } from './routes/_authenticated/$owner/blogs/$id.index';
+import { Route as AuthenticatedOwnerBlogsIdEditImport } from './routes/_authenticated/$owner/blogs/$id.edit';
+
+// Create Virtual Routes
+
+const AuthenticatedIndexLazyImport = createFileRoute('/_authenticated/')();
 
 // Create/Update Routes
 
@@ -22,11 +34,59 @@ const AboutRoute = AboutImport.update({
   getParentRoute: () => rootRoute,
 } as any);
 
+const AuthenticatedRoute = AuthenticatedImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRoute,
+} as any);
+
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRoute,
 } as any);
+
+const AuthenticatedIndexLazyRoute = AuthenticatedIndexLazyImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AuthenticatedRoute,
+} as any).lazy(() =>
+  import('./routes/_authenticated/index.lazy').then((d) => d.Route),
+);
+
+const AuthenticatedOwnerIndexRoute = AuthenticatedOwnerIndexImport.update({
+  id: '/$owner/',
+  path: '/$owner/',
+  getParentRoute: () => AuthenticatedRoute,
+} as any);
+
+const AuthenticatedOwnerBlogsIndexRoute =
+  AuthenticatedOwnerBlogsIndexImport.update({
+    id: '/$owner/blogs/',
+    path: '/$owner/blogs/',
+    getParentRoute: () => AuthenticatedRoute,
+  } as any);
+
+const AuthenticatedOwnerBlogsNewRoute = AuthenticatedOwnerBlogsNewImport.update(
+  {
+    id: '/$owner/blogs/new',
+    path: '/$owner/blogs/new',
+    getParentRoute: () => AuthenticatedRoute,
+  } as any,
+);
+
+const AuthenticatedOwnerBlogsIdIndexRoute =
+  AuthenticatedOwnerBlogsIdIndexImport.update({
+    id: '/$owner/blogs/$id/',
+    path: '/$owner/blogs/$id/',
+    getParentRoute: () => AuthenticatedRoute,
+  } as any);
+
+const AuthenticatedOwnerBlogsIdEditRoute =
+  AuthenticatedOwnerBlogsIdEditImport.update({
+    id: '/$owner/blogs/$id/edit',
+    path: '/$owner/blogs/$id/edit',
+    getParentRoute: () => AuthenticatedRoute,
+  } as any);
 
 // Populate the FileRoutesByPath interface
 
@@ -39,6 +99,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport;
       parentRoute: typeof rootRoute;
     };
+    '/_authenticated': {
+      id: '/_authenticated';
+      path: '';
+      fullPath: '';
+      preLoaderRoute: typeof AuthenticatedImport;
+      parentRoute: typeof rootRoute;
+    };
     '/about': {
       id: '/about';
       path: '/about';
@@ -46,43 +113,152 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutImport;
       parentRoute: typeof rootRoute;
     };
+    '/_authenticated/': {
+      id: '/_authenticated/';
+      path: '/';
+      fullPath: '/';
+      preLoaderRoute: typeof AuthenticatedIndexLazyImport;
+      parentRoute: typeof AuthenticatedImport;
+    };
+    '/_authenticated/$owner/': {
+      id: '/_authenticated/$owner/';
+      path: '/$owner';
+      fullPath: '/$owner';
+      preLoaderRoute: typeof AuthenticatedOwnerIndexImport;
+      parentRoute: typeof AuthenticatedImport;
+    };
+    '/_authenticated/$owner/blogs/new': {
+      id: '/_authenticated/$owner/blogs/new';
+      path: '/$owner/blogs/new';
+      fullPath: '/$owner/blogs/new';
+      preLoaderRoute: typeof AuthenticatedOwnerBlogsNewImport;
+      parentRoute: typeof AuthenticatedImport;
+    };
+    '/_authenticated/$owner/blogs/': {
+      id: '/_authenticated/$owner/blogs/';
+      path: '/$owner/blogs';
+      fullPath: '/$owner/blogs';
+      preLoaderRoute: typeof AuthenticatedOwnerBlogsIndexImport;
+      parentRoute: typeof AuthenticatedImport;
+    };
+    '/_authenticated/$owner/blogs/$id/edit': {
+      id: '/_authenticated/$owner/blogs/$id/edit';
+      path: '/$owner/blogs/$id/edit';
+      fullPath: '/$owner/blogs/$id/edit';
+      preLoaderRoute: typeof AuthenticatedOwnerBlogsIdEditImport;
+      parentRoute: typeof AuthenticatedImport;
+    };
+    '/_authenticated/$owner/blogs/$id/': {
+      id: '/_authenticated/$owner/blogs/$id/';
+      path: '/$owner/blogs/$id';
+      fullPath: '/$owner/blogs/$id';
+      preLoaderRoute: typeof AuthenticatedOwnerBlogsIdIndexImport;
+      parentRoute: typeof AuthenticatedImport;
+    };
   }
 }
 
 // Create and export the route tree
 
+interface AuthenticatedRouteChildren {
+  AuthenticatedIndexLazyRoute: typeof AuthenticatedIndexLazyRoute;
+  AuthenticatedOwnerIndexRoute: typeof AuthenticatedOwnerIndexRoute;
+  AuthenticatedOwnerBlogsNewRoute: typeof AuthenticatedOwnerBlogsNewRoute;
+  AuthenticatedOwnerBlogsIndexRoute: typeof AuthenticatedOwnerBlogsIndexRoute;
+  AuthenticatedOwnerBlogsIdEditRoute: typeof AuthenticatedOwnerBlogsIdEditRoute;
+  AuthenticatedOwnerBlogsIdIndexRoute: typeof AuthenticatedOwnerBlogsIdIndexRoute;
+}
+
+const AuthenticatedRouteChildren: AuthenticatedRouteChildren = {
+  AuthenticatedIndexLazyRoute: AuthenticatedIndexLazyRoute,
+  AuthenticatedOwnerIndexRoute: AuthenticatedOwnerIndexRoute,
+  AuthenticatedOwnerBlogsNewRoute: AuthenticatedOwnerBlogsNewRoute,
+  AuthenticatedOwnerBlogsIndexRoute: AuthenticatedOwnerBlogsIndexRoute,
+  AuthenticatedOwnerBlogsIdEditRoute: AuthenticatedOwnerBlogsIdEditRoute,
+  AuthenticatedOwnerBlogsIdIndexRoute: AuthenticatedOwnerBlogsIdIndexRoute,
+};
+
+const AuthenticatedRouteWithChildren = AuthenticatedRoute._addFileChildren(
+  AuthenticatedRouteChildren,
+);
+
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute;
+  '/': typeof AuthenticatedIndexLazyRoute;
+  '': typeof AuthenticatedRouteWithChildren;
   '/about': typeof AboutRoute;
+  '/$owner': typeof AuthenticatedOwnerIndexRoute;
+  '/$owner/blogs/new': typeof AuthenticatedOwnerBlogsNewRoute;
+  '/$owner/blogs': typeof AuthenticatedOwnerBlogsIndexRoute;
+  '/$owner/blogs/$id/edit': typeof AuthenticatedOwnerBlogsIdEditRoute;
+  '/$owner/blogs/$id': typeof AuthenticatedOwnerBlogsIdIndexRoute;
 }
 
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute;
+  '/': typeof AuthenticatedIndexLazyRoute;
   '/about': typeof AboutRoute;
+  '/$owner': typeof AuthenticatedOwnerIndexRoute;
+  '/$owner/blogs/new': typeof AuthenticatedOwnerBlogsNewRoute;
+  '/$owner/blogs': typeof AuthenticatedOwnerBlogsIndexRoute;
+  '/$owner/blogs/$id/edit': typeof AuthenticatedOwnerBlogsIdEditRoute;
+  '/$owner/blogs/$id': typeof AuthenticatedOwnerBlogsIdIndexRoute;
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute;
   '/': typeof IndexRoute;
+  '/_authenticated': typeof AuthenticatedRouteWithChildren;
   '/about': typeof AboutRoute;
+  '/_authenticated/': typeof AuthenticatedIndexLazyRoute;
+  '/_authenticated/$owner/': typeof AuthenticatedOwnerIndexRoute;
+  '/_authenticated/$owner/blogs/new': typeof AuthenticatedOwnerBlogsNewRoute;
+  '/_authenticated/$owner/blogs/': typeof AuthenticatedOwnerBlogsIndexRoute;
+  '/_authenticated/$owner/blogs/$id/edit': typeof AuthenticatedOwnerBlogsIdEditRoute;
+  '/_authenticated/$owner/blogs/$id/': typeof AuthenticatedOwnerBlogsIdIndexRoute;
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
-  fullPaths: '/' | '/about';
+  fullPaths:
+    | '/'
+    | ''
+    | '/about'
+    | '/$owner'
+    | '/$owner/blogs/new'
+    | '/$owner/blogs'
+    | '/$owner/blogs/$id/edit'
+    | '/$owner/blogs/$id';
   fileRoutesByTo: FileRoutesByTo;
-  to: '/' | '/about';
-  id: '__root__' | '/' | '/about';
+  to:
+    | '/'
+    | '/about'
+    | '/$owner'
+    | '/$owner/blogs/new'
+    | '/$owner/blogs'
+    | '/$owner/blogs/$id/edit'
+    | '/$owner/blogs/$id';
+  id:
+    | '__root__'
+    | '/'
+    | '/_authenticated'
+    | '/about'
+    | '/_authenticated/'
+    | '/_authenticated/$owner/'
+    | '/_authenticated/$owner/blogs/new'
+    | '/_authenticated/$owner/blogs/'
+    | '/_authenticated/$owner/blogs/$id/edit'
+    | '/_authenticated/$owner/blogs/$id/';
   fileRoutesById: FileRoutesById;
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute;
+  AuthenticatedRoute: typeof AuthenticatedRouteWithChildren;
   AboutRoute: typeof AboutRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRoute: AuthenticatedRouteWithChildren,
   AboutRoute: AboutRoute,
 };
 
@@ -97,14 +273,50 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/_authenticated",
         "/about"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
+    "/_authenticated": {
+      "filePath": "_authenticated.tsx",
+      "children": [
+        "/_authenticated/",
+        "/_authenticated/$owner/",
+        "/_authenticated/$owner/blogs/new",
+        "/_authenticated/$owner/blogs/",
+        "/_authenticated/$owner/blogs/$id/edit",
+        "/_authenticated/$owner/blogs/$id/"
+      ]
+    },
     "/about": {
       "filePath": "about.tsx"
+    },
+    "/_authenticated/": {
+      "filePath": "_authenticated/index.lazy.tsx",
+      "parent": "/_authenticated"
+    },
+    "/_authenticated/$owner/": {
+      "filePath": "_authenticated/$owner/index.tsx",
+      "parent": "/_authenticated"
+    },
+    "/_authenticated/$owner/blogs/new": {
+      "filePath": "_authenticated/$owner/blogs/new.tsx",
+      "parent": "/_authenticated"
+    },
+    "/_authenticated/$owner/blogs/": {
+      "filePath": "_authenticated/$owner/blogs/index.tsx",
+      "parent": "/_authenticated"
+    },
+    "/_authenticated/$owner/blogs/$id/edit": {
+      "filePath": "_authenticated/$owner/blogs/$id.edit.tsx",
+      "parent": "/_authenticated"
+    },
+    "/_authenticated/$owner/blogs/$id/": {
+      "filePath": "_authenticated/$owner/blogs/$id.index.tsx",
+      "parent": "/_authenticated"
     }
   }
 }
