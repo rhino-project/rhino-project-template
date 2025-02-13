@@ -1,31 +1,49 @@
-import { createRootRoute, Link, Outlet } from '@tanstack/react-router';
+import {
+  createRootRoute,
+  Link,
+  Outlet,
+  NavigateOptions,
+  ToOptions,
+  useRouter
+} from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { HeroUIProvider, ToastProvider } from '@rhino-project/ui-heroui';
 import { PageAnalytics } from '@rhino-project/core/components/analytics';
 
-export const Route = createRootRoute({
-  component: () => {
-    return (
-      <HeroUIProvider
-        // navigate={navigate}
-        // useHref={useHref}
-        labelPlacement="inside"
-      >
-        <ToastProvider />
-        {/* <PageAnalytics> */}
-        <div className="p-2 flex gap-2">
-          <Link to="/" className="[&.active]:font-bold">
-            Home
-          </Link>{' '}
-          <Link to="/about" className="[&.active]:font-bold">
-            About
-          </Link>
-        </div>
-        <hr />
-        <Outlet />
-        {/* </PageAnalytics> */}
-        <TanStackRouterDevtools />
-      </HeroUIProvider>
-    );
+declare module '@react-types/shared' {
+  interface RouterConfig {
+    href: ToOptions['to'];
+    routerOptions: Omit<NavigateOptions, keyof ToOptions>;
   }
+}
+
+export const Base = () => {
+  const router = useRouter();
+
+  return (
+    <HeroUIProvider
+      navigate={(to, options) => router.navigate({ to, ...options })}
+      useHref={(to) => router.buildLocation({ to }).href}
+      labelPlacement="inside"
+    >
+      <ToastProvider />
+      {/* <PageAnalytics> */}
+      <div className="p-2 flex gap-2">
+        <Link to="/" className="[&.active]:font-bold">
+          Home
+        </Link>{' '}
+        <Link to="/about" className="[&.active]:font-bold">
+          About
+        </Link>
+      </div>
+      <hr />
+      <Outlet />
+      {/* </PageAnalytics> */}
+      <TanStackRouterDevtools />
+    </HeroUIProvider>
+  );
+};
+
+export const Route = createRootRoute({
+  component: Base
 });

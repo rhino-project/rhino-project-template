@@ -16,11 +16,11 @@ declare module '@rhino-project/core' {
   interface Resources extends SchemaToResource {}
 }
 
-declare module '@react-types/shared' {
-  interface RouterConfig {
-    routerOptions: NavigateOptions;
-  }
-}
+// declare module '@react-types/shared' {
+//   interface RouterConfig {
+//     routerOptions: NavigateOptions;
+//   }
+// }
 // eslint-disable-next-line @typescript-eslint/no-floating-promises
 modelLoader.loadModels().then(async () => {
   // Import the Root dynamically so that other modelLoader uses are assured
