@@ -74,6 +74,7 @@ import {
   Tab as AriaTab,
   TabPanel
 } from 'react-aria-components';
+import { Link as TSLink } from '@tanstack/react-router';
 // import 'react-international-phone/style.css';
 
 const APPROVAL = false;
@@ -170,6 +171,7 @@ const GetStarted = () => {
       <Empty
         title={`Welcome to ${baseOwner?.name}, ${user?.name || user?.email}`}
       />
+      <TSLink to="about">Blogs</TSLink>
       <Button
         variant="flat"
         onPress={() => {
@@ -359,7 +361,7 @@ const GetStarted = () => {
           console.log('sort', sort);
         }}
       >
-        <TableHeader>
+        <TableHeader aria-label="Table header">
           <TableColumn key="name" allowsSorting>
             Name
           </TableColumn>
