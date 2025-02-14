@@ -175,6 +175,9 @@ const GetStarted = () => {
         Blogs
       </TSLink>
       <TSLink to="http://example.com">Blogs</TSLink>
+      <Link from="/1" href="blogs">
+        Blogs RA
+      </Link>
       <Button
         variant="flat"
         onPress={() => {

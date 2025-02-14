@@ -6,5 +6,5 @@ export const Route = createFileRoute('/_authenticated/$owner/blogs/')({
 });
 
 function RouteComponent() {
-  return <ModelIndexPage model="blog" />;
+  return <ModelIndexPage model="blog" syncUrl={false} />;
 }

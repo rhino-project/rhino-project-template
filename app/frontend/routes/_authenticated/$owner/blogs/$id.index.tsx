@@ -8,5 +8,7 @@ export const Route = createFileRoute('/_authenticated/$owner/blogs/$id/')({
 function RouteComponent() {
   const { id } = Route.useParams();
 
+  console.log('id:', id);
+
   return <ModelShowPage model="blog" modelId={id} />;
 }
