@@ -17,8 +17,11 @@ import {
 } from 'react-router-dom';
 import { IdentityAnalytics } from '@rhino-project/core/components/analytics';
 import { PageAnalytics } from '@rhino-project/core/components/analytics';
-import { HeroUIProvider, ToastProvider } from '@rhino-project/ui-heroui';
-import { NotFoundPage } from '@rhino-project/core/components/shared';
+import {
+  HeroUIProvider,
+  NotFoundPage,
+  ToastProvider
+} from '@rhino-project/ui-heroui';
 import { ApplicationShell } from '@rhino-project/ui-heroui';
 import { RhinoProvider } from '@rhino-project/core';
 import { BaseOwnerProvider } from '@rhino-project/core/contexts';
