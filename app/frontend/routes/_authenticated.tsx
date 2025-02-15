@@ -5,7 +5,11 @@ export const Route = createFileRoute('/_authenticated')({
   beforeLoad: ({ context: { rhino }, location }) => {
     console.log('beforeLoad', rhino);
     if (!rhino.user) {
-      throw redirect({ to: '/about', search: { redirect: location.href } });
+      redirect({
+        to: '/auth/signin',
+        search: { redirect: location.href },
+        throw: true
+      });
     }
   },
   component: () => (

@@ -16,6 +16,7 @@ import { Route as rootRoute } from './routes/__root';
 import { Route as AboutImport } from './routes/about';
 import { Route as AuthenticatedImport } from './routes/_authenticated';
 import { Route as IndexImport } from './routes/index';
+import { Route as AuthSigninImport } from './routes/auth/signin';
 import { Route as AuthenticatedOwnerIndexImport } from './routes/_authenticated/$owner/index';
 import { Route as AuthenticatedOwnerBlogsIndexImport } from './routes/_authenticated/$owner/blogs/index';
 import { Route as AuthenticatedOwnerBlogsNewImport } from './routes/_authenticated/$owner/blogs/new';
@@ -52,6 +53,12 @@ const AuthenticatedIndexLazyRoute = AuthenticatedIndexLazyImport.update({
 } as any).lazy(() =>
   import('./routes/_authenticated/index.lazy').then((d) => d.Route),
 );
+
+const AuthSigninRoute = AuthSigninImport.update({
+  id: '/auth/signin',
+  path: '/auth/signin',
+  getParentRoute: () => rootRoute,
+} as any);
 
 const AuthenticatedOwnerIndexRoute = AuthenticatedOwnerIndexImport.update({
   id: '/$owner/',
@@ -111,6 +118,13 @@ declare module '@tanstack/react-router' {
       path: '/about';
       fullPath: '/about';
       preLoaderRoute: typeof AboutImport;
+      parentRoute: typeof rootRoute;
+    };
+    '/auth/signin': {
+      id: '/auth/signin';
+      path: '/auth/signin';
+      fullPath: '/auth/signin';
+      preLoaderRoute: typeof AuthSigninImport;
       parentRoute: typeof rootRoute;
     };
     '/_authenticated/': {
@@ -186,6 +200,7 @@ export interface FileRoutesByFullPath {
   '/': typeof AuthenticatedIndexLazyRoute;
   '': typeof AuthenticatedRouteWithChildren;
   '/about': typeof AboutRoute;
+  '/auth/signin': typeof AuthSigninRoute;
   '/$owner': typeof AuthenticatedOwnerIndexRoute;
   '/$owner/blogs/new': typeof AuthenticatedOwnerBlogsNewRoute;
   '/$owner/blogs': typeof AuthenticatedOwnerBlogsIndexRoute;
@@ -196,6 +211,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof AuthenticatedIndexLazyRoute;
   '/about': typeof AboutRoute;
+  '/auth/signin': typeof AuthSigninRoute;
   '/$owner': typeof AuthenticatedOwnerIndexRoute;
   '/$owner/blogs/new': typeof AuthenticatedOwnerBlogsNewRoute;
   '/$owner/blogs': typeof AuthenticatedOwnerBlogsIndexRoute;
@@ -208,6 +224,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute;
   '/_authenticated': typeof AuthenticatedRouteWithChildren;
   '/about': typeof AboutRoute;
+  '/auth/signin': typeof AuthSigninRoute;
   '/_authenticated/': typeof AuthenticatedIndexLazyRoute;
   '/_authenticated/$owner/': typeof AuthenticatedOwnerIndexRoute;
   '/_authenticated/$owner/blogs/new': typeof AuthenticatedOwnerBlogsNewRoute;
@@ -222,6 +239,7 @@ export interface FileRouteTypes {
     | '/'
     | ''
     | '/about'
+    | '/auth/signin'
     | '/$owner'
     | '/$owner/blogs/new'
     | '/$owner/blogs'
@@ -231,6 +249,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/auth/signin'
     | '/$owner'
     | '/$owner/blogs/new'
     | '/$owner/blogs'
@@ -241,6 +260,7 @@ export interface FileRouteTypes {
     | '/'
     | '/_authenticated'
     | '/about'
+    | '/auth/signin'
     | '/_authenticated/'
     | '/_authenticated/$owner/'
     | '/_authenticated/$owner/blogs/new'
@@ -254,12 +274,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute;
   AuthenticatedRoute: typeof AuthenticatedRouteWithChildren;
   AboutRoute: typeof AboutRoute;
+  AuthSigninRoute: typeof AuthSigninRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRoute: AuthenticatedRouteWithChildren,
   AboutRoute: AboutRoute,
+  AuthSigninRoute: AuthSigninRoute,
 };
 
 export const routeTree = rootRoute
@@ -274,7 +296,8 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/_authenticated",
-        "/about"
+        "/about",
+        "/auth/signin"
       ]
     },
     "/": {
@@ -293,6 +316,9 @@ export const routeTree = rootRoute
     },
     "/about": {
       "filePath": "about.tsx"
+    },
+    "/auth/signin": {
+      "filePath": "auth/signin.tsx"
     },
     "/_authenticated/": {
       "filePath": "_authenticated/index.lazy.tsx",
