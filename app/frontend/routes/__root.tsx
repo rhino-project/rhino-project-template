@@ -4,11 +4,13 @@ import {
   Outlet,
   NavigateOptions,
   ToOptions,
-  useRouter
+  useRouter,
+  createRootRouteWithContext
 } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { HeroUIProvider, ToastProvider } from '@rhino-project/ui-heroui';
 import { PageAnalytics } from '@rhino-project/core/components/analytics';
+import { RhinoContextType } from '@rhino-project/core';
 
 declare module '@react-types/shared' {
   interface RouterConfig {
@@ -44,6 +46,10 @@ export const Base = () => {
   );
 };
 
-export const Route = createRootRoute({
+interface AppRouterContext {
+  rhino: RhinoContextType;
+}
+
+export const Route = createRootRouteWithContext<AppRouterContext>()({
   component: Base
 });

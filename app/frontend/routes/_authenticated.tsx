@@ -2,16 +2,11 @@ import { ApplicationShell } from '@rhino-project/ui-heroui';
 import { createFileRoute, Outlet, redirect } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/_authenticated')({
-  beforeLoad: ({ context, location }) => {
-    console.log('beforeLoad', context);
-    // if (!context.auth.user) {
-    //   throw redirect({
-    //     to: '/auth/signin',
-    //     search: {
-    //       redirect: location.href
-    //     }
-    //   });
-    // }
+  beforeLoad: ({ context: { rhino }, location }) => {
+    console.log('beforeLoad', rhino);
+    if (!rhino.user) {
+      throw redirect({ to: '/about', search: { redirect: location.href } });
+    }
   },
   component: () => (
     <ApplicationShell>

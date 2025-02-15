@@ -23,7 +23,7 @@ import {
   ToastProvider
 } from '@rhino-project/ui-heroui';
 import { ApplicationShell } from '@rhino-project/ui-heroui';
-import { RhinoProvider } from '@rhino-project/core';
+import { RhinoProvider, useRhinoContext } from '@rhino-project/core';
 import { BaseOwnerProvider } from '@rhino-project/core/contexts';
 import {
   AcceptInvitationPage,
@@ -176,37 +176,9 @@ const NonAuthenticatedApp = () => {
 
 const RootUI = () => {
   // const navigate = useNavigate();
-  const auth = useAuth();
-
-  return <RouterProvider router={router} context={{ auth }} />;
-
-  // <HeroUIProvider
-  //   navigate={navigate}
-  //   useHref={useHref}
-  //   labelPlacement="inside"
-  // >
-  //   <ToastProvider />
-  //   <div className="dark text-foreground bg-background h-dvh">
-  //     <PageAnalytics>
-  //       <Routes>
-  //         <Route
-  //           path="/"
-  //           element={<Navigate to={getNonAuthenticatedAppPath()} replace />}
-  //         />
-  //         <Route
-  //           path={`${getNonAuthenticatedAppPath()}/*`}
-  //           element={<NonAuthenticatedApp />}
-  //         />
-  //         <Route path={`/:baseOwnerId/*`} element={<AuthenticatedApp />} />
-  //         <Route
-  //           path={getAuthenticatedAppPath()}
-  //           element={<AuthenticatedApp />}
-  //         />
-  //         <Route path="/*" element={<Navigate to="/" replace />} />
-  //       </Routes>
-  //     </PageAnalytics>
-  //   </div>
-  // </HeroUIProvider>
+  const rhino = useRhinoContext();
+  console.log('rhino', rhino);
+  return <RouterProvider router={router} context={{ rhino }} />;
 };
 
 const Root = () => {
