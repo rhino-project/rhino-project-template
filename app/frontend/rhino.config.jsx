@@ -9,6 +9,7 @@ import {
   ModelDisplayEnum,
   ModelDisplayInteger,
   ModelDisplayText,
+  ModelFieldIntegerSelect,
   ModelFilterReferenceTypeahead,
   ModelIndexActionsModalCreate,
   ModelIndexCardGrid,
@@ -26,6 +27,10 @@ const rhinoConfig = {
       // ModelCreate: { props: { paths: ['another_user'] } }
       // ModelIndexActions: ModelIndexActionsModalCreate,
       // ModelShowActions: ModelShowActionsModalEdit,
+
+      integer_in: {
+        ModelFieldGroup: ModelFieldIntegerSelect
+      },
 
       ModelFilters: {
         props: {

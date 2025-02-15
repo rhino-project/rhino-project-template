@@ -11,5 +11,11 @@ export default {
     extend: {}
   },
   darkMode: 'class',
-  plugins: [heroui({ themes: { dark: { colors: {} } } })]
+  plugins: [
+    heroui({
+      themes: {
+        dark: { layout: { borderWidth: { small: 5, medium: 5, large: 5 } } }
+      }
+    })
+  ]
 };

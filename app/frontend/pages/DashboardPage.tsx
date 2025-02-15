@@ -206,6 +206,7 @@ const GetStarted = () => {
       </Button>
       <div>
         <Tabs
+          variant="bordered"
           selectedKey={'/1'}
           onSelectionChange={(key) => console.log('tab', key)}
         >

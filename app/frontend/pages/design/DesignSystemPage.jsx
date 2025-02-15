@@ -127,7 +127,7 @@ const fields = [
     name: 'FieldBoolean',
     props: { children: 'FieldBoolean' }
   },
-  // { Component: FieldCountry, name: 'FieldCountry', props: {} },
+  { Component: FieldCountry, name: 'FieldCountry', props: {} },
   { Component: FieldCurrency, name: 'FieldCurrency', props: {} },
   { Component: FieldDate, name: 'FieldDate', props: {} },
   { Component: FieldDateTime, name: 'FieldDateTime', props: {} },
