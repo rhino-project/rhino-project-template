@@ -13,7 +13,6 @@ import { createFileRoute } from '@tanstack/react-router';
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root';
-import { Route as AboutImport } from './routes/about';
 import { Route as AuthenticatedImport } from './routes/_authenticated';
 import { Route as IndexImport } from './routes/index';
 import { Route as AuthSigninImport } from './routes/auth/signin';
@@ -28,12 +27,6 @@ import { Route as AuthenticatedOwnerBlogsIdEditImport } from './routes/_authenti
 const AuthenticatedIndexLazyImport = createFileRoute('/_authenticated/')();
 
 // Create/Update Routes
-
-const AboutRoute = AboutImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRoute,
-} as any);
 
 const AuthenticatedRoute = AuthenticatedImport.update({
   id: '/_authenticated',
@@ -111,13 +104,6 @@ declare module '@tanstack/react-router' {
       path: '';
       fullPath: '';
       preLoaderRoute: typeof AuthenticatedImport;
-      parentRoute: typeof rootRoute;
-    };
-    '/about': {
-      id: '/about';
-      path: '/about';
-      fullPath: '/about';
-      preLoaderRoute: typeof AboutImport;
       parentRoute: typeof rootRoute;
     };
     '/auth/signin': {
@@ -199,7 +185,6 @@ const AuthenticatedRouteWithChildren = AuthenticatedRoute._addFileChildren(
 export interface FileRoutesByFullPath {
   '/': typeof AuthenticatedIndexLazyRoute;
   '': typeof AuthenticatedRouteWithChildren;
-  '/about': typeof AboutRoute;
   '/auth/signin': typeof AuthSigninRoute;
   '/$owner': typeof AuthenticatedOwnerIndexRoute;
   '/$owner/blogs/new': typeof AuthenticatedOwnerBlogsNewRoute;
@@ -210,7 +195,6 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof AuthenticatedIndexLazyRoute;
-  '/about': typeof AboutRoute;
   '/auth/signin': typeof AuthSigninRoute;
   '/$owner': typeof AuthenticatedOwnerIndexRoute;
   '/$owner/blogs/new': typeof AuthenticatedOwnerBlogsNewRoute;
@@ -223,7 +207,6 @@ export interface FileRoutesById {
   __root__: typeof rootRoute;
   '/': typeof IndexRoute;
   '/_authenticated': typeof AuthenticatedRouteWithChildren;
-  '/about': typeof AboutRoute;
   '/auth/signin': typeof AuthSigninRoute;
   '/_authenticated/': typeof AuthenticatedIndexLazyRoute;
   '/_authenticated/$owner/': typeof AuthenticatedOwnerIndexRoute;
@@ -238,7 +221,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | ''
-    | '/about'
     | '/auth/signin'
     | '/$owner'
     | '/$owner/blogs/new'
@@ -248,7 +230,6 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo;
   to:
     | '/'
-    | '/about'
     | '/auth/signin'
     | '/$owner'
     | '/$owner/blogs/new'
@@ -259,7 +240,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/_authenticated'
-    | '/about'
     | '/auth/signin'
     | '/_authenticated/'
     | '/_authenticated/$owner/'
@@ -273,14 +253,12 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute;
   AuthenticatedRoute: typeof AuthenticatedRouteWithChildren;
-  AboutRoute: typeof AboutRoute;
   AuthSigninRoute: typeof AuthSigninRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRoute: AuthenticatedRouteWithChildren,
-  AboutRoute: AboutRoute,
   AuthSigninRoute: AuthSigninRoute,
 };
 
@@ -296,7 +274,6 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/_authenticated",
-        "/about",
         "/auth/signin"
       ]
     },
@@ -313,9 +290,6 @@ export const routeTree = rootRoute
         "/_authenticated/$owner/blogs/$id/edit",
         "/_authenticated/$owner/blogs/$id/"
       ]
-    },
-    "/about": {
-      "filePath": "about.tsx"
     },
     "/auth/signin": {
       "filePath": "auth/signin.tsx"
