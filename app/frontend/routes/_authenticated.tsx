@@ -1,5 +1,7 @@
 import { ApplicationShell } from '@rhino-project/ui-heroui';
 import { createFileRoute, Outlet, redirect } from '@tanstack/react-router';
+import { PrimaryNavigation } from '../components/app/PrimaryNavigation';
+import { SecondaryNavigation } from '../components/app/SecondaryNavigation';
 
 export const Route = createFileRoute('/_authenticated')({
   beforeLoad: ({ context: { rhino }, location }) => {
@@ -13,7 +15,10 @@ export const Route = createFileRoute('/_authenticated')({
     // }
   },
   component: () => (
-    <ApplicationShell>
+    <ApplicationShell
+      primaryNavigationElement={<PrimaryNavigation />}
+      secondaryNavigationElement={<SecondaryNavigation />}
+    >
       <Outlet />
     </ApplicationShell>
   )
