@@ -27,9 +27,11 @@ export const Base = () => {
       labelPlacement="inside"
     >
       <ToastProvider />
-      {/* <PageAnalytics> */}
-      <Outlet />
-      {/* </PageAnalytics> */}
+      <div className="dark text-foreground bg-background h-dvh">
+        {/* <PageAnalytics> */}
+        <Outlet />
+        {/* </PageAnalytics> */}
+      </div>
       <TanStackRouterDevtools />
     </HeroUIProvider>
   );
