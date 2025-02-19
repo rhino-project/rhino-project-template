@@ -23,7 +23,11 @@ import {
   ToastProvider
 } from '@rhino-project/ui-heroui';
 import { ApplicationShell } from '@rhino-project/ui-heroui';
-import { RhinoProvider, useRhinoContext } from '@rhino-project/core';
+import {
+  RhinoContext,
+  RhinoProvider,
+  useRhinoContext
+} from '@rhino-project/core';
 import { BaseOwnerProvider } from '@rhino-project/core/contexts';
 import {
   AcceptInvitationPage,
@@ -69,7 +73,10 @@ declare module '@tanstack/react-router' {
 const router = createRouter({
   routeTree,
   defaultNotFoundComponent: NotFoundPage,
-  scrollRestoration: true
+  scrollRestoration: true,
+
+  // This will be set after we wrap the app in an RhinoProvider
+  context: { rhino: undefined! }
 });
 
 // Render the app
