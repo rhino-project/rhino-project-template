@@ -73,6 +73,7 @@ declare module '@tanstack/react-router' {
 const router = createRouter({
   routeTree,
   defaultNotFoundComponent: NotFoundPage,
+  defaultPendingComponent: () => <div>Pending...</div>,
   scrollRestoration: true,
 
   // This will be set after we wrap the app in an RhinoProvider
