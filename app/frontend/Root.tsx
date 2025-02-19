@@ -183,9 +183,8 @@ const NonAuthenticatedApp = () => {
 // };
 
 const RootUI = () => {
-  // const navigate = useNavigate();
   const rhino = useRhinoContext();
-  console.log('rhino', rhino);
+
   return <RouterProvider router={router} context={{ rhino }} />;
 };
 

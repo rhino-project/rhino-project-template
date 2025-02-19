@@ -9,22 +9,22 @@ import {
 import { ValidateTokenResponse } from '@rhino-project/core';
 
 export const Route = createFileRoute('/_authenticated')({
-  beforeLoad: ({ context: { rhino }, location }) => {
+  beforeLoad: async ({ context: { rhino }, location }) => {
     console.log('beforeLoad _authenticated', rhino);
 
-    return rhino.queryClient.ensureQueryData({
-      queryKey: AUTH_SESSION_KEY,
-      queryFn: ({ signal }): Promise<ValidateTokenResponse> =>
-        networkApiCall(AUTH_VALIDATE_TOKEN_END_POINT, { signal })
-    });
-
-    // if (!rhino.user) {
-    //   redirect({
-    //     to: '/auth/signin',
-    //     search: { redirect: location.href },
-    //     throw: true
-    //   });
-    // }
+    try {
+      await rhino.queryClient.ensureQueryData({
+        queryKey: AUTH_SESSION_KEY,
+        queryFn: ({ signal }): Promise<ValidateTokenResponse> =>
+          networkApiCall(AUTH_VALIDATE_TOKEN_END_POINT, { signal })
+      });
+    } catch {
+      redirect({
+        to: '/auth/signin',
+        search: { redirect: location.href },
+        throw: true
+      });
+    }
   },
   component: () => (
     <AuthenticatedRoute>
