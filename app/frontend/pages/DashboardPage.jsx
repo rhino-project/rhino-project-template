@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { getBaseOwnedModels } from '@rhino-project/core/utils';
 
 import { BaseAuthedPage } from '@rhino-project/core/pages';
