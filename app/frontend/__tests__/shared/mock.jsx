@@ -1,5 +1,4 @@
 import { renderHook, waitFor } from '@testing-library/react';
-import React from 'react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { AuthProvider } from '@rhino-project/core/contexts';
 import { useAuth } from '@rhino-project/core/hooks';
@@ -19,7 +18,7 @@ const defaultUser = {
 
 export class NetworkingMock {
   axiosResult = {
-    // [API_ROOT_PATH]: {
+    // [path]: {
     // 'post': () => promise with result
     // 'delete': () => promise with result
     // }
