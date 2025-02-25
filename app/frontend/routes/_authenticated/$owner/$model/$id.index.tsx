@@ -6,16 +6,16 @@ export const Route = createFileRoute('/_authenticated/$owner/$model/$id/')({
   params: {
     parse: (rawParams) => {
       const model = rawParams.model as RhinoResourceName;
-      const id = rawParams.id as string;
+      const modelId = rawParams.id as string;
 
-      return { model, id };
+      return { ...rawParams, model, modelId };
     }
   },
   component: RouteComponent
 });
 
 function RouteComponent() {
-  const { model, id } = Route.useParams();
+  const { model, modelId } = Route.useParams();
 
-  return <ModelShow model={model} modelId={id} />;
+  return <ModelShow model={model} modelId={modelId} />;
 }

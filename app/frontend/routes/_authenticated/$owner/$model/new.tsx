@@ -1,5 +1,5 @@
 import { RhinoResourceName } from '@rhino-project/core';
-import { ModelCreate, ModelCreatePage } from '@rhino-project/ui-heroui';
+import { ModelCreate } from '@rhino-project/ui-heroui';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/_authenticated/$owner/$model/new')({
