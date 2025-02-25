@@ -212,6 +212,14 @@ const GetStarted = () => {
 
   return (
     <div className="flex flex-col gap-4">
+      <ModelShowSimple model="blog" modelId={1}>
+        <DisplayBoolean path="is_published">Published</DisplayBoolean>
+        <ModelDisplayBoolean path="is_published">Another</ModelDisplayBoolean>
+        <DisplayAttachments
+          label="Attachments"
+          path="multiple_files_attachments"
+        />
+      </ModelShowSimple>
       <RhinoLink to="/$owner/blogs" params={{ owner: '1' }}>
         Custom Test To
       </RhinoLink>
