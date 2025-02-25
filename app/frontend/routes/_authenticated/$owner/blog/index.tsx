@@ -12,7 +12,7 @@ function RouteComponent() {
   return (
     <>
       Explicit
-      <ModelIndexPage model="blog" syncUrl={false} />
+      <ModelIndexPage model="blog" />
     </>
   );
 }
