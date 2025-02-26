@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_24_145741) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_26_010745) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -71,29 +71,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_24_145741) do
     t.datetime "updated_at", precision: nil, null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
-  end
-
-  create_table "blog_posts", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.bigint "blog_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["blog_id"], name: "index_blog_posts_on_blog_id"
-  end
-
-  create_table "blogs", force: :cascade do |t|
-    t.bigint "organization_id", null: false
-    t.string "title"
-    t.text "content"
-    t.float "dnum"
-    t.date "published_on"
-    t.datetime "published_at"
-    t.time "published_time"
-    t.boolean "is_published"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["organization_id"], name: "index_blogs_on_organization_id"
   end
 
   create_table "every_field_dummies", force: :cascade do |t|
@@ -425,8 +402,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_24_145741) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "blog_posts", "blogs"
-  add_foreign_key "blogs", "organizations"
   add_foreign_key "every_field_dummies", "users"
   add_foreign_key "every_fields", "organizations"
   add_foreign_key "solid_queue_blocked_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
