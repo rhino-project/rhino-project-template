@@ -48,7 +48,7 @@ const rhinoConfig = {
           ]
         }
       }
-    },
+    }
     // DisplayInput: {
     //   props: {
     //     classNames: {
@@ -60,49 +60,49 @@ const rhinoConfig = {
     // },
     // ModelDisplayDate: { props: { format: 'yyyy-MM-dd' } },
     // ModelDisplayAttachment: null,
-    blog: {
-      // ModelDisplayString: () => 'hi2',
-      title: {
-        ModelDisplayString: {
-          props: {
-            isReadOnly: false,
-            label: <div className="text-red-700">Hello</div>
-          }
-        }
-      },
-      // ModelEdit: {
-      //   props: {
-      //     paths: [
-      //       'title',
-      //       // 'image_attachment'
-      //       // 'single_file_attachment'
-      //       'multiple_files_attachments'
-      //     ]
-      //   }
-      // },
+    // blog: {
+    //   // ModelDisplayString: () => 'hi2',
+    //   title: {
+    //     ModelDisplayString: {
+    //       props: {
+    //         isReadOnly: false,
+    //         label: <div className="text-red-700">Hello</div>
+    //       }
+    //     }
+    //   },
+    //   // ModelEdit: {
+    //   //   props: {
+    //   //     paths: [
+    //   //       'title',
+    //   //       // 'image_attachment'
+    //   //       // 'single_file_attachment'
+    //   //       'multiple_files_attachments'
+    //   //     ]
+    //   //   }
+    //   // },
 
-      // ModelIndexActions: ModelIndexActionsModalCreate,
-      // ModelShowActions: ModelShowActionsModalEdit,
+    //   // ModelIndexActions: ModelIndexActionsModalCreate,
+    //   // ModelShowActions: ModelShowActionsModalEdit,
 
-      ModelFilters: {
-        props: {
-          paths: ['is_published']
-        }
-      },
-      // ModelIndexTable: ModelIndexCardGrid,
+    //   ModelFilters: {
+    //     props: {
+    //       paths: ['is_published']
+    //     }
+    //   },
+    //   // ModelIndexTable: ModelIndexCardGrid,
 
-      // single_file_attachment: {},
-      image_attachment: {
-        ModelDisplayAttachment: {
-          component: ModelDisplayAttachmentImage,
-          props: {
-            // src: 'http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MywicHVyIjoiYmxvYl9pZCJ9fQ==--3b64ca0390807a145b147e962e822fcafafb5940/Screenshot%202025-01-06%20at%2010.25.00%E2%80%AFPM.png',
-            // width: 500,
-            // height: 500
-          }
-        }
-      }
-    }
+    //   // single_file_attachment: {},
+    //   image_attachment: {
+    //     ModelDisplayAttachment: {
+    //       component: ModelDisplayAttachmentImage,
+    //       props: {
+    //         // src: 'http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MywicHVyIjoiYmxvYl9pZCJ9fQ==--3b64ca0390807a145b147e962e822fcafafb5940/Screenshot%202025-01-06%20at%2010.25.00%E2%80%AFPM.png',
+    //         // width: 500,
+    //         // height: 500
+    //       }
+    //     }
+    //   }
+    // }
   }
 };
 
