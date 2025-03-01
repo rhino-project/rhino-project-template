@@ -10,6 +10,7 @@
   "dependencies": {
     "@heroui/react": "0.0.0-canary-20250214223404",
     "@internationalized/date": "3.6.0",
+    "@react-types/shared": "3.27.0",
     "@rhino-project/core": "0.30.0-alpha.17",
     "@rhino-project/ui-heroui": "0.30.0-alpha.17",
     "@rollbar/react": "0.11.2",
