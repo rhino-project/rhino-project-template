@@ -1,7 +1,5 @@
 import {
   Outlet,
-  NavigateOptions,
-  ToOptions,
   useRouter,
   createRootRouteWithContext,
   HeadContent
@@ -10,13 +8,6 @@ import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { HeroUIProvider, ToastProvider } from '@rhino-project/ui-heroui';
 // import { PageAnalytics } from '@rhino-project/core/components/analytics';
 import { RhinoContextType } from '@rhino-project/core';
-
-declare module '@react-types/shared' {
-  interface RouterConfig {
-    href: ToOptions['to'];
-    routerOptions: Omit<NavigateOptions, keyof ToOptions>;
-  }
-}
 
 export const Base = () => {
   const router = useRouter();
