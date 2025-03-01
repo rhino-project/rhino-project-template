@@ -1,6 +1,6 @@
 import { RhinoResourceName } from '@rhino-project/core';
 import { ModelIndexPage } from '@rhino-project/ui-heroui';
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute, redirect } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/_authenticated/$owner/$model/')({
   params: {
@@ -10,9 +10,12 @@ export const Route = createFileRoute('/_authenticated/$owner/$model/')({
       return { model };
     }
   },
-  component: () => {
-    return <RouteComponent />;
-  }
+  beforeLoad: ({ context: { rhino }, params: { model, owner } }) => {
+    if (!rhino.resources[model]) {
+      throw redirect({ to: '/$owner', params: { owner } });
+    }
+  },
+  component: RouteComponent
 });
 
 function RouteComponent() {
