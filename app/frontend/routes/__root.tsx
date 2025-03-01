@@ -8,7 +8,7 @@ import {
 } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { HeroUIProvider, ToastProvider } from '@rhino-project/ui-heroui';
-import { PageAnalytics } from '@rhino-project/core/components/analytics';
+// import { PageAnalytics } from '@rhino-project/core/components/analytics';
 import { RhinoContextType } from '@rhino-project/core';
 
 declare module '@react-types/shared' {
