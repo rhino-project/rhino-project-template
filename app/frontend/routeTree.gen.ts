@@ -23,17 +23,13 @@ import { Route as AuthenticatedOwnerImport } from './routes/_authenticated/$owne
 import { Route as AuthenticatedOwnerIndexImport } from './routes/_authenticated/$owner/index';
 import { Route as AuthenticatedOwnerSettingsImport } from './routes/_authenticated/$owner/settings';
 import { Route as AuthenticatedOwnerSettingsIndexImport } from './routes/_authenticated/$owner/settings/index';
-import { Route as AuthenticatedOwnerBlogIndexImport } from './routes/_authenticated/$owner/blog/index';
 import { Route as AuthenticatedOwnerModelIndexImport } from './routes/_authenticated/$owner/$model/index';
 import { Route as AuthenticatedOwnerSettingsSubscriptionImport } from './routes/_authenticated/$owner/settings/subscription';
 import { Route as AuthenticatedOwnerSettingsAccessImport } from './routes/_authenticated/$owner/settings/access';
-import { Route as AuthenticatedOwnerBlogNewImport } from './routes/_authenticated/$owner/blog/new';
 import { Route as AuthenticatedOwnerAccountSettingsImport } from './routes/_authenticated/$owner/account/settings';
 import { Route as AuthenticatedOwnerModelNewImport } from './routes/_authenticated/$owner/$model/new';
-import { Route as AuthenticatedOwnerBlogIdIndexImport } from './routes/_authenticated/$owner/blog/$id.index';
 import { Route as AuthenticatedOwnerAccountSettingsIndexImport } from './routes/_authenticated/$owner/account/settings/index';
 import { Route as AuthenticatedOwnerModelIdIndexImport } from './routes/_authenticated/$owner/$model/$id.index';
-import { Route as AuthenticatedOwnerBlogIdEditImport } from './routes/_authenticated/$owner/blog/$id.edit';
 import { Route as AuthenticatedOwnerAccountSettingsPasswordImport } from './routes/_authenticated/$owner/account/settings/password';
 import { Route as AuthenticatedOwnerModelIdEditImport } from './routes/_authenticated/$owner/$model/$id.edit';
 
@@ -139,13 +135,6 @@ const AuthenticatedOwnerSettingsIndexRoute =
     getParentRoute: () => AuthenticatedOwnerSettingsRoute,
   } as any);
 
-const AuthenticatedOwnerBlogIndexRoute =
-  AuthenticatedOwnerBlogIndexImport.update({
-    id: '/blog/',
-    path: '/blog/',
-    getParentRoute: () => AuthenticatedOwnerRoute,
-  } as any);
-
 const AuthenticatedOwnerModelIndexRoute =
   AuthenticatedOwnerModelIndexImport.update({
     id: '/$model/',
@@ -200,12 +189,6 @@ const AuthenticatedOwnerSettingsAccessRoute =
     getParentRoute: () => AuthenticatedOwnerSettingsRoute,
   } as any);
 
-const AuthenticatedOwnerBlogNewRoute = AuthenticatedOwnerBlogNewImport.update({
-  id: '/blog/new',
-  path: '/blog/new',
-  getParentRoute: () => AuthenticatedOwnerRoute,
-} as any);
-
 const AuthenticatedOwnerAccountSettingsRoute =
   AuthenticatedOwnerAccountSettingsImport.update({
     id: '/account/settings',
@@ -221,13 +204,6 @@ const AuthenticatedOwnerModelNewRoute = AuthenticatedOwnerModelNewImport.update(
   } as any,
 );
 
-const AuthenticatedOwnerBlogIdIndexRoute =
-  AuthenticatedOwnerBlogIdIndexImport.update({
-    id: '/blog/$id/',
-    path: '/blog/$id/',
-    getParentRoute: () => AuthenticatedOwnerRoute,
-  } as any);
-
 const AuthenticatedOwnerAccountSettingsIndexRoute =
   AuthenticatedOwnerAccountSettingsIndexImport.update({
     id: '/',
@@ -239,13 +215,6 @@ const AuthenticatedOwnerModelIdIndexRoute =
   AuthenticatedOwnerModelIdIndexImport.update({
     id: '/$model/$id/',
     path: '/$model/$id/',
-    getParentRoute: () => AuthenticatedOwnerRoute,
-  } as any);
-
-const AuthenticatedOwnerBlogIdEditRoute =
-  AuthenticatedOwnerBlogIdEditImport.update({
-    id: '/blog/$id/edit',
-    path: '/blog/$id/edit',
     getParentRoute: () => AuthenticatedOwnerRoute,
   } as any);
 
@@ -351,13 +320,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedOwnerAccountSettingsImport;
       parentRoute: typeof AuthenticatedOwnerImport;
     };
-    '/_authenticated/$owner/blog/new': {
-      id: '/_authenticated/$owner/blog/new';
-      path: '/blog/new';
-      fullPath: '/$owner/blog/new';
-      preLoaderRoute: typeof AuthenticatedOwnerBlogNewImport;
-      parentRoute: typeof AuthenticatedOwnerImport;
-    };
     '/_authenticated/$owner/settings/access': {
       id: '/_authenticated/$owner/settings/access';
       path: '/access';
@@ -400,13 +362,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedOwnerModelIndexImport;
       parentRoute: typeof AuthenticatedOwnerImport;
     };
-    '/_authenticated/$owner/blog/': {
-      id: '/_authenticated/$owner/blog/';
-      path: '/blog';
-      fullPath: '/$owner/blog';
-      preLoaderRoute: typeof AuthenticatedOwnerBlogIndexImport;
-      parentRoute: typeof AuthenticatedOwnerImport;
-    };
     '/_authenticated/$owner/settings/': {
       id: '/_authenticated/$owner/settings/';
       path: '/';
@@ -435,13 +390,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedOwnerAccountSettingsPasswordImport;
       parentRoute: typeof AuthenticatedOwnerAccountSettingsImport;
     };
-    '/_authenticated/$owner/blog/$id/edit': {
-      id: '/_authenticated/$owner/blog/$id/edit';
-      path: '/blog/$id/edit';
-      fullPath: '/$owner/blog/$id/edit';
-      preLoaderRoute: typeof AuthenticatedOwnerBlogIdEditImport;
-      parentRoute: typeof AuthenticatedOwnerImport;
-    };
     '/_authenticated/$owner/$model/$id/': {
       id: '/_authenticated/$owner/$model/$id/';
       path: '/$model/$id';
@@ -455,13 +403,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/$owner/account/settings/';
       preLoaderRoute: typeof AuthenticatedOwnerAccountSettingsIndexImport;
       parentRoute: typeof AuthenticatedOwnerAccountSettingsImport;
-    };
-    '/_authenticated/$owner/blog/$id/': {
-      id: '/_authenticated/$owner/blog/$id/';
-      path: '/blog/$id';
-      fullPath: '/$owner/blog/$id';
-      preLoaderRoute: typeof AuthenticatedOwnerBlogIdIndexImport;
-      parentRoute: typeof AuthenticatedOwnerImport;
     };
   }
 }
@@ -536,13 +477,9 @@ interface AuthenticatedOwnerRouteChildren {
   AuthenticatedOwnerIndexRoute: typeof AuthenticatedOwnerIndexRoute;
   AuthenticatedOwnerModelNewRoute: typeof AuthenticatedOwnerModelNewRoute;
   AuthenticatedOwnerAccountSettingsRoute: typeof AuthenticatedOwnerAccountSettingsRouteWithChildren;
-  AuthenticatedOwnerBlogNewRoute: typeof AuthenticatedOwnerBlogNewRoute;
   AuthenticatedOwnerModelIndexRoute: typeof AuthenticatedOwnerModelIndexRoute;
-  AuthenticatedOwnerBlogIndexRoute: typeof AuthenticatedOwnerBlogIndexRoute;
   AuthenticatedOwnerModelIdEditRoute: typeof AuthenticatedOwnerModelIdEditRoute;
-  AuthenticatedOwnerBlogIdEditRoute: typeof AuthenticatedOwnerBlogIdEditRoute;
   AuthenticatedOwnerModelIdIndexRoute: typeof AuthenticatedOwnerModelIdIndexRoute;
-  AuthenticatedOwnerBlogIdIndexRoute: typeof AuthenticatedOwnerBlogIdIndexRoute;
 }
 
 const AuthenticatedOwnerRouteChildren: AuthenticatedOwnerRouteChildren = {
@@ -553,13 +490,9 @@ const AuthenticatedOwnerRouteChildren: AuthenticatedOwnerRouteChildren = {
   AuthenticatedOwnerModelNewRoute: AuthenticatedOwnerModelNewRoute,
   AuthenticatedOwnerAccountSettingsRoute:
     AuthenticatedOwnerAccountSettingsRouteWithChildren,
-  AuthenticatedOwnerBlogNewRoute: AuthenticatedOwnerBlogNewRoute,
   AuthenticatedOwnerModelIndexRoute: AuthenticatedOwnerModelIndexRoute,
-  AuthenticatedOwnerBlogIndexRoute: AuthenticatedOwnerBlogIndexRoute,
   AuthenticatedOwnerModelIdEditRoute: AuthenticatedOwnerModelIdEditRoute,
-  AuthenticatedOwnerBlogIdEditRoute: AuthenticatedOwnerBlogIdEditRoute,
   AuthenticatedOwnerModelIdIndexRoute: AuthenticatedOwnerModelIdIndexRoute,
-  AuthenticatedOwnerBlogIdIndexRoute: AuthenticatedOwnerBlogIdIndexRoute,
 };
 
 const AuthenticatedOwnerRouteWithChildren =
@@ -606,22 +539,18 @@ export interface FileRoutesByFullPath {
   '/$owner/': typeof AuthenticatedOwnerIndexRoute;
   '/$owner/$model/new': typeof AuthenticatedOwnerModelNewRoute;
   '/$owner/account/settings': typeof AuthenticatedOwnerAccountSettingsRouteWithChildren;
-  '/$owner/blog/new': typeof AuthenticatedOwnerBlogNewRoute;
   '/$owner/settings/access': typeof AuthenticatedOwnerSettingsAccessRoute;
   '/$owner/settings/subscription': typeof AuthenticatedOwnerSettingsSubscriptionRoute;
   '/$owner/design/forms': typeof AuthenticatedOwnerDesignFormsLazyRoute;
   '/$owner/design/tables': typeof AuthenticatedOwnerDesignTablesLazyRoute;
   '/$owner/design/typography': typeof AuthenticatedOwnerDesignTypographyLazyRoute;
   '/$owner/$model': typeof AuthenticatedOwnerModelIndexRoute;
-  '/$owner/blog': typeof AuthenticatedOwnerBlogIndexRoute;
   '/$owner/settings/': typeof AuthenticatedOwnerSettingsIndexRoute;
   '/$owner/design/': typeof AuthenticatedOwnerDesignIndexLazyRoute;
   '/$owner/$model/$id/edit': typeof AuthenticatedOwnerModelIdEditRoute;
   '/$owner/account/settings/password': typeof AuthenticatedOwnerAccountSettingsPasswordRoute;
-  '/$owner/blog/$id/edit': typeof AuthenticatedOwnerBlogIdEditRoute;
   '/$owner/$model/$id': typeof AuthenticatedOwnerModelIdIndexRoute;
   '/$owner/account/settings/': typeof AuthenticatedOwnerAccountSettingsIndexRoute;
-  '/$owner/blog/$id': typeof AuthenticatedOwnerBlogIdIndexRoute;
 }
 
 export interface FileRoutesByTo {
@@ -632,22 +561,18 @@ export interface FileRoutesByTo {
   '/': typeof AuthenticatedIndexRoute;
   '/$owner': typeof AuthenticatedOwnerIndexRoute;
   '/$owner/$model/new': typeof AuthenticatedOwnerModelNewRoute;
-  '/$owner/blog/new': typeof AuthenticatedOwnerBlogNewRoute;
   '/$owner/settings/access': typeof AuthenticatedOwnerSettingsAccessRoute;
   '/$owner/settings/subscription': typeof AuthenticatedOwnerSettingsSubscriptionRoute;
   '/$owner/design/forms': typeof AuthenticatedOwnerDesignFormsLazyRoute;
   '/$owner/design/tables': typeof AuthenticatedOwnerDesignTablesLazyRoute;
   '/$owner/design/typography': typeof AuthenticatedOwnerDesignTypographyLazyRoute;
   '/$owner/$model': typeof AuthenticatedOwnerModelIndexRoute;
-  '/$owner/blog': typeof AuthenticatedOwnerBlogIndexRoute;
   '/$owner/settings': typeof AuthenticatedOwnerSettingsIndexRoute;
   '/$owner/design': typeof AuthenticatedOwnerDesignIndexLazyRoute;
   '/$owner/$model/$id/edit': typeof AuthenticatedOwnerModelIdEditRoute;
   '/$owner/account/settings/password': typeof AuthenticatedOwnerAccountSettingsPasswordRoute;
-  '/$owner/blog/$id/edit': typeof AuthenticatedOwnerBlogIdEditRoute;
   '/$owner/$model/$id': typeof AuthenticatedOwnerModelIdIndexRoute;
   '/$owner/account/settings': typeof AuthenticatedOwnerAccountSettingsIndexRoute;
-  '/$owner/blog/$id': typeof AuthenticatedOwnerBlogIdIndexRoute;
 }
 
 export interface FileRoutesById {
@@ -664,22 +589,18 @@ export interface FileRoutesById {
   '/_authenticated/$owner/': typeof AuthenticatedOwnerIndexRoute;
   '/_authenticated/$owner/$model/new': typeof AuthenticatedOwnerModelNewRoute;
   '/_authenticated/$owner/account/settings': typeof AuthenticatedOwnerAccountSettingsRouteWithChildren;
-  '/_authenticated/$owner/blog/new': typeof AuthenticatedOwnerBlogNewRoute;
   '/_authenticated/$owner/settings/access': typeof AuthenticatedOwnerSettingsAccessRoute;
   '/_authenticated/$owner/settings/subscription': typeof AuthenticatedOwnerSettingsSubscriptionRoute;
   '/_authenticated/$owner/design/forms': typeof AuthenticatedOwnerDesignFormsLazyRoute;
   '/_authenticated/$owner/design/tables': typeof AuthenticatedOwnerDesignTablesLazyRoute;
   '/_authenticated/$owner/design/typography': typeof AuthenticatedOwnerDesignTypographyLazyRoute;
   '/_authenticated/$owner/$model/': typeof AuthenticatedOwnerModelIndexRoute;
-  '/_authenticated/$owner/blog/': typeof AuthenticatedOwnerBlogIndexRoute;
   '/_authenticated/$owner/settings/': typeof AuthenticatedOwnerSettingsIndexRoute;
   '/_authenticated/$owner/design/': typeof AuthenticatedOwnerDesignIndexLazyRoute;
   '/_authenticated/$owner/$model/$id/edit': typeof AuthenticatedOwnerModelIdEditRoute;
   '/_authenticated/$owner/account/settings/password': typeof AuthenticatedOwnerAccountSettingsPasswordRoute;
-  '/_authenticated/$owner/blog/$id/edit': typeof AuthenticatedOwnerBlogIdEditRoute;
   '/_authenticated/$owner/$model/$id/': typeof AuthenticatedOwnerModelIdIndexRoute;
   '/_authenticated/$owner/account/settings/': typeof AuthenticatedOwnerAccountSettingsIndexRoute;
-  '/_authenticated/$owner/blog/$id/': typeof AuthenticatedOwnerBlogIdIndexRoute;
 }
 
 export interface FileRouteTypes {
@@ -697,22 +618,18 @@ export interface FileRouteTypes {
     | '/$owner/'
     | '/$owner/$model/new'
     | '/$owner/account/settings'
-    | '/$owner/blog/new'
     | '/$owner/settings/access'
     | '/$owner/settings/subscription'
     | '/$owner/design/forms'
     | '/$owner/design/tables'
     | '/$owner/design/typography'
     | '/$owner/$model'
-    | '/$owner/blog'
     | '/$owner/settings/'
     | '/$owner/design/'
     | '/$owner/$model/$id/edit'
     | '/$owner/account/settings/password'
-    | '/$owner/blog/$id/edit'
     | '/$owner/$model/$id'
-    | '/$owner/account/settings/'
-    | '/$owner/blog/$id';
+    | '/$owner/account/settings/';
   fileRoutesByTo: FileRoutesByTo;
   to:
     | '/auth'
@@ -722,22 +639,18 @@ export interface FileRouteTypes {
     | '/'
     | '/$owner'
     | '/$owner/$model/new'
-    | '/$owner/blog/new'
     | '/$owner/settings/access'
     | '/$owner/settings/subscription'
     | '/$owner/design/forms'
     | '/$owner/design/tables'
     | '/$owner/design/typography'
     | '/$owner/$model'
-    | '/$owner/blog'
     | '/$owner/settings'
     | '/$owner/design'
     | '/$owner/$model/$id/edit'
     | '/$owner/account/settings/password'
-    | '/$owner/blog/$id/edit'
     | '/$owner/$model/$id'
-    | '/$owner/account/settings'
-    | '/$owner/blog/$id';
+    | '/$owner/account/settings';
   id:
     | '__root__'
     | '/_authenticated'
@@ -752,22 +665,18 @@ export interface FileRouteTypes {
     | '/_authenticated/$owner/'
     | '/_authenticated/$owner/$model/new'
     | '/_authenticated/$owner/account/settings'
-    | '/_authenticated/$owner/blog/new'
     | '/_authenticated/$owner/settings/access'
     | '/_authenticated/$owner/settings/subscription'
     | '/_authenticated/$owner/design/forms'
     | '/_authenticated/$owner/design/tables'
     | '/_authenticated/$owner/design/typography'
     | '/_authenticated/$owner/$model/'
-    | '/_authenticated/$owner/blog/'
     | '/_authenticated/$owner/settings/'
     | '/_authenticated/$owner/design/'
     | '/_authenticated/$owner/$model/$id/edit'
     | '/_authenticated/$owner/account/settings/password'
-    | '/_authenticated/$owner/blog/$id/edit'
     | '/_authenticated/$owner/$model/$id/'
-    | '/_authenticated/$owner/account/settings/'
-    | '/_authenticated/$owner/blog/$id/';
+    | '/_authenticated/$owner/account/settings/';
   fileRoutesById: FileRoutesById;
 }
 
@@ -819,13 +728,9 @@ export const routeTree = rootRoute
         "/_authenticated/$owner/",
         "/_authenticated/$owner/$model/new",
         "/_authenticated/$owner/account/settings",
-        "/_authenticated/$owner/blog/new",
         "/_authenticated/$owner/$model/",
-        "/_authenticated/$owner/blog/",
         "/_authenticated/$owner/$model/$id/edit",
-        "/_authenticated/$owner/blog/$id/edit",
-        "/_authenticated/$owner/$model/$id/",
-        "/_authenticated/$owner/blog/$id/"
+        "/_authenticated/$owner/$model/$id/"
       ]
     },
     "/auth/reset-password": {
@@ -879,10 +784,6 @@ export const routeTree = rootRoute
         "/_authenticated/$owner/account/settings/"
       ]
     },
-    "/_authenticated/$owner/blog/new": {
-      "filePath": "_authenticated/$owner/blog/new.tsx",
-      "parent": "/_authenticated/$owner"
-    },
     "/_authenticated/$owner/settings/access": {
       "filePath": "_authenticated/$owner/settings/access.tsx",
       "parent": "/_authenticated/$owner/settings"
@@ -907,10 +808,6 @@ export const routeTree = rootRoute
       "filePath": "_authenticated/$owner/$model/index.tsx",
       "parent": "/_authenticated/$owner"
     },
-    "/_authenticated/$owner/blog/": {
-      "filePath": "_authenticated/$owner/blog/index.tsx",
-      "parent": "/_authenticated/$owner"
-    },
     "/_authenticated/$owner/settings/": {
       "filePath": "_authenticated/$owner/settings/index.tsx",
       "parent": "/_authenticated/$owner/settings"
@@ -927,10 +824,6 @@ export const routeTree = rootRoute
       "filePath": "_authenticated/$owner/account/settings/password.tsx",
       "parent": "/_authenticated/$owner/account/settings"
     },
-    "/_authenticated/$owner/blog/$id/edit": {
-      "filePath": "_authenticated/$owner/blog/$id.edit.tsx",
-      "parent": "/_authenticated/$owner"
-    },
     "/_authenticated/$owner/$model/$id/": {
       "filePath": "_authenticated/$owner/$model/$id.index.tsx",
       "parent": "/_authenticated/$owner"
@@ -938,10 +831,6 @@ export const routeTree = rootRoute
     "/_authenticated/$owner/account/settings/": {
       "filePath": "_authenticated/$owner/account/settings/index.tsx",
       "parent": "/_authenticated/$owner/account/settings"
-    },
-    "/_authenticated/$owner/blog/$id/": {
-      "filePath": "_authenticated/$owner/blog/$id.index.tsx",
-      "parent": "/_authenticated/$owner"
     }
   }
 }
