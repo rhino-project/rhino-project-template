@@ -5,6 +5,7 @@ import { SecondaryNavigation } from '../../components/app/SecondaryNavigation';
 
 export const Route = createFileRoute('/_authenticated/$owner')({
   beforeLoad: ({ context: { rhino }, params: { owner } }) => {
+    // This is a hack to make sure that the base owner is set correctly if deep linking into the app
     if (owner !== String(rhino.baseOwner?.id)) {
       const usersRoleFromUrl = rhino.usersRoles.find(
         (el) => String(el.organization.id) === owner
