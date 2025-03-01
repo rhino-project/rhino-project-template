@@ -44,7 +44,6 @@ const router = createRouter({
   defaultPendingComponent: () => <div>Pending...</div>,
   defaultPreload: 'intent',
   scrollRestoration: true,
-
   // This will be set after we wrap the app in an RhinoProvider
   context: { rhino: undefined! }
 });
