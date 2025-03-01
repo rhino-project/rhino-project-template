@@ -9,8 +9,23 @@ import { Helmet } from 'react-helmet';
 import { NotFoundPage } from '@rhino-project/ui-heroui';
 import { RhinoProvider, useRhinoContext } from '@rhino-project/core';
 import { RhinoDevTool } from '@rhino-project/ui-heroui';
+import {
+  RouterProvider,
+  createRouter,
+  NavigateOptions,
+  ToOptions
+} from '@tanstack/react-router';
 
-import { RouterProvider, createRouter } from '@tanstack/react-router';
+// Import the generated models
+import { components } from './models/models';
+
+declare module '@rhino-project/core' {
+  type SchemaToResource = {
+    [K in keyof components['schemas']]: components['schemas'][K];
+  };
+
+  interface Resources extends SchemaToResource {}
+}
 
 // Import the generated route tree
 import { routeTree } from './routeTree.gen';
@@ -33,6 +48,14 @@ const router = createRouter({
   // This will be set after we wrap the app in an RhinoProvider
   context: { rhino: undefined! }
 });
+
+// Add the router config to hero-ui provider
+declare module '@react-types/shared' {
+  interface RouterConfig {
+    href: ToOptions['to'];
+    routerOptions: Omit<NavigateOptions, keyof ToOptions>;
+  }
+}
 
 // Render the app
 const RootUI = () => {
