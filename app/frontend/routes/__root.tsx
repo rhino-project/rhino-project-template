@@ -9,7 +9,15 @@ import { HeroUIProvider, ToastProvider } from '@rhino-project/ui-heroui';
 // import { PageAnalytics } from '@rhino-project/core/components/analytics';
 import { RhinoContextType } from '@rhino-project/core';
 
-export const Base = () => {
+interface AppRouterContext {
+  rhino: RhinoContextType;
+}
+
+export const Route = createRootRouteWithContext<AppRouterContext>()({
+  component: RouteComponent
+});
+
+function RouteComponent() {
   const router = useRouter();
 
   return (
@@ -28,12 +36,4 @@ export const Base = () => {
       <TanStackRouterDevtools />
     </HeroUIProvider>
   );
-};
-
-interface AppRouterContext {
-  rhino: RhinoContextType;
 }
-
-export const Route = createRootRouteWithContext<AppRouterContext>()({
-  component: Base
-});
