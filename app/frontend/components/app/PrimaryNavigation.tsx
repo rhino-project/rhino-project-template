@@ -1,10 +1,12 @@
 import { ModelNavSection, NavItem, NavSection } from '@rhino-project/ui-heroui';
 import { useRhinoConfig } from '@rhino-project/core/config';
+import { useBaseOwnerId } from '@rhino-project/core/hooks';
 
 export const PrimaryNavigation = () => {
   const {
     env: { DESIGN_SYSTEM_ENABLED }
   } = useRhinoConfig();
+  const owner = String(useBaseOwnerId());
 
   return (
     <>
@@ -12,7 +14,8 @@ export const PrimaryNavigation = () => {
         <NavItem
           title="Dashboard"
           icon="bi:house"
-          to="/1"
+          to="/$owner"
+          params={{ owner }}
           activeOptions={{ exact: true }}
         />
       </NavSection>
@@ -23,7 +26,8 @@ export const PrimaryNavigation = () => {
           <NavItem
             key="design-system"
             title="Design System"
-            to="/1/design"
+            to="/$owner/design"
+            params={{ owner }}
             icon="bi:easel"
           />
         )}
