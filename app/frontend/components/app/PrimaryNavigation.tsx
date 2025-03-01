@@ -21,8 +21,8 @@ export const PrimaryNavigation = () => {
       </NavSection>
       <ModelNavSection />
 
-      <NavSection title="Development">
-        {DESIGN_SYSTEM_ENABLED && (
+      {DESIGN_SYSTEM_ENABLED && (
+        <NavSection title="Development">
           <NavItem
             key="design-system"
             title="Design System"
@@ -30,8 +30,8 @@ export const PrimaryNavigation = () => {
             params={{ owner }}
             icon="bi:easel"
           />
-        )}
-      </NavSection>
+        </NavSection>
+      )}
     </>
   );
 };
