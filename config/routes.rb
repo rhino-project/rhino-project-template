@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   # https://github.com/activeadmin/activeadmin/issues/783#issuecomment-244587442
   ActiveAdmin.routes(self) rescue ActiveAdmin::DatabaseHitDuringLoad
 
+  scope Rhino.namespace do
+    get "info/typescript", to: "typescript#show", format: :plain
+  end
+
   mount MissionControl::Jobs::Engine, at: "/jobs"
 
   constraints lambda { |req| !req.xhr? && req.format.html? && !req.path.starts_with?("/api/") && !req.path.starts_with?("/rails/") && !req.path.starts_with?("/jobs") } do # rubocop:disable Layout/LineLength

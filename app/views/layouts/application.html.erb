@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-bs-theme="light">
+<html class="dark text-foreground bg-background h-dvh">
   <head>
     <title><%= content_for(:title) || Rails.application.class.module_parent_name  %></title>
     <meta charset="utf-8" />
@@ -9,7 +9,7 @@
     <%= csrf_meta_tags %>
     <%= vite_client_tag %>
     <%= vite_react_refresh_tag %>
-    <%= vite_javascript_tag 'application.jsx' %>
+    <%= vite_javascript_tag 'application.tsx' %>
 
     <% if (ENV.fetch("VITE_SEGMENT_WRITE_KEY", false) ) %>
     <script>
