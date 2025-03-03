@@ -49,7 +49,7 @@ module RhinoTemplate
 
     # Necessary for ActiveStorage integration
     # Rhino::Resource::ActiveStorageExtension#url needs this to be set
-    Rails.application.routes.default_url_options[:host] = ENV["ROOT_URL"]
+    Rails.application.routes.default_url_options[:host] = ENV["RHINO_APP_URL"]
 
     config.mission_control.jobs.base_controller_class = "MissionControlController"
     config.mission_control.jobs.http_basic_auth_enabled = false
