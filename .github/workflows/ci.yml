@@ -34,7 +34,7 @@ jobs:
       PGHOST: 127.0.0.1
       PGUSER: rails_test
       RAILS_ENV: test
-      ROOT_URL: http://localhost:3000
+      RHINO_APP_URL: http://localhost:3000
       DB_NAME: rails
       DB_USERNAME: rails_test
       DB_PASSWORD: rails_test
@@ -135,7 +135,7 @@ jobs:
       BUNDLE_RETRY: 3
       BUNDLE_PATH: vendor/bundle
       RAILS_ENV: test
-      ROOT_URL: http://localhost:3000
+      RHINO_APP_URLP_URL: http://localhost:3000
       DB_NAME: rails
       DB_USERNAME: rails_test
       DB_PASSWORD: rails_test
