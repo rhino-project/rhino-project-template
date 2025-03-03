@@ -60,5 +60,5 @@ DeviseTokenAuth.setup do |config|
   config.require_client_password_reset_token = true
 
   config.default_confirm_success_url = "#{ENV['RHINO_APP_URL']}/auth/signin"
-  config.default_password_reset_url = "#{ENV['RHINO_APP_URLP_URLP_URL']}/auth/reset-password"
+  config.default_password_reset_url = "#{ENV['RHINO_APP_URL']}/auth/reset-password"
 end
