@@ -14,25 +14,7 @@ interface AppRouterContext {
 }
 
 export const Route = createRootRouteWithContext<AppRouterContext>()({
-  beforeLoad: ({ context: { rhino }, location }) => {
-    console.log('beforeLoad __root', location, rhino.user);
-  },
-  loader: async ({ context: { rhino }, location }) => {
-    console.log('loader __root', location, rhino.user);
-  },
-  component: RouteComponent,
-  onEnter: ({ context: { rhino }, fullPath: pathname, ...rest }) => {
-    console.log('onEnter __root', pathname, rhino.user, rest);
-    if (window.analytics) {
-      window.analytics.page(pathname);
-      window.analytics.identify(rhino.user.id, { email: rhino.user.email });
-      // window.analytics.group(baseOwner.id, { name: baseOwner.name });
-    }
-  },
-  onStay: ({ context: { rhino }, pathname, ...rest }) => {
-    console.log('onStay __root', pathname, rhino.user, rest);
-    if (window.analytics) window.analytics.page(pathname);
-  }
+  component: RouteComponent
 });
 
 function RouteComponent() {
