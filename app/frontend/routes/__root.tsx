@@ -5,8 +5,13 @@ import {
   HeadContent
 } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
-import { HeroUIProvider, ToastProvider } from '@rhino-project/ui-heroui';
-// import { PageAnalytics } from '@rhino-project/core/components/analytics';
+import {
+  HeroUIProvider,
+  ToastProvider,
+  useGroupAnalytics,
+  useIdentifyAnalytics,
+  usePageAnalytics
+} from '@rhino-project/ui-heroui';
 import { RhinoContextType } from '@rhino-project/core';
 
 interface AppRouterContext {
@@ -19,6 +24,10 @@ export const Route = createRootRouteWithContext<AppRouterContext>()({
 
 function RouteComponent() {
   const router = useRouter();
+
+  useIdentifyAnalytics();
+  useGroupAnalytics();
+  usePageAnalytics();
 
   return (
     <HeroUIProvider
