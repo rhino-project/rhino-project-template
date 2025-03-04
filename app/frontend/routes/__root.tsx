@@ -46,7 +46,7 @@ function RouteComponent() {
     >
       <HeadContent />
       <ToastProvider />
-      <div className="dark text-foreground bg-background h-dvh">
+      <div className="h-dvh">
         {/* <PageAnalytics> */}
         <Outlet />
         {/* </PageAnalytics> */}
