@@ -8,5 +8,5 @@ export const Route = createFileRoute('/_authenticated/$owner/$model/')({
 function RouteComponent() {
   const { model } = Route.useParams();
 
-  return <ModelIndexPage model={model} />;
+  return <ModelIndexPage model={model} syncUrl />;
 }
