@@ -4,6 +4,7 @@
   "name": "rhino-project-template",
   "dockerComposeFile": "compose.yaml",
   "service": "rails-app",
+  "workspaceFolder": "/workspaces/sandbox",
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
