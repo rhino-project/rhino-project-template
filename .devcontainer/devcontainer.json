@@ -8,10 +8,10 @@
       "packages": "libpq-dev, libvips, postgresql-client-15"
     },
     "ghcr.io/devcontainers/features/ruby:1": {
-      "version": "3.3.0"
+      "version": "3.4.1"
     },
     "ghcr.io/devcontainers/features/node:1": {
-      "version": 20
+      "version": 22
     },
     "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
       "plugins": "bundler rails ruby yarn"
