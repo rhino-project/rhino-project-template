@@ -7,9 +7,6 @@
     "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
       "packages": "libpq-dev, libvips, postgresql-client-15"
     },
-    "ghcr.io/devcontainers/features/git:1": {
-      "version": "latest"
-    },
     "ghcr.io/devcontainers/features/ruby:1": {
       "version": "3.3.0"
     },
