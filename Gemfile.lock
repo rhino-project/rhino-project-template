@@ -447,13 +447,13 @@ GEM
       pairing_heap (>= 0.3, < 4.0)
       rexml (~> 3.2, >= 3.2.4)
       stream (~> 0.5.3)
-    rhino_project (0.25.0.beta.9)
+    rhino_project (0.25.0.beta.11)
       bundler (>= 1.15.0)
-      rhino_project_core (= 0.25.0.beta.9)
-      rhino_project_notifications (= 0.25.0.beta.9)
-      rhino_project_organizations (= 0.25.0.beta.9)
-      rhino_project_subscriptions (= 0.25.0.beta.9)
-    rhino_project_core (0.25.0.beta.9)
+      rhino_project_core (= 0.25.0.beta.11)
+      rhino_project_notifications (= 0.25.0.beta.11)
+      rhino_project_organizations (= 0.25.0.beta.11)
+      rhino_project_subscriptions (= 0.25.0.beta.11)
+    rhino_project_core (0.25.0.beta.11)
       activeadmin (= 3.2.2)
       acts-as-taggable-on (= 12.0.0)
       analytics-ruby (= 2.0.13)
@@ -479,17 +479,17 @@ GEM
       rails (~> 8.0.0, >= 8.0.0)
       rake (~> 13.1)
       rgl (= 0.6.6)
-    rhino_project_notifications (0.25.0.beta.9)
+    rhino_project_notifications (0.25.0.beta.11)
       activity_notification (= 2.3.3)
       rails (~> 8.0.0, >= 8.0.0)
-      rhino_project_core (= 0.25.0.beta.9)
-    rhino_project_organizations (0.25.0.beta.9)
+      rhino_project_core (= 0.25.0.beta.11)
+    rhino_project_organizations (0.25.0.beta.11)
       devise_invitable (= 2.0.9)
       rails (~> 8.0.0, >= 8.0.0)
-      rhino_project_core (= 0.25.0.beta.9)
-    rhino_project_subscriptions (0.25.0.beta.9)
+      rhino_project_core (= 0.25.0.beta.11)
+    rhino_project_subscriptions (0.25.0.beta.11)
       rails (~> 8.0.0, >= 8.0.0)
-      rhino_project_core (= 0.25.0.beta.9)
+      rhino_project_core (= 0.25.0.beta.11)
       stripe (= 13.3.1)
     rollbar (3.2.0)
     rubocop (1.64.1)
@@ -523,7 +523,7 @@ GEM
       rubocop-minitest
       rubocop-performance
       rubocop-rails
-    rubocop-rhino-project (0.25.0.beta.9)
+    rubocop-rhino-project (0.25.0.beta.11)
       activesupport (>= 4.2.0)
       parser (~> 3.3.7.0, >= 3.3.7.0)
       rubocop (>= 1.24.1, < 2.0)
@@ -666,16 +666,16 @@ DEPENDENCIES
   puma (>= 5.0)
   railroady
   rails (~> 8.0.1)
-  rhino_project (~> 0.25.0.beta.9)
-  rhino_project_core (~> 0.25.0.beta.9)
-  rhino_project_notifications (~> 0.25.0.beta.9)
-  rhino_project_organizations (~> 0.25.0.beta.9)
-  rhino_project_subscriptions (~> 0.25.0.beta.9)
+  rhino_project (~> 0.25.0.beta.11)
+  rhino_project_core (~> 0.25.0.beta.11)
+  rhino_project_notifications (~> 0.25.0.beta.11)
+  rhino_project_organizations (~> 0.25.0.beta.11)
+  rhino_project_subscriptions (~> 0.25.0.beta.11)
   rollbar
   rubocop-factory_bot (= 2.26.1)
   rubocop-minitest
   rubocop-rails-omakase
-  rubocop-rhino-project (~> 0.25.0.beta.9)
+  rubocop-rhino-project (~> 0.25.0.beta.11)
   sendgrid-actionmailer
   sendgrid-ruby
   simplecov
@@ -861,11 +861,11 @@ CHECKSUMS
   responders (3.1.1) sha256=92f2a87e09028347368639cfb468f5fefa745cb0dc2377ef060db1cdd79a341a
   rexml (3.3.9) sha256=d71875b85299f341edf47d44df0212e7658cbdf35aeb69cefdb63f57af3137c9
   rgl (0.6.6) sha256=2611d75509bcf31be2955c0a14b063c7a198dabba3e95b6a67c8653bd30c5136
-  rhino_project (0.25.0.beta.9) sha256=8907bb315c097a61f1a9762e71781c577b30a4cd84db2ef8e95a9fd129a432eb
-  rhino_project_core (0.25.0.beta.9) sha256=d975d6497962b80fda708d82c45ff413caaa48a1b5d1b1e5560733053981ec45
-  rhino_project_notifications (0.25.0.beta.9) sha256=1b20abe9ad7ec9e908d4c9c6ec24f7792a3375faa3c93b7f93fe03621e8846b0
-  rhino_project_organizations (0.25.0.beta.9) sha256=ea6c9be67822fcf365b13398d62290f54a3acbeedd38f978c7bea4f16f0c9484
-  rhino_project_subscriptions (0.25.0.beta.9) sha256=46a43986291b3502fdc94045c67031fa1525b2d68f847747544150a65717265d
+  rhino_project (0.25.0.beta.11) sha256=c6f7217856727634fe6321d620127db1b099cf01c13b0290d9c72fc596a630d0
+  rhino_project_core (0.25.0.beta.11) sha256=7f43a6f9deb36bfd9707abe6846bd504ad22fe85d823c40e0e5d0886111b30cd
+  rhino_project_notifications (0.25.0.beta.11) sha256=21757a6ea4dd3e6c66d59c87d3b62557c2b74d2555b43fa11dca0948d3e33c37
+  rhino_project_organizations (0.25.0.beta.11) sha256=a1914459cf50db6e9cbcdda9b78eb8aa914e9fcf681b777fbf9e79ef8864c1dd
+  rhino_project_subscriptions (0.25.0.beta.11) sha256=aa0233e2a83e4067ca20e2080e98e6eeea7364acff7241795b21d58b9bc3a2aa
   rollbar (3.2.0) sha256=906d90c802ce4a56c5d4e18f89e5c0dc41896c142f35c7ba52a2049768daa25b
   rubocop (1.64.1) sha256=3145bf1863771e400a1c041060e751e5ff0edd9ceb99d01df36db1902f611f3b
   rubocop-ast (1.32.0) sha256=ecff238ff339b12e1f2a857833a5f9024aa91085516f5eb9c3027f7164908629
@@ -874,7 +874,7 @@ CHECKSUMS
   rubocop-performance (1.23.0) sha256=34ae78cb1bc5f1a0b34a34a1f9f6eec2cb8b8b9cafa2ce37982021e86fa49171
   rubocop-rails (2.27.0) sha256=c3a6cef509539cdefe5043992ab3530610b1fecc3d67befe3ff0215b96f2f4fe
   rubocop-rails-omakase (1.0.0) sha256=26635821283d6a03dc8b68172123716a62db96123eb035f736ebb91283f96418
-  rubocop-rhino-project (0.25.0.beta.9) sha256=5dd085057ab1db3430e4913b6a9201b26f5804576bbe1dc9e6312c9374370696
+  rubocop-rhino-project (0.25.0.beta.11) sha256=c13d12ae58f7652177bf9eeb659c96c78d39e3069a0a2558decf2729e4c74417
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
   ruby-vips (2.2.2) sha256=af5be8e9f2857a98424d7606ecfc2c21c5e107d0802915190dcc093f56e4dd5b
   ruby2_keywords (0.0.5) sha256=ffd13740c573b7301cf7a2e61fc857b2a8e3d3aff32545d6f8300d8bae10e3ef
