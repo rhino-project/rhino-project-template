@@ -15,7 +15,7 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "esModuleInterop": true,
-    "types": ["vite/client", "@rhino-project/config/rhino-env"],
+    "types": ["vite/client", "@rhino-project/core/rhino-env"],
 
     /* Linting */
     "strict": true,
@@ -25,5 +25,5 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["./app/frontend/entrypoints", "./app/frontend", "./cypress"]
+  "include": ["./app/frontend/entrypoints", "./app/frontend"]
 }

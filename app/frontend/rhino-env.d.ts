@@ -1,3 +1,3 @@
-/// <reference types="@rhino-project/config/rhino-env" />
+/// <reference types="@rhino-project/core/rhino-env" />
 
 interface RhinoEnv {}
