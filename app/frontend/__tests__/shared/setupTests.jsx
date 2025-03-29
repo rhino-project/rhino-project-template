@@ -1,6 +1,8 @@
 import modelLoader from '@rhino-project/core/models';
 import api from './modelFixtures';
 
+window.rhino = { env: { PROD: true } };
+
 // Force modelLoader to load models synchronously and then mock the api
 modelLoader.loadModels(true);
 vi.spyOn(modelLoader, 'api', 'get').mockReturnValue(api);
