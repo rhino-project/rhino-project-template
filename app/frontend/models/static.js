@@ -27,7 +27,8 @@ const api = {
             },
             "readOnly": true,
             "nullable": false,
-            "type": "identifier"
+            "type": "integer",
+            "format": "identifier"
           },
           "name": {
             "x-rhino-attribute": {
@@ -166,7 +167,8 @@ const api = {
             },
             "readOnly": true,
             "nullable": false,
-            "type": "identifier"
+            "type": "integer",
+            "format": "identifier"
           },
           "name": {
             "x-rhino-attribute": {
@@ -244,7 +246,8 @@ const api = {
             },
             "readOnly": true,
             "nullable": false,
-            "type": "identifier"
+            "type": "integer",
+            "format": "identifier"
           },
           "name": {
             "x-rhino-attribute": {
@@ -979,7 +982,7 @@ const api = {
     "x-rhino": {
       "modules": {
         "rhino": {
-          "version": "0.25.0.beta.15",
+          "version": "0.30.0.alpha.29",
           "authOwner": "user",
           "baseOwner": "user",
           "oauth": [
