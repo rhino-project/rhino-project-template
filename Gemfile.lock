@@ -281,7 +281,7 @@ GEM
     marcel (1.0.4)
     mini_magick (4.13.2)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.8)
+    mini_portile2 (2.8.9)
     minitest (5.25.5)
     mission_control-jobs (1.0.1)
       actioncable (>= 7.1)
@@ -298,7 +298,7 @@ GEM
       bigdecimal (~> 3.1)
     net-http (0.6.0)
       uri
-    net-imap (0.5.6)
+    net-imap (0.5.8)
       date
       net-protocol
     net-pop (0.1.2)
@@ -308,18 +308,18 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.4)
-    nokogiri (1.18.6)
+    nokogiri (1.18.8)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
-    nokogiri (1.18.6-aarch64-linux-gnu)
+    nokogiri (1.18.8-aarch64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.18.6-arm-linux-gnu)
+    nokogiri (1.18.8-arm-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.18.6-arm64-darwin)
+    nokogiri (1.18.8-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.6-x86_64-darwin)
+    nokogiri (1.18.8-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.18.6-x86_64-linux-gnu)
+    nokogiri (1.18.8-x86_64-linux-gnu)
       racc (~> 1.4)
     oauth2 (2.0.9)
       faraday (>= 0.17.3, < 3.0)
@@ -379,7 +379,7 @@ GEM
       activesupport (>= 3.0.0)
     raabro (1.4.0)
     racc (1.8.1)
-    rack (3.1.12)
+    rack (3.1.15)
     rack-cors (2.0.2)
       rack (>= 2.0.0)
     rack-protection (4.1.1)
@@ -388,7 +388,7 @@ GEM
       rack (>= 3.0.0, < 4)
     rack-proxy (0.7.7)
       rack
-    rack-session (2.1.0)
+    rack-session (2.1.1)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
     rack-test (2.2.0)
@@ -447,13 +447,13 @@ GEM
       pairing_heap (>= 0.3, < 4.0)
       rexml (~> 3.2, >= 3.2.4)
       stream (~> 0.5.3)
-    rhino_project (0.25.0.beta.15)
+    rhino_project (0.25.0.beta.17)
       bundler (>= 1.15.0)
-      rhino_project_core (= 0.25.0.beta.15)
-      rhino_project_notifications (= 0.25.0.beta.15)
-      rhino_project_organizations (= 0.25.0.beta.15)
-      rhino_project_subscriptions (= 0.25.0.beta.15)
-    rhino_project_core (0.25.0.beta.15)
+      rhino_project_core (= 0.25.0.beta.17)
+      rhino_project_notifications (= 0.25.0.beta.17)
+      rhino_project_organizations (= 0.25.0.beta.17)
+      rhino_project_subscriptions (= 0.25.0.beta.17)
+    rhino_project_core (0.25.0.beta.17)
       activeadmin (= 3.2.2)
       acts-as-taggable-on (= 12.0.0)
       analytics-ruby (= 2.0.13)
@@ -479,17 +479,17 @@ GEM
       rails (~> 8.0.0, >= 8.0.0)
       rake (~> 13.1)
       rgl (= 0.6.6)
-    rhino_project_notifications (0.25.0.beta.15)
+    rhino_project_notifications (0.25.0.beta.17)
       activity_notification (= 2.3.3)
       rails (~> 8.0.0, >= 8.0.0)
-      rhino_project_core (= 0.25.0.beta.15)
-    rhino_project_organizations (0.25.0.beta.15)
+      rhino_project_core (= 0.25.0.beta.17)
+    rhino_project_organizations (0.25.0.beta.17)
       devise_invitable (= 2.0.9)
       rails (~> 8.0.0, >= 8.0.0)
-      rhino_project_core (= 0.25.0.beta.15)
-    rhino_project_subscriptions (0.25.0.beta.15)
+      rhino_project_core (= 0.25.0.beta.17)
+    rhino_project_subscriptions (0.25.0.beta.17)
       rails (~> 8.0.0, >= 8.0.0)
-      rhino_project_core (= 0.25.0.beta.15)
+      rhino_project_core (= 0.25.0.beta.17)
       stripe (= 13.3.1)
     rollbar (3.2.0)
     rubocop (1.64.1)
@@ -523,7 +523,7 @@ GEM
       rubocop-minitest
       rubocop-performance
       rubocop-rails
-    rubocop-rhino-project (0.25.0.beta.15)
+    rubocop-rhino-project (0.25.0.beta.17)
       activesupport (>= 4.2.0)
       parser (~> 3.3.7.0, >= 3.3.7.0)
       rubocop (>= 1.24.1, < 2.0)
@@ -666,16 +666,16 @@ DEPENDENCIES
   puma (>= 5.0)
   railroady
   rails (~> 8.0.1)
-  rhino_project (~> 0.25.0.beta.15)
-  rhino_project_core (~> 0.25.0.beta.15)
-  rhino_project_notifications (~> 0.25.0.beta.15)
-  rhino_project_organizations (~> 0.25.0.beta.15)
-  rhino_project_subscriptions (~> 0.25.0.beta.15)
+  rhino_project (~> 0.25.0.beta.17)
+  rhino_project_core (~> 0.25.0.beta.17)
+  rhino_project_notifications (~> 0.25.0.beta.17)
+  rhino_project_organizations (~> 0.25.0.beta.17)
+  rhino_project_subscriptions (~> 0.25.0.beta.17)
   rollbar
   rubocop-factory_bot (= 2.26.1)
   rubocop-minitest
   rubocop-rails-omakase
-  rubocop-rhino-project (~> 0.25.0.beta.15)
+  rubocop-rhino-project (~> 0.25.0.beta.17)
   sendgrid-actionmailer
   sendgrid-ruby
   simplecov
@@ -795,23 +795,23 @@ CHECKSUMS
   marcel (1.0.4) sha256=0d5649feb64b8f19f3d3468b96c680bae9746335d02194270287868a661516a4
   mini_magick (4.13.2) sha256=71d6258e0e8a3d04a9a0a09784d5d857b403a198a51dd4f882510435eb95ddd9
   mini_mime (1.1.5) sha256=8681b7e2e4215f2a159f9400b5816d85e9d8c6c6b491e96a12797e798f8bccef
-  mini_portile2 (2.8.8) sha256=8e47136cdac04ce81750bb6c09733b37895bf06962554e4b4056d78168d70a75
+  mini_portile2 (2.8.9) sha256=0cd7c7f824e010c072e33f68bc02d85a00aeb6fce05bb4819c03dfd3c140c289
   minitest (5.25.5) sha256=391b6c6cb43a4802bfb7c93af1ebe2ac66a210293f4a3fb7db36f2fc7dc2c756
   mission_control-jobs (1.0.1) sha256=3bcccd10ed807a0d59c36054bab2be077e3ee37c48b0d67d25e25802cb0d79ca
   msgpack (1.7.2) sha256=59ab62fd8a4d0dfbde45009f87eb6f158ab2628a7c48886b0256f175166baaa8
   multi_xml (0.7.1) sha256=4fce100c68af588ff91b8ba90a0bb3f0466f06c909f21a32f4962059140ba61b
   net-http (0.6.0) sha256=9621b20c137898af9d890556848c93603716cab516dc2c89b01a38b894e259fb
-  net-imap (0.5.6) sha256=1ede8048ee688a14206060bf37a716d18cb6ea00855f6c9b15daee97ee51fbe5
+  net-imap (0.5.8) sha256=52aa5fdfc1a8a3df1f793b20a327e95b5a9dfe1d733e1f0d53075d2dbcfcf593
   net-pop (0.1.2) sha256=848b4e982013c15b2f0382792268763b748cce91c9e91e36b0f27ed26420dff3
   net-protocol (0.2.2) sha256=aa73e0cba6a125369de9837b8d8ef82a61849360eba0521900e2c3713aa162a8
   net-smtp (0.5.1) sha256=ed96a0af63c524fceb4b29b0d352195c30d82dd916a42f03c62a3a70e5b70736
   nio4r (2.7.4) sha256=d95dee68e0bb251b8ff90ac3423a511e3b784124e5db7ff5f4813a220ae73ca9
-  nokogiri (1.18.6) sha256=4d283431d7829719ea1287ca388f24c6ce343af736bbcbd1365cbdb83bce41a4
-  nokogiri (1.18.6-aarch64-linux-gnu) sha256=1b11f9a814068282cc2b47ebe61395b2a69d1918092d2ca3bd664074f72540e9
-  nokogiri (1.18.6-arm-linux-gnu) sha256=2da07a07ef4c9d9e9da809b3dc0937ed90b031e32c2c658d9918941b85d68b95
-  nokogiri (1.18.6-arm64-darwin) sha256=727a441d179d934b4b7c73e0e28e6723ee46463d96bb0cc6e2e33a13540962c4
-  nokogiri (1.18.6-x86_64-darwin) sha256=fb72568c97ccd90a8d68cb765b0ff0720b109bd62e3babbf372e854ef8fef995
-  nokogiri (1.18.6-x86_64-linux-gnu) sha256=df065db6ba6e1e80f76ef04f860fcf260cc24685125fe33cdc3d1572a1c66b71
+  nokogiri (1.18.8) sha256=8c7464875d9ca7f71080c24c0db7bcaa3940e8be3c6fc4bcebccf8b9a0016365
+  nokogiri (1.18.8-aarch64-linux-gnu) sha256=36badd2eb281fca6214a5188e24a34399b15d89730639a068d12931e2adc210e
+  nokogiri (1.18.8-arm-linux-gnu) sha256=17de01ca3adf9f8e187883ed73c672344d3dbb3c260f88ffa1008e8dc255a28e
+  nokogiri (1.18.8-arm64-darwin) sha256=483b5b9fb33653f6f05cbe00d09ea315f268f0e707cfc809aa39b62993008212
+  nokogiri (1.18.8-x86_64-darwin) sha256=024cdfe7d9ae3466bba6c06f348fb2a8395d9426b66a3c82f1961b907945cc0c
+  nokogiri (1.18.8-x86_64-linux-gnu) sha256=4a747875db873d18a2985ee2c320a6070c4a414ad629da625fbc58d1a20e5ecc
   oauth2 (2.0.9) sha256=b21f9defcf52dc1610e0dfab4c868342173dcd707fd15c777d9f4f04e153f7fb
   omniauth (2.1.2) sha256=def03277298b8f8a5d3ff16cdb2eb5edb9bffed60ee7dda24cc0c89b3ae6a0ce
   omniauth-auth0 (3.1.1) sha256=3d9e83377b37394db077cf27082d29ccff93158f072d92fc59f1e88798c6c2b2
@@ -837,11 +837,11 @@ CHECKSUMS
   pundit (2.1.0) sha256=a3fbeb5614e841a205293ccce3db16bc33187177c38b749c4f687d3573a97ca2
   raabro (1.4.0) sha256=d4fa9ff5172391edb92b242eed8be802d1934b1464061ae5e70d80962c5da882
   racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
-  rack (3.1.12) sha256=00d83055c89273eb13679ab562767b8826955aa6c4371d7d161deb975c50c540
+  rack (3.1.15) sha256=d12b3e9960d18a26ded961250f2c0e3b375b49ff40dbe6786e9c3b160cbffca4
   rack-cors (2.0.2) sha256=415d4e1599891760c5dc9ef0349c7fecdf94f7c6a03e75b2e7c2b54b82adda1b
   rack-protection (4.1.1) sha256=51a254a5d574a7f0ca4f0672025ce2a5ef7c8c3bd09c431349d683e825d7d16a
   rack-proxy (0.7.7) sha256=446a4b57001022145d5c3ba73b775f66a2260eaf7420c6907483141900395c8a
-  rack-session (2.1.0) sha256=437c3916535b58ef71c816ce4a2dee0a01c8a52ae6077dc2b6cd19085760a290
+  rack-session (2.1.1) sha256=0b6dc07dea7e4b583f58a48e8b806d4c9f1c6c9214ebc202ec94562cbea2e4e9
   rack-test (2.2.0) sha256=005a36692c306ac0b4a9350355ee080fd09ddef1148a5f8b2ac636c720f5c463
   rackup (2.2.1) sha256=f737191fd5c5b348b7f0a4412a3b86383f88c43e13b8217b63d4c8d90b9e798d
   railroady (1.6.0) sha256=c0f020a10bf818c21e9b107549ec48cd160bb35117c2c5bf8a6722156275cd0e
@@ -861,11 +861,11 @@ CHECKSUMS
   responders (3.1.1) sha256=92f2a87e09028347368639cfb468f5fefa745cb0dc2377ef060db1cdd79a341a
   rexml (3.3.9) sha256=d71875b85299f341edf47d44df0212e7658cbdf35aeb69cefdb63f57af3137c9
   rgl (0.6.6) sha256=2611d75509bcf31be2955c0a14b063c7a198dabba3e95b6a67c8653bd30c5136
-  rhino_project (0.25.0.beta.15) sha256=f1cda2bde5cd039932bee4675d1439dd8395d22d1991e847466fdfd1eda9883c
-  rhino_project_core (0.25.0.beta.15) sha256=c7c19b5bdad5bb95eb824d23e878c2683107d325e8a161299d0ae41d7bf57ea2
-  rhino_project_notifications (0.25.0.beta.15) sha256=307e65cf880ad40d77cca6554dc36bd2fdc7ace479e14ce87122ec12d07c2760
-  rhino_project_organizations (0.25.0.beta.15) sha256=6462dccafc133dc2222b15095633294f89d982ba8922081f2ba3cb5cfea87494
-  rhino_project_subscriptions (0.25.0.beta.15) sha256=d5d5abaf5b2f45b27a0053985c59a1dd8e96528d1f86a8e87d78c109a8705a22
+  rhino_project (0.25.0.beta.17) sha256=6d61dc27508a115b394674a7b24ba09fae51665f69defad5b5a693801b8db1f3
+  rhino_project_core (0.25.0.beta.17) sha256=73eb9e5884da26fbb5da33a7c621afa731a732b3040fc9807045fcac18a19dee
+  rhino_project_notifications (0.25.0.beta.17) sha256=c7801bd2a286c98a1af50c4ce4306225876f41b2e9c8f0610169402c233b6f04
+  rhino_project_organizations (0.25.0.beta.17) sha256=93eea4a41a7f9ba43eded936c46814231bc1d6d0a17e8a18b741d2882298310f
+  rhino_project_subscriptions (0.25.0.beta.17) sha256=b88431da8d338f82a28d61aab4ef6aa3268ef28ff1672c516c76a147151a58e5
   rollbar (3.2.0) sha256=906d90c802ce4a56c5d4e18f89e5c0dc41896c142f35c7ba52a2049768daa25b
   rubocop (1.64.1) sha256=3145bf1863771e400a1c041060e751e5ff0edd9ceb99d01df36db1902f611f3b
   rubocop-ast (1.32.0) sha256=ecff238ff339b12e1f2a857833a5f9024aa91085516f5eb9c3027f7164908629
@@ -874,7 +874,7 @@ CHECKSUMS
   rubocop-performance (1.23.0) sha256=34ae78cb1bc5f1a0b34a34a1f9f6eec2cb8b8b9cafa2ce37982021e86fa49171
   rubocop-rails (2.27.0) sha256=c3a6cef509539cdefe5043992ab3530610b1fecc3d67befe3ff0215b96f2f4fe
   rubocop-rails-omakase (1.0.0) sha256=26635821283d6a03dc8b68172123716a62db96123eb035f736ebb91283f96418
-  rubocop-rhino-project (0.25.0.beta.15) sha256=dc710f3822e2ebe1200dc22b61e4eafc6f8a17532c9e8b21323d3c27a5239214
+  rubocop-rhino-project (0.25.0.beta.17) sha256=05741ef5ddedc10a0ff44d62f6c9d52aeac4d527bbb68089f51e850fd1552018
   ruby-progressbar (1.13.0) sha256=80fc9c47a9b640d6834e0dc7b3c94c9df37f08cb072b7761e4a71e22cff29b33
   ruby-vips (2.2.2) sha256=af5be8e9f2857a98424d7606ecfc2c21c5e107d0802915190dcc093f56e4dd5b
   ruby2_keywords (0.0.5) sha256=ffd13740c573b7301cf7a2e61fc857b2a8e3d3aff32545d6f8300d8bae10e3ef
