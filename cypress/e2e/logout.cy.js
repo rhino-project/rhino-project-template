@@ -6,7 +6,8 @@ describe('logout', () => {
     cy.get('#sidebarMenu #account-menu .nav-icon:first').click();
     cy.get('#sidebarMenu').contains('Sign Out').click();
 
-    cy.get('input[name=email]').should('be.visible');
+    // After logout, should be on signin page
+    cy.get('input[name="email"]').should('be.visible');
 
     cy.getCookie('auth_cookie').should('not.exist');
   });

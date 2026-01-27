@@ -30,11 +30,19 @@ Cypress.Commands.add('login', (email, password) => {
     testEmail,
     () => {
       cy.visit('/signin');
-      cy.get('input[name=email]').type(testEmail);
-      cy.get('input[name=password]').type(`${testPassword}{enter}`, {
+      // HeroUI inputs are wrapped in divs, but the actual input still has the name attribute
+      cy.get('input[name="email"]').should('be.visible').type(testEmail);
+      cy.get('input[name="password"]').should('be.visible').type(testPassword, {
         log: false
       });
-      cy.url().should('match', /\/[0-9]+/);
+      // Click the submit button - scope to form to avoid multiple matches
+      cy.get('input[name="email"]')
+        .closest('form')
+        .find('button[type="submit"]')
+        .should('be.visible')
+        .click();
+      // Wait for navigation away from signin page (could be dashboard, user page, etc.)
+      cy.url({ timeout: 10000 }).should('not.include', '/signin');
     },
     {
       validate: () => {

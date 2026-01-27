@@ -10,13 +10,17 @@ describe('account settings', () => {
 
     cy.get('#sidebarMenu #account-menu .nav-icon:first').click();
     cy.get('#sidebarMenu').contains('Account Settings').click();
-    cy.get('#name').clear();
-    cy.get('#name').type(faker.person.fullName());
-    cy.get('.active > form > .btn').click();
+    cy.get('input[name="name"]').clear();
+    cy.get('input[name="name"]').type(faker.person.fullName());
+    // Scope to form to avoid multiple submit buttons
+    cy.get('input[name="name"]')
+      .closest('form')
+      .find('button[type="submit"]')
+      .click();
 
-    cy.get('.alert-success > h6').should(
-      'have.text',
-      'Your profile has been updated successfully'
+    // HeroUI Alert component
+    cy.contains('Your profile has been updated successfully').should(
+      'be.visible'
     );
   });
 
@@ -25,13 +29,17 @@ describe('account settings', () => {
 
     cy.get('#sidebarMenu #account-menu .nav-icon:first').click();
     cy.get('#sidebarMenu').contains('Account Settings').click();
-    cy.get('#nickname').clear();
-    cy.get('#nickname').type(faker.person.fullName());
-    cy.get('.active > form > .btn').click();
+    cy.get('input[name="nickname"]').clear();
+    cy.get('input[name="nickname"]').type(faker.person.fullName());
+    // Scope to form to avoid multiple submit buttons
+    cy.get('input[name="nickname"]')
+      .closest('form')
+      .find('button[type="submit"]')
+      .click();
 
-    cy.get('.alert-success > h6').should(
-      'have.text',
-      'Your profile has been updated successfully'
+    // HeroUI Alert component
+    cy.contains('Your profile has been updated successfully').should(
+      'be.visible'
     );
   });
 });

@@ -13,7 +13,12 @@ class TokenValidationSuccessTest < Rhino::TestCase::ControllerTest
   end
 
   test "returns user information when successful" do
-    assert_equal serialized_user, parsed_response["data"]
+    # Reload user to get current state (updated_at may have changed during token validation)
+    @current_user.reload
+    # Convert to_caching_json to match JSON-serialized format (timestamps as strings)
+    expected = JSON.parse(@current_user.to_caching_json.to_json)
+
+    assert_equal expected, parsed_response["data"]
   end
 end
 

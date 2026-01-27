@@ -14,13 +14,20 @@ describe('signup', () => {
 
     cy.get('a[href="/auth/signup"]').click();
 
-    cy.get('input[name=email]').type(faker.internet.email());
-    cy.get('#password').clear();
-    cy.get('#password').type('password');
-    cy.get('#password_confirmation').clear();
-    cy.get('#password_confirmation').type(faker.internet.password());
-    cy.get('.btn-primary').click();
+    cy.get('input[name="email"]').type(faker.internet.email());
+    cy.get('input[name="password"]').clear();
+    cy.get('input[name="password"]').type('password');
+    cy.get('input[name="password_confirmation"]').clear();
+    cy.get('input[name="password_confirmation"]').type(
+      faker.internet.password()
+    );
+    // Scope to form to avoid multiple submit buttons
+    cy.get('input[name="email"]')
+      .closest('form')
+      .find('button[type="submit"]')
+      .click();
 
-    cy.get('.btn').should('be.visible');
+    // After signup, should be redirected to dashboard or show success
+    cy.url().should('not.include', '/auth/signup');
   });
 });

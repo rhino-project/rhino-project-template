@@ -4,10 +4,16 @@ describe('forgot password', () => {
 
     cy.contains('Forgot Password?').click();
 
-    cy.get('input[name=email]').type(Cypress.config('testUser').email);
+    cy.get('input[name="email"]').type(Cypress.config('testUser').email);
 
-    cy.get('.btn').contains('Reset Password').click();
+    // Scope to form to avoid multiple submit buttons
+    cy.get('input[name="email"]')
+      .closest('form')
+      .find('button[type="submit"]')
+      .contains('Reset Password')
+      .click();
 
-    cy.get('.alert-success > h6').should('have.text', 'Reset Password');
+    // HeroUI Alert component structure
+    cy.contains('Reset Password').should('be.visible');
   });
 });

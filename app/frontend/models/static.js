@@ -27,7 +27,8 @@ const api = {
             },
             "readOnly": true,
             "nullable": false,
-            "type": "identifier"
+            "type": "integer",
+            "format": "identifier"
           },
           "name": {
             "x-rhino-attribute": {
@@ -166,7 +167,8 @@ const api = {
             },
             "readOnly": true,
             "nullable": false,
-            "type": "identifier"
+            "type": "integer",
+            "format": "identifier"
           },
           "name": {
             "x-rhino-attribute": {
@@ -244,7 +246,8 @@ const api = {
             },
             "readOnly": true,
             "nullable": false,
-            "type": "identifier"
+            "type": "integer",
+            "format": "identifier"
           },
           "name": {
             "x-rhino-attribute": {
@@ -979,13 +982,19 @@ const api = {
     "x-rhino": {
       "modules": {
         "rhino": {
-          "version": "0.25.0.beta.17",
+          "version": "0.26.0.beta.4",
           "authOwner": "user",
           "baseOwner": "user",
           "oauth": [
-
+            {
+              "name": "google_oauth2",
+              "path": "/api/auth/omniauth/google_oauth2"
+            }
           ],
           "allow_signup": true
+        },
+        "rhino_subscriptions": {
+          "version": "0.26.0.beta.4"
         }
       }
     }

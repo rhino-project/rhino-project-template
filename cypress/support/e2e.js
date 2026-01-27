@@ -16,5 +16,19 @@
 // Import commands.js using ES2015 syntax:
 import './commands';
 
+// Ignore Vite WebSocket errors (HMR) that occur during Cypress tests
+Cypress.on('uncaught:exception', (err) => {
+  // Ignore Vite WebSocket errors
+  if (
+    err.message.includes('WebSocket closed without opened') ||
+    err.message.includes('vite-dev') ||
+    err.message.includes('@vite/client')
+  ) {
+    return false;
+  }
+  // Don't prevent other errors from failing the test
+  return true;
+});
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

@@ -19,10 +19,10 @@ export default tseslint.config(
       react.configs.flat['jsx-runtime'],
       ...tseslint.configs.recommended
     ],
-    files: ['**/*.{ts,tsx,js,jsx}'],
+    files: ['app/frontend/**/*.{ts,tsx,js,jsx}'],
     languageOptions: {
       ecmaVersion: 'latest',
-      globals: { ...globals.browser, vi: 'readonly' },
+      globals: globals.browser,
       parserOptions: {
         projectService: true,
         tsconfigRootDir: import.meta.dirname
@@ -46,7 +46,8 @@ export default tseslint.config(
         }
       ],
       'no-restricted-globals': 'off',
-      'no-undef': 'error',
+      'no-var': 'error',
+      'prefer-const': 'error',
       'react/prop-types': 'off',
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': [

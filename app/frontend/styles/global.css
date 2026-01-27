@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 mb-6 leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl font-bold tracking-tight text-gray-800 dark:text-gray-200 mb-4 leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4 leading-normal;
+  }
+
+  h4 {
+    @apply text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2 leading-normal;
+  }
+
+  h5 {
+    @apply text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2 leading-normal;
+  }
+
+  h6 {
+    @apply text-base font-semibold text-gray-700 dark:text-[#b0b3b8] mb-2 leading-normal;
+  }
+}
+
+@layer utilities {
+  /* Sidebar dark theme - override bg-primary for sidebar containers */
+  /* Target sidebar-like containers (fixed/relative positioning with specific width) */
+  .fixed.inset-0.z-20.bg-primary,
+  .relative.flex.h-full.w-72.bg-primary,
+  div.bg-primary:has(nav),
+  div.bg-primary:has([data-selected]) {
+    background-color: #242526 !important;
+  }
+
+  /* Restore primary blue for buttons and interactive elements */
+  button.bg-primary,
+  button[data-color='primary'],
+  a.bg-primary:has(button),
+  [role='button'].bg-primary {
+    background-color: #1877f2 !important;
+  }
+
+  /* Sidebar background variants - only for sidebar context */
+  .relative.flex.h-full.w-72.bg-primary-50,
+  .relative.flex.h-full.w-72.bg-primary-100,
+  .relative.flex.h-full.w-72.bg-primary-200,
+  .relative.flex.h-full.w-72.bg-primary-300,
+  .relative.flex.h-full.w-72.bg-primary-400,
+  div.bg-primary-50:has(nav),
+  div.bg-primary-100:has(nav),
+  div.bg-primary-200:has(nav),
+  div.bg-primary-300:has(nav),
+  div.bg-primary-400:has(nav) {
+    background-color: #242526 !important;
+  }
+
+  /* Navigation items in sidebar - selected state */
+  div.bg-primary [data-selected='true'],
+  .relative.flex.h-full.w-72 [data-selected='true'],
+  div.bg-primary [data-selected='true'].bg-primary-400,
+  div.bg-primary [data-selected='true'].bg-primary-300,
+  .relative.flex.h-full.w-72 [data-selected='true'].bg-primary-400,
+  .relative.flex.h-full.w-72 [data-selected='true'].bg-primary-300,
+  .dark div.bg-primary [data-selected='true'].bg-primary-300,
+  .dark .relative.flex.h-full.w-72 [data-selected='true'].bg-primary-300 {
+    background-color: #3a3b3c !important;
+  }
+
+  /* Navigation item hover states in sidebar */
+  div.bg-primary .hover\:bg-primary-300\/20:hover,
+  .relative.flex.h-full.w-72 .hover\:bg-primary-300\/20:hover,
+  .dark div.bg-primary .hover\:bg-primary-300\/40:hover,
+  .dark .relative.flex.h-full.w-72 .hover\:bg-primary-300\/40:hover {
+    background-color: rgba(58, 59, 60, 0.4) !important;
+  }
+
+  /* Text colors for navigation in sidebar */
+  div.bg-primary .text-primary-foreground,
+  .relative.flex.h-full.w-72 .text-primary-foreground {
+    color: #e4e6eb !important;
+  }
+
+  div.bg-primary .text-primary-foreground\/60,
+  .relative.flex.h-full.w-72 .text-primary-foreground\/60 {
+    color: rgba(228, 230, 235, 0.6) !important;
+  }
+
+  div.bg-primary .text-primary-foreground\/80,
+  .relative.flex.h-full.w-72 .text-primary-foreground\/80 {
+    color: rgba(228, 230, 235, 0.8) !important;
+  }
+
+  /* Button variant text colors for visibility on dark background */
+  /* Default gray color for non-primary buttons */
+  button[data-variant='bordered']:not([data-color='primary']),
+  button[data-variant='bordered']:not([data-color='primary']) *,
+  button[data-variant='bordered']:not([data-color='primary']) span,
+  [data-variant='bordered']:not([data-color='primary']),
+  [data-variant='bordered']:not([data-color='primary']) *,
+  [data-variant='bordered']:not([data-color='primary']) span {
+    color: #e4e6eb !important;
+  }
+
+  button[data-variant='light']:not([data-color='primary']),
+  button[data-variant='light']:not([data-color='primary']) *,
+  button[data-variant='light']:not([data-color='primary']) span,
+  [data-variant='light']:not([data-color='primary']),
+  [data-variant='light']:not([data-color='primary']) *,
+  [data-variant='light']:not([data-color='primary']) span {
+    color: #e4e6eb !important;
+  }
+
+  button[data-variant='ghost']:not([data-color='primary']),
+  button[data-variant='ghost']:not([data-color='primary']) *,
+  button[data-variant='ghost']:not([data-color='primary']) span,
+  [data-variant='ghost']:not([data-color='primary']),
+  [data-variant='ghost']:not([data-color='primary']) *,
+  [data-variant='ghost']:not([data-color='primary']) span {
+    color: #e4e6eb !important;
+  }
+
+  button[data-variant='faded']:not([data-color='primary']),
+  button[data-variant='faded']:not([data-color='primary']) *,
+  button[data-variant='faded']:not([data-color='primary']) span,
+  [data-variant='faded']:not([data-color='primary']),
+  [data-variant='faded']:not([data-color='primary']) *,
+  [data-variant='faded']:not([data-color='primary']) span {
+    color: #e4e6eb !important;
+  }
+
+  /* Default bordered buttons keep gray border */
+  button[data-variant='bordered']:not([data-color='primary']) {
+    border-color: #3e4042 !important;
+  }
+
+  /* Light variant background should be subtle for non-primary buttons */
+  button[data-variant='light']:not([data-color='primary']) {
+    background-color: rgba(58, 59, 60, 0.2) !important;
+  }
+}
